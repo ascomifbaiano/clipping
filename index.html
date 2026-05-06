@@ -126,7 +126,75 @@
 
         <!-- ABA 1: MÉTRICAS (A SER EXPORTADA PARA PDF) -->
         <div id="aba-metricas" class="tab-content active">
-...
+            
+            <div id="area-impressao"> <!-- Div encapsuladora para a Impressão -->
+                <div class="stats-grid">
+                    <div class="stat-card"><h3>Total de Menções</h3><div id="clip-total" class="valor">-</div></div>
+                    <div class="stat-card"><h3>Comparativo YoY</h3><div id="clip-yoy" class="valor" style="font-size:18px;">-</div></div>
+                    <div class="stat-card"><h3>Média Mensal</h3><div id="clip-media" class="valor" style="font-size:20px;">-</div></div>
+                    <div class="stat-card"><h3>Veículos Únicos</h3><div id="clip-veiculos" class="valor" style="font-size:20px;">-</div></div>
+                </div>
+
+                <!-- DESTAQUES DE TENDÊNCIAS -->
+                <div class="chart-box" style="margin-bottom: 25px; border-top: 4px solid var(--verde-if);">
+                    <h3 style="margin-top:0; font-size: 11px; color: #666; text-transform: uppercase;">🔥 Assuntos em Destaque no Período</h3>
+                    <div id="container-trends" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                        <!-- Injetado via JS -->
+                    </div>
+                </div>
+
+                <div class="charts-main-grid">
+                    <div class="chart-box"><div class="chart-container"><canvas id="chartSazonalidade"></canvas></div></div>
+                    <div class="chart-box"><div class="chart-container"><canvas id="chartEvolucao"></canvas></div></div>
+                </div>
+
+                <div class="charts-main-grid">
+                    <div class="chart-box"><div class="chart-container"><canvas id="chartVeiculos"></canvas></div></div>
+                    <div class="chart-box"><div class="chart-container"><canvas id="chartAssuntos"></canvas></div></div>
+                </div>
+
+                <div class="charts-main-grid">
+                    <div class="chart-box"><div class="chart-container"><canvas id="chartAbrangencia"></canvas></div></div>
+                    <div class="chart-box"><div class="chart-container"><canvas id="chartEixos"></canvas></div></div>
+                </div>
+            </div> <!-- Fim da área Impressão -->
+            
+        </div>
+
+        <!-- ABA 2: ACERVO TABELA -->
+        <div id="aba-tabela" class="tab-content">
+            <div class="table-box">
+                <h3 style="margin-top:0; color: var(--texto);">Banco de Dados da Mídia</h3>
+                <table>
+                    <thead><tr><th width="100">Data</th><th>Eixo Temático</th><th>Fonte / Veículo</th><th>Assunto da Matéria</th><th class="no-print" width="80">Link</th></tr></thead>
+                    <tbody id="tabela-corpo"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="versao">App 2: Clipping DICOM - Print Ready</div>
+</div>
+
+<script>
+    // Registrar o plugin globalmente para que os números apareçam nos gráficos
+    Chart.register(ChartDataLabels);
+    Chart.defaults.set('plugins.datalabels', {
+        color: '#ffffff',
+        font: { weight: 'bold' },
+        formatter: Math.round,
+        display: function(context) { return context.dataset.data[context.dataIndex] > 0; }
+    });
+
+    const timestampAgorinha = new Date().getTime();
+    const clippingUrl = 'data/clipping.csv?v=' + timestampAgorinha;
+
+    const cores = { 
+        verde: '#2F9E41', vermelho: '#E31B23', azul: '#29b6f6', laranja: '#ffa726', 
+        roxo: '#ab47bc', cinza: '#78909c', verdeClaro: '#81c784', amarelo: '#fbc02d', azulEscuro: '#1565c0'
+    };
+
     let dadosClipping = [];
     let dadosFiltrados = [];
     let anoAtual = 'Geral';
@@ -143,15 +211,14 @@
         let baseParaFiltrar = anoAtual === 'Geral' ? dadosClipping : dadosClipping.filter(i => i.data.startsWith(anoAtual));
         
         dadosFiltrados = baseParaFiltrar.filter(i => 
-            i.assunto.toLowerCase().includes(termo) || 
-            i.veiculo.toLowerCase().includes(termo) || 
-            i.eixo_institucional.toLowerCase().includes(termo)
+            (i.assunto && i.assunto.toLowerCase().includes(termo)) || 
+            (i.veiculo && i.veiculo.toLowerCase().includes(termo)) || 
+            (i.eixo_institucional && i.eixo_institucional.toLowerCase().includes(termo))
         );
         
-        processarDashboard(true); // true indica que é apenas atualização parcial
+        processarDashboard(true);
     }
 
-    // Função de Impressão (Usa o motor nativo do navegador)
     function imprimirRelatorio() {
         document.getElementById('print-periodo').innerText = `Período: ${anoAtual}`;
         document.getElementById('print-data-hoje').innerText = new Date().toLocaleDateString('pt-BR');
@@ -159,19 +226,71 @@
     }
 
     function abrirAba(idAba, btn) {
-...
+        document.querySelectorAll('.tab-content').forEach(aba => aba.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(idAba).classList.add('active');
+        btn.classList.add('active');
+    }
+
+    Papa.parse(clippingUrl, {
+        download: true, header: true, skipEmptyLines: true,
+        complete: function(res) {
+            dadosClipping = res.data.filter(i => i.data && i.data.length >= 4);
+            
+            document.getElementById('status').style.display = 'none';
+            if(dadosClipping.length === 0) {
+                document.getElementById('status').style.display = 'block';
+                document.getElementById('status').innerHTML = '<span style="color:red;">Banco de dados vazio ou não encontrado.</span>';
+                return;
+            }
+            
+            document.getElementById('dashboard').style.display = 'block';
+
+            const anosUnicos = [...new Set(dadosClipping.map(i => i.data.substring(0,4)))].sort().reverse();
+            const containerAnos = document.getElementById('clipping-years-container');
+            
+            containerAnos.innerHTML = `<button class="btn-year" onclick="mudarAno('Geral', this)">Acervo Histórico (Todos)</button>`;
+            anosUnicos.forEach(a => {
+                if(a && !isNaN(a)) containerAnos.innerHTML += `<button class="btn-year" onclick="mudarAno('${a}', this)">${a}</button>`;
+            });
+
+            if(anosUnicos.length > 0) {
+                anoAtual = anosUnicos[0];
+                setTimeout(() => {
+                    const botoes = document.querySelectorAll('.btn-year');
+                    botoes.forEach(b => { if(b.innerText === anoAtual) b.classList.add('active'); });
+                    processarDashboard();
+                }, 50);
+            }
+        },
+        error: function() {
+            document.getElementById('status').innerHTML = '<span style="color:red;">Arquivo data/clipping.csv não encontrado. Verifique o caminho.</span>';
+        }
+    });
+
+    window.mudarAno = function(ano, btn) {
+        anoAtual = ano;
+        document.querySelectorAll('.btn-year').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        processarDashboard();
+    }
+
+    function renderizarGrafico(idCanvas, config) {
+        if(graficosAtivos[idCanvas]) graficosAtivos[idCanvas].destroy();
+        config.options.maintainAspectRatio = false; 
+        graficosAtivos[idCanvas] = new Chart(document.getElementById(idCanvas), config);
+    }
+
     function processarDashboard(apenasTabela = false) {
         let dadosAnalise = (document.getElementById('inputBusca').value.length > 0) ? dadosFiltrados : (anoAtual === 'Geral' ? dadosClipping : dadosClipping.filter(i => i.data.startsWith(anoAtual)));
         
         if(dadosAnalise.length === 0 && !apenasTabela) return;
 
-        // 1. KPIs (Sempre atualiza)
+        // 1. KPIs
         const totalMencoes = dadosAnalise.length;
         document.getElementById('clip-total').innerText = totalMencoes;
-        
         const mesesAtivos = [...new Set(dadosAnalise.map(i => i.data.substring(0,7)))].length;
         document.getElementById('clip-media').innerText = mesesAtivos ? Math.round(totalMencoes / mesesAtivos) : 0;
-        
         const veiculosUnicos = [...new Set(dadosAnalise.map(i => i.veiculo))].length;
         document.getElementById('clip-veiculos').innerText = veiculosUnicos;
 
@@ -186,7 +305,7 @@
         }
         document.getElementById('clip-yoy').innerText = yoy;
 
-        // 2. Tabela de Registros
+        // 2. Tabela
         const tbody = document.getElementById('tabela-corpo');
         tbody.innerHTML = '';
         dadosAnalise.forEach(item => {
@@ -261,8 +380,7 @@
             options: { plugins: { title: { display: true, text: 'Visibilidade por Eixo Institucional' }, legend:{position:'bottom'}} }
         });
 
-        // 4. Trending Topics (Heurística simples por palavras repetidas no assunto)
-        const stopwords = ['de', 'a', 'o', 'que', 'e', 'do', 'da', 'em', 'um', 'para', 'com', 'no', 'na', 'uma', 'os', 'as', 'dos', 'das', 'if', 'baiano', 'abre', 'vagas', 'cursos', 'inscrições', 'edital', 'campus', 'sobre', 'para', 'mais', 'para'];
+        const stopwords = ['de', 'a', 'o', 'que', 'e', 'do', 'da', 'em', 'um', 'para', 'com', 'no', 'na', 'uma', 'os', 'as', 'dos', 'das', 'if', 'baiano', 'abre', 'vagas', 'cursos', 'inscrições', 'edital', 'campus', 'sobre', 'para', 'mais'];
         const palavras = {};
         dadosAnalise.forEach(i => {
             if (i.assunto) {
