@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics de Mídia | IF Baiano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root { --verde-if: #2F9E41; --vermelho-if: #E31B23; --verde-claro: #e8f5e9; --fundo: #f4f6f8; --branco: #ffffff; --texto: #333333; --borda: #e0e0e0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--fundo); color: var(--texto); margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        header { text-align: center; margin-bottom: 25px; background: var(--branco); padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 5px solid var(--verde-if); position: relative; }
+        .logo-if { height: 110px; margin-bottom: 15px; }
+        h1 { color: var(--verde-if); margin: 0; font-size: 26px; }
+        p { color: #666; margin-top: 5px; font-size: 15px; }
+
+        .tabs-nav { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid var(--borda); overflow-x: auto;}
+        .tab-btn { background: none; border: none; font-size: 15px; font-weight: 600; color: #888; cursor: pointer; padding: 12px 25px; border-radius: 8px 8px 0 0; transition: 0.3s; margin-bottom: -2px; white-space: nowrap;}
+        .tab-btn.active { color: var(--verde-if); background: var(--branco); border: 2px solid var(--borda); border-bottom: 2px solid var(--branco); }
+        .tab-btn:hover:not(.active) { color: var(--texto); background: #eaeaea; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .year-filters { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; background: var(--branco); padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 4px solid var(--verde-if);}
+        .btn-year { background: #fff; border: 1px solid var(--borda); padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; font-weight: 600; color: #555; transition: 0.2s; font-family: inherit;}
+        .btn-year.active { background: var(--verde-if); color: #fff; border-color: var(--verde-if); }
+        .btn-year:hover:not(.active) { background: #eee; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 25px; }
+        .stat-card { background: var(--branco); padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 4px solid var(--verde-if); }
+        .stat-card h3 { font-size: 11px; color: #666; text-transform: uppercase; margin-bottom: 8px; }
+        .stat-card .valor { font-size: 24px; font-weight: 700; color: var(--texto); }
+
+        .charts-main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+        .chart-box { background: var(--branco); padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .chart-container { position: relative; height: 320px; width: 100%; } /* Altura fixa resolve o bug do Chart.js */
+        @media (max-width: 800px) { .charts-main-grid { grid-template-columns: 1fr; } }
+
+        .table-box { background: var(--branco); padding: 20px; border-radius: 12px; overflow-x: auto; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 25px;}
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--borda); }
+        th { background: #f8f9fa; color: #555; font-weight: 600; }
+        
+        /* Tags de Categoria / Eixo */
+        .tag-ensino { background: #e8f5e9; color: #2e7d32; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
+        .tag-pesquisa { background: #fff3e0; color: #ef6c00; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
+        .tag-extensao { background: #f3e5f5; color: #6a1b9a; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
+        .tag-institucional { background: #eceff1; color: #455a64; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
+        
+        /* Tag de Veiculo */
+        .tag-veiculo { background: #e3f2fd; color: #0277bd; font-weight: bold; padding: 4px 8px; border-radius: 4px; font-size: 12px; display: inline-block; margin-bottom: 4px;}
+        .tag-abrangencia { font-size: 10px; color: #888; font-weight: 500;}
+        
+        .link-btn { color: var(--verde-if); text-decoration: none; font-weight: 600; }
+        .link-btn:hover { text-decoration: underline; color: var(--vermelho-if); }
+
+        .loading { text-align: center; font-style: italic; color: #888; margin-top: 40px; }
+        .versao { text-align: center; margin-top: 30px; font-size: 12px; color: #888; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="https://github.com/ascomifbaiano/radar-ifbaiano/blob/main/marca-if-baiano-vertical.png?raw=true" alt="Logo IF Baiano" class="logo-if">
+        <h1>📰 Analytics de Clipping</h1>
+        <p>Monitoramento e Análise da Mídia Externa</p>
+    </header>
+
+    <div id="status" class="loading">Carregando Acervo de Clipping...</div>
+
+    <div id="dashboard" style="display:none;">
+        
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="abrirAba('aba-metricas', this)">📈 Visão Estratégica (Dashboard)</button>
+            <button class="tab-btn" onclick="abrirAba('aba-tabela', this)">🗃️ Acervo Memorial (Tabela)</button>
+        </div>
+
+        <!-- FILTRO DE ANO GERAL -->
+        <div class="year-filters" id="clipping-years-container">
+            <!-- Botões injetados via JS -->
+        </div>
+
+        <div id="aba-metricas" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card"><h3>Total de Menções</h3><div id="clip-total" class="valor">-</div></div>
+                <div class="stat-card"><h3>Comparativo YoY</h3><div id="clip-yoy" class="valor" style="font-size:18px;">-</div></div>
+                <div class="stat-card"><h3>Média Mensal</h3><div id="clip-media" class="valor" style="font-size:20px;">-</div></div>
+                <div class="stat-card"><h3>Veículos Únicos</h3><div id="clip-veiculos" class="valor" style="font-size:20px;">-</div></div>
+            </div>
+
+            <div class="charts-main-grid">
+                <div class="chart-box"><div class="chart-container"><canvas id="chartSazonalidade"></canvas></div></div>
+                <div class="chart-box"><div class="chart-container"><canvas id="chartEvolucao"></canvas></div></div>
+            </div>
+
+            <div class="charts-main-grid">
+                <div class="chart-box"><div class="chart-container"><canvas id="chartVeiculos"></canvas></div></div>
+                <div class="chart-box"><div class="chart-container"><canvas id="chartAssuntos"></canvas></div></div>
+            </div>
+
+            <div class="charts-main-grid">
+                <div class="chart-box"><div class="chart-container"><canvas id="chartAbrangencia"></canvas></div></div>
+                <div class="chart-box"><div class="chart-container"><canvas id="chartEixos"></canvas></div></div>
+            </div>
+        </div>
+
+        <div id="aba-tabela" class="tab-content">
+            <div class="table-box">
+                <h3 style="margin-top:0; color: var(--texto);">Banco de Dados da Mídia</h3>
+                <table>
+                    <thead><tr><th width="100">Data</th><th>Eixo Temático</th><th>Fonte / Veículo</th><th>Assunto da Matéria</th><th width="80">Link</th></tr></thead>
+                    <tbody id="tabela-corpo"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="versao">App 2: Clipping DICOM - Analytics & Auto-Tagging</div>
+</div>
+
+<script>
+    const timestampAgorinha = new Date().getTime();
+    const clippingUrl = 'data/clipping.csv?v=' + timestampAgorinha;
+
+    const cores = { 
+        verde: '#2F9E41', 
+        vermelho: '#E31B23', 
+        azul: '#29b6f6', 
+        laranja: '#ffa726', 
+        roxo: '#ab47bc', 
+        cinza: '#78909c', 
+        verdeClaro: '#81c784',
+        amarelo: '#fbc02d',
+        azulEscuro: '#1565c0'
+    };
+
+    let dadosClipping = [];
+    let anoAtual = 'Geral';
+    let graficosAtivos = {};
+
+    function abrirAba(idAba, btn) {
+        document.querySelectorAll('.tab-content').forEach(aba => aba.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(idAba).classList.add('active');
+        btn.classList.add('active');
+    }
+
+    Papa.parse(clippingUrl, {
+        download: true, header: true, skipEmptyLines: true,
+        complete: function(res) {
+            dadosClipping = res.data.filter(i => i.data && i.data.length >= 4);
+            
+            document.getElementById('status').style.display = 'none';
+            if(dadosClipping.length === 0) {
+                document.getElementById('status').style.display = 'block';
+                document.getElementById('status').innerHTML = '<span style="color:red;">Banco de dados vazio ou não encontrado. Execute o robô de extração.</span>';
+                return;
+            }
+            
+            document.getElementById('dashboard').style.display = 'block';
+
+            const anosUnicos = [...new Set(dadosClipping.map(i => i.data.substring(0,4)))].sort().reverse();
+            const containerAnos = document.getElementById('clipping-years-container');
+            
+            containerAnos.innerHTML = `<button class="btn-year" onclick="mudarAno('Geral', this)">Acervo Histórico (Todos)</button>`;
+            anosUnicos.forEach(a => {
+                if(a && !isNaN(a)) containerAnos.innerHTML += `<button class="btn-year" onclick="mudarAno('${a}', this)">${a}</button>`;
+            });
+
+            // Seleciona o ano mais recente por padrão ao abrir
+            if(anosUnicos.length > 0) {
+                anoAtual = anosUnicos[0];
+                setTimeout(() => {
+                    const botoes = document.querySelectorAll('.btn-year');
+                    botoes.forEach(b => { if(b.innerText === anoAtual) b.classList.add('active'); });
+                    processarDashboard();
+                }, 50);
+            }
+        },
+        error: function() {
+            document.getElementById('status').innerHTML = '<span style="color:red;">Arquivo clipping.csv não encontrado.</span>';
+        }
+    });
+
+    window.mudarAno = function(ano, btn) {
+        anoAtual = ano;
+        document.querySelectorAll('.btn-year').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        processarDashboard();
+    }
+
+    function renderizarGrafico(idCanvas, config) {
+        if(graficosAtivos[idCanvas]) graficosAtivos[idCanvas].destroy();
+        config.options.maintainAspectRatio = false; // Permite preencher a div .chart-container de altura fixa
+        graficosAtivos[idCanvas] = new Chart(document.getElementById(idCanvas), config);
+    }
+
+    function processarDashboard() {
+        let dadosAnalise = anoAtual === 'Geral' ? dadosClipping : dadosClipping.filter(i => i.data.startsWith(anoAtual));
+
+        if(dadosAnalise.length === 0) return;
+
+        // 1. KPIs
+        const totalMencoes = dadosAnalise.length;
+        document.getElementById('clip-total').innerText = totalMencoes;
+        
+        const mesesAtivos = [...new Set(dadosAnalise.map(i => i.data.substring(0,7)))].length;
+        document.getElementById('clip-media').innerText = mesesAtivos ? Math.round(totalMencoes / mesesAtivos) : 0;
+        
+        const veiculosUnicos = [...new Set(dadosAnalise.map(i => i.veiculo))].length;
+        document.getElementById('clip-veiculos').innerText = veiculosUnicos;
+
+        let yoy = "N/A";
+        if(anoAtual !== 'Geral') {
+            const anoAnt = (parseInt(anoAtual) - 1).toString();
+            const totalAnt = dadosClipping.filter(i => i.data.startsWith(anoAnt)).length;
+            if(totalAnt > 0) {
+                const perc = (((totalMencoes - totalAnt) / totalAnt) * 100).toFixed(1);
+                yoy = perc >= 0 ? `+${perc}% 🟢` : `${perc}% 🔴`;
+            } else { yoy = "Sem base ant."; }
+        }
+        document.getElementById('clip-yoy').innerText = yoy;
+
+        // 2. Tabela de Registros
+        const tbody = document.getElementById('tabela-corpo');
+        tbody.innerHTML = '';
+        dadosAnalise.forEach(item => {
+            const dataBR = item.data.split('-').reverse().join('/');
+            
+            let classeEixo = 'tag-institucional';
+            if(item.eixo_institucional === 'Ensino') classeEixo = 'tag-ensino';
+            else if(item.eixo_institucional === 'Pesquisa') classeEixo = 'tag-pesquisa';
+            else if(item.eixo_institucional === 'Extensão') classeEixo = 'tag-extensao';
+
+            tbody.innerHTML += `
+                <tr>
+                    <td>${dataBR}</td>
+                    <td><span class="${classeEixo}">${item.eixo_institucional || 'Institucional'}</span></td>
+                    <td><span class="tag-veiculo">${item.veiculo || 'Mídia'}</span><br><span class="tag-abrangencia">${item.abrangencia || 'Imprensa Local'}</span></td>
+                    <td style="font-weight: 500;">${item.assunto}</td>
+                    <td><a href="${item.link}" target="_blank" class="link-btn">Acessar</a></td>
+                </tr>`;
+        });
+
+        // 3. Gráfico: Sazonalidade
+        const sazonalidade = {};
+        dadosAnalise.forEach(i => { const m = i.data.substring(5,7); sazonalidade[m] = (sazonalidade[m] || 0) + 1; });
+        const labelsM = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+        renderizarGrafico('chartSazonalidade', { 
+            type: 'bar', 
+            data: { labels: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'], datasets: [{ label: 'Menções', data: labelsM.map(m => sazonalidade[m]||0), backgroundColor: cores.verde }] }, 
+            options: { plugins: { title: { display: true, text: 'Sazonalidade Mensal' }, legend:{display:false}} }
+        });
+
+        // 4. Gráfico: Evolução Histórica (Usa a base inteira, não só a filtrada)
+        const evolucao = {};
+        dadosClipping.forEach(i => { const a = i.data.substring(0,4); if(a) evolucao[a] = (evolucao[a] || 0) + 1; });
+        const labelsAnos = Object.keys(evolucao).sort();
+        renderizarGrafico('chartEvolucao', { 
+            type: 'line', 
+            data: { labels: labelsAnos, datasets: [{ label: 'Total no Ano', data: labelsAnos.map(a => evolucao[a]), borderColor: cores.vermelho, backgroundColor: cores.vermelho, fill: false, tension: 0.1, pointRadius: 5 }] }, 
+            options: { plugins: { title: { display: true, text: 'Evolução Histórica de Clipping' }, legend:{display:false}}, scales: { y: { beginAtZero: true } } }
+        });
+
+        // 5. Gráfico: Top Veículos
+        const contVeiculos = {}; 
+        dadosAnalise.forEach(i => contVeiculos[i.veiculo || 'Desconhecido'] = (contVeiculos[i.veiculo || 'Desconhecido']||0) + 1);
+        const topVeiculos = Object.entries(contVeiculos).sort((a,b)=>b[1]-a[1]).slice(0,7);
+        renderizarGrafico('chartVeiculos', { 
+            type: 'bar', 
+            data: { labels: topVeiculos.map(i=>i[0].substring(0,20)), datasets: [{ label: 'Publicações', data: topVeiculos.map(i=>i[1]), backgroundColor: cores.azul }] }, 
+            options: { indexAxis: 'y', plugins: { title: { display: true, text: 'Top 7 Veículos' }, legend:{display:false}} }
+        });
+
+        // 6. Gráfico: Top Assuntos
+        const contAssuntos = {}; 
+        dadosAnalise.forEach(i => contAssuntos[i.assunto || 'Sem Título'] = (contAssuntos[i.assunto || 'Sem Título']||0) + 1);
+        const topAssuntos = Object.entries(contAssuntos).sort((a,b)=>b[1]-a[1]).slice(0,7);
+        renderizarGrafico('chartAssuntos', { 
+            type: 'bar', 
+            data: { labels: topAssuntos.map(i=>i[0].substring(0,35)+'...'), datasets: [{ label: 'Frequência', data: topAssuntos.map(i=>i[1]), backgroundColor: cores.laranja }] }, 
+            options: { indexAxis: 'y', plugins: { title: { display: true, text: 'Pautas Mais Frequentes' }, legend:{display:false}} }
+        });
+
+        // 7. Gráfico: Abrangência
+        const contAbrangencia = {}; 
+        dadosAnalise.forEach(i => { const ab = i.abrangencia || 'Imprensa Local'; contAbrangencia[ab] = (contAbrangencia[ab]||0)+1; });
+        renderizarGrafico('chartAbrangencia', { 
+            type: 'doughnut', 
+            data: { labels: Object.keys(contAbrangencia), datasets: [{ data: Object.values(contAbrangencia), backgroundColor: [cores.verde, cores.azulEscuro, cores.roxo, cores.amarelo, cores.cinza] }] }, 
+            options: { plugins: { title: { display: true, text: 'Natureza e Abrangência da Mídia' }, legend:{position:'bottom'}} }
+        });
+
+        // 8. Gráfico: Eixos Institucionais
+        const contEixos = {}; 
+        dadosAnalise.forEach(i => { const ex = i.eixo_institucional || 'Institucional'; contEixos[ex] = (contEixos[ex]||0)+1; });
+        renderizarGrafico('chartEixos', { 
+            type: 'pie', 
+            data: { labels: Object.keys(contEixos), datasets: [{ data: Object.values(contEixos), backgroundColor: [cores.verdeClaro, cores.laranja, cores.roxo, cores.cinza] }] }, 
+            options: { plugins: { title: { display: true, text: 'Visibilidade por Eixo Institucional' }, legend:{position:'bottom'}} }
+        });
+    }
+</script>
+
+</body>
+</html>
