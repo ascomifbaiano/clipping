@@ -265,10 +265,12 @@
         const stopwords = ['de', 'a', 'o', 'que', 'e', 'do', 'da', 'em', 'um', 'para', 'com', 'no', 'na', 'uma', 'os', 'as', 'dos', 'das', 'if', 'baiano', 'abre', 'vagas', 'cursos', 'inscrições', 'edital', 'campus', 'sobre', 'para', 'mais', 'para'];
         const palavras = {};
         dadosAnalise.forEach(i => {
-            const termos = i.assunto.toLowerCase().replace(/[^\w\s]/gi, '').split(/\s+/);
-            termos.forEach(t => {
-                if (t.length > 3 && !stopwords.includes(t)) palavras[t] = (palavras[t] || 0) + 1;
-            });
+            if (i.assunto) {
+                const termos = i.assunto.toLowerCase().replace(/[^\w\s]/gi, '').split(/\s+/);
+                termos.forEach(t => {
+                    if (t.length > 3 && !stopwords.includes(t)) palavras[t] = (palavras[t] || 0) + 1;
+                });
+            }
         });
         const topPalavras = Object.entries(palavras).sort((a,b) => b[1]-a[1]).slice(0, 6);
         const containerTrends = document.getElementById('container-trends');
