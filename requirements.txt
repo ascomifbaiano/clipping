@@ -1,0 +1,6 @@
+# requirements.txt - v1.14.0
+requests
+pandas
+urllib3
+streamlit
+plotly
