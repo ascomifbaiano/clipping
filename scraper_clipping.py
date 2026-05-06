@@ -1,284 +1,180 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytics de Mídia | Clipping IF Baiano</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+import requests
+import pandas as pd
+import os
+import html
+import urllib3
+import xml.etree.ElementTree as ET
+import re
+import time
+from datetime import datetime
+from email.utils import parsedate_to_datetime
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# ==========================================
+# 1. CONFIGURAÇÕES E HEURÍSTICA
+# ==========================================
+ARQUIVO_CLIPPING = 'data/clipping.csv'
+
+def padronizar_data(data_str, ano_referencia=str(datetime.now().year)):
+    if not data_str: return f"{ano_referencia}-01-01"
+    d_str = str(data_str).strip().lower()
     
-    <!-- Bibliotecas Necessárias -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Plugin para fixar os números nos gráficos -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    meses = {'janeiro':'01','fevereiro':'02','março':'03','marco':'03','abril':'04','maio':'05','junho':'06',
+             'julho':'07','agosto':'08','setembro':'09','outubro':'10','novembro':'11','dezembro':'12'}
+    for pt, num in meses.items():
+        d_str = d_str.replace(pt, num)
+        
+    # Tenta YYYY-MM-DD
+    match = re.search(r'(\d{4})-(\d{2})-(\d{2})', d_str)
+    if match: return match.group(0)
+
+    # Tenta DD/MM/YYYY ou DD-MM-YYYY
+    match = re.search(r'(\d{2})[-/](\d{2})[-/](\d{2,4})', d_str)
+    if match:
+        d, m, y = match.groups()
+        if len(y) == 2: y = '20' + y
+        return f"{y}-{m.zfill(2)}-{d.zfill(2)}"
+
+    # Tenta RFC 2822 (pubDate do RSS)
+    try:
+        dt = parsedate_to_datetime(data_str)
+        return dt.strftime('%Y-%m-%d')
+    except: pass
+
+    return f"{ano_referencia}-01-01"
+
+def classificar_eixo(titulo):
+    t = str(titulo).lower()
+    # Prioridade para Gestão e RH
+    if any(w in t for w in ['professor', 'substituto', 'concurso', 'processo seletivo', 'seleção', 'vaga', 'servidor', 'docente', 'edital']): return 'Gestão e RH'
+    if any(w in t for w in ['sisu', 'prosel', 'curso', 'graduação', 'especialização', 'técnico', 'matrícula', 'ensino', 'aluno', 'estudante', 'aula', 'partiu if']): return 'Ensino'
+    if any(w in t for w in ['pesquisa', 'ciência', 'tecnologia', 'inovação', 'patente', 'cnpq', 'artigo', 'fapesb', 'científica', 'pesquisador', 'desenvolve', 'biofilme']): return 'Pesquisa'
+    if any(w in t for w in ['extensão', 'comunidade', 'projeto', 'feira', 'evento', 'seminário', 'agricultura familiar', 'mulheres mil', 'oficina', 'tenda', 'jornada']): return 'Extensão'
+    return 'Institucional'
+
+def classificar_abrangencia(veiculo):
+    v = str(veiculo).lower()
+    if any(w in v for w in ['g1', 'cnn', 'r7', 'terra', 'estadao', 'msn', 'uol', 'record', 'band', 'catraca livre', 'o tempo', 'folha']): return 'Imprensa (Nacional)'
+    if any(w in v for w in ['a tarde', 'correio', 'bnews', 'aratu', 'ibahia', 'tribuna da bahia', 'bahia notícias', 'farol da bahia', 'bahia.ba', 'bahia já']): return 'Imprensa Regional (Bahia)'
+    if any(w in v for w in ['prefeitura', 'gov.br', 'conif', 'mec', 'if baiano', 'ufba', 'uesb', 'ifba', 'adab', 'codevasf', 'embrapa']): return 'Institucional / Governamental'
+    if any(w in v for w in ['concurso', 'pci', 'qconcursos', 'ache', 'direção', 'estrategia', 'educação', 'agro', 'rural', 'defesa', 'tecnologia', 'focus', 'gran', 'vestibular']): return 'Especializados (Nichos)'
+    return 'Imprensa Local'
+
+def resolver_url_direta(url_rss):
+    """Tenta extrair a URL real por trás do redirecionamento do Google/Bing"""
+    try:
+        # User agent para simular navegador e evitar bloqueios
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+        # Apenas HEAD para ser rápido
+        res = requests.head(url_rss, headers=headers, allow_redirects=True, timeout=5)
+        return res.url
+    except:
+        return url_rss
+
+# ==========================================
+# 2. MOTOR DE CLIPPING
+# ==========================================
+def processar_clipping():
+    print("Iniciando Motor de Clipping Inteligente...")
+    links_conhecidos = set()
+    df_existente = pd.DataFrame()
+
+    # 1. Carrega base e corrige codificação
+    if os.path.exists(ARQUIVO_CLIPPING):
+        try:
+            # Tenta ler com utf-8-sig para lidar com BOM de Excel
+            df_existente = pd.read_csv(ARQUIVO_CLIPPING, encoding='utf-8-sig')
+            print(f"Base histórica: {len(df_existente)} registros.")
+            
+            # Limpeza de encoding em colunas existentes (se houver lixo)
+            for col in ['assunto', 'veiculo']:
+                if col in df_existente.columns:
+                    df_existente[col] = df_existente[col].apply(lambda x: str(x).encode('latin1').decode('utf-8') if isinstance(x, str) and 'Ã' in x else x)
+            
+            links_conhecidos = set(df_existente['link'].dropna().tolist())
+        except Exception as e:
+            print(f"Aviso ao ler base: {e}")
+
+    # 2. Busca novas notícias
+    clipping_coletado = []
+    fontes_pesquisa = [
+        ("Google News", 'https://news.google.com/rss/search?q="IF+Baiano"&hl=pt-BR&gl=BR&ceid=BR:pt-419'),
+        ("Bing News", 'https://www.bing.com/news/search?q="IF+Baiano"&format=rss')
+    ]
     
-    <style>
-        :root { --verde-if: #2F9E41; --vermelho-if: #E31B23; --verde-claro: #e8f5e9; --fundo: #f4f6f8; --branco: #ffffff; --texto: #333333; --borda: #e0e0e0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--fundo); color: var(--texto); margin: 0; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}
+    
+    for nome_motor, url_rss in fontes_pesquisa:
+        print(f" -> Varrendo {nome_motor}...")
+        try:
+            response = requests.get(url_rss, headers=headers, timeout=30)
+            root = ET.fromstring(response.content)
+            
+            for item in root.findall('./channel/item'):
+                link_original = item.find('link').text
+                
+                # Se já temos o link, pula
+                if link_original in links_conhecidos: continue 
+                
+                print(f"    - Resolvendo: {link_original[:50]}...")
+                link_direto = resolver_url_direta(link_original)
+                if link_direto in links_conhecidos: continue
+
+                titulo_completo = item.find('title').text or 'Sem Título'
+                veiculo = "Mídia Externa"
+                
+                source_tag = item.find('source')
+                if source_tag is not None and source_tag.text:
+                    veiculo = html.unescape(source_tag.text)
+                    if ' - ' in titulo_completo and veiculo in titulo_completo:
+                        titulo_completo = titulo_completo.rsplit(' - ', 1)[0]
+                    titulo = html.unescape(titulo_completo)
+                else:
+                    if ' - ' in titulo_completo:
+                        partes = titulo_completo.rsplit(' - ', 1)
+                        titulo = html.unescape(partes[0].strip())
+                        veiculo = html.unescape(partes[1].strip())
+                    else:
+                        titulo = html.unescape(titulo_completo)
+
+                data_pub = padronizar_data(item.find('pubDate').text)
+                
+                clipping_coletado.append({
+                    'data': data_pub,
+                    'assunto': titulo,
+                    'veiculo': veiculo,
+                    'link': link_direto,
+                    'eixo_institucional': classificar_eixo(titulo),
+                    'abrangencia': classificar_abrangencia(veiculo)
+                })
+                links_conhecidos.add(link_direto)
+                time.sleep(0.5) # Pequena pausa para não ser bloqueado ao resolver URLs
+                
+        except Exception as e:
+            print(f"   X Erro no motor {nome_motor}: {e}")
+
+    # 3. Consolidação e Salvamento Seguro
+    df_novo = pd.DataFrame(clipping_coletado)
+    if not df_novo.empty:
+        print(f"Novas notícias: {len(df_novo)}")
+        df_final = pd.concat([df_novo, df_existente], ignore_index=True)
+    else:
+        df_final = df_existente
+    
+    if not df_final.empty:
+        # Re-classificar tudo para garantir consistência com a nova heurística
+        df_final['eixo_institucional'] = df_final['assunto'].apply(classificar_eixo)
+        df_final['abrangencia'] = df_final['veiculo'].apply(classificar_abrangencia)
         
-        header { text-align: center; margin-bottom: 25px; background: var(--branco); padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 5px solid var(--verde-if); position: relative; }
-        .logo-if { height: 110px; margin-bottom: 15px; }
-        h1 { color: var(--verde-if); margin: 0; font-size: 26px; }
-        p { color: #666; margin-top: 5px; font-size: 15px; }
-
-        .tabs-nav { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid var(--borda); overflow-x: auto;}
-        .tab-btn { background: none; border: none; font-size: 15px; font-weight: 600; color: #888; cursor: pointer; padding: 12px 25px; border-radius: 8px 8px 0 0; transition: 0.3s; margin-bottom: -2px; white-space: nowrap;}
-        .tab-btn.active { color: var(--verde-if); background: var(--branco); border: 2px solid var(--borda); border-bottom: 2px solid var(--branco); }
-        .tab-btn:hover:not(.active) { color: var(--texto); background: #eaeaea; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-
-        .acoes-topo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: var(--branco); padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 4px solid var(--verde-if); flex-wrap: wrap; gap: 15px;}
-        .year-filters { display: flex; gap: 8px; flex-wrap: wrap;}
-        .btn-year { background: #fff; border: 1px solid var(--borda); padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; font-weight: 600; color: #555; transition: 0.2s; font-family: inherit;}
-        .btn-year.active { background: var(--verde-if); color: #fff; border-color: var(--verde-if); }
-        .btn-year:hover:not(.active) { background: #eee; }
+        # Limpeza Final
+        df_final = df_final.drop_duplicates(subset=['link'], keep='first')
+        df_final = df_final.sort_values(by=['data'], ascending=False)
         
-        .btn-print { background-color: #1565c0; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; font-family: inherit;}
-        .btn-print:hover { background-color: #0d47a1; }
+        os.makedirs(os.path.dirname(ARQUIVO_CLIPPING), exist_ok=True)
+        # Salva com encoding UTF-8 real para evitar lixo
+        df_final.to_csv(ARQUIVO_CLIPPING, index=False, encoding='utf-8-sig')
+        print(f"Sucesso! Total: {len(df_final)} registros.")
 
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 25px; }
-        .stat-card { background: var(--branco); padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 4px solid var(--verde-if); }
-        .stat-card h3 { font-size: 11px; color: #666; text-transform: uppercase; margin-bottom: 8px; }
-        .stat-card .valor { font-size: 24px; font-weight: 700; color: var(--texto); }
-
-        .charts-main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
-        .chart-box { background: var(--branco); padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .chart-container { position: relative; height: 320px; width: 100%; }
-        @media (max-width: 800px) { .charts-main-grid { grid-template-columns: 1fr; } }
-
-        .table-box { background: var(--branco); padding: 20px; border-radius: 12px; overflow-x: auto; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 25px;}
-        table { width: 100%; border-collapse: collapse; font-size: 14px; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--borda); }
-        th { background: #f8f9fa; color: #555; font-weight: 600; }
-        
-        .tag-ensino { background: #e8f5e9; color: #2e7d32; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
-        .tag-pesquisa { background: #fff3e0; color: #ef6c00; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
-        .tag-extensao { background: #f3e5f5; color: #6a1b9a; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
-        .tag-gestao { background: #e1f5fe; color: #0277bd; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
-        .tag-institucional { background: #eceff1; color: #455a64; font-size: 11px; padding: 4px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;}
-        
-        .tag-veiculo { background: #e3f2fd; color: #0277bd; font-weight: bold; padding: 4px 8px; border-radius: 4px; font-size: 12px; display: inline-block; margin-bottom: 4px;}
-        .tag-abrangencia { font-size: 10px; color: #888; font-weight: 500;}
-        
-        .link-btn { color: var(--verde-if); text-decoration: none; font-weight: 600; cursor: pointer; }
-        .link-btn:hover { text-decoration: underline; color: var(--vermelho-if); }
-        .copy-btn { background: #eee; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; margin-left: 5px; color: #666; }
-        .copy-btn:hover { background: #ddd; }
-
-        .search-box { flex-grow: 1; min-width: 250px; position: relative; }
-        .search-box input { width: 100%; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--borda); font-family: inherit; font-size: 14px; outline: none; transition: 0.2s; box-sizing: border-box; }
-        .search-box input:focus { border-color: var(--verde-if); box-shadow: 0 0 0 3px rgba(47, 158, 65, 0.1); }
-
-        .loading { text-align: center; font-style: italic; color: #888; margin-top: 40px; }
-        .versao { text-align: center; margin-top: 30px; font-size: 12px; color: #888; }
-
-        /* Resumo de Impressão */
-        .print-only-header { display: none; }
-
-        /* Ajustes para Impressão */
-        @media print {
-            .tabs-nav, .acoes-topo, .versao, .loading, .no-print, .search-box, .copy-btn { display: none !important; }
-            .print-only-header { display: block !important; text-align: center; border-bottom: 2px solid var(--verde-if); padding-bottom: 15px; margin-bottom: 20px; }
-            body { background: white; padding: 0; }
-            .container { max-width: 100%; margin: 0; }
-            header { box-shadow: none; border-radius: 0; padding: 20px; border-top: 3px solid var(--verde-if); }
-            .chart-box, .stat-card, .table-box { box-shadow: none; border: 1px solid #eee; break-inside: avoid; }
-            .charts-main-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
-            .tab-content { display: none !important; }
-            .tab-content.active { display: block !important; }
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <header>
-        <img src="https://github.com/ascomifbaiano/radar-ifbaiano/blob/main/marca-if-baiano-vertical.png?raw=true" alt="Logo IF Baiano" class="logo-if">
-        <h1>📰 Analytics de Clipping</h1>
-        <p>Monitoramento e Análise da Mídia Externa</p>
-    </header>
-
-    <div id="status" class="loading">Carregando Acervo de Clipping...</div>
-
-    <div id="dashboard" style="display:none;">
-        
-        <div class="tabs-nav">
-            <button class="tab-btn active" onclick="abrirAba('aba-metricas', this)">📈 Visão Estratégica (Dashboard)</button>
-            <button class="tab-btn" onclick="abrirAba('aba-tabela', this)">🗃️ Acervo Memorial (Tabela)</button>
-        </div>
-
-        <!-- FILTROS E AÇÕES -->
-        <div class="acoes-topo">
-            <div class="year-filters" id="clipping-years-container"></div>
-            <div class="search-box">
-                <input type="text" id="inputBusca" placeholder="Pesquisar notícias, veículos ou eixos..." onkeyup="filtrarPorTexto()">
-            </div>
-            <button class="btn-print" onclick="imprimirRelatorio()">🖨️ Imprimir Relatório</button>
-        </div>
-
-        <div class="print-only-header">
-            <h2 id="print-titulo">Relatório de Clipping - IF Baiano</h2>
-            <p id="print-periodo">Período: Geral</p>
-            <p style="font-size: 12px;">Gerado em: <span id="print-data-hoje"></span></p>
-        </div>
-
-        <!-- ABA 1: MÉTRICAS (A SER EXPORTADA PARA PDF) -->
-        <div id="aba-metricas" class="tab-content active">
-...
-    let dadosClipping = [];
-    let dadosFiltrados = [];
-    let anoAtual = 'Geral';
-    let graficosAtivos = {};
-
-    function copiarLink(url) {
-        navigator.clipboard.writeText(url).then(() => {
-            alert('Link copiado para a área de transferência!');
-        });
-    }
-
-    function filtrarPorTexto() {
-        const termo = document.getElementById('inputBusca').value.toLowerCase();
-        let baseParaFiltrar = anoAtual === 'Geral' ? dadosClipping : dadosClipping.filter(i => i.data.startsWith(anoAtual));
-        
-        dadosFiltrados = baseParaFiltrar.filter(i => 
-            i.assunto.toLowerCase().includes(termo) || 
-            i.veiculo.toLowerCase().includes(termo) || 
-            i.eixo_institucional.toLowerCase().includes(termo)
-        );
-        
-        processarDashboard(true); // true indica que é apenas atualização parcial
-    }
-
-    // Função de Impressão (Usa o motor nativo do navegador)
-    function imprimirRelatorio() {
-        document.getElementById('print-periodo').innerText = `Período: ${anoAtual}`;
-        document.getElementById('print-data-hoje').innerText = new Date().toLocaleDateString('pt-BR');
-        window.print();
-    }
-
-    function abrirAba(idAba, btn) {
-...
-    function processarDashboard(apenasTabela = false) {
-        let dadosAnalise = (document.getElementById('inputBusca').value.length > 0) ? dadosFiltrados : (anoAtual === 'Geral' ? dadosClipping : dadosClipping.filter(i => i.data.startsWith(anoAtual)));
-        
-        if(dadosAnalise.length === 0 && !apenasTabela) return;
-
-        // 1. KPIs (Sempre atualiza)
-        const totalMencoes = dadosAnalise.length;
-        document.getElementById('clip-total').innerText = totalMencoes;
-        
-        const mesesAtivos = [...new Set(dadosAnalise.map(i => i.data.substring(0,7)))].length;
-        document.getElementById('clip-media').innerText = mesesAtivos ? Math.round(totalMencoes / mesesAtivos) : 0;
-        
-        const veiculosUnicos = [...new Set(dadosAnalise.map(i => i.veiculo))].length;
-        document.getElementById('clip-veiculos').innerText = veiculosUnicos;
-
-        let yoy = "N/A";
-        if(anoAtual !== 'Geral') {
-            const anoAnt = (parseInt(anoAtual) - 1).toString();
-            const totalAnt = dadosClipping.filter(i => i.data.startsWith(anoAnt)).length;
-            if(totalAnt > 0) {
-                const perc = (((totalMencoes - totalAnt) / totalAnt) * 100).toFixed(1);
-                yoy = perc >= 0 ? `+${perc}% 🟢` : `${perc}% 🔴`;
-            } else { yoy = "Sem base ant."; }
-        }
-        document.getElementById('clip-yoy').innerText = yoy;
-
-        // 2. Tabela de Registros
-        const tbody = document.getElementById('tabela-corpo');
-        tbody.innerHTML = '';
-        dadosAnalise.forEach(item => {
-            const dataBR = item.data.split('-').reverse().join('/');
-            let classeEixo = 'tag-institucional';
-            if(item.eixo_institucional === 'Ensino') classeEixo = 'tag-ensino';
-            else if(item.eixo_institucional === 'Pesquisa') classeEixo = 'tag-pesquisa';
-            else if(item.eixo_institucional === 'Extensão') classeEixo = 'tag-extensao';
-            else if(item.eixo_institucional === 'Gestão e RH') classeEixo = 'tag-gestao';
-
-            tbody.innerHTML += `
-                <tr>
-                    <td>${dataBR}</td>
-                    <td><span class="${classeEixo}">${item.eixo_institucional || 'Institucional'}</span></td>
-                    <td><span class="tag-veiculo">${item.veiculo || 'Mídia'}</span><br><span class="tag-abrangencia">${item.abrangencia || 'Imprensa Local'}</span></td>
-                    <td style="font-weight: 500;">${item.assunto}</td>
-                    <td class="no-print">
-                        <a href="${item.link}" target="_blank" class="link-btn">Acessar</a>
-                        <button class="copy-btn" onclick="copiarLink('${item.link}')">🔗 Copiar</button>
-                    </td>
-                </tr>`;
-        });
-
-        if (apenasTabela) return;
-
-        // 3. Gráficos
-        const sazonalidade = {};
-        dadosAnalise.forEach(i => { const m = i.data.substring(5,7); sazonalidade[m] = (sazonalidade[m] || 0) + 1; });
-        const labelsM = ['01','02','03','04','05','06','07','08','09','10','11','12'];
-        renderizarGrafico('chartSazonalidade', { 
-            type: 'bar', 
-            data: { labels: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'], datasets: [{ label: 'Menções', data: labelsM.map(m => sazonalidade[m]||0), backgroundColor: cores.verde }] }, 
-            options: { plugins: { title: { display: true, text: 'Sazonalidade Mensal' }, legend:{display:false}} }
-        });
-
-        const evolucao = {};
-        dadosClipping.forEach(i => { const a = i.data.substring(0,4); if(a) evolucao[a] = (evolucao[a] || 0) + 1; });
-        const labelsAnos = Object.keys(evolucao).sort();
-        renderizarGrafico('chartEvolucao', { 
-            type: 'line', 
-            data: { labels: labelsAnos, datasets: [{ label: 'Total no Ano', data: labelsAnos.map(a => evolucao[a]), borderColor: cores.vermelho, backgroundColor: cores.vermelho, fill: false, tension: 0.1, pointRadius: 5 }] }, 
-            options: { plugins: { title: { display: true, text: 'Evolução Histórica de Clipping' }, legend:{display:false}, datalabels: { color: cores.vermelho, align: 'top', anchor: 'end' }}, scales: { y: { beginAtZero: true } } }
-        });
-
-        const contVeiculos = {}; dadosAnalise.forEach(i => contVeiculos[i.veiculo || 'Desconhecido'] = (contVeiculos[i.veiculo || 'Desconhecido']||0) + 1);
-        const topVeiculos = Object.entries(contVeiculos).sort((a,b)=>b[1]-a[1]).slice(0,7);
-        renderizarGrafico('chartVeiculos', { 
-            type: 'bar', 
-            data: { labels: topVeiculos.map(i=>i[0].substring(0,20)), datasets: [{ label: 'Publicações', data: topVeiculos.map(i=>i[1]), backgroundColor: cores.azul }] }, 
-            options: { indexAxis: 'y', plugins: { title: { display: true, text: 'Top 7 Veículos' }, legend:{display:false}} }
-        });
-
-        const contAssuntos = {}; dadosAnalise.forEach(i => contAssuntos[i.assunto || 'Sem Título'] = (contAssuntos[i.assunto || 'Sem Título']||0) + 1);
-        const topAssuntos = Object.entries(contAssuntos).sort((a,b)=>b[1]-a[1]).slice(0,7);
-        renderizarGrafico('chartAssuntos', { 
-            type: 'bar', 
-            data: { labels: topAssuntos.map(i=>i[0].substring(0,35)+'...'), datasets: [{ label: 'Frequência', data: topAssuntos.map(i=>i[1]), backgroundColor: cores.laranja }] }, 
-            options: { indexAxis: 'y', plugins: { title: { display: true, text: 'Pautas Mais Frequentes' }, legend:{display:false}} }
-        });
-
-        const contAbrangencia = {}; dadosAnalise.forEach(i => { const ab = i.abrangencia || 'Imprensa Local'; contAbrangencia[ab] = (contAbrangencia[ab]||0)+1; });
-        renderizarGrafico('chartAbrangencia', { 
-            type: 'doughnut', 
-            data: { labels: Object.keys(contAbrangencia), datasets: [{ data: Object.values(contAbrangencia), backgroundColor: [cores.verde, cores.azulEscuro, cores.roxo, cores.amarelo, cores.cinza] }] }, 
-            options: { plugins: { title: { display: true, text: 'Natureza e Abrangência da Mídia' }, legend:{position:'bottom'}} }
-        });
-
-        const contEixos = {}; dadosAnalise.forEach(i => { const ex = i.eixo_institucional || 'Institucional'; contEixos[ex] = (contEixos[ex]||0)+1; });
-        renderizarGrafico('chartEixos', { 
-            type: 'pie', 
-            data: { labels: Object.keys(contEixos), datasets: [{ data: Object.values(contEixos), backgroundColor: [cores.verdeClaro, cores.laranja, cores.roxo, cores.azul, cores.cinza] }] }, 
-            options: { plugins: { title: { display: true, text: 'Visibilidade por Eixo Institucional' }, legend:{position:'bottom'}} }
-        });
-
-        // 4. Trending Topics (Heurística simples por palavras repetidas no assunto)
-        const stopwords = ['de', 'a', 'o', 'que', 'e', 'do', 'da', 'em', 'um', 'para', 'com', 'no', 'na', 'uma', 'os', 'as', 'dos', 'das', 'if', 'baiano', 'abre', 'vagas', 'cursos', 'inscrições', 'edital', 'campus', 'sobre', 'para', 'mais', 'para'];
-        const palavras = {};
-        dadosAnalise.forEach(i => {
-            const termos = i.assunto.toLowerCase().replace(/[^\w\s]/gi, '').split(/\s+/);
-            termos.forEach(t => {
-                if (t.length > 3 && !stopwords.includes(t)) palavras[t] = (palavras[t] || 0) + 1;
-            });
-        });
-        const topPalavras = Object.entries(palavras).sort((a,b) => b[1]-a[1]).slice(0, 6);
-        const containerTrends = document.getElementById('container-trends');
-        if (containerTrends) {
-            containerTrends.innerHTML = topPalavras.length > 0 
-                ? topPalavras.map(p => `<span style="background: #f0f0f0; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; color: var(--verde-if); border: 1px solid #ddd;">#${p[0].toUpperCase()} (${p[1]})</span>`).join('')
-                : '<span style="color: #999; font-size: 12px;">Sem tendências no momento.</span>';
-        }
-    }
-</script>
-
-</body>
-</html>
+if __name__ == "__main__":
+    processar_clipping()
