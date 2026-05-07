@@ -188,7 +188,15 @@
     });
 
     const timestampAgorinha = new Date().getTime();
-    const clippingUrl = 'data/clipping.csv?v=' + timestampAgorinha;
+    
+    // Configuração de carregamento multi-arquivo
+    const anoInicial = 2022;
+    const anoAtualSistema = new Date().getFullYear();
+    const arquivosParaCarregar = ['ate_2021'];
+    
+    for (let a = anoInicial; a <= anoAtualSistema; a++) {
+        arquivosParaCarregar.push(a.toString());
+    }
 
     const cores = { 
         verde: '#2F9E41', vermelho: '#E31B23', azul: '#29b6f6', laranja: '#ffa726', 
@@ -232,41 +240,60 @@
         btn.classList.add('active');
     }
 
-    Papa.parse(clippingUrl, {
-        download: true, header: true, skipEmptyLines: true,
-        complete: function(res) {
-            dadosClipping = res.data.filter(i => i.data && i.data.length >= 4);
-            
-            document.getElementById('status').style.display = 'none';
-            if(dadosClipping.length === 0) {
-                document.getElementById('status').style.display = 'block';
-                document.getElementById('status').innerHTML = '<span style="color:red;">Banco de dados vazio ou não encontrado.</span>';
-                return;
-            }
-            
-            document.getElementById('dashboard').style.display = 'block';
-
-            const anosUnicos = [...new Set(dadosClipping.map(i => i.data.substring(0,4)))].sort().reverse();
-            const containerAnos = document.getElementById('clipping-years-container');
-            
-            containerAnos.innerHTML = `<button class="btn-year" onclick="mudarAno('Geral', this)">Acervo Histórico (Todos)</button>`;
-            anosUnicos.forEach(a => {
-                if(a && !isNaN(a)) containerAnos.innerHTML += `<button class="btn-year" onclick="mudarAno('${a}', this)">${a}</button>`;
+    // Carregamento Assíncrono de Múltiplos Arquivos
+    async function carregarDados() {
+        const promessas = arquivosParaCarregar.map(ano => {
+            return new Promise((resolve) => {
+                const url = `data/clipping_${ano}.csv?v=${timestampAgorinha}`;
+                Papa.parse(url, {
+                    download: true,
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: (results) => resolve(results.data),
+                    error: () => resolve([]) // Se o arquivo não existir (ex: ano futuro), ignora
+                });
             });
+        });
 
-            if(anosUnicos.length > 0) {
-                anoAtual = anosUnicos[0];
-                setTimeout(() => {
-                    const botoes = document.querySelectorAll('.btn-year');
-                    botoes.forEach(b => { if(b.innerText === anoAtual) b.classList.add('active'); });
-                    processarDashboard();
-                }, 50);
-            }
-        },
-        error: function() {
-            document.getElementById('status').innerHTML = '<span style="color:red;">Arquivo data/clipping.csv não encontrado. Verifique o caminho.</span>';
+        // Tenta carregar também o arquivo antigo por segurança (caso ainda exista)
+        promessas.push(new Promise((resolve) => {
+            Papa.parse(`data/clipping.csv?v=${timestampAgorinha}`, {
+                download: true, header: true, skipEmptyLines: true,
+                complete: (results) => resolve(results.data),
+                error: () => resolve([])
+            });
+        }));
+
+        const resultados = await Promise.all(promessas);
+        dadosClipping = resultados.flat().filter(i => i.data && i.data.length >= 4);
+
+        if(dadosClipping.length === 0) {
+            document.getElementById('status').innerHTML = '<span style="color:red;">Banco de dados não encontrado ou vazio.</span>';
+            return;
         }
-    });
+
+        document.getElementById('status').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+
+        const anosUnicos = [...new Set(dadosClipping.map(i => i.data.substring(0,4)))].sort().reverse();
+        const containerAnos = document.getElementById('clipping-years-container');
+        
+        containerAnos.innerHTML = `<button class="btn-year" onclick="mudarAno('Geral', this)">Acervo Histórico (Todos)</button>`;
+        anosUnicos.forEach(a => {
+            if(a && !isNaN(a)) containerAnos.innerHTML += `<button class="btn-year" onclick="mudarAno('${a}', this)">${a}</button>`;
+        });
+
+        if(anosUnicos.length > 0) {
+            anoAtual = anosUnicos[0];
+            setTimeout(() => {
+                const botoes = document.querySelectorAll('.btn-year');
+                botoes.forEach(b => { if(b.innerText === anoAtual) b.classList.add('active'); });
+                processarDashboard();
+            }, 50);
+        }
+    }
+
+    carregarDados();
 
     window.mudarAno = function(ano, btn) {
         anoAtual = ano;
