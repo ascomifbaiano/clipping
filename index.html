@@ -132,8 +132,15 @@
             const r = await fetch(`data/stats.json?v=${ts}`);
             statsGlobais = await r.json();
             
-            const anos = Object.keys(statsGlobais).sort().reverse();
+            // Ordenação: Anos numéricos primeiro (decrescente), 'ate_2021' por último
+            const anos = Object.keys(statsGlobais).sort((a, b) => {
+                if (a === 'ate_2021') return 1;
+                if (b === 'ate_2021') return -1;
+                return parseInt(b) - parseInt(a);
+            });
+
             const container = document.getElementById('clipping-years-container');
+            container.innerHTML = ''; // Limpa antes de renderizar
             anos.forEach(a => {
                 const label = a === 'ate_2021' ? 'Até 2021' : a;
                 container.innerHTML += `<button class="btn-year" id="btn-${a}" onclick="selecionarAno('${a}')">${label}</button>`;
