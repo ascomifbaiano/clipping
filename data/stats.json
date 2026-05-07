@@ -22,9 +22,9 @@
       "Se Liga Alagoinhas": 8,
       "Diga Bahia": 6,
       "Hora Brasil": 5,
-      "Correio": 3,
       "Sul da Bahia News": 3,
       "G1": 3,
+      "Correio": 3,
       "PCI Concursos": 3
     },
     "meses": {
@@ -40,7 +40,37 @@
       "01": 9,
       "09": 8,
       "04": 8
-    }
+    },
+    "historico": [
+      {
+        "ano": 2022,
+        "total": 203
+      },
+      {
+        "ano": 2021,
+        "total": 93
+      },
+      {
+        "ano": 2020,
+        "total": 64
+      },
+      {
+        "ano": 2019,
+        "total": 1
+      },
+      {
+        "ano": 2018,
+        "total": 1
+      },
+      {
+        "ano": 2016,
+        "total": 1
+      },
+      {
+        "ano": 2012,
+        "total": 1
+      }
+    ]
   },
   "2023": {
     "total": 224,
@@ -66,9 +96,9 @@
       "Notícias Concursos": 5,
       "Sul da Bahia News": 4,
       "Bom Jesus da Lapa Notícias": 4,
-      "Conif": 3,
+      "iBahia": 3,
       "Acheconcursos": 3,
-      "Sul Bahia News": 3
+      "Conif": 3
     },
     "meses": {
       "10": 37,
@@ -84,7 +114,41 @@
       "08": 7,
       "07": 7,
       "20": 1
-    }
+    },
+    "historico": [
+      {
+        "ano": 2023,
+        "total": 224
+      },
+      {
+        "ano": 2022,
+        "total": 203
+      },
+      {
+        "ano": 2021,
+        "total": 93
+      },
+      {
+        "ano": 2020,
+        "total": 64
+      },
+      {
+        "ano": 2019,
+        "total": 1
+      },
+      {
+        "ano": 2018,
+        "total": 1
+      },
+      {
+        "ano": 2016,
+        "total": 1
+      },
+      {
+        "ano": 2012,
+        "total": 1
+      }
+    ]
   },
   "2024": {
     "total": 241,
@@ -108,9 +172,9 @@
       "Pimenta Blog": 6,
       "Notícias da Lapa": 5,
       "Click Petróleo e Gás": 5,
-      "A Tarde": 4,
+      "Correio": 4,
       "PEBSP": 4,
-      "G1 Bahia": 4,
+      "A Tarde": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -126,7 +190,45 @@
       "11": 9,
       "05": 9,
       "06": 5
-    }
+    },
+    "historico": [
+      {
+        "ano": 2024,
+        "total": 241
+      },
+      {
+        "ano": 2023,
+        "total": 224
+      },
+      {
+        "ano": 2022,
+        "total": 203
+      },
+      {
+        "ano": 2021,
+        "total": 93
+      },
+      {
+        "ano": 2020,
+        "total": 64
+      },
+      {
+        "ano": 2019,
+        "total": 1
+      },
+      {
+        "ano": 2018,
+        "total": 1
+      },
+      {
+        "ano": 2016,
+        "total": 1
+      },
+      {
+        "ano": 2012,
+        "total": 1
+      }
+    ]
   },
   "2025": {
     "total": 401,
@@ -148,12 +250,12 @@
       "Agência Sertão": 36,
       "PCI Concursos": 16,
       "G1": 14,
-      "A Tarde": 9,
       "Notícias da Lapa": 9,
+      "A Tarde": 9,
       "Bahia Econômica": 9,
+      "Acorda Cidade": 8,
       "Correio": 8,
       "Ache Concursos": 8,
-      "Acorda Cidade": 8,
       "Mídia Externa": 7
     },
     "meses": {
@@ -169,7 +271,49 @@
       "08": 23,
       "07": 15,
       "04": 11
-    }
+    },
+    "historico": [
+      {
+        "ano": 2025,
+        "total": 401
+      },
+      {
+        "ano": 2024,
+        "total": 241
+      },
+      {
+        "ano": 2023,
+        "total": 224
+      },
+      {
+        "ano": 2022,
+        "total": 203
+      },
+      {
+        "ano": 2021,
+        "total": 93
+      },
+      {
+        "ano": 2020,
+        "total": 64
+      },
+      {
+        "ano": 2019,
+        "total": 1
+      },
+      {
+        "ano": 2018,
+        "total": 1
+      },
+      {
+        "ano": 2016,
+        "total": 1
+      },
+      {
+        "ano": 2012,
+        "total": 1
+      }
+    ]
   },
   "2026": {
     "total": 290,
@@ -196,8 +340,8 @@
       "Pimenta Blog": 5,
       "Tribuna da Bahia": 5,
       "Concursos no Brasil": 4,
-      "Jornal Valença Agora": 3,
-      "Plantão News": 3
+      "Jornal da Chapada": 3,
+      "Jornal Valença Agora": 3
     },
     "meses": {
       "03": 98,
@@ -205,7 +349,53 @@
       "02": 58,
       "04": 45,
       "05": 23
-    }
+    },
+    "historico": [
+      {
+        "ano": 2026,
+        "total": 290
+      },
+      {
+        "ano": 2025,
+        "total": 401
+      },
+      {
+        "ano": 2024,
+        "total": 241
+      },
+      {
+        "ano": 2023,
+        "total": 224
+      },
+      {
+        "ano": 2022,
+        "total": 203
+      },
+      {
+        "ano": 2021,
+        "total": 93
+      },
+      {
+        "ano": 2020,
+        "total": 64
+      },
+      {
+        "ano": 2019,
+        "total": 1
+      },
+      {
+        "ano": 2018,
+        "total": 1
+      },
+      {
+        "ano": 2016,
+        "total": 1
+      },
+      {
+        "ano": 2012,
+        "total": 1
+      }
+    ]
   },
   "ate_2021": {
     "total": 161,
@@ -230,8 +420,8 @@
       "Academia de Ciências da Bahia": 5,
       "Mídia Externa": 4,
       "A Tarde": 3,
-      "Fapesb": 3,
       "Notícias da Lapa": 3,
+      "Fapesb": 3,
       "Ministério da Educação": 3,
       "Pimenta Blog": 2
     },
@@ -248,6 +438,32 @@
       "02": 7,
       "01": 7,
       "10": 6
-    }
+    },
+    "historico": [
+      {
+        "ano": 2021,
+        "total": 93
+      },
+      {
+        "ano": 2020,
+        "total": 64
+      },
+      {
+        "ano": 2019,
+        "total": 1
+      },
+      {
+        "ano": 2018,
+        "total": 1
+      },
+      {
+        "ano": 2016,
+        "total": 1
+      },
+      {
+        "ano": 2012,
+        "total": 1
+      }
+    ]
   }
 }
