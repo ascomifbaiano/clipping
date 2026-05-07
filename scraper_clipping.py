@@ -14,7 +14,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # ==========================================
 # 1. CONFIGURAÇÕES E HEURÍSTICA
 # ==========================================
-ARQUIVO_CLIPPING = 'data/clipping.csv'
+DIR_DATA = 'data'
+ARQUIVO_ANTIGO = os.path.join(DIR_DATA, 'clipping.csv')
 
 def padronizar_data(data_str, ano_referencia=str(datetime.now().year)):
     if not data_str: return f"{ano_referencia}-01-01"
@@ -77,24 +78,30 @@ def resolver_url_direta(url_rss):
 # ==========================================
 def processar_clipping():
     print("Iniciando Motor de Clipping Inteligente...")
+    os.makedirs(DIR_DATA, exist_ok=True)
+    
     links_conhecidos = set()
-    df_existente = pd.DataFrame()
+    dfs_existentes = []
 
-    # 1. Carrega base e corrige codificação
-    if os.path.exists(ARQUIVO_CLIPPING):
+    # 1. Carrega base histórica (incluindo o arquivo antigo para migração)
+    import glob
+    arquivos_historicos = glob.glob(os.path.join(DIR_DATA, 'clipping_*.csv'))
+    if os.path.exists(ARQUIVO_ANTIGO):
+        arquivos_historicos.append(ARQUIVO_ANTIGO)
+        print(f"Arquivo antigo detectado para migração: {ARQUIVO_ANTIGO}")
+
+    for arq in arquivos_historicos:
         try:
-            # Tenta ler com utf-8-sig para lidar com BOM de Excel
-            df_existente = pd.read_csv(ARQUIVO_CLIPPING, encoding='utf-8-sig')
-            print(f"Base histórica: {len(df_existente)} registros.")
-            
-            # Limpeza de encoding em colunas existentes (se houver lixo)
-            for col in ['assunto', 'veiculo']:
-                if col in df_existente.columns:
-                    df_existente[col] = df_existente[col].apply(lambda x: str(x).encode('latin1').decode('utf-8') if isinstance(x, str) and 'Ã' in x else x)
-            
-            links_conhecidos = set(df_existente['link'].dropna().tolist())
+            df_temp = pd.read_csv(arq, encoding='utf-8-sig')
+            if not df_temp.empty:
+                dfs_existentes.append(df_temp)
+                if 'link' in df_temp.columns:
+                    links_conhecidos.update(df_temp['link'].dropna().tolist())
         except Exception as e:
-            print(f"Aviso ao ler base: {e}")
+            print(f"Aviso ao ler {arq}: {e}")
+
+    df_existente = pd.concat(dfs_existentes, ignore_index=True) if dfs_existentes else pd.DataFrame()
+    print(f"Base histórica total: {len(df_existente)} registros.")
 
     # 2. Busca novas notícias
     clipping_coletado = []
@@ -149,32 +156,47 @@ def processar_clipping():
                     'abrangencia': classificar_abrangencia(veiculo)
                 })
                 links_conhecidos.add(link_direto)
-                time.sleep(0.5) # Pequena pausa para não ser bloqueado ao resolver URLs
+                time.sleep(0.5) 
                 
         except Exception as e:
             print(f"   X Erro no motor {nome_motor}: {e}")
 
-    # 3. Consolidação e Salvamento Seguro
+    # 3. Consolidação e Salvamento Seguro por Ano
     df_novo = pd.DataFrame(clipping_coletado)
-    if not df_novo.empty:
-        print(f"Novas notícias: {len(df_novo)}")
-        df_final = pd.concat([df_novo, df_existente], ignore_index=True)
-    else:
-        df_final = df_existente
+    df_final = pd.concat([df_novo, df_existente], ignore_index=True) if not df_novo.empty else df_existente
     
     if not df_final.empty:
-        # Re-classificar tudo para garantir consistência com a nova heurística
+        # Re-classificar e Limpar
         df_final['eixo_institucional'] = df_final['assunto'].apply(classificar_eixo)
         df_final['abrangencia'] = df_final['veiculo'].apply(classificar_abrangencia)
-        
-        # Limpeza Final
         df_final = df_final.drop_duplicates(subset=['link'], keep='first')
-        df_final = df_final.sort_values(by=['data'], ascending=False)
         
-        os.makedirs(os.path.dirname(ARQUIVO_CLIPPING), exist_ok=True)
-        # Salva com encoding UTF-8 real para evitar lixo
-        df_final.to_csv(ARQUIVO_CLIPPING, index=False, encoding='utf-8-sig')
-        print(f"Sucesso! Total: {len(df_final)} registros.")
+        # Determinar arquivo de destino por ano
+        def definir_arquivo(data_str):
+            try:
+                ano = int(str(data_str)[:4])
+                return 'clipping_ate_2021.csv' if ano <= 2021 else f'clipping_{ano}.csv'
+            except:
+                return 'clipping_extra.csv'
+
+        df_final['arquivo_destino'] = df_final['data'].apply(definir_arquivo)
+        
+        # Salva cada grupo em seu respectivo arquivo
+        for arquivo, df_grupo in df_final.groupby('arquivo_destino'):
+            caminho = os.path.join(DIR_DATA, arquivo)
+            df_grupo = df_grupo.sort_values(by=['data'], ascending=False)
+            df_grupo = df_grupo.drop(columns=['arquivo_destino'])
+            df_grupo.to_csv(caminho, index=False, encoding='utf-8-sig')
+        
+        print(f"Sucesso! Dados distribuídos por ano em {DIR_DATA}/")
+        
+        # Se migrou com sucesso, remove o arquivo antigo
+        if os.path.exists(ARQUIVO_ANTIGO):
+            try:
+                os.remove(ARQUIVO_ANTIGO)
+                print(f"Arquivo antigo {ARQUIVO_ANTIGO} removido após migração.")
+            except Exception as e:
+                print(f"Erro ao remover arquivo antigo: {e}")
 
 if __name__ == "__main__":
     processar_clipping()
