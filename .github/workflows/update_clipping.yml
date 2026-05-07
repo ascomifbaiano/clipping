@@ -30,3 +30,4 @@ jobs:
           git add data/ || echo "Pasta data não encontrada."
           git diff-index --quiet HEAD || git commit -m "📰 Atualização do Acervo de Mídia Externa"
           git push
+          
