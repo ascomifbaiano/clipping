@@ -1,253 +1,253 @@
 {
   "2022": {
-    "total": 218,
+    "total": 203,
     "eixos": {
-      "Ensino": 97,
+      "Ensino": 88,
       "Institucional": 75,
-      "Gestão e RH": 36,
+      "Gestão e RH": 30,
       "Extensão": 9,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 171,
-      "Imprensa Regional (Bahia)": 18,
+      "Imprensa Local": 160,
+      "Imprensa Regional (Bahia)": 16,
       "Institucional / Governamental": 11,
-      "Especializados (Nichos)": 11,
+      "Especializados (Nichos)": 9,
       "Imprensa (Nacional)": 7
     },
     "top_veiculos": {
-      "Agência Sertão": 30,
-      "Bom Jesus da Lapa Notícias": 10,
-      "Pimenta Blog": 10,
-      "Hora Brasil": 9,
+      "Agência Sertão": 29,
+      "Bom Jesus da Lapa Notícias": 9,
+      "Pimenta Blog": 8,
       "Se Liga Alagoinhas": 8,
       "Diga Bahia": 6,
-      "PCI Concursos": 4,
-      "Correio": 4,
-      "Se liga Alagoinhas": 4,
-      "Tribuna do Recôncavo": 3
+      "Hora Brasil": 5,
+      "Sul da Bahia News": 3,
+      "G1": 3,
+      "Correio": 3,
+      "PCI Concursos": 3
     },
     "meses": {
-      "02": 45,
-      "05": 26,
-      "11": 23,
+      "02": 43,
+      "05": 25,
       "06": 23,
+      "11": 22,
       "12": 17,
       "07": 16,
-      "03": 15,
-      "10": 14,
-      "08": 11,
-      "01": 10,
-      "09": 9,
-      "04": 9
+      "03": 12,
+      "10": 10,
+      "08": 10,
+      "01": 9,
+      "09": 8,
+      "04": 8
     }
   },
   "2023": {
-    "total": 273,
+    "total": 224,
     "eixos": {
-      "Ensino": 122,
-      "Institucional": 67,
-      "Gestão e RH": 62,
-      "Extensão": 14,
+      "Ensino": 86,
+      "Institucional": 63,
+      "Gestão e RH": 54,
+      "Extensão": 13,
       "Pesquisa": 8
     },
     "abrangencia": {
-      "Imprensa Local": 207,
-      "Especializados (Nichos)": 38,
-      "Imprensa Regional (Bahia)": 12,
-      "Imprensa (Nacional)": 9,
-      "Institucional / Governamental": 7
+      "Imprensa Local": 169,
+      "Especializados (Nichos)": 31,
+      "Imprensa Regional (Bahia)": 11,
+      "Imprensa (Nacional)": 7,
+      "Institucional / Governamental": 6
     },
     "top_veiculos": {
-      "Agência Sertão": 51,
-      "PCI Concursos": 12,
-      "Pimenta Blog": 8,
-      "Hora Brasil": 6,
+      "Agência Sertão": 30,
+      "Pimenta Blog": 7,
+      "PCI Concursos": 6,
       "Guanambi": 6,
       "Notícias Concursos": 5,
       "Sul da Bahia News": 4,
       "Bom Jesus da Lapa Notícias": 4,
-      "iBahia": 4,
-      "Conif": 4
+      "iBahia": 3,
+      "Acheconcursos": 3,
+      "Conif": 3
     },
     "meses": {
-      "10": 50,
-      "11": 32,
-      "12": 29,
-      "03": 26,
-      "06": 26,
-      "05": 24,
-      "02": 23,
+      "10": 37,
+      "12": 27,
+      "11": 25,
+      "03": 24,
       "09": 20,
-      "04": 14,
-      "01": 13,
-      "08": 8,
+      "05": 19,
+      "06": 18,
+      "02": 17,
+      "04": 12,
+      "01": 10,
+      "08": 7,
       "07": 7,
       "20": 1
     }
   },
   "2024": {
-    "total": 282,
+    "total": 241,
     "eixos": {
-      "Ensino": 137,
-      "Gestão e RH": 116,
+      "Ensino": 124,
+      "Gestão e RH": 88,
       "Institucional": 27,
       "Extensão": 2
     },
     "abrangencia": {
-      "Imprensa Local": 193,
-      "Imprensa Regional (Bahia)": 40,
-      "Especializados (Nichos)": 36,
-      "Imprensa (Nacional)": 12,
+      "Imprensa Local": 174,
+      "Imprensa Regional (Bahia)": 37,
+      "Especializados (Nichos)": 18,
+      "Imprensa (Nacional)": 11,
       "Institucional / Governamental": 1
     },
     "top_veiculos": {
-      "Agência Sertão": 50,
-      "iBahia": 16,
-      "Ache Concursos": 10,
+      "Agência Sertão": 34,
+      "iBahia": 14,
       "SulBahia News": 8,
-      "PCI Concursos": 8,
-      "Notícias da Lapa": 6,
-      "QConcursos": 6,
       "Pimenta Blog": 6,
+      "Notícias da Lapa": 5,
       "Click Petróleo e Gás": 5,
-      "Correio": 5
+      "Correio": 4,
+      "PEBSP": 4,
+      "A Tarde": 4,
+      "Se Liga Alagoinhas": 4
     },
     "meses": {
-      "09": 55,
-      "01": 42,
-      "12": 36,
-      "08": 32,
-      "04": 20,
-      "02": 19,
-      "03": 18,
-      "10": 14,
-      "07": 14,
-      "05": 12,
-      "11": 11,
-      "06": 9
+      "09": 51,
+      "12": 35,
+      "08": 31,
+      "01": 30,
+      "04": 17,
+      "02": 16,
+      "03": 14,
+      "10": 13,
+      "07": 11,
+      "11": 9,
+      "05": 9,
+      "06": 5
     }
   },
   "2025": {
-    "total": 473,
+    "total": 401,
     "eixos": {
-      "Gestão e RH": 176,
-      "Ensino": 153,
-      "Institucional": 114,
-      "Extensão": 19,
-      "Pesquisa": 11
+      "Ensino": 137,
+      "Gestão e RH": 130,
+      "Institucional": 107,
+      "Extensão": 17,
+      "Pesquisa": 10
     },
     "abrangencia": {
-      "Imprensa Local": 272,
-      "Especializados (Nichos)": 79,
-      "Imprensa Regional (Bahia)": 63,
-      "Imprensa (Nacional)": 45,
-      "Institucional / Governamental": 14
+      "Imprensa Local": 247,
+      "Especializados (Nichos)": 58,
+      "Imprensa Regional (Bahia)": 52,
+      "Imprensa (Nacional)": 31,
+      "Institucional / Governamental": 13
     },
     "top_veiculos": {
-      "Agência Sertão": 50,
-      "PCI Concursos": 25,
-      "G1": 21,
-      "A TARDE": 11,
-      "Folha Dirigida": 10,
-      "Ache Concursos": 10,
-      "A Tarde": 10,
-      "Correio": 9,
+      "Agência Sertão": 36,
+      "PCI Concursos": 16,
+      "G1": 14,
       "Notícias da Lapa": 9,
-      "QConcursos": 9
+      "A Tarde": 9,
+      "Bahia Econômica": 9,
+      "Acorda Cidade": 8,
+      "Correio": 8,
+      "Ache Concursos": 8,
+      "Mídia Externa": 7
     },
     "meses": {
-      "12": 82,
-      "11": 64,
-      "10": 59,
-      "02": 47,
-      "08": 37,
-      "05": 36,
-      "09": 35,
-      "01": 27,
-      "03": 26,
+      "12": 69,
+      "11": 52,
+      "10": 52,
+      "02": 45,
+      "05": 33,
+      "09": 26,
       "06": 26,
-      "07": 18,
-      "04": 16
+      "01": 25,
+      "03": 24,
+      "08": 23,
+      "07": 15,
+      "04": 11
     }
   },
   "2026": {
-    "total": 412,
+    "total": 290,
     "eixos": {
-      "Gestão e RH": 169,
-      "Ensino": 108,
-      "Institucional": 90,
-      "Extensão": 26,
-      "Pesquisa": 19
+      "Ensino": 94,
+      "Gestão e RH": 84,
+      "Institucional": 79,
+      "Extensão": 21,
+      "Pesquisa": 12
     },
     "abrangencia": {
-      "Imprensa Local": 262,
-      "Especializados (Nichos)": 56,
-      "Imprensa (Nacional)": 49,
-      "Imprensa Regional (Bahia)": 26,
-      "Institucional / Governamental": 19
+      "Imprensa Local": 201,
+      "Especializados (Nichos)": 31,
+      "Imprensa (Nacional)": 27,
+      "Imprensa Regional (Bahia)": 19,
+      "Institucional / Governamental": 12
     },
     "top_veiculos": {
-      "Agência Sertão": 28,
-      "Folha Dirigida": 24,
-      "PCI Concursos": 24,
-      "Mídia Externa": 21,
-      "G1": 10,
-      "Pimenta Blog": 8,
-      "Notícias da Lapa": 8,
-      "Tribuna da Bahia": 8,
-      "Concursos no Brasil": 7,
-      "Panorama da Bahia": 6
+      "Agência Sertão": 17,
+      "Folha Dirigida": 11,
+      "PCI Concursos": 10,
+      "G1": 6,
+      "Mídia Externa": 5,
+      "Pimenta Blog": 5,
+      "Tribuna da Bahia": 5,
+      "Concursos no Brasil": 4,
+      "Jornal da Chapada": 3,
+      "Jornal Valença Agora": 3
     },
     "meses": {
-      "03": 123,
-      "01": 113,
-      "02": 75,
-      "04": 72,
-      "05": 29
+      "03": 98,
+      "01": 66,
+      "02": 58,
+      "04": 45,
+      "05": 23
     }
   },
   "ate_2021": {
-    "total": 171,
+    "total": 161,
     "eixos": {
-      "Institucional": 85,
-      "Gestão e RH": 37,
-      "Ensino": 23,
+      "Institucional": 79,
+      "Gestão e RH": 34,
+      "Ensino": 22,
       "Pesquisa": 14,
       "Extensão": 12
     },
     "abrangencia": {
-      "Imprensa Local": 122,
+      "Imprensa Local": 113,
       "Imprensa Regional (Bahia)": 18,
       "Institucional / Governamental": 11,
       "Imprensa (Nacional)": 11,
-      "Especializados (Nichos)": 9
+      "Especializados (Nichos)": 8
     },
     "top_veiculos": {
-      "Agência Sertão": 36,
+      "Agência Sertão": 35,
       "Conif": 8,
       "G1": 7,
       "Academia de Ciências da Bahia": 5,
       "Mídia Externa": 4,
-      "Fapesb": 3,
-      "Ministério da Educação": 3,
       "A Tarde": 3,
       "Notícias da Lapa": 3,
-      "Bahia.ba": 2
+      "Fapesb": 3,
+      "Ministério da Educação": 3,
+      "Pimenta Blog": 2
     },
     "meses": {
       "03": 25,
-      "08": 25,
+      "08": 23,
       "05": 21,
-      "11": 18,
       "04": 16,
       "06": 15,
-      "09": 12,
+      "11": 13,
+      "09": 11,
       "12": 9,
-      "10": 8,
       "07": 8,
       "02": 7,
-      "01": 7
+      "01": 7,
+      "10": 6
     }
   }
 }
