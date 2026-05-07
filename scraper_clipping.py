@@ -76,7 +76,7 @@ def processar_clipping():
     os.makedirs(DIR_DATA, exist_ok=True)
     
     links_conhecidos = set()
-    titulos_veiculos_conhecidos = set() # Novo: para evitar mesmo título no mesmo veículo
+    titulos_veiculos_conhecidos = set() 
     dfs_existentes = []
 
     import glob
@@ -91,7 +91,6 @@ def processar_clipping():
                 dfs_existentes.append(df_temp)
                 if 'link' in df_temp.columns:
                     links_conhecidos.update(df_temp['link'].dropna().tolist())
-                # Popula conjunto de títulos+veículos para evitar duplicatas históricas
                 if 'assunto' in df_temp.columns and 'veiculo' in df_temp.columns:
                     for _, row in df_temp.iterrows():
                         chave = f"{str(row['assunto']).strip().lower()}|{str(row['veiculo']).strip().lower()}"
@@ -137,7 +136,6 @@ def processar_clipping():
                     else:
                         titulo = html.unescape(titulo_completo)
 
-                # Novo: Verificação de título e veículo idênticos
                 chave_nova = f"{titulo.strip().lower()}|{veiculo.strip().lower()}"
                 if chave_nova in titulos_veiculos_conhecidos: continue
 
@@ -156,22 +154,19 @@ def processar_clipping():
     df_final = pd.concat([df_novo, df_existente], ignore_index=True) if not df_novo.empty else df_existente
     
     if not df_final.empty:
-        # Normalização para limpeza de duplicatas
         df_final['assunto'] = df_final['assunto'].astype(str).str.strip()
         df_final['veiculo'] = df_final['veiculo'].astype(str).str.strip()
-        
-        # Limpeza Final Multi-Critério
-        # 1. Por Link (Primário)
         df_final = df_final.drop_duplicates(subset=['link'], keep='first')
-        
-        # 2. Por Título e Veículo (Secundário - evita a mesma notícia postada no mesmo local com link diferente)
-        # Criamos uma coluna temporária normalizada para isso
         df_final['tmp_key'] = df_final['assunto'].str.lower() + df_final['veiculo'].str.lower()
         df_final = df_final.drop_duplicates(subset=['tmp_key'], keep='first').drop(columns=['tmp_key'])
         
         df_final['eixo_institucional'] = df_final['assunto'].apply(classificar_eixo)
         df_final['abrangencia'] = df_final['veiculo'].apply(classificar_abrangencia)
         
+        # Garante que a coluna data seja string para extrair o ano
+        df_final['data'] = df_final['data'].astype(str)
+        df_final['ano_num'] = df_final['data'].apply(lambda x: int(x[:4]) if len(x) >= 4 else 0)
+
         def definir_arquivo(data_str):
             try:
                 ano = int(str(data_str)[:4])
@@ -180,20 +175,37 @@ def processar_clipping():
 
         df_final['arquivo_destino'] = df_final['data'].apply(definir_arquivo)
         
+        # Agrupamento para Stats
         stats_por_ano = {}
+        contagem_por_ano_real = df_final['ano_num'].value_counts().to_dict()
+
         for arquivo, df_grupo in df_final.groupby('arquivo_destino'):
             caminho = os.path.join(DIR_DATA, arquivo)
             df_grupo = df_grupo.sort_values(by=['data'], ascending=False)
             
             ano_key = arquivo.replace('clipping_', '').replace('.csv', '')
+            
+            # Histórico Acumulado (Métrica solicitada)
+            # Para o ano atual X, mostrar contagem de X, X-1, X-2... até 2012
+            if ano_key == 'ate_2021':
+                ano_referencia = 2021
+            else:
+                ano_referencia = int(ano_key)
+            
+            historico = []
+            for a in range(ano_referencia, 2011, -1):
+                if a in contagem_por_ano_real:
+                    historico.append({"ano": a, "total": int(contagem_por_ano_real[a])})
+            
             stats_por_ano[ano_key] = {
                 "total": len(df_grupo),
                 "eixos": df_grupo['eixo_institucional'].value_counts().to_dict(),
                 "abrangencia": df_grupo['abrangencia'].value_counts().to_dict(),
                 "top_veiculos": df_grupo['veiculo'].value_counts().head(10).to_dict(),
-                "meses": df_grupo['data'].str[5:7].value_counts().to_dict()
+                "meses": df_grupo['data'].str[5:7].value_counts().to_dict(),
+                "historico": historico # Novo campo para o novo card
             }
-            df_grupo.drop(columns=['arquivo_destino']).to_csv(caminho, index=False, encoding='utf-8-sig')
+            df_grupo.drop(columns=['arquivo_destino', 'ano_num']).to_csv(caminho, index=False, encoding='utf-8-sig')
 
         with open(ARQUIVO_STATS, 'w', encoding='utf-8') as f:
             json.dump(stats_por_ano, f, ensure_ascii=False, indent=2)
