@@ -76,6 +76,7 @@ def processar_clipping():
     os.makedirs(DIR_DATA, exist_ok=True)
     
     links_conhecidos = set()
+    titulos_veiculos_conhecidos = set() # Novo: para evitar mesmo título no mesmo veículo
     dfs_existentes = []
 
     import glob
@@ -90,6 +91,11 @@ def processar_clipping():
                 dfs_existentes.append(df_temp)
                 if 'link' in df_temp.columns:
                     links_conhecidos.update(df_temp['link'].dropna().tolist())
+                # Popula conjunto de títulos+veículos para evitar duplicatas históricas
+                if 'assunto' in df_temp.columns and 'veiculo' in df_temp.columns:
+                    for _, row in df_temp.iterrows():
+                        chave = f"{str(row['assunto']).strip().lower()}|{str(row['veiculo']).strip().lower()}"
+                        titulos_veiculos_conhecidos.add(chave)
         except Exception as e:
             print(f"Aviso ao ler {arq}: {e}")
 
@@ -131,12 +137,17 @@ def processar_clipping():
                     else:
                         titulo = html.unescape(titulo_completo)
 
+                # Novo: Verificação de título e veículo idênticos
+                chave_nova = f"{titulo.strip().lower()}|{veiculo.strip().lower()}"
+                if chave_nova in titulos_veiculos_conhecidos: continue
+
                 data_pub = padronizar_data(item.find('pubDate').text)
                 clipping_coletado.append({
                     'data': data_pub, 'assunto': titulo, 'veiculo': veiculo, 'link': link_direto,
                     'eixo_institucional': classificar_eixo(titulo), 'abrangencia': classificar_abrangencia(veiculo)
                 })
                 links_conhecidos.add(link_direto)
+                titulos_veiculos_conhecidos.add(chave_nova)
                 time.sleep(0.5) 
         except Exception as e:
             print(f"   X Erro no motor {nome_motor}: {e}")
@@ -145,9 +156,21 @@ def processar_clipping():
     df_final = pd.concat([df_novo, df_existente], ignore_index=True) if not df_novo.empty else df_existente
     
     if not df_final.empty:
+        # Normalização para limpeza de duplicatas
+        df_final['assunto'] = df_final['assunto'].astype(str).str.strip()
+        df_final['veiculo'] = df_final['veiculo'].astype(str).str.strip()
+        
+        # Limpeza Final Multi-Critério
+        # 1. Por Link (Primário)
+        df_final = df_final.drop_duplicates(subset=['link'], keep='first')
+        
+        # 2. Por Título e Veículo (Secundário - evita a mesma notícia postada no mesmo local com link diferente)
+        # Criamos uma coluna temporária normalizada para isso
+        df_final['tmp_key'] = df_final['assunto'].str.lower() + df_final['veiculo'].str.lower()
+        df_final = df_final.drop_duplicates(subset=['tmp_key'], keep='first').drop(columns=['tmp_key'])
+        
         df_final['eixo_institucional'] = df_final['assunto'].apply(classificar_eixo)
         df_final['abrangencia'] = df_final['veiculo'].apply(classificar_abrangencia)
-        df_final = df_final.drop_duplicates(subset=['link'], keep='first')
         
         def definir_arquivo(data_str):
             try:
@@ -157,16 +180,12 @@ def processar_clipping():
 
         df_final['arquivo_destino'] = df_final['data'].apply(definir_arquivo)
         
-        # 1. Salvar CSVs Anuais
         stats_por_ano = {}
         for arquivo, df_grupo in df_final.groupby('arquivo_destino'):
             caminho = os.path.join(DIR_DATA, arquivo)
             df_grupo = df_grupo.sort_values(by=['data'], ascending=False)
             
-            # Gerar stats para este arquivo/ano
             ano_key = arquivo.replace('clipping_', '').replace('.csv', '')
-            
-            # Contagens para o JSON de Stats
             stats_por_ano[ano_key] = {
                 "total": len(df_grupo),
                 "eixos": df_grupo['eixo_institucional'].value_counts().to_dict(),
@@ -174,18 +193,15 @@ def processar_clipping():
                 "top_veiculos": df_grupo['veiculo'].value_counts().head(10).to_dict(),
                 "meses": df_grupo['data'].str[5:7].value_counts().to_dict()
             }
-            
             df_grupo.drop(columns=['arquivo_destino']).to_csv(caminho, index=False, encoding='utf-8-sig')
 
-        # 2. Salvar JSON Global de Estatísticas (Otimização 3)
         with open(ARQUIVO_STATS, 'w', encoding='utf-8') as f:
             json.dump(stats_por_ano, f, ensure_ascii=False, indent=2)
         
-        print(f"Sucesso! CSVs e Stats JSON atualizados em {DIR_DATA}/")
+        print(f"Sucesso! Dados limpos e distribuídos em {DIR_DATA}/")
         
         if os.path.exists(ARQUIVO_ANTIGO):
             os.remove(ARQUIVO_ANTIGO)
-            print("Arquivo antigo removido.")
 
 if __name__ == "__main__":
     processar_clipping()
