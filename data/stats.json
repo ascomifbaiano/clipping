@@ -22,9 +22,9 @@
       "G1": 32,
       "iBahia": 24,
       "Notícias da Lapa": 22,
-      "A Tarde": 18,
       "Folha Dirigida": 18,
       "Correio": 18,
+      "A Tarde": 18,
       "Mídia Externa": 17
     },
     "meses": {
@@ -264,8 +264,8 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "Correio": 4,
-      "Se Liga Alagoinhas": 4
+      "Se Liga Alagoinhas": 4,
+      "G1 Bahia": 4
     },
     "meses": {
       "09": 51,
@@ -340,12 +340,12 @@
       "Agência Sertão": 36,
       "PCI Concursos": 16,
       "G1": 14,
-      "A Tarde": 9,
       "Notícias da Lapa": 9,
+      "A Tarde": 9,
       "Bahia Econômica": 9,
-      "Correio": 8,
-      "Ache Concursos": 8,
       "Acorda Cidade": 8,
+      "Ache Concursos": 8,
+      "Correio": 8,
       "Mídia Externa": 7
     },
     "meses": {
@@ -430,7 +430,7 @@
       "Pimenta Blog": 5,
       "Tribuna da Bahia": 5,
       "Concursos no Brasil": 4,
-      "Jornal da Chapada": 3,
+      "Jornal Valença Agora": 3,
       "Plantão News": 3
     },
     "meses": {
