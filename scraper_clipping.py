@@ -163,7 +163,6 @@ def processar_clipping():
         df_final['eixo_institucional'] = df_final['assunto'].apply(classificar_eixo)
         df_final['abrangencia'] = df_final['veiculo'].apply(classificar_abrangencia)
         
-        # Garante que a coluna data seja string para extrair o ano
         df_final['data'] = df_final['data'].astype(str)
         df_final['ano_num'] = df_final['data'].apply(lambda x: int(x[:4]) if len(x) >= 4 else 0)
 
@@ -175,42 +174,45 @@ def processar_clipping():
 
         df_final['arquivo_destino'] = df_final['data'].apply(definir_arquivo)
         
-        # Agrupamento para Stats
+        # Stats por Ano e Geral
         stats_por_ano = {}
         contagem_por_ano_real = df_final['ano_num'].value_counts().to_dict()
+        
+        # Otimização: Salvar um CSV "Geral" para carregamento sob demanda
+        caminho_geral = os.path.join(DIR_DATA, 'clipping_geral.csv')
+        df_final.sort_values(by=['data'], ascending=False).drop(columns=['arquivo_destino', 'ano_num']).to_csv(caminho_geral, index=False, encoding='utf-8-sig')
 
-        for arquivo, df_grupo in df_final.groupby('arquivo_destino'):
-            caminho = os.path.join(DIR_DATA, arquivo)
-            df_grupo = df_grupo.sort_values(by=['data'], ascending=False)
-            
-            ano_key = arquivo.replace('clipping_', '').replace('.csv', '')
-            
-            # Histórico Acumulado (Métrica solicitada)
-            # Para o ano atual X, mostrar contagem de X, X-1, X-2... até 2012
-            if ano_key == 'ate_2021':
-                ano_referencia = 2021
-            else:
-                ano_referencia = int(ano_key)
-            
+        # Função auxiliar para gerar dict de stats
+        def gerar_stats_dict(df, key_name):
+            ano_ref = datetime.now().year if key_name == 'geral' else (2021 if key_name == 'ate_2021' else int(key_name))
             historico = []
-            for a in range(ano_referencia, 2011, -1):
+            for a in range(ano_ref, 2011, -1):
                 if a in contagem_por_ano_real:
                     historico.append({"ano": a, "total": int(contagem_por_ano_real[a])})
             
-            stats_por_ano[ano_key] = {
-                "total": len(df_grupo),
-                "eixos": df_grupo['eixo_institucional'].value_counts().to_dict(),
-                "abrangencia": df_grupo['abrangencia'].value_counts().to_dict(),
-                "top_veiculos": df_grupo['veiculo'].value_counts().head(10).to_dict(),
-                "meses": df_grupo['data'].str[5:7].value_counts().to_dict(),
-                "historico": historico # Novo campo para o novo card
+            return {
+                "total": len(df),
+                "eixos": df['eixo_institucional'].value_counts().to_dict(),
+                "abrangencia": df['abrangencia'].value_counts().to_dict(),
+                "top_veiculos": df['veiculo'].value_counts().head(10).to_dict(),
+                "meses": df['data'].str[5:7].value_counts().to_dict(),
+                "historico": historico
             }
+
+        # Stats Geral
+        stats_por_ano['geral'] = gerar_stats_dict(df_final, 'geral')
+
+        # Stats por arquivo
+        for arquivo, df_grupo in df_final.groupby('arquivo_destino'):
+            ano_key = arquivo.replace('clipping_', '').replace('.csv', '')
+            stats_por_ano[ano_key] = gerar_stats_dict(df_grupo, ano_key)
+            caminho = os.path.join(DIR_DATA, arquivo)
             df_grupo.drop(columns=['arquivo_destino', 'ano_num']).to_csv(caminho, index=False, encoding='utf-8-sig')
 
         with open(ARQUIVO_STATS, 'w', encoding='utf-8') as f:
             json.dump(stats_por_ano, f, ensure_ascii=False, indent=2)
         
-        print(f"Sucesso! Dados limpos e distribuídos em {DIR_DATA}/")
+        print(f"Sucesso! Dados limpos, CSV Geral e Stats JSON atualizados em {DIR_DATA}/")
         
         if os.path.exists(ARQUIVO_ANTIGO):
             os.remove(ARQUIVO_ANTIGO)

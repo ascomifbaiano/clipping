@@ -30,6 +30,8 @@
         .year-filters { display: flex; gap: 8px; flex-wrap: wrap;}
         .btn-year { background: #fff; border: 1px solid var(--borda); padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; font-weight: 600; color: #555; transition: 0.2s; font-family: inherit;}
         .btn-year.active { background: var(--verde-if); color: #fff; border-color: var(--verde-if); }
+        .btn-year.especial { border-color: #1565c0; color: #1565c0; }
+        .btn-year.especial.active { background: #1565c0; color: #fff; }
         
         .btn-print { background-color: #1565c0; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; }
 
@@ -63,11 +65,23 @@
         .btn-pag:disabled { background: #ccc; cursor: not-allowed; }
 
         .loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; display: none; }
+
+        /* Ajustes para Impressão */
+        @media print {
+            .tabs-nav, .acoes-topo, .paginacao, #loading-global, .btn-print, header::after { display: none !important; }
+            body { background: white; padding: 0; }
+            .container { max-width: 100%; margin: 0; }
+            .chart-box, .stat-card, .table-box { box-shadow: none; border: 1px solid #eee; break-inside: avoid; }
+            .tab-content { display: block !important; }
+            .tab-content:not(.active) { display: block !important; }
+            table { font-size: 10px; }
+            th, td { padding: 4px; }
+        }
     </style>
 </head>
 <body>
 
-<div id="loading-global" class="loading-overlay"><div>⏳ Carregando Dados...</div></div>
+<div id="loading-global" class="loading-overlay"><div>⏳ Processando Dados...</div></div>
 
 <div class="container">
     <header>
@@ -85,7 +99,7 @@
         <div class="acoes-topo">
             <div class="year-filters" id="clipping-years-container"></div>
             <div class="search-box"><input type="text" id="inputBusca" placeholder="Pesquisar..." onkeyup="aoPesquisar()"></div>
-            <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+            <button class="btn-print" onclick="prepararEImprimir()">🖨️ Imprimir Acervo Total</button>
         </div>
 
         <div id="aba-metricas" class="tab-content active">
@@ -94,9 +108,7 @@
                 <div class="stat-card"><h3>Veículos Únicos</h3><div id="clip-veiculos" class="valor">-</div></div>
                 <div class="stat-card vermelho" style="grid-column: span 2;">
                     <h3>📊 Evolução Histórica (Menções por Ano)</h3>
-                    <div id="clip-historico-lista" class="historico-lista">
-                        <!-- Injetado via JS -->
-                    </div>
+                    <div id="clip-historico-lista" class="historico-lista"></div>
                 </div>
             </div>
             <div class="charts-main-grid">
@@ -112,7 +124,7 @@
         <div id="aba-tabela" class="tab-content">
             <div class="table-box">
                 <table>
-                    <thead><tr><th>Data</th><th>Eixo</th><th>Veículo</th><th>Assunto</th><th width="80">Link</th></tr></thead>
+                    <thead><tr><th>Data</th><th>Eixo</th><th>Veículo</th><th>Assunto</th><th width="80" class="no-print">Link</th></tr></thead>
                     <tbody id="tabela-corpo"></tbody>
                 </table>
                 <div class="paginacao">
@@ -135,6 +147,7 @@
     let paginaAtual = 1;
     const itensPorPagina = 25; 
     let graficos = {};
+    let imprimindo = false;
 
     async function iniciar() {
         showLoading(true);
@@ -143,6 +156,8 @@
             statsGlobais = await r.json();
             
             const anos = Object.keys(statsGlobais).sort((a, b) => {
+                if (a === 'geral') return 1;
+                if (b === 'geral') return -1;
                 if (a === 'ate_2021') return 1;
                 if (b === 'ate_2021') return -1;
                 return parseInt(b) - parseInt(a);
@@ -151,8 +166,9 @@
             const container = document.getElementById('clipping-years-container');
             container.innerHTML = ''; 
             anos.forEach(a => {
-                const label = a === 'ate_2021' ? 'Até 2021' : a;
-                container.innerHTML += `<button class="btn-year" id="btn-${a}" onclick="selecionarAno('${a}')">${label}</button>`;
+                let label = a === 'ate_2021' ? 'Até 2021' : (a === 'geral' ? '🌍 Acervo Completo' : a);
+                let classe = (a === 'geral') ? 'btn-year especial' : 'btn-year';
+                container.innerHTML += `<button class="${classe}" id="btn-${a}" onclick="selecionarAno('${a}')">${label}</button>`;
             });
 
             if (anos.length > 0) selecionarAno(anos[0]);
@@ -164,9 +180,7 @@
         anoAtivo = ano;
         document.querySelectorAll('.btn-year').forEach(b => b.classList.remove('active'));
         document.getElementById(`btn-${ano}`).classList.add('active');
-
         atualizarDashboardComStats(statsGlobais[ano]);
-
         if (document.getElementById('aba-tabela').classList.contains('active')) {
             await carregarCSVDoAno(ano);
         }
@@ -178,7 +192,6 @@
             renderizarTabela();
             return;
         }
-
         showLoading(true);
         return new Promise(resolve => {
             Papa.parse(`data/clipping_${ano}.csv?v=${ts}`, {
@@ -197,8 +210,6 @@
     function atualizarDashboardComStats(s) {
         document.getElementById('clip-total').innerText = s.total;
         document.getElementById('clip-veiculos').innerText = Object.keys(s.top_veiculos).length;
-
-        // Atualiza novo card de histórico (Métrica solicitada)
         const histContainer = document.getElementById('clip-historico-lista');
         if (s.historico) {
             histContainer.innerHTML = s.historico.map(h => `
@@ -208,22 +219,18 @@
                 </div>
             `).join('');
         }
-
         renderChart('chartSazonalidade', 'bar', {
             labels: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
             datasets: [{ label: 'Menções', data: ['01','02','03','04','05','06','07','08','09','10','11','12'].map(m => s.meses[m] || 0), backgroundColor: '#2F9E41' }]
         }, 'Sazonalidade Mensal');
-
         renderChart('chartEixos', 'pie', {
             labels: Object.keys(s.eixos),
             datasets: [{ data: Object.values(s.eixos), backgroundColor: ['#81c784', '#ffa726', '#ab47bc', '#29b6f6', '#78909c'] }]
         }, 'Eixos Institucionais');
-
         renderChart('chartVeiculos', 'bar', {
             labels: Object.keys(s.top_veiculos),
             datasets: [{ label: 'Publicações', data: Object.values(s.top_veiculos), backgroundColor: '#29b6f6' }]
         }, 'Top Veículos', 'y');
-
         renderChart('chartAbrangencia', 'doughnut', {
             labels: Object.keys(s.abrangencia),
             datasets: [{ data: Object.values(s.abrangencia), backgroundColor: ['#2F9E41', '#1565c0', '#ab47bc', '#fbc02d'] }]
@@ -237,19 +244,12 @@
         });
     }
 
-    function renderizarTabela() {
+    function renderizarTabela(completa = false) {
         const termo = document.getElementById('inputBusca').value.toLowerCase();
         const filtrados = dadosAtuais.filter(i => 
             i.assunto.toLowerCase().includes(termo) || i.veiculo.toLowerCase().includes(termo)
         );
-
-        const totalPags = Math.ceil(filtrados.length / itensPorPagina);
-        if (paginaAtual > totalPags) paginaAtual = 1;
-
-        const inicio = (paginaAtual - 1) * itensPorPagina;
-        const fim = inicio + itensPorPagina;
-        const itens = filtrados.slice(inicio, fim);
-
+        const itens = completa ? filtrados : filtrados.slice((paginaAtual - 1) * itensPorPagina, paginaAtual * itensPorPagina);
         const tbody = document.getElementById('tabela-corpo');
         tbody.innerHTML = itens.map(i => `
             <tr>
@@ -257,19 +257,34 @@
                 <td><span class="tag-ensino">${i.eixo_institucional}</span></td>
                 <td>${i.veiculo}</td>
                 <td style="font-weight:500">${i.assunto}</td>
-                <td><a href="${i.link}" target="_blank">Acessar</a></td>
+                <td class="no-print"><a href="${i.link}" target="_blank">Acessar</a></td>
             </tr>
         `).join('');
+        if (!completa) {
+            const totalPags = Math.ceil(filtrados.length / itensPorPagina);
+            document.getElementById('info-pag').innerText = `Página ${paginaAtual} de ${totalPags || 1}`;
+            document.getElementById('btn-prev').disabled = paginaAtual <= 1;
+            document.getElementById('btn-next').disabled = paginaAtual >= totalPags;
+        }
+    }
 
-        document.getElementById('info-pag').innerText = `Página ${paginaAtual} de ${totalPags || 1}`;
-        document.getElementById('btn-prev').disabled = paginaAtual <= 1;
-        document.getElementById('btn-next').disabled = paginaAtual >= totalPags;
+    async function prepararEImprimir() {
+        showLoading(true);
+        // Garante que o CSV do ano ativo (ou geral) esteja carregado
+        await carregarCSVDoAno(anoAtivo);
+        // Renderiza a tabela completa (sem paginação)
+        renderizarTabela(true);
+        // Pequeno delay para o navegador processar o DOM gigante
+        setTimeout(() => {
+            window.print();
+            // Volta ao normal após imprimir
+            renderizarTabela(false);
+            showLoading(false);
+        }, 1000);
     }
 
     function mudarPagina(dir) { paginaAtual += dir; renderizarTabela(); }
-    
     function aoPesquisar() { paginaAtual = 1; renderizarTabela(); }
-
     async function abrirAba(id, btn) {
         document.querySelectorAll('.tab-content').forEach(a => a.classList.remove('active'));
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -277,9 +292,7 @@
         btn.classList.add('active');
         if (id === 'aba-tabela') await carregarCSVDoAno(anoAtivo);
     }
-
     function showLoading(show) { document.getElementById('loading-global').style.display = show ? 'flex' : 'none'; }
-
     iniciar();
 </script>
 </body>
