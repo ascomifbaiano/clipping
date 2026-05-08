@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 1526,
+    "total": 1529,
     "eixos": {
       "Ensino": 552,
       "Institucional": 430,
-      "Gestão e RH": 424,
+      "Gestão e RH": 427,
       "Extensão": 74,
       "Pesquisa": 46
     },
     "abrangencia": {
-      "Imprensa Local": 1066,
-      "Especializados (Nichos)": 158,
+      "Imprensa Local": 1067,
+      "Especializados (Nichos)": 159,
       "Imprensa Regional (Bahia)": 153,
-      "Imprensa (Nacional)": 95,
+      "Imprensa (Nacional)": 96,
       "Institucional / Governamental": 54
     },
     "top_veiculos": {
@@ -22,21 +22,21 @@
       "G1": 32,
       "iBahia": 24,
       "Notícias da Lapa": 22,
-      "Folha Dirigida": 19,
-      "Correio": 18,
+      "Folha Dirigida": 20,
       "A Tarde": 18,
-      "Bom Jesus da Lapa Notícias": 17
+      "Correio": 18,
+      "Ache Concursos": 18
     },
     "meses": {
       "03": 197,
       "02": 186,
-      "12": 157,
+      "12": 158,
       "01": 147,
-      "05": 136,
+      "05": 137,
       "11": 121,
       "10": 118,
       "09": 116,
-      "04": 109,
+      "04": 110,
       "08": 94,
       "06": 87,
       "07": 57,
@@ -45,11 +45,11 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 296
+        "total": 298
       },
       {
         "ano": 2025,
-        "total": 401
+        "total": 402
       },
       {
         "ano": 2024,
@@ -264,7 +264,7 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "G1 Bahia": 4,
+      "Correio": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -321,17 +321,17 @@
     ]
   },
   "2025": {
-    "total": 401,
+    "total": 402,
     "eixos": {
       "Ensino": 137,
-      "Gestão e RH": 130,
+      "Gestão e RH": 131,
       "Institucional": 107,
       "Extensão": 17,
       "Pesquisa": 10
     },
     "abrangencia": {
       "Imprensa Local": 247,
-      "Especializados (Nichos)": 58,
+      "Especializados (Nichos)": 59,
       "Imprensa Regional (Bahia)": 52,
       "Imprensa (Nacional)": 31,
       "Institucional / Governamental": 13
@@ -340,16 +340,16 @@
       "Agência Sertão": 36,
       "PCI Concursos": 16,
       "G1": 14,
-      "A Tarde": 9,
       "Notícias da Lapa": 9,
+      "Ache Concursos": 9,
+      "A Tarde": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
-      "Ache Concursos": 8,
       "Acorda Cidade": 8,
       "Mídia Externa": 7
     },
     "meses": {
-      "12": 69,
+      "12": 70,
       "11": 52,
       "10": 52,
       "02": 45,
@@ -365,7 +365,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 401
+        "total": 402
       },
       {
         "ano": 2024,
@@ -406,48 +406,48 @@
     ]
   },
   "2026": {
-    "total": 296,
+    "total": 298,
     "eixos": {
       "Ensino": 95,
-      "Gestão e RH": 88,
+      "Gestão e RH": 90,
       "Institucional": 79,
       "Extensão": 21,
       "Pesquisa": 13
     },
     "abrangencia": {
-      "Imprensa Local": 203,
+      "Imprensa Local": 204,
       "Especializados (Nichos)": 34,
-      "Imprensa (Nacional)": 28,
+      "Imprensa (Nacional)": 29,
       "Imprensa Regional (Bahia)": 19,
       "Institucional / Governamental": 12
     },
     "top_veiculos": {
       "Agência Sertão": 18,
+      "Folha Dirigida": 13,
       "PCI Concursos": 13,
-      "Folha Dirigida": 12,
       "G1": 6,
       "Mídia Externa": 5,
       "Pimenta Blog": 5,
       "Tribuna da Bahia": 5,
       "Concursos no Brasil": 4,
-      "Jornal da Chapada": 3,
-      "Plantão News": 3
+      "Jornal Valença Agora": 3,
+      "Acorda Cidade": 3
     },
     "meses": {
       "03": 98,
       "01": 66,
       "02": 58,
-      "04": 45,
-      "05": 29
+      "04": 46,
+      "05": 30
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 296
+        "total": 298
       },
       {
         "ano": 2025,
-        "total": 401
+        "total": 402
       },
       {
         "ano": 2024,
