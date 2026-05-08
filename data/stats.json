@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1522,
+    "total": 1523,
     "eixos": {
-      "Ensino": 551,
+      "Ensino": 552,
       "Institucional": 430,
       "Gestão e RH": 421,
       "Extensão": 74,
       "Pesquisa": 46
     },
     "abrangencia": {
-      "Imprensa Local": 1065,
+      "Imprensa Local": 1066,
       "Especializados (Nichos)": 156,
       "Imprensa Regional (Bahia)": 153,
       "Imprensa (Nacional)": 94,
@@ -23,8 +23,8 @@
       "iBahia": 24,
       "Notícias da Lapa": 22,
       "Folha Dirigida": 18,
-      "A Tarde": 18,
       "Correio": 18,
+      "A Tarde": 18,
       "Se Liga Alagoinhas": 17
     },
     "meses": {
@@ -32,7 +32,7 @@
       "02": 186,
       "12": 157,
       "01": 147,
-      "05": 132,
+      "05": 133,
       "11": 121,
       "10": 118,
       "09": 116,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 292
+        "total": 293
       },
       {
         "ano": 2025,
@@ -264,7 +264,7 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "G1 Bahia": 4,
+      "Correio": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -340,12 +340,12 @@
       "Agência Sertão": 36,
       "PCI Concursos": 16,
       "G1": 14,
-      "A Tarde": 9,
       "Notícias da Lapa": 9,
+      "A Tarde": 9,
       "Bahia Econômica": 9,
-      "Correio": 8,
-      "Ache Concursos": 8,
       "Acorda Cidade": 8,
+      "Ache Concursos": 8,
+      "Correio": 8,
       "Mídia Externa": 7
     },
     "meses": {
@@ -406,16 +406,16 @@
     ]
   },
   "2026": {
-    "total": 292,
+    "total": 293,
     "eixos": {
-      "Ensino": 94,
+      "Ensino": 95,
       "Gestão e RH": 85,
       "Institucional": 79,
       "Extensão": 21,
       "Pesquisa": 13
     },
     "abrangencia": {
-      "Imprensa Local": 202,
+      "Imprensa Local": 203,
       "Especializados (Nichos)": 32,
       "Imprensa (Nacional)": 27,
       "Imprensa Regional (Bahia)": 19,
@@ -438,12 +438,12 @@
       "01": 66,
       "02": 58,
       "04": 45,
-      "05": 25
+      "05": 26
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 292
+        "total": 293
       },
       {
         "ano": 2025,
