@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1540,
+    "total": 1541,
     "eixos": {
       "Ensino": 553,
-      "Gestão e RH": 436,
+      "Gestão e RH": 437,
       "Institucional": 430,
       "Extensão": 74,
       "Pesquisa": 47
     },
     "abrangencia": {
-      "Imprensa Local": 1075,
+      "Imprensa Local": 1076,
       "Especializados (Nichos)": 161,
       "Imprensa Regional (Bahia)": 153,
       "Imprensa (Nacional)": 97,
@@ -32,7 +32,7 @@
       "02": 186,
       "12": 158,
       "01": 148,
-      "05": 144,
+      "05": 145,
       "11": 122,
       "10": 118,
       "09": 117,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 307
+        "total": 308
       },
       {
         "ano": 2025,
@@ -264,7 +264,7 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "G1 Bahia": 4,
+      "Correio": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -341,9 +341,9 @@
       "PCI Concursos": 16,
       "G1": 14,
       "Notícias da Lapa": 9,
+      "Acorda Cidade": 9,
       "A Tarde": 9,
       "Ache Concursos": 9,
-      "Acorda Cidade": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -406,16 +406,16 @@
     ]
   },
   "2026": {
-    "total": 307,
+    "total": 308,
     "eixos": {
-      "Gestão e RH": 98,
+      "Gestão e RH": 99,
       "Ensino": 95,
       "Institucional": 79,
       "Extensão": 21,
       "Pesquisa": 14
     },
     "abrangencia": {
-      "Imprensa Local": 211,
+      "Imprensa Local": 212,
       "Especializados (Nichos)": 35,
       "Imprensa (Nacional)": 30,
       "Imprensa Regional (Bahia)": 19,
@@ -423,27 +423,27 @@
     },
     "top_veiculos": {
       "Agência Sertão": 21,
-      "PCI Concursos": 14,
       "Folha Dirigida": 14,
+      "PCI Concursos": 14,
       "G1": 6,
       "Mídia Externa": 5,
       "Pimenta Blog": 5,
       "Tribuna da Bahia": 5,
       "Concursos no Brasil": 4,
       "Acorda Cidade": 4,
-      "Notícias da Lapa": 4
+      "Sou Enfermagem": 4
     },
     "meses": {
       "03": 98,
       "01": 67,
       "02": 58,
       "04": 47,
-      "05": 37
+      "05": 38
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 307
+        "total": 308
       },
       {
         "ano": 2025,
