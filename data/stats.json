@@ -1,37 +1,37 @@
 {
   "geral": {
-    "total": 1545,
+    "total": 1547,
     "eixos": {
       "Ensino": 553,
-      "Gestão e RH": 441,
+      "Gestão e RH": 443,
       "Institucional": 430,
       "Extensão": 74,
       "Pesquisa": 47
     },
     "abrangencia": {
       "Imprensa Local": 1078,
-      "Especializados (Nichos)": 163,
+      "Especializados (Nichos)": 164,
       "Imprensa Regional (Bahia)": 153,
-      "Imprensa (Nacional)": 97,
+      "Imprensa (Nacional)": 98,
       "Institucional / Governamental": 54
     },
     "top_veiculos": {
       "Agência Sertão": 185,
-      "PCI Concursos": 43,
+      "PCI Concursos": 44,
       "Pimenta Blog": 33,
       "G1": 32,
       "iBahia": 24,
       "Notícias da Lapa": 23,
-      "Folha Dirigida": 21,
+      "Folha Dirigida": 22,
       "Ache Concursos": 19,
-      "Mídia Externa": 18,
-      "A Tarde": 18
+      "Correio": 18,
+      "Mídia Externa": 18
     },
     "meses": {
       "03": 197,
       "02": 186,
       "12": 158,
-      "05": 149,
+      "05": 151,
       "01": 148,
       "11": 122,
       "10": 118,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 312
+        "total": 314
       },
       {
         "ano": 2025,
@@ -264,7 +264,7 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "G1 Bahia": 4,
+      "Correio": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -341,9 +341,9 @@
       "PCI Concursos": 16,
       "G1": 14,
       "Notícias da Lapa": 9,
+      "Acorda Cidade": 9,
       "Ache Concursos": 9,
       "A Tarde": 9,
-      "Acorda Cidade": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -406,9 +406,9 @@
     ]
   },
   "2026": {
-    "total": 312,
+    "total": 314,
     "eixos": {
-      "Gestão e RH": 103,
+      "Gestão e RH": 105,
       "Ensino": 95,
       "Institucional": 79,
       "Extensão": 21,
@@ -416,34 +416,34 @@
     },
     "abrangencia": {
       "Imprensa Local": 214,
-      "Especializados (Nichos)": 37,
-      "Imprensa (Nacional)": 30,
+      "Especializados (Nichos)": 38,
+      "Imprensa (Nacional)": 31,
       "Imprensa Regional (Bahia)": 19,
       "Institucional / Governamental": 12
     },
     "top_veiculos": {
       "Agência Sertão": 21,
-      "PCI Concursos": 14,
-      "Folha Dirigida": 14,
+      "PCI Concursos": 15,
+      "Folha Dirigida": 15,
       "G1": 6,
       "Mídia Externa": 6,
       "Concursos no Brasil": 5,
       "Pimenta Blog": 5,
       "Tribuna da Bahia": 5,
-      "Ache Concursos": 4,
-      "Acorda Cidade": 4
+      "Acorda Cidade": 4,
+      "Notícias da Lapa": 4
     },
     "meses": {
       "03": 98,
       "01": 67,
       "02": 58,
       "04": 47,
-      "05": 42
+      "05": 44
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 312
+        "total": 314
       },
       {
         "ano": 2025,
