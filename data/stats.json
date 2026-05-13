@@ -1,22 +1,22 @@
 {
   "geral": {
-    "total": 1547,
+    "total": 1549,
     "eixos": {
       "Ensino": 553,
-      "Gestão e RH": 443,
+      "Gestão e RH": 444,
       "Institucional": 430,
       "Extensão": 74,
-      "Pesquisa": 47
+      "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1078,
+      "Imprensa Local": 1080,
       "Especializados (Nichos)": 164,
       "Imprensa Regional (Bahia)": 153,
       "Imprensa (Nacional)": 98,
       "Institucional / Governamental": 54
     },
     "top_veiculos": {
-      "Agência Sertão": 185,
+      "Agência Sertão": 187,
       "PCI Concursos": 44,
       "Pimenta Blog": 33,
       "G1": 32,
@@ -24,15 +24,15 @@
       "Notícias da Lapa": 23,
       "Folha Dirigida": 22,
       "Ache Concursos": 19,
-      "Correio": 18,
-      "Mídia Externa": 18
+      "Mídia Externa": 18,
+      "Correio": 18
     },
     "meses": {
       "03": 197,
       "02": 186,
       "12": 158,
-      "05": 151,
-      "01": 148,
+      "05": 152,
+      "01": 149,
       "11": 122,
       "10": 118,
       "09": 117,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 314
+        "total": 316
       },
       {
         "ano": 2025,
@@ -341,9 +341,9 @@
       "PCI Concursos": 16,
       "G1": 14,
       "Notícias da Lapa": 9,
-      "Acorda Cidade": 9,
-      "Ache Concursos": 9,
       "A Tarde": 9,
+      "Ache Concursos": 9,
+      "Acorda Cidade": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -406,44 +406,44 @@
     ]
   },
   "2026": {
-    "total": 314,
+    "total": 316,
     "eixos": {
-      "Gestão e RH": 105,
+      "Gestão e RH": 106,
       "Ensino": 95,
       "Institucional": 79,
       "Extensão": 21,
-      "Pesquisa": 14
+      "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 214,
+      "Imprensa Local": 216,
       "Especializados (Nichos)": 38,
       "Imprensa (Nacional)": 31,
       "Imprensa Regional (Bahia)": 19,
       "Institucional / Governamental": 12
     },
     "top_veiculos": {
-      "Agência Sertão": 21,
-      "PCI Concursos": 15,
+      "Agência Sertão": 23,
       "Folha Dirigida": 15,
+      "PCI Concursos": 15,
       "G1": 6,
       "Mídia Externa": 6,
       "Concursos no Brasil": 5,
       "Pimenta Blog": 5,
       "Tribuna da Bahia": 5,
-      "Acorda Cidade": 4,
-      "Notícias da Lapa": 4
+      "Notícias da Lapa": 4,
+      "Acorda Cidade": 4
     },
     "meses": {
       "03": 98,
-      "01": 67,
+      "01": 68,
       "02": 58,
       "04": 47,
-      "05": 44
+      "05": 45
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 314
+        "total": 316
       },
       {
         "ano": 2025,
