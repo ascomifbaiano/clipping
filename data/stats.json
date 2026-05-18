@@ -1,16 +1,16 @@
 {
   "geral": {
-    "total": 1552,
+    "total": 1554,
     "eixos": {
       "Ensino": 553,
-      "Gestão e RH": 447,
+      "Gestão e RH": 449,
       "Institucional": 430,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1083,
-      "Especializados (Nichos)": 164,
+      "Imprensa Local": 1084,
+      "Especializados (Nichos)": 165,
       "Imprensa Regional (Bahia)": 153,
       "Imprensa (Nacional)": 98,
       "Institucional / Governamental": 54
@@ -23,15 +23,15 @@
       "iBahia": 24,
       "Notícias da Lapa": 23,
       "Folha Dirigida": 22,
-      "Ache Concursos": 19,
-      "Mídia Externa": 18,
+      "Ache Concursos": 20,
+      "Mídia Externa": 19,
       "A Tarde": 18
     },
     "meses": {
       "03": 197,
       "02": 186,
       "12": 158,
-      "05": 155,
+      "05": 157,
       "01": 149,
       "11": 122,
       "10": 118,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 319
+        "total": 321
       },
       {
         "ano": 2025,
@@ -264,7 +264,7 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "Correio": 4,
+      "G1 Bahia": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -341,9 +341,9 @@
       "PCI Concursos": 16,
       "G1": 14,
       "Notícias da Lapa": 9,
-      "A Tarde": 9,
-      "Ache Concursos": 9,
       "Acorda Cidade": 9,
+      "Ache Concursos": 9,
+      "A Tarde": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -406,17 +406,17 @@
     ]
   },
   "2026": {
-    "total": 319,
+    "total": 321,
     "eixos": {
-      "Gestão e RH": 109,
+      "Gestão e RH": 111,
       "Ensino": 95,
       "Institucional": 79,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 219,
-      "Especializados (Nichos)": 38,
+      "Imprensa Local": 220,
+      "Especializados (Nichos)": 39,
       "Imprensa (Nacional)": 31,
       "Imprensa Regional (Bahia)": 19,
       "Institucional / Governamental": 12
@@ -425,25 +425,25 @@
       "Agência Sertão": 23,
       "Folha Dirigida": 15,
       "PCI Concursos": 15,
+      "Mídia Externa": 7,
       "G1": 6,
-      "Mídia Externa": 6,
       "Sou Enfermagem": 5,
+      "Ache Concursos": 5,
       "Concursos no Brasil": 5,
       "Pimenta Blog": 5,
-      "Tribuna da Bahia": 5,
-      "Ache Concursos": 4
+      "Tribuna da Bahia": 5
     },
     "meses": {
       "03": 98,
       "01": 68,
       "02": 58,
-      "05": 48,
+      "05": 50,
       "04": 47
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 319
+        "total": 321
       },
       {
         "ano": 2025,
