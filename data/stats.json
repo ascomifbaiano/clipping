@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1564,
+    "total": 1566,
     "eixos": {
       "Ensino": 555,
-      "Gestão e RH": 457,
+      "Gestão e RH": 459,
       "Institucional": 430,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1085,
+      "Imprensa Local": 1087,
       "Especializados (Nichos)": 169,
       "Imprensa Regional (Bahia)": 154,
       "Imprensa (Nacional)": 102,
@@ -30,7 +30,7 @@
     "meses": {
       "03": 197,
       "02": 186,
-      "05": 167,
+      "05": 169,
       "12": 158,
       "01": 149,
       "11": 122,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 331
+        "total": 333
       },
       {
         "ano": 2025,
@@ -264,8 +264,8 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "Se Liga Alagoinhas": 4,
-      "G1 Bahia": 4
+      "G1 Bahia": 4,
+      "Se Liga Alagoinhas": 4
     },
     "meses": {
       "09": 51,
@@ -341,9 +341,9 @@
       "PCI Concursos": 16,
       "G1": 14,
       "Notícias da Lapa": 9,
-      "A Tarde": 9,
-      "Ache Concursos": 9,
       "Acorda Cidade": 9,
+      "Ache Concursos": 9,
+      "A Tarde": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -406,16 +406,16 @@
     ]
   },
   "2026": {
-    "total": 331,
+    "total": 333,
     "eixos": {
-      "Gestão e RH": 119,
+      "Gestão e RH": 121,
       "Ensino": 97,
       "Institucional": 79,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 221,
+      "Imprensa Local": 223,
       "Especializados (Nichos)": 43,
       "Imprensa (Nacional)": 35,
       "Imprensa Regional (Bahia)": 20,
@@ -436,14 +436,14 @@
     "meses": {
       "03": 98,
       "01": 68,
-      "05": 60,
+      "05": 62,
       "02": 58,
       "04": 47
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 331
+        "total": 333
       },
       {
         "ano": 2025,
