@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1577,
+    "total": 1580,
     "eixos": {
       "Ensino": 556,
-      "Gestão e RH": 469,
+      "Gestão e RH": 472,
       "Institucional": 430,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1096,
+      "Imprensa Local": 1099,
       "Especializados (Nichos)": 169,
       "Imprensa Regional (Bahia)": 155,
       "Imprensa (Nacional)": 103,
@@ -22,7 +22,7 @@
       "G1": 33,
       "Folha Dirigida": 26,
       "iBahia": 24,
-      "Mídia Externa": 23,
+      "Mídia Externa": 24,
       "Notícias da Lapa": 23,
       "Ache Concursos": 20,
       "Correio": 18
@@ -30,7 +30,7 @@
     "meses": {
       "03": 197,
       "02": 186,
-      "05": 180,
+      "05": 183,
       "12": 158,
       "01": 149,
       "11": 122,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 344
+        "total": 347
       },
       {
         "ano": 2025,
@@ -341,9 +341,9 @@
       "PCI Concursos": 16,
       "G1": 14,
       "Notícias da Lapa": 9,
+      "Acorda Cidade": 9,
       "Ache Concursos": 9,
       "A Tarde": 9,
-      "Acorda Cidade": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -406,16 +406,16 @@
     ]
   },
   "2026": {
-    "total": 344,
+    "total": 347,
     "eixos": {
-      "Gestão e RH": 131,
+      "Gestão e RH": 134,
       "Ensino": 98,
       "Institucional": 79,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 232,
+      "Imprensa Local": 235,
       "Especializados (Nichos)": 43,
       "Imprensa (Nacional)": 36,
       "Imprensa Regional (Bahia)": 21,
@@ -425,17 +425,17 @@
       "Agência Sertão": 23,
       "Folha Dirigida": 19,
       "PCI Concursos": 19,
-      "Mídia Externa": 11,
+      "Mídia Externa": 12,
       "G1": 7,
       "Pimenta Blog": 6,
       "Ache Concursos": 5,
-      "Sou Enfermagem": 5,
       "Concursos no Brasil": 5,
+      "Sou Enfermagem": 5,
       "Tribuna da Bahia": 5
     },
     "meses": {
       "03": 98,
-      "05": 73,
+      "05": 76,
       "01": 68,
       "02": 58,
       "04": 47
@@ -443,7 +443,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 344
+        "total": 347
       },
       {
         "ano": 2025,
