@@ -20,8 +20,8 @@
       "PCI Concursos": 48,
       "Pimenta Blog": 34,
       "G1": 33,
-      "Folha Dirigida": 26,
       "Mídia Externa": 26,
+      "Folha Dirigida": 26,
       "iBahia": 24,
       "Notícias da Lapa": 23,
       "Ache Concursos": 20,
@@ -264,7 +264,7 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "G1 Bahia": 4,
+      "Correio": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -341,9 +341,9 @@
       "PCI Concursos": 16,
       "G1": 14,
       "Notícias da Lapa": 9,
-      "Ache Concursos": 9,
-      "A Tarde": 9,
       "Acorda Cidade": 9,
+      "A Tarde": 9,
+      "Ache Concursos": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
