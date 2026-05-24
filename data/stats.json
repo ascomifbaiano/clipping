@@ -1,22 +1,22 @@
 {
   "geral": {
-    "total": 1594,
+    "total": 1595,
     "eixos": {
       "Ensino": 556,
-      "Gestão e RH": 485,
+      "Gestão e RH": 486,
       "Institucional": 431,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1109,
+      "Imprensa Local": 1110,
       "Especializados (Nichos)": 169,
       "Imprensa Regional (Bahia)": 158,
       "Imprensa (Nacional)": 104,
       "Institucional / Governamental": 54
     },
     "top_veiculos": {
-      "Agência Sertão": 188,
+      "Agência Sertão": 189,
       "PCI Concursos": 48,
       "Pimenta Blog": 34,
       "G1": 33,
@@ -33,7 +33,7 @@
       "02": 186,
       "12": 158,
       "01": 149,
-      "11": 122,
+      "11": 123,
       "10": 118,
       "09": 117,
       "04": 111,
@@ -49,7 +49,7 @@
       },
       {
         "ano": 2025,
-        "total": 404
+        "total": 405
       },
       {
         "ano": 2024,
@@ -264,7 +264,7 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "G1 Bahia": 4,
+      "Correio": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -321,36 +321,36 @@
     ]
   },
   "2025": {
-    "total": 404,
+    "total": 405,
     "eixos": {
       "Ensino": 138,
-      "Gestão e RH": 132,
+      "Gestão e RH": 133,
       "Institucional": 107,
       "Extensão": 17,
       "Pesquisa": 10
     },
     "abrangencia": {
-      "Imprensa Local": 248,
+      "Imprensa Local": 249,
       "Especializados (Nichos)": 60,
       "Imprensa Regional (Bahia)": 52,
       "Imprensa (Nacional)": 31,
       "Institucional / Governamental": 13
     },
     "top_veiculos": {
-      "Agência Sertão": 36,
+      "Agência Sertão": 37,
       "PCI Concursos": 16,
       "G1": 14,
       "Notícias da Lapa": 9,
-      "Acorda Cidade": 9,
       "A Tarde": 9,
       "Ache Concursos": 9,
+      "Acorda Cidade": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
     },
     "meses": {
       "12": 70,
-      "11": 53,
+      "11": 54,
       "10": 52,
       "02": 45,
       "05": 33,
@@ -365,7 +365,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 404
+        "total": 405
       },
       {
         "ano": 2024,
@@ -429,8 +429,8 @@
       "G1": 7,
       "Sou Enfermagem": 6,
       "Pimenta Blog": 6,
-      "Ache Concursos": 5,
       "Concursos no Brasil": 5,
+      "Ache Concursos": 5,
       "Tribuna da Bahia": 5
     },
     "meses": {
@@ -447,7 +447,7 @@
       },
       {
         "ano": 2025,
-        "total": 404
+        "total": 405
       },
       {
         "ano": 2024,
