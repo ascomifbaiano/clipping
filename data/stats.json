@@ -1,19 +1,19 @@
 {
   "geral": {
-    "total": 1607,
+    "total": 1609,
     "eixos": {
       "Ensino": 556,
-      "Gestão e RH": 498,
-      "Institucional": 431,
+      "Gestão e RH": 499,
+      "Institucional": 432,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
       "Imprensa Local": 1114,
-      "Especializados (Nichos)": 174,
+      "Especializados (Nichos)": 175,
       "Imprensa Regional (Bahia)": 158,
       "Imprensa (Nacional)": 107,
-      "Institucional / Governamental": 54
+      "Institucional / Governamental": 55
     },
     "top_veiculos": {
       "Agência Sertão": 189,
@@ -23,12 +23,12 @@
       "Folha Dirigida": 29,
       "Mídia Externa": 29,
       "iBahia": 24,
+      "Ache Concursos": 23,
       "Notícias da Lapa": 23,
-      "Ache Concursos": 22,
-      "Correio": 18
+      "A Tarde": 18
     },
     "meses": {
-      "05": 209,
+      "05": 210,
       "03": 197,
       "02": 186,
       "12": 158,
@@ -36,7 +36,7 @@
       "11": 123,
       "10": 118,
       "09": 117,
-      "04": 111,
+      "04": 112,
       "08": 94,
       "06": 87,
       "07": 57,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 373
+        "total": 375
       },
       {
         "ano": 2025,
@@ -264,7 +264,7 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "Correio": 4,
+      "G1 Bahia": 4,
       "Se Liga Alagoinhas": 4
     },
     "meses": {
@@ -406,44 +406,44 @@
     ]
   },
   "2026": {
-    "total": 373,
+    "total": 375,
     "eixos": {
-      "Gestão e RH": 159,
+      "Gestão e RH": 160,
       "Ensino": 98,
-      "Institucional": 80,
+      "Institucional": 81,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
       "Imprensa Local": 249,
-      "Especializados (Nichos)": 48,
+      "Especializados (Nichos)": 49,
       "Imprensa (Nacional)": 40,
       "Imprensa Regional (Bahia)": 24,
-      "Institucional / Governamental": 12
+      "Institucional / Governamental": 13
     },
     "top_veiculos": {
       "Agência Sertão": 24,
-      "Folha Dirigida": 22,
       "PCI Concursos": 22,
+      "Folha Dirigida": 22,
       "Mídia Externa": 17,
-      "Ache Concursos": 7,
+      "Ache Concursos": 8,
       "G1": 7,
-      "Pimenta Blog": 6,
       "Sou Enfermagem": 6,
+      "Pimenta Blog": 6,
       "Concursos no Brasil": 5,
       "Tribuna da Bahia": 5
     },
     "meses": {
-      "05": 102,
+      "05": 103,
       "03": 98,
       "01": 68,
       "02": 58,
-      "04": 47
+      "04": 48
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 373
+        "total": 375
       },
       {
         "ano": 2025,
