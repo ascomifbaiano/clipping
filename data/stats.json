@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1612,
+    "total": 1613,
     "eixos": {
       "Ensino": 556,
-      "Gestão e RH": 501,
+      "Gestão e RH": 502,
       "Institucional": 433,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1115,
+      "Imprensa Local": 1116,
       "Especializados (Nichos)": 176,
       "Imprensa Regional (Bahia)": 158,
       "Imprensa (Nacional)": 108,
@@ -28,7 +28,7 @@
       "A Tarde": 18
     },
     "meses": {
-      "05": 212,
+      "05": 213,
       "03": 197,
       "02": 186,
       "12": 158,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 377
+        "total": 378
       },
       {
         "ano": 2025,
@@ -406,16 +406,16 @@
     ]
   },
   "2026": {
-    "total": 377,
+    "total": 378,
     "eixos": {
-      "Gestão e RH": 161,
+      "Gestão e RH": 162,
       "Ensino": 98,
       "Institucional": 82,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 250,
+      "Imprensa Local": 251,
       "Especializados (Nichos)": 50,
       "Imprensa (Nacional)": 40,
       "Imprensa Regional (Bahia)": 24,
@@ -423,18 +423,18 @@
     },
     "top_veiculos": {
       "Agência Sertão": 24,
-      "Folha Dirigida": 22,
       "PCI Concursos": 22,
+      "Folha Dirigida": 22,
       "Mídia Externa": 17,
       "Ache Concursos": 9,
       "G1": 7,
-      "Sou Enfermagem": 6,
       "Pimenta Blog": 6,
-      "Concursos no Brasil": 5,
-      "Tribuna da Bahia": 5
+      "Sou Enfermagem": 6,
+      "Acorda Cidade": 5,
+      "Concursos no Brasil": 5
     },
     "meses": {
-      "05": 105,
+      "05": 106,
       "03": 98,
       "01": 68,
       "02": 58,
@@ -443,7 +443,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 377
+        "total": 378
       },
       {
         "ano": 2025,
