@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1615,
+    "total": 1616,
     "eixos": {
       "Ensino": 556,
-      "Gestão e RH": 504,
+      "Gestão e RH": 505,
       "Institucional": 433,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1118,
+      "Imprensa Local": 1119,
       "Especializados (Nichos)": 176,
       "Imprensa Regional (Bahia)": 158,
       "Imprensa (Nacional)": 108,
@@ -28,7 +28,7 @@
       "A Tarde": 18
     },
     "meses": {
-      "05": 215,
+      "05": 216,
       "03": 197,
       "02": 186,
       "12": 158,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 380
+        "total": 381
       },
       {
         "ano": 2025,
@@ -406,16 +406,16 @@
     ]
   },
   "2026": {
-    "total": 380,
+    "total": 381,
     "eixos": {
-      "Gestão e RH": 164,
+      "Gestão e RH": 165,
       "Ensino": 98,
       "Institucional": 82,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 253,
+      "Imprensa Local": 254,
       "Especializados (Nichos)": 50,
       "Imprensa (Nacional)": 40,
       "Imprensa Regional (Bahia)": 24,
@@ -434,7 +434,7 @@
       "Concursos no Brasil": 5
     },
     "meses": {
-      "05": 108,
+      "05": 109,
       "03": 98,
       "01": 68,
       "02": 58,
@@ -443,7 +443,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 380
+        "total": 381
       },
       {
         "ano": 2025,
