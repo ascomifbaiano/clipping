@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1619,
+    "total": 1620,
     "eixos": {
       "Ensino": 556,
-      "Gestão e RH": 508,
+      "Gestão e RH": 509,
       "Institucional": 433,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1121,
+      "Imprensa Local": 1122,
       "Especializados (Nichos)": 176,
       "Imprensa Regional (Bahia)": 159,
       "Imprensa (Nacional)": 108,
@@ -22,13 +22,13 @@
       "G1": 33,
       "Mídia Externa": 29,
       "Folha Dirigida": 29,
-      "iBahia": 24,
       "Ache Concursos": 24,
+      "iBahia": 24,
       "Notícias da Lapa": 23,
-      "A Tarde": 18
+      "Correio": 18
     },
     "meses": {
-      "05": 216,
+      "05": 217,
       "03": 197,
       "02": 186,
       "12": 158,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 381
+        "total": 382
       },
       {
         "ano": 2025,
@@ -264,8 +264,8 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "Correio": 4,
-      "Se Liga Alagoinhas": 4
+      "Se Liga Alagoinhas": 4,
+      "G1 Bahia": 4
     },
     "meses": {
       "09": 51,
@@ -406,16 +406,16 @@
     ]
   },
   "2026": {
-    "total": 381,
+    "total": 382,
     "eixos": {
-      "Gestão e RH": 165,
+      "Gestão e RH": 166,
       "Ensino": 98,
       "Institucional": 82,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 254,
+      "Imprensa Local": 255,
       "Especializados (Nichos)": 50,
       "Imprensa (Nacional)": 40,
       "Imprensa Regional (Bahia)": 24,
@@ -423,18 +423,18 @@
     },
     "top_veiculos": {
       "Agência Sertão": 24,
-      "Folha Dirigida": 22,
       "PCI Concursos": 22,
+      "Folha Dirigida": 22,
       "Mídia Externa": 17,
       "Ache Concursos": 9,
       "Sou Enfermagem": 8,
       "G1": 7,
       "Pimenta Blog": 6,
-      "Acorda Cidade": 5,
+      "Bahia Na Política": 5,
       "Concursos no Brasil": 5
     },
     "meses": {
-      "05": 109,
+      "05": 110,
       "03": 98,
       "01": 68,
       "02": 58,
@@ -443,7 +443,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 381
+        "total": 382
       },
       {
         "ano": 2025,
