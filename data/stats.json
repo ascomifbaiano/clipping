@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 1620,
+    "total": 1622,
     "eixos": {
       "Ensino": 556,
-      "Gestão e RH": 509,
+      "Gestão e RH": 511,
       "Institucional": 433,
       "Extensão": 74,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1122,
+      "Imprensa Local": 1123,
       "Especializados (Nichos)": 176,
       "Imprensa Regional (Bahia)": 159,
-      "Imprensa (Nacional)": 108,
+      "Imprensa (Nacional)": 109,
       "Institucional / Governamental": 55
     },
     "top_veiculos": {
@@ -24,11 +24,11 @@
       "Folha Dirigida": 29,
       "Ache Concursos": 24,
       "iBahia": 24,
-      "Notícias da Lapa": 23,
+      "Notícias da Lapa": 24,
       "Correio": 18
     },
     "meses": {
-      "05": 217,
+      "05": 218,
       "03": 197,
       "02": 186,
       "12": 158,
@@ -38,14 +38,14 @@
       "09": 117,
       "04": 112,
       "08": 97,
-      "06": 87,
+      "06": 88,
       "07": 57,
       "20": 1
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 382
+        "total": 384
       },
       {
         "ano": 2025,
@@ -264,8 +264,8 @@
       "Click Petróleo e Gás": 5,
       "A Tarde": 4,
       "PEBSP": 4,
-      "Se Liga Alagoinhas": 4,
-      "G1 Bahia": 4
+      "Correio": 4,
+      "Se Liga Alagoinhas": 4
     },
     "meses": {
       "09": 51,
@@ -406,44 +406,45 @@
     ]
   },
   "2026": {
-    "total": 382,
+    "total": 384,
     "eixos": {
-      "Gestão e RH": 166,
+      "Gestão e RH": 168,
       "Ensino": 98,
       "Institucional": 82,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 255,
+      "Imprensa Local": 256,
       "Especializados (Nichos)": 50,
-      "Imprensa (Nacional)": 40,
+      "Imprensa (Nacional)": 41,
       "Imprensa Regional (Bahia)": 24,
       "Institucional / Governamental": 13
     },
     "top_veiculos": {
       "Agência Sertão": 24,
-      "PCI Concursos": 22,
       "Folha Dirigida": 22,
+      "PCI Concursos": 22,
       "Mídia Externa": 17,
       "Ache Concursos": 9,
       "Sou Enfermagem": 8,
       "G1": 7,
       "Pimenta Blog": 6,
-      "Bahia Na Política": 5,
-      "Concursos no Brasil": 5
+      "Notícias da Lapa": 5,
+      "Bahia Na Política": 5
     },
     "meses": {
-      "05": 110,
+      "05": 111,
       "03": 98,
       "01": 68,
       "02": 58,
-      "04": 48
+      "04": 48,
+      "06": 1
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 382
+        "total": 384
       },
       {
         "ano": 2025,
