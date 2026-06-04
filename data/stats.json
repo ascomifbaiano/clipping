@@ -25,7 +25,7 @@
       "Ache Concursos": 26,
       "iBahia": 25,
       "Notícias da Lapa": 25,
-      "Correio": 18
+      "A Tarde": 18
     },
     "meses": {
       "05": 222,
@@ -191,8 +191,8 @@
       "Imprensa Local": 169,
       "Especializados (Nichos)": 31,
       "Imprensa Regional (Bahia)": 11,
-      "Institucional / Governamental": 7,
-      "Imprensa (Nacional)": 7
+      "Imprensa (Nacional)": 7,
+      "Institucional / Governamental": 7
     },
     "top_veiculos": {
       "Agência Sertão": 30,
@@ -217,8 +217,8 @@
       "02": 17,
       "04": 13,
       "01": 10,
-      "07": 7,
       "08": 7,
+      "07": 7,
       "20": 1
     },
     "historico": [
