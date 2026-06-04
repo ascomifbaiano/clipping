@@ -1,19 +1,19 @@
 {
   "geral": {
-    "total": 1647,
+    "total": 1651,
     "eixos": {
       "Ensino": 562,
-      "Gestão e RH": 523,
-      "Institucional": 439,
+      "Gestão e RH": 525,
+      "Institucional": 441,
       "Extensão": 75,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1130,
-      "Especializados (Nichos)": 181,
+      "Imprensa Local": 1131,
+      "Especializados (Nichos)": 182,
       "Imprensa Regional (Bahia)": 160,
       "Imprensa (Nacional)": 115,
-      "Institucional / Governamental": 61
+      "Institucional / Governamental": 63
     },
     "top_veiculos": {
       "Agência Sertão": 192,
@@ -36,20 +36,20 @@
       "11": 124,
       "10": 119,
       "09": 118,
-      "04": 114,
+      "04": 117,
       "08": 99,
-      "06": 93,
+      "06": 94,
       "07": 59,
       "20": 1
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 389
+        "total": 390
       },
       {
         "ano": 2025,
-        "total": 415
+        "total": 416
       },
       {
         "ano": 2024,
@@ -57,11 +57,11 @@
       },
       {
         "ano": 2023,
-        "total": 224
+        "total": 225
       },
       {
         "ano": 2022,
-        "total": 204
+        "total": 205
       },
       {
         "ano": 2021,
@@ -98,10 +98,10 @@
     ]
   },
   "2022": {
-    "total": 204,
+    "total": 205,
     "eixos": {
       "Ensino": 89,
-      "Institucional": 75,
+      "Institucional": 76,
       "Gestão e RH": 30,
       "Extensão": 9,
       "Pesquisa": 1
@@ -109,7 +109,7 @@
     "abrangencia": {
       "Imprensa Local": 160,
       "Imprensa Regional (Bahia)": 16,
-      "Institucional / Governamental": 12,
+      "Institucional / Governamental": 13,
       "Especializados (Nichos)": 9,
       "Imprensa (Nacional)": 7
     },
@@ -120,10 +120,10 @@
       "Se Liga Alagoinhas": 8,
       "Diga Bahia": 6,
       "Hora Brasil": 5,
-      "Correio": 3,
       "G1": 3,
-      "PCI Concursos": 3,
-      "Sul da Bahia News": 3
+      "Sul da Bahia News": 3,
+      "Correio": 3,
+      "Prefeitura de Alagoinhas": 3
     },
     "meses": {
       "02": 43,
@@ -133,16 +133,16 @@
       "12": 17,
       "07": 16,
       "03": 12,
+      "04": 10,
       "10": 10,
       "08": 10,
-      "04": 9,
       "01": 9,
       "09": 8
     },
     "historico": [
       {
         "ano": 2022,
-        "total": 204
+        "total": 205
       },
       {
         "ano": 2021,
@@ -179,10 +179,10 @@
     ]
   },
   "2023": {
-    "total": 224,
+    "total": 225,
     "eixos": {
       "Ensino": 86,
-      "Institucional": 63,
+      "Institucional": 64,
       "Gestão e RH": 54,
       "Extensão": 13,
       "Pesquisa": 8
@@ -191,8 +191,8 @@
       "Imprensa Local": 169,
       "Especializados (Nichos)": 31,
       "Imprensa Regional (Bahia)": 11,
-      "Imprensa (Nacional)": 7,
-      "Institucional / Governamental": 6
+      "Institucional / Governamental": 7,
+      "Imprensa (Nacional)": 7
     },
     "top_veiculos": {
       "Agência Sertão": 30,
@@ -203,8 +203,8 @@
       "Sul da Bahia News": 4,
       "Bom Jesus da Lapa Notícias": 4,
       "Conif": 3,
-      "Acheconcursos": 3,
-      "Sul Bahia News": 3
+      "Sul Bahia News": 3,
+      "Acheconcursos": 3
     },
     "meses": {
       "10": 37,
@@ -215,20 +215,20 @@
       "05": 19,
       "06": 18,
       "02": 17,
-      "04": 12,
+      "04": 13,
       "01": 10,
-      "08": 7,
       "07": 7,
+      "08": 7,
       "20": 1
     },
     "historico": [
       {
         "ano": 2023,
-        "total": 224
+        "total": 225
       },
       {
         "ano": 2022,
-        "total": 204
+        "total": 205
       },
       {
         "ano": 2021,
@@ -312,11 +312,11 @@
       },
       {
         "ano": 2023,
-        "total": 224
+        "total": 225
       },
       {
         "ano": 2022,
-        "total": 204
+        "total": 205
       },
       {
         "ano": 2021,
@@ -353,17 +353,17 @@
     ]
   },
   "2025": {
-    "total": 415,
+    "total": 416,
     "eixos": {
       "Ensino": 141,
-      "Gestão e RH": 139,
+      "Gestão e RH": 140,
       "Institucional": 108,
       "Extensão": 17,
       "Pesquisa": 10
     },
     "abrangencia": {
       "Imprensa Local": 252,
-      "Especializados (Nichos)": 60,
+      "Especializados (Nichos)": 61,
       "Imprensa Regional (Bahia)": 53,
       "Imprensa (Nacional)": 36,
       "Institucional / Governamental": 14
@@ -374,8 +374,8 @@
       "PCI Concursos": 16,
       "Acorda Cidade": 9,
       "Notícias da Lapa": 9,
-      "Ache Concursos": 9,
       "A Tarde": 9,
+      "Ache Concursos": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -389,15 +389,15 @@
       "09": 27,
       "06": 27,
       "03": 26,
-      "01": 26,
       "08": 26,
+      "01": 26,
       "07": 15,
-      "04": 11
+      "04": 12
     },
     "historico": [
       {
         "ano": 2025,
-        "total": 415
+        "total": 416
       },
       {
         "ano": 2024,
@@ -405,11 +405,11 @@
       },
       {
         "ano": 2023,
-        "total": 224
+        "total": 225
       },
       {
         "ano": 2022,
-        "total": 204
+        "total": 205
       },
       {
         "ano": 2021,
@@ -446,16 +446,16 @@
     ]
   },
   "2026": {
-    "total": 389,
+    "total": 390,
     "eixos": {
-      "Gestão e RH": 170,
+      "Gestão e RH": 171,
       "Ensino": 98,
       "Institucional": 85,
       "Extensão": 21,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 258,
+      "Imprensa Local": 259,
       "Especializados (Nichos)": 52,
       "Imprensa (Nacional)": 42,
       "Imprensa Regional (Bahia)": 24,
@@ -467,11 +467,11 @@
       "PCI Concursos": 22,
       "Mídia Externa": 18,
       "Ache Concursos": 10,
-      "Sou Enfermagem": 8,
+      "Sou Enfermagem": 9,
       "G1": 7,
-      "Concursos no Brasil": 6,
       "Pimenta Blog": 6,
-      "Notícias da Lapa": 5
+      "Concursos no Brasil": 6,
+      "Acorda Cidade": 5
     },
     "meses": {
       "05": 113,
@@ -479,16 +479,16 @@
       "01": 68,
       "02": 58,
       "04": 48,
-      "06": 4
+      "06": 5
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 389
+        "total": 390
       },
       {
         "ano": 2025,
-        "total": 415
+        "total": 416
       },
       {
         "ano": 2024,
@@ -496,11 +496,11 @@
       },
       {
         "ano": 2023,
-        "total": 224
+        "total": 225
       },
       {
         "ano": 2022,
-        "total": 204
+        "total": 205
       },
       {
         "ano": 2021,
