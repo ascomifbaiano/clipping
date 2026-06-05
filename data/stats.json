@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1651,
+    "total": 1652,
     "eixos": {
       "Ensino": 562,
       "Gestão e RH": 525,
       "Institucional": 441,
-      "Extensão": 75,
+      "Extensão": 76,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1131,
+      "Imprensa Local": 1132,
       "Especializados (Nichos)": 182,
       "Imprensa Regional (Bahia)": 160,
       "Imprensa (Nacional)": 115,
@@ -38,14 +38,14 @@
       "09": 118,
       "04": 117,
       "08": 99,
-      "06": 94,
+      "06": 95,
       "07": 59,
       "20": 1
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 390
+        "total": 391
       },
       {
         "ano": 2025,
@@ -446,16 +446,16 @@
     ]
   },
   "2026": {
-    "total": 390,
+    "total": 391,
     "eixos": {
       "Gestão e RH": 171,
       "Ensino": 98,
       "Institucional": 85,
-      "Extensão": 21,
+      "Extensão": 22,
       "Pesquisa": 15
     },
     "abrangencia": {
-      "Imprensa Local": 259,
+      "Imprensa Local": 260,
       "Especializados (Nichos)": 52,
       "Imprensa (Nacional)": 42,
       "Imprensa Regional (Bahia)": 24,
@@ -463,15 +463,15 @@
     },
     "top_veiculos": {
       "Agência Sertão": 25,
-      "Folha Dirigida": 22,
       "PCI Concursos": 22,
+      "Folha Dirigida": 22,
       "Mídia Externa": 18,
       "Ache Concursos": 10,
       "Sou Enfermagem": 9,
       "G1": 7,
       "Pimenta Blog": 6,
       "Concursos no Brasil": 6,
-      "Acorda Cidade": 5
+      "Bahia Na Política": 5
     },
     "meses": {
       "05": 113,
@@ -479,12 +479,12 @@
       "01": 68,
       "02": 58,
       "04": 48,
-      "06": 5
+      "06": 6
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 390
+        "total": 391
       },
       {
         "ano": 2025,
