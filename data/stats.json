@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1652,
+    "total": 1653,
     "eixos": {
       "Ensino": 562,
-      "Gestão e RH": 525,
+      "Gestão e RH": 526,
       "Institucional": 441,
       "Extensão": 76,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1132,
+      "Imprensa Local": 1133,
       "Especializados (Nichos)": 182,
       "Imprensa Regional (Bahia)": 160,
       "Imprensa (Nacional)": 115,
@@ -23,9 +23,9 @@
       "Mídia Externa": 30,
       "Folha Dirigida": 29,
       "Ache Concursos": 26,
-      "Notícias da Lapa": 25,
       "iBahia": 25,
-      "A Tarde": 18
+      "Notícias da Lapa": 25,
+      "Correio": 18
     },
     "meses": {
       "05": 222,
@@ -34,7 +34,7 @@
       "12": 159,
       "01": 153,
       "11": 124,
-      "10": 119,
+      "10": 120,
       "09": 118,
       "04": 117,
       "08": 99,
@@ -49,7 +49,7 @@
       },
       {
         "ano": 2025,
-        "total": 416
+        "total": 417
       },
       {
         "ano": 2024,
@@ -353,16 +353,16 @@
     ]
   },
   "2025": {
-    "total": 416,
+    "total": 417,
     "eixos": {
+      "Gestão e RH": 141,
       "Ensino": 141,
-      "Gestão e RH": 140,
       "Institucional": 108,
       "Extensão": 17,
       "Pesquisa": 10
     },
     "abrangencia": {
-      "Imprensa Local": 252,
+      "Imprensa Local": 253,
       "Especializados (Nichos)": 61,
       "Imprensa Regional (Bahia)": 53,
       "Imprensa (Nacional)": 36,
@@ -372,10 +372,10 @@
       "Agência Sertão": 38,
       "G1": 18,
       "PCI Concursos": 16,
-      "Acorda Cidade": 9,
       "Notícias da Lapa": 9,
-      "A Tarde": 9,
+      "Acorda Cidade": 9,
       "Ache Concursos": 9,
+      "A Tarde": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -383,7 +383,7 @@
     "meses": {
       "12": 70,
       "11": 55,
-      "10": 53,
+      "10": 54,
       "02": 46,
       "05": 33,
       "09": 27,
@@ -397,7 +397,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 416
+        "total": 417
       },
       {
         "ano": 2024,
@@ -488,7 +488,7 @@
       },
       {
         "ano": 2025,
-        "total": 416
+        "total": 417
       },
       {
         "ano": 2024,
