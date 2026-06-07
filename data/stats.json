@@ -1,10 +1,10 @@
 {
   "geral": {
-    "total": 1653,
+    "total": 1654,
     "eixos": {
       "Ensino": 562,
       "Gestão e RH": 526,
-      "Institucional": 441,
+      "Institucional": 442,
       "Extensão": 76,
       "Pesquisa": 48
     },
@@ -13,7 +13,7 @@
       "Especializados (Nichos)": 182,
       "Imprensa Regional (Bahia)": 160,
       "Imprensa (Nacional)": 115,
-      "Institucional / Governamental": 63
+      "Institucional / Governamental": 64
     },
     "top_veiculos": {
       "Agência Sertão": 192,
@@ -25,10 +25,10 @@
       "Ache Concursos": 26,
       "iBahia": 25,
       "Notícias da Lapa": 25,
-      "A Tarde": 18
+      "Correio": 18
     },
     "meses": {
-      "05": 222,
+      "05": 223,
       "03": 199,
       "02": 187,
       "12": 159,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 391
+        "total": 392
       },
       {
         "ano": 2025,
@@ -446,11 +446,11 @@
     ]
   },
   "2026": {
-    "total": 391,
+    "total": 392,
     "eixos": {
       "Gestão e RH": 171,
       "Ensino": 98,
-      "Institucional": 85,
+      "Institucional": 86,
       "Extensão": 22,
       "Pesquisa": 15
     },
@@ -459,7 +459,7 @@
       "Especializados (Nichos)": 52,
       "Imprensa (Nacional)": 42,
       "Imprensa Regional (Bahia)": 24,
-      "Institucional / Governamental": 13
+      "Institucional / Governamental": 14
     },
     "top_veiculos": {
       "Agência Sertão": 25,
@@ -471,10 +471,10 @@
       "G1": 7,
       "Pimenta Blog": 6,
       "Concursos no Brasil": 6,
-      "Bahia Na Política": 5
+      "Notícias da Lapa": 5
     },
     "meses": {
-      "05": 113,
+      "05": 114,
       "03": 98,
       "01": 68,
       "02": 58,
@@ -484,7 +484,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 391
+        "total": 392
       },
       {
         "ano": 2025,
