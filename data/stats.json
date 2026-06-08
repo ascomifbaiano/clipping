@@ -1,24 +1,24 @@
 {
   "geral": {
-    "total": 1655,
+    "total": 1658,
     "eixos": {
-      "Ensino": 562,
-      "Gestão e RH": 526,
+      "Ensino": 563,
+      "Gestão e RH": 527,
       "Institucional": 443,
-      "Extensão": 76,
+      "Extensão": 77,
       "Pesquisa": 48
     },
     "abrangencia": {
-      "Imprensa Local": 1133,
+      "Imprensa Local": 1134,
       "Especializados (Nichos)": 182,
       "Imprensa Regional (Bahia)": 160,
-      "Imprensa (Nacional)": 115,
-      "Institucional / Governamental": 65
+      "Imprensa (Nacional)": 116,
+      "Institucional / Governamental": 66
     },
     "top_veiculos": {
       "Agência Sertão": 192,
       "PCI Concursos": 51,
-      "G1": 38,
+      "G1": 39,
       "Pimenta Blog": 34,
       "Mídia Externa": 30,
       "Folha Dirigida": 29,
@@ -31,11 +31,11 @@
       "05": 223,
       "03": 199,
       "02": 187,
-      "12": 160,
+      "12": 161,
       "01": 153,
-      "11": 124,
+      "11": 125,
       "10": 120,
-      "09": 118,
+      "09": 119,
       "04": 117,
       "08": 99,
       "06": 95,
@@ -53,11 +53,11 @@
       },
       {
         "ano": 2024,
-        "total": 247
+        "total": 248
       },
       {
         "ano": 2023,
-        "total": 225
+        "total": 226
       },
       {
         "ano": 2022,
@@ -81,7 +81,7 @@
       },
       {
         "ano": 2017,
-        "total": 2
+        "total": 3
       },
       {
         "ano": 2016,
@@ -162,7 +162,7 @@
       },
       {
         "ano": 2017,
-        "total": 2
+        "total": 3
       },
       {
         "ano": 2016,
@@ -179,16 +179,16 @@
     ]
   },
   "2023": {
-    "total": 225,
+    "total": 226,
     "eixos": {
-      "Ensino": 86,
+      "Ensino": 87,
       "Institucional": 64,
       "Gestão e RH": 54,
       "Extensão": 13,
       "Pesquisa": 8
     },
     "abrangencia": {
-      "Imprensa Local": 169,
+      "Imprensa Local": 170,
       "Especializados (Nichos)": 31,
       "Imprensa Regional (Bahia)": 11,
       "Imprensa (Nacional)": 7,
@@ -203,15 +203,15 @@
       "Sul da Bahia News": 4,
       "Bom Jesus da Lapa Notícias": 4,
       "Conif": 3,
-      "Sul Bahia News": 3,
-      "Acheconcursos": 3
+      "iBahia": 3,
+      "Sul Bahia News": 3
     },
     "meses": {
       "10": 37,
       "12": 27,
       "11": 25,
       "03": 24,
-      "09": 20,
+      "09": 21,
       "05": 19,
       "06": 18,
       "02": 17,
@@ -224,7 +224,7 @@
     "historico": [
       {
         "ano": 2023,
-        "total": 225
+        "total": 226
       },
       {
         "ano": 2022,
@@ -248,7 +248,7 @@
       },
       {
         "ano": 2017,
-        "total": 2
+        "total": 3
       },
       {
         "ano": 2016,
@@ -265,10 +265,10 @@
     ]
   },
   "2024": {
-    "total": 247,
+    "total": 248,
     "eixos": {
       "Ensino": 124,
-      "Gestão e RH": 93,
+      "Gestão e RH": 94,
       "Institucional": 28,
       "Extensão": 2
     },
@@ -276,7 +276,7 @@
       "Imprensa Local": 175,
       "Imprensa Regional (Bahia)": 38,
       "Especializados (Nichos)": 20,
-      "Imprensa (Nacional)": 12,
+      "Imprensa (Nacional)": 13,
       "Institucional / Governamental": 2
     },
     "top_veiculos": {
@@ -287,13 +287,13 @@
       "Notícias da Lapa": 5,
       "Click Petróleo e Gás": 5,
       "PEBSP": 4,
-      "Correio": 4,
+      "G1": 4,
       "A Tarde": 4,
       "G1 Bahia": 4
     },
     "meses": {
       "09": 51,
-      "12": 35,
+      "12": 36,
       "01": 32,
       "08": 32,
       "04": 18,
@@ -308,11 +308,11 @@
     "historico": [
       {
         "ano": 2024,
-        "total": 247
+        "total": 248
       },
       {
         "ano": 2023,
-        "total": 225
+        "total": 226
       },
       {
         "ano": 2022,
@@ -336,7 +336,7 @@
       },
       {
         "ano": 2017,
-        "total": 2
+        "total": 3
       },
       {
         "ano": 2016,
@@ -401,11 +401,11 @@
       },
       {
         "ano": 2024,
-        "total": 247
+        "total": 248
       },
       {
         "ano": 2023,
-        "total": 225
+        "total": 226
       },
       {
         "ano": 2022,
@@ -429,7 +429,7 @@
       },
       {
         "ano": 2017,
-        "total": 2
+        "total": 3
       },
       {
         "ano": 2016,
@@ -492,11 +492,11 @@
       },
       {
         "ano": 2024,
-        "total": 247
+        "total": 248
       },
       {
         "ano": 2023,
-        "total": 225
+        "total": 226
       },
       {
         "ano": 2022,
@@ -520,7 +520,7 @@
       },
       {
         "ano": 2017,
-        "total": 2
+        "total": 3
       },
       {
         "ano": 2016,
@@ -537,18 +537,18 @@
     ]
   },
   "ate_2021": {
-    "total": 168,
+    "total": 169,
     "eixos": {
       "Institucional": 80,
       "Gestão e RH": 37,
       "Ensino": 24,
-      "Pesquisa": 14,
-      "Extensão": 13
+      "Extensão": 14,
+      "Pesquisa": 14
     },
     "abrangencia": {
       "Imprensa Local": 116,
       "Imprensa Regional (Bahia)": 18,
-      "Institucional / Governamental": 14,
+      "Institucional / Governamental": 15,
       "Imprensa (Nacional)": 11,
       "Especializados (Nichos)": 9
     },
@@ -556,8 +556,8 @@
       "Agência Sertão": 35,
       "Conif": 8,
       "G1": 7,
+      "Prefeitura de Alagoinhas": 5,
       "Academia de Ciências da Bahia": 5,
-      "Prefeitura de Alagoinhas": 4,
       "Notícias da Lapa": 4,
       "Mídia Externa": 4,
       "Fapesb": 3,
@@ -570,7 +570,7 @@
       "05": 23,
       "04": 16,
       "06": 15,
-      "11": 13,
+      "11": 14,
       "09": 12,
       "12": 10,
       "07": 9,
@@ -597,7 +597,7 @@
       },
       {
         "ano": 2017,
-        "total": 2
+        "total": 3
       },
       {
         "ano": 2016,
