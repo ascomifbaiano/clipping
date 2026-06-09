@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1662,
+    "total": 1663,
     "eixos": {
       "Ensino": 564,
-      "Gestão e RH": 528,
+      "Gestão e RH": 529,
       "Institucional": 444,
       "Extensão": 77,
       "Pesquisa": 49
     },
     "abrangencia": {
-      "Imprensa Local": 1134,
+      "Imprensa Local": 1135,
       "Especializados (Nichos)": 182,
       "Imprensa Regional (Bahia)": 161,
       "Imprensa (Nacional)": 116,
@@ -23,9 +23,9 @@
       "Mídia Externa": 30,
       "Folha Dirigida": 29,
       "Ache Concursos": 26,
-      "iBahia": 25,
       "Notícias da Lapa": 25,
-      "Correio": 18
+      "iBahia": 25,
+      "A Tarde": 18
     },
     "meses": {
       "05": 224,
@@ -34,7 +34,7 @@
       "12": 161,
       "01": 153,
       "11": 125,
-      "10": 121,
+      "10": 122,
       "09": 119,
       "04": 118,
       "08": 99,
@@ -49,7 +49,7 @@
       },
       {
         "ano": 2025,
-        "total": 420
+        "total": 421
       },
       {
         "ano": 2024,
@@ -353,16 +353,16 @@
     ]
   },
   "2025": {
-    "total": 420,
+    "total": 421,
     "eixos": {
+      "Gestão e RH": 143,
       "Ensino": 142,
-      "Gestão e RH": 142,
       "Institucional": 109,
       "Extensão": 17,
       "Pesquisa": 10
     },
     "abrangencia": {
-      "Imprensa Local": 253,
+      "Imprensa Local": 254,
       "Especializados (Nichos)": 61,
       "Imprensa Regional (Bahia)": 54,
       "Imprensa (Nacional)": 36,
@@ -382,7 +382,7 @@
     },
     "meses": {
       "12": 71,
-      "10": 55,
+      "10": 56,
       "11": 55,
       "02": 46,
       "05": 33,
@@ -397,7 +397,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 420
+        "total": 421
       },
       {
         "ano": 2024,
@@ -488,7 +488,7 @@
       },
       {
         "ano": 2025,
-        "total": 420
+        "total": 421
       },
       {
         "ano": 2024,
