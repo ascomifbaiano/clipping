@@ -1,19 +1,19 @@
 {
   "geral": {
-    "total": 1661,
+    "total": 1662,
     "eixos": {
       "Ensino": 564,
       "Gestão e RH": 528,
       "Institucional": 444,
       "Extensão": 77,
-      "Pesquisa": 48
+      "Pesquisa": 49
     },
     "abrangencia": {
       "Imprensa Local": 1134,
       "Especializados (Nichos)": 182,
       "Imprensa Regional (Bahia)": 161,
       "Imprensa (Nacional)": 116,
-      "Institucional / Governamental": 68
+      "Institucional / Governamental": 69
     },
     "top_veiculos": {
       "Agência Sertão": 192,
@@ -23,8 +23,8 @@
       "Mídia Externa": 30,
       "Folha Dirigida": 29,
       "Ache Concursos": 26,
-      "iBahia": 25,
       "Notícias da Lapa": 25,
+      "iBahia": 25,
       "Correio": 18
     },
     "meses": {
@@ -36,7 +36,7 @@
       "11": 125,
       "10": 121,
       "09": 119,
-      "04": 117,
+      "04": 118,
       "08": 99,
       "06": 95,
       "07": 60,
@@ -45,7 +45,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 393
+        "total": 394
       },
       {
         "ano": 2025,
@@ -446,25 +446,25 @@
     ]
   },
   "2026": {
-    "total": 393,
+    "total": 394,
     "eixos": {
       "Gestão e RH": 171,
       "Ensino": 98,
       "Institucional": 87,
       "Extensão": 22,
-      "Pesquisa": 15
+      "Pesquisa": 16
     },
     "abrangencia": {
       "Imprensa Local": 260,
       "Especializados (Nichos)": 52,
       "Imprensa (Nacional)": 42,
       "Imprensa Regional (Bahia)": 24,
-      "Institucional / Governamental": 15
+      "Institucional / Governamental": 16
     },
     "top_veiculos": {
       "Agência Sertão": 25,
-      "Folha Dirigida": 22,
       "PCI Concursos": 22,
+      "Folha Dirigida": 22,
       "Mídia Externa": 18,
       "Ache Concursos": 10,
       "Sou Enfermagem": 9,
@@ -478,13 +478,13 @@
       "03": 98,
       "01": 68,
       "02": 58,
-      "04": 48,
+      "04": 49,
       "06": 6
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 393
+        "total": 394
       },
       {
         "ano": 2025,
