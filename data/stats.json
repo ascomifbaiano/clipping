@@ -1,10 +1,10 @@
 {
   "geral": {
-    "total": 1659,
+    "total": 1661,
     "eixos": {
-      "Ensino": 563,
+      "Ensino": 564,
       "Gestão e RH": 528,
-      "Institucional": 443,
+      "Institucional": 444,
       "Extensão": 77,
       "Pesquisa": 48
     },
@@ -13,7 +13,7 @@
       "Especializados (Nichos)": 182,
       "Imprensa Regional (Bahia)": 161,
       "Imprensa (Nacional)": 116,
-      "Institucional / Governamental": 66
+      "Institucional / Governamental": 68
     },
     "top_veiculos": {
       "Agência Sertão": 192,
@@ -23,12 +23,12 @@
       "Mídia Externa": 30,
       "Folha Dirigida": 29,
       "Ache Concursos": 26,
-      "Notícias da Lapa": 25,
       "iBahia": 25,
-      "A Tarde": 18
+      "Notícias da Lapa": 25,
+      "Correio": 18
     },
     "meses": {
-      "05": 223,
+      "05": 224,
       "03": 199,
       "02": 187,
       "12": 161,
@@ -39,17 +39,17 @@
       "04": 117,
       "08": 99,
       "06": 95,
-      "07": 59,
+      "07": 60,
       "20": 1
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 392
+        "total": 393
       },
       {
         "ano": 2025,
-        "total": 419
+        "total": 420
       },
       {
         "ano": 2024,
@@ -353,10 +353,10 @@
     ]
   },
   "2025": {
-    "total": 419,
+    "total": 420,
     "eixos": {
+      "Ensino": 142,
       "Gestão e RH": 142,
-      "Ensino": 141,
       "Institucional": 109,
       "Extensão": 17,
       "Pesquisa": 10
@@ -366,16 +366,16 @@
       "Especializados (Nichos)": 61,
       "Imprensa Regional (Bahia)": 54,
       "Imprensa (Nacional)": 36,
-      "Institucional / Governamental": 15
+      "Institucional / Governamental": 16
     },
     "top_veiculos": {
       "Agência Sertão": 38,
       "G1": 18,
       "PCI Concursos": 16,
-      "Acorda Cidade": 9,
       "Notícias da Lapa": 9,
-      "A Tarde": 9,
+      "Acorda Cidade": 9,
       "Ache Concursos": 9,
+      "A Tarde": 9,
       "Bahia Econômica": 9,
       "Correio": 8,
       "Mídia Externa": 7
@@ -388,16 +388,16 @@
       "05": 33,
       "06": 27,
       "09": 27,
-      "08": 26,
       "03": 26,
       "01": 26,
-      "07": 15,
+      "08": 26,
+      "07": 16,
       "04": 12
     },
     "historico": [
       {
         "ano": 2025,
-        "total": 419
+        "total": 420
       },
       {
         "ano": 2024,
@@ -446,11 +446,11 @@
     ]
   },
   "2026": {
-    "total": 392,
+    "total": 393,
     "eixos": {
       "Gestão e RH": 171,
       "Ensino": 98,
-      "Institucional": 86,
+      "Institucional": 87,
       "Extensão": 22,
       "Pesquisa": 15
     },
@@ -459,12 +459,12 @@
       "Especializados (Nichos)": 52,
       "Imprensa (Nacional)": 42,
       "Imprensa Regional (Bahia)": 24,
-      "Institucional / Governamental": 14
+      "Institucional / Governamental": 15
     },
     "top_veiculos": {
       "Agência Sertão": 25,
-      "PCI Concursos": 22,
       "Folha Dirigida": 22,
+      "PCI Concursos": 22,
       "Mídia Externa": 18,
       "Ache Concursos": 10,
       "Sou Enfermagem": 9,
@@ -474,7 +474,7 @@
       "Notícias da Lapa": 5
     },
     "meses": {
-      "05": 114,
+      "05": 115,
       "03": 98,
       "01": 68,
       "02": 58,
@@ -484,11 +484,11 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 392
+        "total": 393
       },
       {
         "ano": 2025,
-        "total": 419
+        "total": 420
       },
       {
         "ano": 2024,
