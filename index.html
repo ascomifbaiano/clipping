@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Analytics | Clipping IF Baiano (Completo)</title>
+    <link rel="icon" href="data:,">
+    
+    <!-- Google Fonts & Tailwind-like CSS variables -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --brand-primary: #1b4332; /* Verde Forest Escuro IF Baiano */
+            --brand-secondary: #2d6a4f; /* Verde Médio */
+            --brand-accent: #d90429; /* Vermelho IF Baiano */
+            --brand-accent-hover: #ef233c;
+            --brand-light-green: #e8f5e9;
+            --brand-gradient: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            --brand-accent-gradient: linear-gradient(135deg, #d90429 0%, #ef233c 100%);
+            
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.03);
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 32px 24px;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(45, 106, 79, 0.03) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(217, 4, 41, 0.015) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 24px 32px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+            overflow: hidden;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--brand-gradient);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            z-index: 2;
+        }
+
+        .logo-if {
+            height: 76px;
+            object-fit: contain;
+            transition: var(--transition-smooth);
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+        }
+
+        .logo-if:hover {
+            transform: scale(1.04) rotate(-1deg);
+        }
+
+        .header-title h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1b4332;
+            letter-spacing: -0.75px;
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            font-size: 14.5px;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            z-index: 2;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-family: inherit;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: var(--brand-gradient);
+            border: none;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #143225 0%, #1e4634 100%);
+            border: none;
+            box-shadow: 0 4px 12px rgba(45, 106, 79, 0.2);
+        }
+
+        .btn-accent {
+            background: #0284c7;
+            border: none;
+            color: #ffffff;
+        }
+
+        .btn-accent:hover {
+            background: #0369a1;
+            border: none;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+        }
+
+        /* NAVIGATION TABS */
+        .tabs-nav {
+            display: flex;
+            background: #f1f5f9;
+            padding: 6px;
+            border-radius: 14px;
+            gap: 4px;
+            max-width: fit-content;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 10px 24px;
+            border-radius: 10px;
+            transition: var(--transition-smooth);
+            font-family: inherit;
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--brand-primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .tab-btn.active {
+            color: #1b4332;
+            background: var(--bg-card);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* FILTER BAR & ACTIONS */
+        .filter-panel {
+            background: var(--bg-card);
+            padding: 24px 32px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        .filter-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .year-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-year {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13.5px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+            font-family: inherit;
+        }
+
+        .btn-year:hover {
+            background-color: #e2e8f0;
+            color: var(--text-main);
+            transform: translateY(-1px);
+        }
+
+        .btn-year.active {
+            background: var(--brand-gradient);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 10px rgba(45, 106, 79, 0.15);
+        }
+
+        .btn-year.especial {
+            border-color: #0284c7;
+            color: #0284c7;
+        }
+
+        .btn-year.especial:hover {
+            background-color: #f0f9ff;
+        }
+
+        .btn-year.especial.active {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.15);
+        }
+
+        .filter-selects {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 16px;
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            .filter-selects {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .filter-selects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .filter-select-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-select-group label {
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.75px;
+        }
+
+        .filter-select-group select {
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-main);
+            outline: none;
+            background-color: #f8fafc;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        .filter-select-group select:focus {
+            border-color: var(--brand-secondary);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.12);
+        }
+
+        .search-box-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .search-box-container label {
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.75px;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            padding: 12px 16px;
+            padding-right: 44px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+            background-color: #f8fafc;
+            transition: var(--transition-smooth);
+        }
+
+        .search-input-wrapper input:focus {
+            border-color: var(--brand-secondary);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.12);
+        }
+
+        .search-clear-btn {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 16px;
+            display: none;
+            transition: var(--transition-smooth);
+        }
+
+        .search-clear-btn:hover {
+            color: var(--brand-accent);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* STATS CARDS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 26px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--brand-gradient);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-card.accent-red::after { background: var(--brand-accent-gradient); }
+        .stat-card.accent-blue::after { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+        .stat-card.accent-orange::after { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+
+        .stat-card h3 {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.75px;
+            margin-bottom: 12px;
+        }
+
+        .stat-card .valor {
+            font-size: 30px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+        }
+
+        .stat-card .subtext {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* KEYWORDS TAG CLOUD CARD */
+        .keywords-card {
+            background: var(--bg-card);
+            padding: 26px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .keywords-card h3 {
+            font-size: 16px;
+            font-weight: 750;
+            color: #1b4332;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag-word {
+            background-color: #f1f5f9;
+            color: #475569;
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid var(--border-color);
+        }
+
+        .tag-word:hover {
+            background-color: var(--brand-light-green);
+            color: var(--brand-primary);
+            border-color: #a7f3d0;
+            transform: translateY(-1px) scale(1.03);
+        }
+
+        .tag-word.active {
+            background: var(--brand-gradient);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 8px rgba(45, 106, 79, 0.15);
+        }
+
+        /* DASHBOARD CHARTS GRID */
+        .charts-row-full {
+            width: 100%;
+        }
+
+        .charts-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .charts-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chart-box {
+            background: var(--bg-card);
+            padding: 26px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: var(--transition-smooth);
+        }
+
+        .chart-box:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .chart-box h3 {
+            font-size: 16px;
+            font-weight: 750;
+            color: #1b4332;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        /* TABLE VIEW */
+        .table-box {
+            background: var(--bg-card);
+            padding: 26px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .table-header h2 {
+            font-size: 18px;
+            font-weight: 750;
+            color: #1b4332;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14.5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--text-muted);
+            font-weight: 750;
+            padding: 16px 20px;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.75px;
+        }
+
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr {
+            transition: var(--transition-smooth);
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* BADGES FOR TABLE CELLS */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-eixo-ensino { background: linear-gradient(120deg, #e8f5e9, #c8e6c9); color: #1b5e20; border: 1px solid rgba(27,94,32,0.1); }
+        .badge-eixo-pesquisa { background: linear-gradient(120deg, #f3e5f5, #e1bee7); color: #4a148c; border: 1px solid rgba(74,20,140,0.1); }
+        .badge-eixo-extensão { background: linear-gradient(120deg, #e3f2fd, #bbdefb); color: #0d47a1; border: 1px solid rgba(13,71,161,0.1); }
+        .badge-eixo-rh { background: linear-gradient(120deg, #fff3e0, #ffe0b2); color: #e65100; border: 1px solid rgba(230,81,0,0.1); }
+        .badge-eixo-institucional { background: linear-gradient(120deg, #f1f5f9, #e2e8f0); color: #475569; border: 1px solid rgba(71,85,105,0.1); }
+
+        .badge-abrangencia-nac { background: #ffebee; color: #c62828; border: 1px solid rgba(198,40,40,0.1); }
+        .badge-abrangencia-reg { background: #e0f2f1; color: #00695c; border: 1px solid rgba(0,105,92,0.1); }
+        .badge-abrangencia-gov { background: #f1f8e9; color: #33691e; border: 1px solid rgba(51,105,30,0.1); }
+        .badge-abrangencia-nicho { background: #ede7f6; color: #4527a0; border: 1px solid rgba(69,39,160,0.1); }
+        .badge-abrangencia-local { background: #eceff1; color: #37474f; border: 1px solid rgba(55,71,79,0.1); }
+
+        .badge-campus {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid var(--border-color);
+        }
+
+        .link-url {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+            font-size: 13.5px;
+        }
+
+        .link-url:hover {
+            color: #0369a1;
+            text-decoration: underline;
+        }
+
+        /* PAGINATION */
+        .paginacao {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .pag-info {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .pag-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .btn-pag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 38px;
+            min-width: 38px;
+            padding: 0 12px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-family: inherit;
+        }
+
+        .btn-pag:hover:not(:disabled) {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: var(--brand-primary);
+        }
+
+        .btn-pag.active {
+            background: var(--brand-gradient);
+            border-color: transparent;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(45, 106, 79, 0.15);
+        }
+
+        .btn-pag:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background-color: #f8fafc;
+        }
+        
+        .pag-ellipsis {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* LOADING */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+            gap: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        .spinner {
+            width: 54px;
+            height: 54px;
+            border: 4px solid var(--border-color);
+            border-top-color: var(--brand-primary);
+            border-radius: 50%;
+            animation: spin 0.85s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-content.active {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            .tabs-nav, .filter-panel, .paginacao, .loading-overlay, .header-actions, .no-print, th:last-child, td:last-child {
+                display: none !important;
+            }
+            body {
+                background: white;
+                padding: 0;
+                color: #000;
+            }
+            .container {
+                max-width: 100%;
+                margin: 0;
+            }
+            .chart-box, .stat-card, .table-box {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+                break-inside: avoid;
+                margin-bottom: 15px;
+            }
+            .tab-content {
+                display: block !important;
+            }
+            .tab-content:not(.active) {
+                display: block !important;
+            }
+            table {
+                font-size: 11px;
+            }
+            th, td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Global loading indicator -->
+<div id="loading-global" class="loading-overlay">
+    <div class="spinner"></div>
+    <div style="font-weight:600; color:var(--brand-primary)">Processando acervo de mídia...</div>
+</div>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <img src="https://github.com/ascomifbaiano/radar-ifbaiano/blob/main/marca-if-baiano-vertical.png?raw=true" alt="Logo IF Baiano" class="logo-if">
+            <div class="header-title">
+                <h1>📰 Analytics de Clipping Completo</h1>
+                <p>Monitoramento e Inteligência de Mídia do IF Baiano (v2 - Busca Expandida)</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button class="btn btn-accent" onclick="exportarCSV()">📥 Exportar Planilha Filtrada</button>
+            <button class="btn btn-primary" onclick="prepararEImprimir()">🖨️ Imprimir Relatório</button>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-nav">
+        <button class="tab-btn active" id="tab-btn-metrics" onclick="abrirAba('aba-metricas')">📈 Painel Estatístico</button>
+        <button class="tab-btn" id="tab-btn-table" onclick="abrirAba('aba-tabela')">🗃️ Acervo de Notícias</button>
+        <button class="tab-btn" id="tab-btn-somos" onclick="abrirAba('aba-somos')">🏷️ Nós Somos o IF Baiano</button>
+    </div>
+
+    <!-- Filter Control Panel -->
+    <div class="filter-panel">
+        <div class="filter-row">
+            <div class="filter-select-group" style="flex: 0 0 100%;">
+                <label>Selecione o Ano do Acervo</label>
+                <div class="year-filters" id="clipping-years-container"></div>
+            </div>
+        </div>
+        
+        <div class="filter-selects">
+            <div class="search-box-container">
+                <label for="inputBusca">Pesquisar Título ou Veículo</label>
+                <div class="search-input-wrapper">
+                    <input type="text" id="inputBusca" placeholder="Ex: concurso, reitor, esporte, Alagoinhas..." onkeyup="aplicarFiltros()">
+                    <button class="search-clear-btn" id="search-clear-btn" onclick="limparBusca()">✕</button>
+                </div>
+            </div>
+
+            <div class="filter-select-group">
+                <label for="selectCampus">Campus / Cidade</label>
+                <select id="selectCampus" onchange="aplicarFiltros()">
+                    <option value="">Todos os Campi / Geral</option>
+                </select>
+            </div>
+
+            <div class="filter-select-group">
+                <label for="selectEixo">Eixo Temático</label>
+                <select id="selectEixo" onchange="aplicarFiltros()">
+                    <option value="">Todos os Eixos</option>
+                    <option value="Ensino">Ensino</option>
+                    <option value="Pesquisa">Pesquisa</option>
+                    <option value="Extensão">Extensão</option>
+                    <option value="Gestão e RH">Gestão e RH</option>
+                    <option value="Institucional">Institucional</option>
+                </select>
+            </div>
+
+            <div class="filter-select-group">
+                <label for="selectAbrangencia">Abrangência</label>
+                <select id="selectAbrangencia" onchange="aplicarFiltros()">
+                    <option value="">Todas as Abrangências</option>
+                    <option value="Imprensa Local">Imprensa Local</option>
+                    <option value="Imprensa Regional (Bahia)">Imprensa Regional (Bahia)</option>
+                    <option value="Imprensa (Nacional)">Imprensa (Nacional)</option>
+                    <option value="Institucional / Governamental">Institucional / Governamental</option>
+                    <option value="Especializados (Nichos)">Especializados (Nichos)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Metrics View (Dashboard) -->
+    <div id="aba-metricas" class="tab-content active">
+        <!-- Key KPIs -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total de Menções</h3>
+                <div id="kpi-total" class="valor">-</div>
+                <div class="subtext">matérias coletadas no período</div>
+            </div>
+            <div class="stat-card accent-blue">
+                <h3>Veículos de Imprensa</h3>
+                <div id="kpi-veiculos" class="valor">-</div>
+                <div class="subtext">portais de notícias únicos</div>
+            </div>
+            <div class="stat-card accent-orange">
+                <h3>Campus Mais Citado</h3>
+                <div id="kpi-top-campus" class="valor">-</div>
+                <div class="subtext">líder em espaço na mídia</div>
+            </div>
+            <div class="stat-card accent-red">
+                <h3>Eixo Temático Principal</h3>
+                <div id="kpi-top-eixo" class="valor">-</div>
+                <div class="subtext">pauta institucional mais forte</div>
+            </div>
+        </div>
+
+        <!-- Trend Chart Evolution (Full Width) -->
+        <div class="charts-row-full">
+            <div class="chart-box">
+                <h3>📈 Evolução Mensal da Cobertura de Mídia</h3>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="chartEvolucao"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3-Column Grid for Distribution Charts -->
+        <div class="charts-grid-3">
+            <div class="chart-box">
+                <h3>🎯 Eixos Institucionais</h3>
+                <div class="chart-container">
+                    <canvas id="chartEixos"></canvas>
+                </div>
+            </div>
+            <div class="chart-box">
+                <h3>🌍 Alcance da Notícia (Abrangência)</h3>
+                <div class="chart-container">
+                    <canvas id="chartAbrangencia"></canvas>
+                </div>
+            </div>
+            <div class="chart-box">
+                <h3>📍 Menções por Campus / Cidade</h3>
+                <div class="chart-container">
+                    <canvas id="chartCampi"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Grid: Leaderboards and Tag Cloud -->
+        <div class="charts-grid-3" style="grid-template-columns: 2fr 1fr;">
+            <div class="chart-box">
+                <h3>🏆 Top 10 Veículos de Notícia mais Ativos</h3>
+                <div class="chart-container">
+                    <canvas id="chartVeiculos"></canvas>
+                </div>
+            </div>
+            <div class="keywords-card">
+                <h3>🏷️ Palavras-Chave Frequentes nos Títulos</h3>
+                <div class="subtext" style="margin-top: -10px; margin-bottom: 5px;">Clique em uma tag para filtrar a pesquisa</div>
+                <div id="tags-cloud-container" class="tags-container">
+                    <!-- Palavras frequentes dinâmicas -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table View (Acervo) -->
+    <div id="aba-tabela" class="tab-content">
+        <div class="table-box">
+            <div class="table-header">
+                <h2 id="table-title">Registros Encontrados (Carregando...)</h2>
+            </div>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="100">Data</th>
+                            <th width="140">Campus</th>
+                            <th width="140">Eixo</th>
+                            <th width="150">Abrangência</th>
+                            <th width="200">Veículo</th>
+                            <th>Assunto</th>
+                            <th width="100" class="no-print">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-corpo"></tbody>
+                </table>
+            </div>
+
+            <!-- Pagination controls -->
+            <div class="paginacao">
+                <div class="pag-info" id="info-pag">Exibindo 0 registros</div>
+                <div class="pag-controls" id="pag-controls-container">
+                    <!-- Botões de páginas dinâmicos -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nós Somos o IF Baiano (Correções) -->
+    <div id="aba-somos" class="tab-content">
+        <div class="filter-panel" style="border-left-color: var(--brand-accent); background-color: #fff5f5;">
+            <div style="display:flex; align-items:center; gap:16px;">
+                <span style="font-size:32px;">📢</span>
+                <div>
+                    <h3 style="color:var(--brand-accent); font-weight:800; font-size:18px;">Espaço de Identidade e Correção Histórica</h3>
+                    <p style="color:var(--text-muted); font-size:14px; margin-top:2px;">
+                        Esta aba reúne todas as notícias capturadas onde jornais e portais de notícias se referiram incorretamente ao <strong>IF Baiano</strong> utilizando o termo <strong>IFBA</strong> ou <strong>Instituto Federal da Bahia</strong>. 
+                        Estas menções ocorrem frequentemente em cidades onde apenas o IF Baiano atua.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-box">
+            <div class="table-header">
+                <h2 id="somos-table-title" style="color: var(--brand-accent);">Menções Incorretas Detectadas (0)</h2>
+            </div>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="100">Data</th>
+                            <th width="160">Campus Afetado</th>
+                            <th width="200">Veículo / Portal</th>
+                            <th>Título da Matéria (Como foi publicado)</th>
+                            <th width="160">Termo Incorreto Lido</th>
+                            <th width="100" class="no-print">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="somos-tabela-corpo"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const ts = new Date().getTime();
+    let statsGlobais = {};
+    let cacheDados = {}; 
+    let dadosOriginais = []; // Dados originais do ano ativo
+    let dadosFiltrados = [];  // Dados após filtros aplicados
+    
+    let anoAtivo = '';
+    let abaAtiva = 'aba-metricas';
+    let paginaAtual = 1;
+    const itensPorPagina = 25; 
+    let graficos = {};
+    let tagAtiva = '';
+
+    // Stop words para a nuvem de palavras em português
+    const stopWords = new Set([
+        'de', 'a', 'o', 'que', 'e', 'do', 'da', 'em', 'um', 'para', 'é', 'com', 'não', 'uma', 'os', 'no', 'se', 'na', 'por', 
+        'mais', 'as', 'dos', 'das', 'como', 'mas', 'foi', 'ao', 'ele', 'pelo', 'pela', 'até', 'isso', 'ela', 'entre', 'depois', 
+        'sem', 'mesmo', 'aos', 'seus', 'suas', 'sobre', 'aberto', 'abertas', 'abre', 'vagas', 'vaga', 'concurso', 'processo', 
+        'seletivo', 'seleção', 'professor', 'substituto', 'inscrições', 'estágio', 'cursos', 'técnicos', 'superior', 'baiano', 
+        'federal', 'instituto', 'if', 'nas', 'nos', 'sob', 'o', 'a', 'os', 'as', 'em', 'um', 'uma', 'uns', 'umas', 'da', 'das', 
+        'de', 'do', 'dos', 'no', 'na', 'nos', 'nas', 'ao', 'aos', 'pelo', 'pelos', 'pela', 'pelas', 'com', 'sem', 'por', 'para'
+    ]);
+
+    async function iniciar() {
+        showLoading(true);
+        try {
+            // Configurações globais de estilo para o Chart.js
+            if (window.Chart) {
+                Chart.defaults.font.family = "'Outfit', sans-serif";
+                Chart.defaults.font.size = 12;
+                Chart.defaults.color = "#64748b";
+                Chart.defaults.plugins.tooltip.backgroundColor = "rgba(15, 23, 42, 0.9)";
+                Chart.defaults.plugins.tooltip.titleFont = { family: "'Outfit', sans-serif", weight: 'bold' };
+                Chart.defaults.plugins.tooltip.bodyFont = { family: "'Outfit', sans-serif" };
+                Chart.defaults.plugins.tooltip.padding = 12;
+                Chart.defaults.plugins.tooltip.cornerRadius = 8;
+            }
+            const r = await fetch(`data/stats.json?v=${ts}`);
+            statsGlobais = await r.json();
+            
+            // Popula lista de anos disponíveis nos botões de filtro
+            const anos = Object.keys(statsGlobais).sort((a, b) => {
+                if (a === 'geral') return 1;
+                if (b === 'geral') return -1;
+                if (a === 'ate_2021') return 1;
+                if (b === 'ate_2021') return -1;
+                return parseInt(b) - parseInt(a);
+            });
+
+            const container = document.getElementById('clipping-years-container');
+            container.innerHTML = ''; 
+            anos.forEach(a => {
+                let label = a === 'ate_2021' ? 'Até 2021' : (a === 'geral' ? '🌍 Acervo Completo' : a);
+                let classe = (a === 'geral') ? 'btn-year especial' : 'btn-year';
+                container.innerHTML += `<button class="${classe}" id="btn-${a}" onclick="selecionarAno('${a}')">${label}</button>`;
+            });
+
+            if (anos.length > 0) {
+                await selecionarAno(anos[0]);
+            }
+        } catch (e) { 
+            console.error("Erro ao iniciar painel:", e); 
+        }
+        showLoading(false);
+    }
+
+    async function selecionarAno(ano) {
+        anoAtivo = ano;
+        document.querySelectorAll('.btn-year').forEach(b => b.classList.remove('active'));
+        const btn = document.getElementById(`btn-${ano}`);
+        if(btn) btn.classList.add('active');
+
+        // Carrega o CSV correspondente
+        await carregarCSVDoAno(ano);
+        
+        // Popula o seletor de Campi baseado nos dados carregados
+        popularSeletorCampi();
+        
+        // Reseta filtros secundários e aplica
+        document.getElementById('selectCampus').value = '';
+        document.getElementById('selectEixo').value = '';
+        document.getElementById('selectAbrangencia').value = '';
+        document.getElementById('inputBusca').value = '';
+        tagAtiva = '';
+        
+        aplicarFiltros();
+    }
+
+    async function carregarCSVDoAno(ano) {
+        if (cacheDados[ano]) {
+            dadosOriginais = cacheDados[ano];
+            return;
+        }
+        showLoading(true);
+        return new Promise((resolve, reject) => {
+            Papa.parse(`data/clipping_${ano}.csv?v=${ts}`, {
+                download: true, 
+                header: true, 
+                skipEmptyLines: true,
+                complete: (res) => {
+                    // Ordena da notícia mais recente para a mais antiga (data decrescente)
+                    res.data.sort((a, b) => {
+                        const dataA = a.data ? a.data.trim() : "";
+                        const dataB = b.data ? b.data.trim() : "";
+                        return dataB.localeCompare(dataA);
+                    });
+                    cacheDados[ano] = res.data;
+                    dadosOriginais = res.data;
+                    showLoading(false);
+                    resolve();
+                },
+                error: (err) => {
+                    console.error("Erro PapaParse:", err);
+                    showLoading(false);
+                    reject(err);
+                }
+            });
+        });
+    }
+
+    function popularSeletorCampi() {
+        const campi = new Set();
+        dadosOriginais.forEach(row => {
+            if(row.campus && row.campus.trim() !== "") {
+                campi.add(row.campus.trim());
+            }
+        });
+
+        const select = document.getElementById('selectCampus');
+        select.innerHTML = '<option value="">Todos os Campi / Geral</option>';
+        
+        // Ordena os campi alfabeticamente, colocando 'Geral / Não Especificado' e 'Reitoria' no final ou topo
+        const ordenados = Array.from(campi).sort((a,b) => {
+            if(a.startsWith('Geral')) return 1;
+            if(b.startsWith('Geral')) return -1;
+            if(a.startsWith('Reitoria')) return -1;
+            if(b.startsWith('Reitoria')) return 1;
+            return a.localeCompare(b);
+        });
+
+        ordenados.forEach(c => {
+            select.innerHTML += `<option value="${c}">${c}</option>`;
+        });
+    }
+
+    function aplicarFiltros() {
+        const termoBusca = document.getElementById('inputBusca').value.toLowerCase().trim();
+        const campusFiltro = document.getElementById('selectCampus').value;
+        const eixoFiltro = document.getElementById('selectEixo').value;
+        const abrangenciaFiltro = document.getElementById('selectAbrangencia').value;
+
+        // Exibe botão de limpar busca se houver busca digitada
+        const clearBtn = document.getElementById('search-clear-btn');
+        if (termoBusca) {
+            clearBtn.style.display = 'block';
+        } else {
+            clearBtn.style.display = 'none';
+        }
+
+        // Filtra a base original do ano
+        dadosFiltrados = dadosOriginais.filter(row => {
+            // Filtro textual (Assunto ou Veículo)
+            const matchTexto = termoBusca === "" || 
+                (row.assunto && row.assunto.toLowerCase().includes(termoBusca)) || 
+                (row.veiculo && row.veiculo.toLowerCase().includes(termoBusca));
+            
+            // Filtro por Tag de palavra-chave
+            const matchTag = tagAtiva === "" || 
+                (row.assunto && row.assunto.toLowerCase().includes(tagAtiva));
+
+            // Filtro de Campus
+            const matchCampus = campusFiltro === "" || row.campus === campusFiltro;
+
+            // Filtro de Eixo
+            const matchEixo = eixoFiltro === "" || row.eixo_institucional === eixoFiltro;
+
+            // Filtro de Abrangência
+            const matchAbrangencia = abrangenciaFiltro === "" || row.abrangencia === abrangenciaFiltro;
+
+            return matchTexto && matchTag && matchCampus && matchEixo && matchAbrangencia;
+        });
+
+        paginaAtual = 1;
+        
+        // Atualiza KPIs, Gráficos, Nuvem e Tabela
+        recalcularKPIs();
+        atualizarGraficos();
+        gerarNuvemPalavras();
+        renderizarTabela();
+        if(abaAtiva === 'aba-somos') {
+            renderizarTabelaSomos();
+        }
+    }
+
+    function recalcularKPIs() {
+        document.getElementById('kpi-total').innerText = dadosFiltrados.length;
+        
+        // Calcula veículos únicos
+        const veiculos = new Set();
+        const eixosContagem = {};
+        const campusContagem = {};
+
+        dadosFiltrados.forEach(row => {
+            if(row.veiculo) veiculos.add(row.veiculo.trim());
+            if(row.eixo_institucional) {
+                eixosContagem[row.eixo_institucional] = (eixosContagem[row.eixo_institucional] || 0) + 1;
+            }
+            if(row.campus && row.campus !== 'Geral / Não Especificado') {
+                campusContagem[row.campus] = (campusContagem[row.campus] || 0) + 1;
+            }
+        });
+
+        document.getElementById('kpi-veiculos').innerText = veiculos.size;
+
+        // Top Campus
+        let topCampus = 'Nenhum';
+        let maxCampusCount = 0;
+        for (const [c, count] of Object.entries(campusContagem)) {
+            if (count > maxCampusCount) {
+                maxCampusCount = count;
+                topCampus = c;
+            }
+        }
+        document.getElementById('kpi-top-campus').innerText = maxCampusCount > 0 ? `${topCampus} (${maxCampusCount})` : 'N/A';
+
+        // Top Eixo
+        let topEixo = 'Nenhum';
+        let maxEixoCount = 0;
+        let totalEixos = 0;
+        for (const [e, count] of Object.entries(eixosContagem)) {
+            totalEixos += count;
+            if (count > maxEixoCount) {
+                maxEixoCount = count;
+                topEixo = e;
+            }
+        }
+        
+        if (maxEixoCount > 0 && totalEixos > 0) {
+            const pct = Math.round((maxEixoCount / totalEixos) * 100);
+            document.getElementById('kpi-top-eixo').innerText = `${topEixo} (${pct}%)`;
+        } else {
+            document.getElementById('kpi-top-eixo').innerText = 'N/A';
+        }
+    }
+
+    function gerarNuvemPalavras() {
+        const wordCounts = {};
+        dadosFiltrados.forEach(row => {
+            if(!row.assunto) return;
+            // Limpa pontuações comuns
+            const palavras = row.assunto
+                .toLowerCase()
+                .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'’]/g, "")
+                .split(/\s+/);
+            
+            palavras.forEach(p => {
+                if(p.length > 3 && !stopWords.has(p)) {
+                    wordCounts[p] = (wordCounts[p] || 0) + 1;
+                }
+            });
+        });
+
+        // Ordena por frequência
+        const sortedWords = Object.entries(wordCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 12);
+
+        const container = document.getElementById('tags-cloud-container');
+        container.innerHTML = '';
+
+        if(sortedWords.length === 0) {
+            container.innerHTML = '<span style="color:var(--text-muted); font-size:13px">Sem palavras suficientes para gerar tags.</span>';
+            return;
+        }
+
+        sortedWords.forEach(([word, count]) => {
+            const isActive = tagAtiva === word ? 'active' : '';
+            container.innerHTML += `<span class="tag-word ${isActive}" onclick="toggleTagFiltro('${word}')">${word} (${count})</span>`;
+        });
+    }
+
+    function toggleTagFiltro(word) {
+        if (tagAtiva === word) {
+            tagAtiva = '';
+        } else {
+            tagAtiva = word;
+        }
+        aplicarFiltros();
+    }
+
+    function limparBusca() {
+        document.getElementById('inputBusca').value = '';
+        tagAtiva = '';
+        aplicarFiltros();
+    }
+
+    function renderizarTabela() {
+        const tbody = document.getElementById('tabela-corpo');
+        tbody.innerHTML = '';
+        const pagContainer = document.getElementById('pag-controls-container');
+        pagContainer.innerHTML = '';
+
+        if(dadosFiltrados.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 40px; color: var(--text-muted);">Nenhuma notícia encontrada para os filtros selecionados.</td></tr>`;
+            document.getElementById('info-pag').innerText = `Nenhum registro`;
+            document.getElementById('table-title').innerText = `Registros Encontrados (0)`;
+            return;
+        }
+
+        document.getElementById('table-title').innerText = `Registros Encontrados (${dadosFiltrados.length})`;
+
+        const totalPags = Math.ceil(dadosFiltrados.length / itensPorPagina);
+        const inicio = (paginaAtual - 1) * itensPorPagina;
+        const fim = Math.min(inicio + itensPorPagina, dadosFiltrados.length);
+        
+        const itensExibidos = dadosFiltrados.slice(inicio, fim);
+
+        tbody.innerHTML = itensExibidos.map(i => {
+            // Eixo Badge Class
+            let classeEixo = 'badge-eixo-institucional';
+            const e = i.eixo_institucional;
+            if(e === 'Ensino') classeEixo = 'badge-eixo-ensino';
+            else if(e === 'Pesquisa') classeEixo = 'badge-eixo-pesquisa';
+            else if(e === 'Extensão') classeEixo = 'badge-eixo-extensão';
+            else if(e === 'Gestão e RH') classeEixo = 'badge-eixo-rh';
+
+            // Abrangência Badge Class
+            let classeAbr = 'badge-abrangencia-local';
+            const a = i.abrangencia;
+            if(a === 'Imprensa (Nacional)') classeAbr = 'badge-abrangencia-nac';
+            else if(a === 'Imprensa Regional (Bahia)') classeAbr = 'badge-abrangencia-reg';
+            else if(a === 'Institucional / Governamental') classeAbr = 'badge-abrangencia-gov';
+            else if(a === 'Especializados (Nichos)') classeAbr = 'badge-abrangencia-nicho';
+
+            // Data formatada dd/mm/aaaa
+            const dataFmt = i.data ? i.data.split('-').reverse().join('/') : 'N/A';
+
+            return `
+                <tr>
+                    <td style="font-weight: 500; color: #475569;">${dataFmt}</td>
+                    <td><span class="badge badge-campus">${i.campus || 'Geral'}</span></td>
+                    <td><span class="badge ${classeEixo}">${i.eixo_institucional || 'Outros'}</span></td>
+                    <td><span class="badge ${classeAbr}">${i.abrangencia || 'Mídia Local'}</span></td>
+                    <td style="color: #475569; font-weight:600;">${i.veiculo || 'Mídia Externa'}</td>
+                    <td style="font-weight:500; color: var(--text-main); font-size:14.5px;">${i.assunto}</td>
+                    <td class="no-print"><a href="${i.link}" target="_blank" class="link-url">Acessar ↗</a></td>
+                </tr>
+            `;
+        }).join('');
+
+        document.getElementById('info-pag').innerText = `Exibindo de ${inicio + 1} a ${fim} de ${dadosFiltrados.length} notícias`;
+        
+        atualizarBotoesPaginacao(totalPags);
+    }
+
+    function irParaPagina(p) {
+        paginaAtual = p;
+        renderizarTabela();
+        document.querySelector('.table-box').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function atualizarBotoesPaginacao(totalPags) {
+        const container = document.getElementById('pag-controls-container');
+        container.innerHTML = '';
+        
+        if (totalPags <= 1) return;
+        
+        // Botão Primeira
+        const btnFirst = document.createElement('button');
+        btnFirst.className = 'btn-pag';
+        btnFirst.innerHTML = '«';
+        btnFirst.title = 'Primeira Página';
+        btnFirst.disabled = paginaAtual === 1;
+        btnFirst.onclick = () => irParaPagina(1);
+        container.appendChild(btnFirst);
+        
+        // Botão Anterior
+        const btnPrev = document.createElement('button');
+        btnPrev.className = 'btn-pag';
+        btnPrev.innerHTML = '◀';
+        btnPrev.title = 'Página Anterior';
+        btnPrev.disabled = paginaAtual === 1;
+        btnPrev.onclick = () => irParaPagina(paginaAtual - 1);
+        container.appendChild(btnPrev);
+        
+        // Determina páginas visíveis
+        const maxVisiblePages = 5;
+        let startPage = Math.max(1, paginaAtual - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPags, startPage + maxVisiblePages - 1);
+        
+        if (endPage - startPage + 1 < maxVisiblePages) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+        
+        // Sempre mostra a primeira página se não estiver no intervalo
+        if (startPage > 1) {
+            const btnPage = document.createElement('button');
+            btnPage.className = `btn-pag`;
+            btnPage.innerHTML = 1;
+            btnPage.onclick = () => irParaPagina(1);
+            container.appendChild(btnPage);
+            
+            if (startPage > 2) {
+                const el = document.createElement('span');
+                el.className = 'pag-ellipsis';
+                el.innerHTML = '...';
+                container.appendChild(el);
+            }
+        }
+        
+        for (let p = startPage; p <= endPage; p++) {
+            const btnPage = document.createElement('button');
+            btnPage.className = `btn-pag ${p === paginaAtual ? 'active' : ''}`;
+            btnPage.innerHTML = p;
+            btnPage.onclick = () => irParaPagina(p);
+            container.appendChild(btnPage);
+        }
+        
+        // Sempre mostra a última página se não estiver no intervalo
+        if (endPage < totalPags) {
+            if (endPage < totalPags - 1) {
+                const el = document.createElement('span');
+                el.className = 'pag-ellipsis';
+                el.innerHTML = '...';
+                container.appendChild(el);
+            }
+            
+            const btnPage = document.createElement('button');
+            btnPage.className = `btn-pag`;
+            btnPage.innerHTML = totalPags;
+            btnPage.onclick = () => irParaPagina(totalPags);
+            container.appendChild(btnPage);
+        }
+        
+        // Botão Próxima
+        const btnNext = document.createElement('button');
+        btnNext.className = 'btn-pag';
+        btnNext.innerHTML = '▶';
+        btnNext.title = 'Próxima Página';
+        btnNext.disabled = paginaAtual === totalPags;
+        btnNext.onclick = () => irParaPagina(paginaAtual + 1);
+        container.appendChild(btnNext);
+        
+        // Botão Última
+        const btnLast = document.createElement('button');
+        btnLast.className = 'btn-pag';
+        btnLast.innerHTML = '»';
+        btnLast.title = 'Última Página';
+        btnLast.disabled = paginaAtual === totalPags;
+        btnLast.onclick = () => irParaPagina(totalPags);
+        container.appendChild(btnLast);
+    }
+
+    // CHARTS RENDERING & DYNAMIC UPDATE
+    function atualizarGraficos() {
+        // 1. Processamento dos dados filtrados para gráficos
+        const eixosCounts = {};
+        const abrangenciaCounts = {};
+        const veiculosCounts = {};
+        const campiCounts = {};
+        const mesesCounts = Array(12).fill(0);
+
+        dadosFiltrados.forEach(row => {
+            // Eixos
+            if (row.eixo_institucional) {
+                eixosCounts[row.eixo_institucional] = (eixosCounts[row.eixo_institucional] || 0) + 1;
+            }
+            // Abrangencia
+            if (row.abrangencia) {
+                abrangenciaCounts[row.abrangencia] = (abrangenciaCounts[row.abrangencia] || 0) + 1;
+            }
+            // Veículos
+            if (row.veiculo) {
+                veiculosCounts[row.veiculo] = (veiculosCounts[row.veiculo] || 0) + 1;
+            }
+            // Campus
+            if (row.campus) {
+                campiCounts[row.campus] = (campiCounts[row.campus] || 0) + 1;
+            }
+            // Sazonalidade / Evolução (Data: AAAA-MM-DD)
+            if (row.data && row.data.length >= 7) {
+                const mesIdx = parseInt(row.data.substring(5, 7)) - 1;
+                if (mesIdx >= 0 && mesIdx < 12) {
+                    mesesCounts[mesIdx]++;
+                }
+            }
+        });
+
+        // 2. Gráfico de Evolução Temporal (Line Chart)
+        renderChart('chartEvolucao', 'line', {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+            datasets: [{
+                label: 'Menções de Mídia',
+                data: mesesCounts,
+                borderColor: '#2d6a4f',
+                backgroundColor: 'rgba(45, 106, 79, 0.08)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.3,
+                pointBackgroundColor: '#2d6a4f',
+                pointRadius: 4
+            }]
+        }, {
+            plugins: { legend: { display: false } },
+            maintainAspectRatio: false
+        });
+
+        // 3. Gráfico de Eixos (Doughnut Chart)
+        const sortedEixos = Object.entries(eixosCounts).sort((a,b) => b[1] - a[1]);
+        renderChart('chartEixos', 'doughnut', {
+            labels: sortedEixos.map(x => x[0]),
+            datasets: [{
+                data: sortedEixos.map(x => x[1]),
+                backgroundColor: ['#2d6a4f', '#8338ec', '#0284c7', '#f97316', '#64748b']
+            }]
+        }, {
+            plugins: { legend: { position: 'bottom', labels: { boxWidth: 12 } } },
+            maintainAspectRatio: false
+        });
+
+        // 4. Gráfico de Abrangência (Pie Chart)
+        const sortedAbr = Object.entries(abrangenciaCounts).sort((a,b) => b[1] - a[1]);
+        renderChart('chartAbrangencia', 'pie', {
+            labels: sortedAbr.map(x => x[0]),
+            datasets: [{
+                data: sortedAbr.map(x => x[1]),
+                backgroundColor: ['#00695c', '#582f0e', '#d90429', '#475569', '#2d6a4f']
+            }]
+        }, {
+            plugins: { legend: { position: 'bottom', labels: { boxWidth: 12 } } },
+            maintainAspectRatio: false
+        });
+
+        // 5. Gráfico de Campi (Horizontal Bar Chart)
+        // Excluindo "Geral" para ficar mais interessante, ou exibindo-o
+        const sortedCampi = Object.entries(campiCounts)
+            .sort((a,b) => b[1] - a[1])
+            .slice(0, 8); // Top 8 Campi
+        renderChart('chartCampi', 'bar', {
+            labels: sortedCampi.map(x => x[0]),
+            datasets: [{
+                label: 'Menções',
+                data: sortedCampi.map(x => x[1]),
+                backgroundColor: '#2d6a4f',
+                borderRadius: 4
+            }]
+        }, {
+            indexAxis: 'y',
+            plugins: { legend: { display: false } },
+            scales: { x: { grid: { display: false } } },
+            maintainAspectRatio: false
+        });
+
+        // 6. Gráfico de Top Veículos (Horizontal Bar Chart)
+        const sortedVeiculos = Object.entries(veiculosCounts)
+            .sort((a,b) => b[1] - a[1])
+            .slice(0, 10); // Top 10 veículos
+        renderChart('chartVeiculos', 'bar', {
+            labels: sortedVeiculos.map(x => x[0]),
+            datasets: [{
+                label: 'Publicações',
+                data: sortedVeiculos.map(x => x[1]),
+                backgroundColor: '#0284c7',
+                borderRadius: 4
+            }]
+        }, {
+            indexAxis: 'y',
+            plugins: { legend: { display: false } },
+            scales: { x: { grid: { display: false } } },
+            maintainAspectRatio: false
+        });
+    }
+
+    function renderChart(id, type, data, options = {}) {
+        if (graficos[id]) {
+            graficos[id].destroy();
+        }
+        const ctx = document.getElementById(id).getContext('2d');
+        graficos[id] = new Chart(ctx, {
+            type: type,
+            data: data,
+            options: options
+        });
+    }
+
+    // EXPORT FILTERED DATA TO CSV
+    function exportarCSV() {
+        if (dadosFiltrados.length === 0) {
+            alert("Não há dados para exportar com os filtros atuais.");
+            return;
+        }
+
+        // Cabeçalhos do CSV
+        const headers = ["Data", "Campus", "Eixo Temático", "Abrangência", "Veículo", "Assunto/Título", "Link Notícia"];
+        
+        // Converte linhas
+        const csvRows = [headers.join(",")];
+        dadosFiltrados.forEach(row => {
+            const dataFmt = row.data ? row.data.split('-').reverse().join('/') : '';
+            const values = [
+                dataFmt,
+                row.campus || 'Geral',
+                row.eixo_institucional || '',
+                row.abrangencia || '',
+                row.veiculo || '',
+                // Escapa aspas para evitar quebra no CSV
+                `"${(row.assunto || '').replace(/"/g, '""')}"`,
+                row.link || ''
+            ];
+            csvRows.push(values.join(","));
+        });
+
+        const csvContent = "\uFEFF" + csvRows.join("\n"); // Adiciona BOM para caracteres especiais do Português (acentos)
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", `clipping_ifbaiano_${anoAtivo}_filtrado.csv`);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    async function prepararEImprimir() {
+        showLoading(true);
+        // Exibe a aba da tabela
+        abrirAba('aba-tabela');
+        // Renderiza a tabela inteira (sem limite de paginação para imprimir completo)
+        const tbody = document.getElementById('tabela-corpo');
+        
+        tbody.innerHTML = dadosFiltrados.map(i => {
+            let classeEixo = 'badge-eixo-institucional';
+            const e = i.eixo_institucional;
+            if(e === 'Ensino') classeEixo = 'badge-eixo-ensino';
+            else if(e === 'Pesquisa') classeEixo = 'badge-eixo-pesquisa';
+            else if(e === 'Extensão') classeEixo = 'badge-eixo-extensão';
+            else if(e === 'Gestão e RH') classeEixo = 'badge-eixo-rh';
+
+            let classeAbr = 'badge-abrangencia-local';
+            const a = i.abrangencia;
+            if(a === 'Imprensa (Nacional)') classeAbr = 'badge-abrangencia-nac';
+            else if(a === 'Imprensa Regional (Bahia)') classeAbr = 'badge-abrangencia-reg';
+            else if(a === 'Institucional / Governamental') classeAbr = 'badge-abrangencia-gov';
+            else if(a === 'Especializados (Nichos)') classeAbr = 'badge-abrangencia-nicho';
+
+            const dataFmt = i.data ? i.data.split('-').reverse().join('/') : 'N/A';
+
+            return `
+                <tr>
+                    <td style="font-weight: 500;">${dataFmt}</td>
+                    <td><span class="badge badge-campus">${i.campus || 'Geral'}</span></td>
+                    <td><span class="badge ${classeEixo}">${i.eixo_institucional || 'Outros'}</span></td>
+                    <td><span class="badge ${classeAbr}">${i.abrangencia || 'Mídia Local'}</span></td>
+                    <td style="font-weight: 600;">${i.veiculo || 'Mídia Externa'}</td>
+                    <td>${i.assunto}</td>
+                    <td class="no-print"><a href="${i.link}" target="_blank" class="link-url">Link</a></td>
+                </tr>
+            `;
+        }).join('');
+
+        // Atraso para renderizar no DOM antes do print do navegador
+        setTimeout(() => {
+            window.print();
+            // Restaura paginação da tabela
+            renderizarTabela();
+            showLoading(false);
+        }, 1000);
+    }
+
+    function ehConfusao(row) {
+        const titulo = (row.assunto || '').toLowerCase();
+        const veiculo = (row.veiculo || '').toLowerCase();
+        const campus = row.campus || '';
+        
+        // Verifica se o título contém "ifba" (mas não "ifbaiano") ou "instituto federal da bahia"
+        const regexIfba = /\bifba(?!iano)\b/i;
+        const hasIfbaIsolated = regexIfba.test(titulo) || titulo.includes('instituto federal da bahia');
+        
+        // Se contém IFBA ou IF da Bahia, mas não contém as grafias corretas do IF Baiano
+        const hasIfbaiano = titulo.includes('if baiano') || titulo.includes('ifbaiano') || titulo.includes('instituto federal baiano') || titulo.includes('ifbaiana') || titulo.includes('if baiana') || titulo.includes('federal baiano');
+        
+        if (!hasIfbaIsolated || hasIfbaiano) return false;
+        
+        // Cidades exclusivas do IF Baiano (Valença e Salvador não estão aqui)
+        const cidadesExclusivas = [
+            'Alagoinhas', 'Bom Jesus da Lapa', 'Catu', 'Governador Mangabeira', 'Guanambi', 
+            'Itaberaba', 'Itapetinga', 'Santa Inês', 'Senhor do Bonfim', 'Serrinha', 
+            'Teixeira de Freitas', 'Uruçuca', 'Xique-Xique', 'Santo Estêvão', 'Ribeira do Pombal', 
+            'Remanso', 'Ruy Barbosa'
+        ];
+        
+        // Regra 1: Se cita explicitamente um campus exclusivo, é 100% erro
+        if (cidadesExclusivas.includes(campus)) return true;
+        
+        // Regra 2: Se for Valença (onde ambos possuem campus)
+        if (campus === 'Valença') {
+            // Cursos e áreas típicas do IF Baiano em Valença (Agropecuária, Meio Ambiente, etc.)
+            const termosValencaBaiano = ['agropecuária', 'agropecuaria', 'zootecnia', 'agronomia', 'agricultura', 'agroecologia', 'florestas', 'alimento', 'reitor', 'substituto', 'edital'];
+            return termosValencaBaiano.some(t => titulo.includes(t));
+        }
+        
+        // Regra 3: Se for Salvador (onde o IF Baiano possui apenas a Reitoria, e o IFBA possui reitoria e campus)
+        if (campus.includes('Reitoria') || campus.includes('Salvador')) {
+            // Se mencionar termos da Reitoria do IF Baiano mas associar a IFBA
+            const termosReitoriaBaiano = ['reitor', 'reitoria', 'licitação', 'licitacao', 'concurso'];
+            return termosReitoriaBaiano.some(t => titulo.includes(t));
+        }
+        
+        // Regra 4: Caso geral - se o título contém o nome de alguma cidade exclusiva no texto
+        const cidadesExclusivasLower = cidadesExclusivas.map(c => c.toLowerCase());
+        return cidadesExclusivasLower.some(c => titulo.includes(c));
+    }
+
+    function renderizarTabelaSomos() {
+        const confusões = dadosOriginais.filter(ehConfusao);
+        
+        const tbody = document.getElementById('somos-tabela-corpo');
+        document.getElementById('somos-table-title').innerText = `Menções Incorretas Detectadas (${confusões.length})`;
+        
+        if(confusões.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 40px; color: var(--text-muted);">Nenhuma menção incorreta detectada neste período. Parabéns aos portais! 👏</td></tr>`;
+            return;
+        }
+        
+        tbody.innerHTML = confusões.map(i => {
+            const dataFmt = i.data ? i.data.split('-').reverse().join('/') : 'N/A';
+            const titulo = i.assunto.toLowerCase();
+            let termoLido = 'IFBA / IF da Bahia';
+            if (titulo.includes('instituto federal da bahia')) {
+                termoLido = 'Instituto Federal da Bahia';
+            } else if (/\bifba(?!iano)\b/i.test(titulo)) {
+                termoLido = 'IFBA';
+            }
+            
+            return `
+                <tr>
+                    <td style="font-weight: 500; color: #475569;">${dataFmt}</td>
+                    <td><span class="badge badge-campus" style="background-color:#fee2e2; color:#991b1b; border-color:#fecaca;">📍 ${i.campus || 'Geral'}</span></td>
+                    <td style="color: #475569; font-weight:600;">${i.veiculo || 'Mídia Externa'}</td>
+                    <td style="font-weight:500; color: var(--text-main); font-size:14.5px;">
+                        <span style="text-decoration: line-through; color: var(--brand-accent); font-weight:normal; margin-right:6px;">[Confundido]</span> ${i.assunto}
+                    </td>
+                    <td><span class="badge" style="background-color:#fee2e2; color:#991b1b; border:1px solid #fecaca; font-weight:bold;">❌ ${termoLido}</span></td>
+                    <td class="no-print"><a href="${i.link}" target="_blank" class="link-url" style="color:var(--brand-accent);">Acessar ↗</a></td>
+                </tr>
+            `;
+        }).join('');
+    }
+
+    function abrirAba(id) {
+        abaAtiva = id;
+        document.querySelectorAll('.tab-content').forEach(a => a.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        if (id === 'aba-metricas') {
+            document.getElementById('tab-btn-metrics').classList.add('active');
+        } else if (id === 'aba-tabela') {
+            document.getElementById('tab-btn-table').classList.add('active');
+        } else if (id === 'aba-somos') {
+            document.getElementById('tab-btn-somos').classList.add('active');
+            renderizarTabelaSomos();
+        }
+    }
+
+    function showLoading(show) { 
+        document.getElementById('loading-global').style.display = show ? 'flex' : 'none'; 
+    }
+
+    // Inicia o painel
+    iniciar();
+</script>
+</body>
+</html>
