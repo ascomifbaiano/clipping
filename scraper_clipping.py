@@ -117,6 +117,68 @@ def resolver_url_direta(url_rss):
     except:
         return url_rss
 
+termos_diretos = [
+    'if baiano', 'ifbaiano', 'if-baiano', 'if.baiano', 'if_baiano', 
+    'instituto federal baiano', 'ifbaiana', 'if baiana', 
+    'instituto federal baiana', 'federal baiano'
+]
+
+cidades_exclusivas = [
+    'alagoinhas', 'bom jesus da lapa', 'lapa', 'catu', 'governador mangabeira', 'mangabeira', 
+    'guanambi', 'itaberaba', 'itapetinga', 'santa inês', 'santa ines', 'senhor do bonfim', 'bonfim', 
+    'serrinha', 'teixeira de freitas', 'teixeira', 'uruçuca', 'urucuca', 'xique-xique', 'xique xique', 
+    'santo estêvão', 'santo estevao', 'ribeira do pombal', 'pombal', 'remanso', 'ruy barbosa'
+]
+
+termos_valenca_baiano = [
+    'agropecuária', 'agropecuaria', 'zootecnia', 'agronomia', 
+    'agricultura', 'agroecologia', 'florestas', 'alimento', 
+    'reitor', 'substituto', 'edital', 'estudante do if baiano'
+]
+
+def e_valido_baiano(titulo, campus):
+    t = str(titulo).lower()
+    c = str(campus)
+    
+    # 1. Se tem menções explícitas ao IF Baiano, é sempre válido
+    if any(term in t for term in termos_diretos):
+        return True
+        
+    # 2. Se fala de IFBA ou Instituto Federal da Bahia, vamos ver se é uma confusão
+    has_ifba_term = 'ifba' in t or 'instituto federal da bahia' in t
+    if has_ifba_term:
+        # Confusão em cidades exclusivas do IF Baiano (onde não há IFBA)
+        if any(cid in t for cid in cidades_exclusivas) or c in [x.title() for x in cidades_exclusivas]:
+            return True
+            
+        # Confusão em Valença (onde existem ambos)
+        if 'valença' in t or 'valenca' in t or c == 'Valença':
+            if any(term in t for term in termos_valenca_baiano):
+                return True
+                
+        # Confusão na Reitoria / Salvador (Imbuí)
+        if 'imbuí' in t or 'imbui' in t:
+            return True
+            
+        return False # Legítimo do IFBA (desprezar)
+        
+    # 3. Se menciona "Instituto Federal" generico e tem campus associado
+    has_generic_if = 'instituto federal' in t or 'institutos federais' in t or 'federal de educação' in t or 'rede federal' in t
+    if has_generic_if:
+        if c != 'Geral / Não Especificado':
+            return True
+            
+    # 4. Se menciona "campus" ou "reitoria" + cidade/campus
+    has_campus_ref = 'campus' in t or 'campi' in t or 'reitoria' in t
+    if has_campus_ref:
+        if c != 'Geral / Não Especificado':
+            if c == 'Valença':
+                if 'ifba' in t:
+                    return any(term in t for term in termos_valenca_baiano)
+            return True
+
+    return False
+
 # ==========================================
 # 2. MOTOR DE CLIPPING
 # ==========================================
@@ -125,6 +187,17 @@ def processar_clipping():
     os.makedirs(DIR_DATA, exist_ok=True)
     
     links_conhecidos = set()
+    ARQUIVO_DESCARTADOS = os.path.join(DIR_DATA, 'links_descartados.txt')
+    if os.path.exists(ARQUIVO_DESCARTADOS):
+        try:
+            with open(ARQUIVO_DESCARTADOS, 'r', encoding='utf-8') as f:
+                for line in f:
+                    lnk = line.strip()
+                    if lnk:
+                        links_conhecidos.add(lnk)
+        except Exception as e:
+            print(f"Aviso ao ler {ARQUIVO_DESCARTADOS}: {e}")
+
     titulos_veiculos_conhecidos = set() 
     dfs_existentes = []
 
@@ -266,6 +339,24 @@ def processar_clipping():
         df_final['eixo_institucional'] = df_final['assunto'].apply(classificar_eixo)
         df_final['abrangencia'] = df_final['veiculo'].apply(classificar_abrangencia)
         df_final['campus'] = df_final.apply(lambda row: classificar_campus(row['assunto'], row['veiculo']), axis=1)
+        
+        # Filtra registros por relevância (remove ruídos e notícias legítimas do IFBA)
+        if not df_final.empty:
+            df_final['valido'] = df_final.apply(lambda r: e_valido_baiano(r['assunto'], r['campus']), axis=1)
+            
+            # Identifica e salva novos descartados
+            df_descartados = df_final[~df_final['valido']]
+            if not df_descartados.empty:
+                novos_descartados = df_descartados['link'].dropna().unique().tolist()
+                if novos_descartados:
+                    try:
+                        with open(ARQUIVO_DESCARTADOS, 'a', encoding='utf-8') as f:
+                            for l in novos_descartados:
+                                f.write(l + '\n')
+                    except Exception as e:
+                        print(f"Erro ao salvar links descartados: {e}")
+                        
+            df_final = df_final[df_final['valido']].drop(columns=['valido'])
         
         df_final['data'] = df_final['data'].astype(str)
         df_final['ano_num'] = df_final['data'].apply(lambda x: int(x[:4]) if len(x) >= 4 else 0)

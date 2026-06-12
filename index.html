@@ -1764,7 +1764,7 @@
         // Regra 3: Se for Salvador (onde o IF Baiano possui apenas a Reitoria, e o IFBA possui reitoria e campus)
         if (campus.includes('Reitoria') || campus.includes('Salvador')) {
             // Se mencionar termos da Reitoria do IF Baiano mas associar a IFBA
-            const termosReitoriaBaiano = ['reitor', 'reitoria', 'licitação', 'licitacao', 'concurso'];
+            const termosReitoriaBaiano = ['reitor', 'reitoria', 'licitação', 'licitacao', 'concurso', 'imbuí', 'imbui'];
             return termosReitoriaBaiano.some(t => titulo.includes(t));
         }
         

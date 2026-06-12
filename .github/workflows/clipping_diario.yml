@@ -36,6 +36,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Actions Scraper"
         git config --global user.email "actions@github.com"
+        # Adiciona a pasta data/ (incluindo CSVs, stats.json e a blacklist de descartados)
         git add data/
         # Só realiza o commit se houver modificações nos arquivos de dados
         if ! git diff --cached --quiet; then
