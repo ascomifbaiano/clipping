@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 745,
+    "total": 746,
     "eixos": {
-      "Gestão e RH": 436,
+      "Gestão e RH": 437,
       "Institucional": 143,
       "Ensino": 122,
       "Pesquisa": 28,
       "Extensão": 16
     },
     "abrangencia": {
-      "Imprensa Local": 470,
+      "Imprensa Local": 471,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 71,
       "Institucional / Governamental": 55,
@@ -31,7 +31,7 @@
       "05": 139,
       "12": 70,
       "01": 67,
-      "11": 66,
+      "11": 67,
       "04": 63,
       "10": 59,
       "09": 58,
@@ -46,7 +46,7 @@
       "Guanambi": 95,
       "Bom Jesus da Lapa": 59,
       "Teixeira de Freitas": 36,
-      "Alagoinhas": 33,
+      "Alagoinhas": 34,
       "Uruçuca": 27,
       "Catu": 24,
       "Valença": 19,
@@ -74,7 +74,7 @@
       },
       {
         "ano": 2024,
-        "total": 98
+        "total": 99
       },
       {
         "ano": 2023,
@@ -247,10 +247,10 @@
       "Notícias da Lapa": 3,
       "Blog Gran Cursos Online": 3,
       "Notícias de Bom Jesus da Lapa": 2,
+      "Jornal Nossa Voz": 2,
       "Pimenta Blog": 2,
-      "JC Concursos": 2,
       "Blog do Eloilton Cajuhy": 2,
-      "Jornal Nossa Voz": 2
+      "JC Concursos": 2
     },
     "meses": {
       "10": 18,
@@ -333,16 +333,16 @@
     ]
   },
   "2024": {
-    "total": 98,
+    "total": 99,
     "eixos": {
-      "Gestão e RH": 63,
+      "Gestão e RH": 64,
       "Institucional": 18,
       "Ensino": 14,
       "Pesquisa": 2,
       "Extensão": 1
     },
     "abrangencia": {
-      "Imprensa Local": 75,
+      "Imprensa Local": 76,
       "Especializados (Nichos)": 9,
       "Imprensa Regional (Bahia)": 6,
       "Institucional / Governamental": 4,
@@ -356,9 +356,9 @@
       "Notícias da Lapa": 4,
       "G1": 3,
       "PEBSP": 2,
-      "Mais Região": 2,
+      "Se Liga Alagoinhas": 2,
       "Notícias de Bom Jesus da Lapa": 2,
-      "Preto no Branco | Com Sibelle Fonseca": 2
+      "Mais Região": 2
     },
     "meses": {
       "12": 16,
@@ -367,10 +367,10 @@
       "07": 9,
       "04": 8,
       "10": 8,
-      "01": 7,
+      "11": 7,
       "06": 7,
+      "01": 7,
       "02": 7,
-      "11": 6,
       "03": 5,
       "05": 4
     },
@@ -381,8 +381,8 @@
       "Guanambi": 7,
       "Catu": 4,
       "Uruçuca": 4,
+      "Alagoinhas": 3,
       "Ruy Barbosa": 3,
-      "Alagoinhas": 2,
       "Valença": 2,
       "Remanso": 2,
       "Itaberaba": 1,
@@ -396,7 +396,7 @@
     "historico": [
       {
         "ano": 2024,
-        "total": 98
+        "total": 99
       },
       {
         "ano": 2023,
@@ -515,7 +515,7 @@
       },
       {
         "ano": 2024,
-        "total": 98
+        "total": 99
       },
       {
         "ano": 2023,
@@ -634,7 +634,7 @@
       },
       {
         "ano": 2024,
-        "total": 98
+        "total": 99
       },
       {
         "ano": 2023,
