@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 746,
+    "total": 747,
     "eixos": {
       "Gestão e RH": 437,
-      "Institucional": 143,
+      "Institucional": 144,
       "Ensino": 122,
       "Pesquisa": 28,
       "Extensão": 16
     },
     "abrangencia": {
-      "Imprensa Local": 471,
+      "Imprensa Local": 472,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 71,
       "Institucional / Governamental": 55,
@@ -33,8 +33,8 @@
       "01": 67,
       "11": 67,
       "04": 63,
+      "09": 59,
       "10": 59,
-      "09": 58,
       "03": 52,
       "08": 49,
       "02": 45,
@@ -49,8 +49,8 @@
       "Alagoinhas": 34,
       "Uruçuca": 27,
       "Catu": 24,
+      "Senhor do Bonfim": 20,
       "Valença": 19,
-      "Senhor do Bonfim": 19,
       "Itaberaba": 15,
       "Serrinha": 14,
       "Xique-Xique": 12,
@@ -86,7 +86,7 @@
       },
       {
         "ano": 2021,
-        "total": 41
+        "total": 42
       },
       {
         "ano": 2020,
@@ -184,7 +184,7 @@
       },
       {
         "ano": 2021,
-        "total": 41
+        "total": 42
       },
       {
         "ano": 2020,
@@ -292,7 +292,7 @@
       },
       {
         "ano": 2021,
-        "total": 41
+        "total": 42
       },
       {
         "ano": 2020,
@@ -408,7 +408,7 @@
       },
       {
         "ano": 2021,
-        "total": 41
+        "total": 42
       },
       {
         "ano": 2020,
@@ -527,7 +527,7 @@
       },
       {
         "ano": 2021,
-        "total": 41
+        "total": 42
       },
       {
         "ano": 2020,
@@ -593,7 +593,7 @@
       "O TEMPO": 5,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Concursos no Brasil": 4
+      "Bahia Na Política": 4
     },
     "meses": {
       "05": 104,
@@ -646,7 +646,7 @@
       },
       {
         "ano": 2021,
-        "total": 41
+        "total": 42
       },
       {
         "ano": 2020,
@@ -687,16 +687,16 @@
     ]
   },
   "ate_2021": {
-    "total": 145,
+    "total": 146,
     "eixos": {
       "Gestão e RH": 60,
-      "Institucional": 44,
+      "Institucional": 45,
       "Ensino": 24,
       "Pesquisa": 11,
       "Extensão": 6
     },
     "abrangencia": {
-      "Imprensa Local": 102,
+      "Imprensa Local": 103,
       "Institucional / Governamental": 18,
       "Especializados (Nichos)": 11,
       "Imprensa (Nacional)": 7,
@@ -716,7 +716,7 @@
     },
     "meses": {
       "11": 21,
-      "09": 16,
+      "09": 17,
       "08": 15,
       "01": 13,
       "06": 12,
@@ -733,9 +733,9 @@
       "Guanambi": 25,
       "Bom Jesus da Lapa": 14,
       "Alagoinhas": 12,
+      "Senhor do Bonfim": 5,
       "Teixeira de Freitas": 5,
       "Uruçuca": 5,
-      "Senhor do Bonfim": 4,
       "Santa Inês": 4,
       "Catu": 3,
       "Itaberaba": 2,
@@ -747,7 +747,7 @@
     "historico": [
       {
         "ano": 2021,
-        "total": 41
+        "total": 42
       },
       {
         "ano": 2020,
