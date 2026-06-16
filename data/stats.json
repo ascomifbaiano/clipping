@@ -1,17 +1,17 @@
 {
   "geral": {
-    "total": 748,
+    "total": 750,
     "eixos": {
-      "Gestão e RH": 437,
+      "Gestão e RH": 439,
       "Institucional": 145,
       "Ensino": 122,
       "Pesquisa": 28,
       "Extensão": 16
     },
     "abrangencia": {
-      "Imprensa Local": 473,
+      "Imprensa Local": 474,
       "Especializados (Nichos)": 100,
-      "Imprensa (Nacional)": 71,
+      "Imprensa (Nacional)": 72,
       "Institucional / Governamental": 55,
       "Imprensa Regional (Bahia)": 49
     },
@@ -33,16 +33,16 @@
       "01": 67,
       "11": 67,
       "04": 63,
-      "09": 59,
       "10": 59,
-      "03": 52,
+      "09": 59,
+      "03": 53,
       "08": 49,
       "02": 45,
-      "06": 43,
+      "06": 44,
       "07": 34
     },
     "campuses": {
-      "Geral / Não Especificado": 337,
+      "Geral / Não Especificado": 339,
       "Guanambi": 95,
       "Bom Jesus da Lapa": 59,
       "Teixeira de Freitas": 36,
@@ -66,11 +66,11 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 201
+        "total": 202
       },
       {
         "ano": 2025,
-        "total": 180
+        "total": 181
       },
       {
         "ano": 2024,
@@ -244,13 +244,13 @@
       "Agência Sertão": 34,
       "SulBahiaNews": 6,
       "G1": 5,
-      "Notícias da Lapa": 3,
       "Blog Gran Cursos Online": 3,
+      "Notícias da Lapa": 3,
       "Notícias de Bom Jesus da Lapa": 2,
-      "Jornal Nossa Voz": 2,
       "Pimenta Blog": 2,
+      "JC Concursos": 2,
       "Blog do Eloilton Cajuhy": 2,
-      "JC Concursos": 2
+      "Jornal Nossa Voz": 2
     },
     "meses": {
       "10": 18,
@@ -449,16 +449,16 @@
     ]
   },
   "2025": {
-    "total": 180,
+    "total": 181,
     "eixos": {
-      "Gestão e RH": 103,
+      "Gestão e RH": 104,
       "Institucional": 38,
       "Ensino": 36,
       "Extensão": 2,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 96,
+      "Imprensa Local": 97,
       "Especializados (Nichos)": 31,
       "Imprensa (Nacional)": 19,
       "Imprensa Regional (Bahia)": 17,
@@ -483,7 +483,7 @@
       "10": 19,
       "09": 16,
       "01": 13,
-      "03": 11,
+      "03": 12,
       "02": 11,
       "06": 10,
       "04": 9,
@@ -491,7 +491,7 @@
       "05": 7
     },
     "campuses": {
-      "Geral / Não Especificado": 84,
+      "Geral / Não Especificado": 85,
       "Bom Jesus da Lapa": 17,
       "Guanambi": 13,
       "Santo Estêvão": 9,
@@ -511,7 +511,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 180
+        "total": 181
       },
       {
         "ano": 2024,
@@ -568,9 +568,9 @@
     ]
   },
   "2026": {
-    "total": 201,
+    "total": 202,
     "eixos": {
-      "Gestão e RH": 155,
+      "Gestão e RH": 156,
       "Institucional": 19,
       "Ensino": 13,
       "Pesquisa": 10,
@@ -579,7 +579,7 @@
     "abrangencia": {
       "Imprensa Local": 104,
       "Especializados (Nichos)": 39,
-      "Imprensa (Nacional)": 33,
+      "Imprensa (Nacional)": 34,
       "Imprensa Regional (Bahia)": 14,
       "Institucional / Governamental": 11
     },
@@ -590,10 +590,10 @@
       "Mídia Externa": 16,
       "Ache Concursos": 9,
       "Sou Enfermagem": 8,
-      "O TEMPO": 5,
+      "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Bahia Na Política": 4
+      "Concursos no Brasil": 4
     },
     "meses": {
       "05": 104,
@@ -601,10 +601,10 @@
       "04": 26,
       "03": 22,
       "02": 17,
-      "06": 5
+      "06": 6
     },
     "campuses": {
-      "Geral / Não Especificado": 93,
+      "Geral / Não Especificado": 94,
       "Guanambi": 29,
       "Valença": 9,
       "Xique-Xique": 9,
@@ -626,11 +626,11 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 201
+        "total": 202
       },
       {
         "ano": 2025,
-        "total": 180
+        "total": 181
       },
       {
         "ano": 2024,
