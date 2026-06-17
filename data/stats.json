@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 750,
+    "total": 751,
     "eixos": {
-      "Gestão e RH": 439,
+      "Gestão e RH": 440,
       "Institucional": 145,
       "Ensino": 122,
       "Pesquisa": 28,
       "Extensão": 16
     },
     "abrangencia": {
-      "Imprensa Local": 474,
+      "Imprensa Local": 475,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 72,
       "Institucional / Governamental": 55,
@@ -17,10 +17,10 @@
     },
     "top_veiculos": {
       "Agência Sertão": 153,
-      "SulBahiaNews": 34,
+      "SulBahiaNews": 35,
       "PCI Concursos": 33,
-      "G1": 30,
       "Ache Concursos": 30,
+      "G1": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
       "Notícias da Lapa": 21,
@@ -33,7 +33,7 @@
       "01": 67,
       "11": 67,
       "04": 63,
-      "10": 59,
+      "10": 60,
       "09": 59,
       "03": 53,
       "08": 49,
@@ -45,7 +45,7 @@
       "Geral / Não Especificado": 339,
       "Guanambi": 95,
       "Bom Jesus da Lapa": 59,
-      "Teixeira de Freitas": 36,
+      "Teixeira de Freitas": 37,
       "Alagoinhas": 34,
       "Uruçuca": 27,
       "Catu": 24,
@@ -55,8 +55,8 @@
       "Serrinha": 14,
       "Xique-Xique": 12,
       "Santo Estêvão": 10,
-      "Santa Inês": 10,
       "Ribeira do Pombal": 10,
+      "Santa Inês": 10,
       "Reitoria (Salvador)": 8,
       "Itapetinga": 7,
       "Governador Mangabeira": 4,
@@ -110,7 +110,7 @@
       },
       {
         "ano": 2015,
-        "total": 6
+        "total": 7
       },
       {
         "ano": 2014,
@@ -208,7 +208,7 @@
       },
       {
         "ano": 2015,
-        "total": 6
+        "total": 7
       },
       {
         "ano": 2014,
@@ -316,7 +316,7 @@
       },
       {
         "ano": 2015,
-        "total": 6
+        "total": 7
       },
       {
         "ano": 2014,
@@ -432,7 +432,7 @@
       },
       {
         "ano": 2015,
-        "total": 6
+        "total": 7
       },
       {
         "ano": 2014,
@@ -551,7 +551,7 @@
       },
       {
         "ano": 2015,
-        "total": 6
+        "total": 7
       },
       {
         "ano": 2014,
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Concursos no Brasil": 4
+      "Bahia Na Política": 4
     },
     "meses": {
       "05": 104,
@@ -670,7 +670,7 @@
       },
       {
         "ano": 2015,
-        "total": 6
+        "total": 7
       },
       {
         "ano": 2014,
@@ -687,16 +687,16 @@
     ]
   },
   "ate_2021": {
-    "total": 147,
+    "total": 148,
     "eixos": {
-      "Gestão e RH": 60,
+      "Gestão e RH": 61,
       "Institucional": 46,
       "Ensino": 24,
       "Pesquisa": 11,
       "Extensão": 6
     },
     "abrangencia": {
-      "Imprensa Local": 104,
+      "Imprensa Local": 105,
       "Institucional / Governamental": 18,
       "Especializados (Nichos)": 11,
       "Imprensa (Nacional)": 7,
@@ -705,7 +705,7 @@
     "top_veiculos": {
       "Agência Sertão": 35,
       "Prefeitura de Alagoinhas": 8,
-      "SulBahiaNews": 7,
+      "SulBahiaNews": 8,
       "GOV.BR": 6,
       "Notícias de Bom Jesus da Lapa": 5,
       "InfoEscola": 5,
@@ -718,8 +718,8 @@
       "11": 21,
       "09": 17,
       "08": 15,
+      "10": 13,
       "01": 13,
-      "10": 12,
       "12": 12,
       "06": 12,
       "07": 11,
@@ -733,8 +733,8 @@
       "Guanambi": 25,
       "Bom Jesus da Lapa": 14,
       "Alagoinhas": 12,
+      "Teixeira de Freitas": 6,
       "Senhor do Bonfim": 5,
-      "Teixeira de Freitas": 5,
       "Uruçuca": 5,
       "Santa Inês": 4,
       "Catu": 3,
@@ -771,7 +771,7 @@
       },
       {
         "ano": 2015,
-        "total": 6
+        "total": 7
       },
       {
         "ano": 2014,
