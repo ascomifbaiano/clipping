@@ -19,8 +19,8 @@
       "Agência Sertão": 153,
       "SulBahiaNews": 35,
       "PCI Concursos": 33,
-      "Ache Concursos": 30,
       "G1": 30,
+      "Ache Concursos": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
       "Notícias da Lapa": 21,
@@ -55,8 +55,8 @@
       "Serrinha": 14,
       "Xique-Xique": 12,
       "Santo Estêvão": 10,
-      "Ribeira do Pombal": 10,
       "Santa Inês": 10,
+      "Ribeira do Pombal": 10,
       "Reitoria (Salvador)": 8,
       "Itapetinga": 7,
       "Governador Mangabeira": 4,
@@ -471,9 +471,9 @@
       "G1": 10,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Notícias da Lapa": 6,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
+      "Folha Dirigida": 6,
+      "Notícias da Lapa": 6,
       "Notícias de Bom Jesus da Lapa": 6
     },
     "meses": {
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Bahia Na Política": 4
+      "Concursos no Brasil": 4
     },
     "meses": {
       "05": 104,
