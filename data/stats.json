@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 756,
+    "total": 757,
     "eixos": {
-      "Gestão e RH": 443,
+      "Gestão e RH": 444,
       "Institucional": 146,
       "Ensino": 123,
       "Pesquisa": 28,
       "Extensão": 16
     },
     "abrangencia": {
-      "Imprensa Local": 479,
+      "Imprensa Local": 480,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 73,
       "Institucional / Governamental": 55,
@@ -23,7 +23,7 @@
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
-      "Notícias da Lapa": 23,
+      "Notícias da Lapa": 24,
       "Notícias de Bom Jesus da Lapa": 17,
       "Prefeitura de Alagoinhas": 13
     },
@@ -33,18 +33,18 @@
       "01": 68,
       "11": 67,
       "04": 64,
-      "09": 60,
       "10": 60,
+      "09": 60,
       "03": 53,
       "08": 50,
+      "06": 45,
       "02": 45,
-      "06": 44,
       "07": 34
     },
     "campuses": {
       "Geral / Não Especificado": 342,
       "Guanambi": 95,
-      "Bom Jesus da Lapa": 61,
+      "Bom Jesus da Lapa": 62,
       "Teixeira de Freitas": 37,
       "Alagoinhas": 34,
       "Uruçuca": 27,
@@ -94,7 +94,7 @@
       },
       {
         "ano": 2019,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2018,
@@ -192,7 +192,7 @@
       },
       {
         "ano": 2019,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2018,
@@ -244,13 +244,13 @@
       "Agência Sertão": 34,
       "SulBahiaNews": 6,
       "G1": 5,
-      "Blog Gran Cursos Online": 3,
       "Notícias da Lapa": 3,
+      "Blog Gran Cursos Online": 3,
       "Notícias de Bom Jesus da Lapa": 2,
+      "Jornal Nossa Voz": 2,
       "Pimenta Blog": 2,
-      "JC Concursos": 2,
       "Blog do Eloilton Cajuhy": 2,
-      "Jornal Nossa Voz": 2
+      "JC Concursos": 2
     },
     "meses": {
       "10": 18,
@@ -300,7 +300,7 @@
       },
       {
         "ano": 2019,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2018,
@@ -416,7 +416,7 @@
       },
       {
         "ano": 2019,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2018,
@@ -535,7 +535,7 @@
       },
       {
         "ano": 2019,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2018,
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Bahia Na Política": 4
+      "Concursos no Brasil": 4
     },
     "meses": {
       "05": 104,
@@ -654,7 +654,7 @@
       },
       {
         "ano": 2019,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2018,
@@ -687,16 +687,16 @@
     ]
   },
   "ate_2021": {
-    "total": 149,
+    "total": 150,
     "eixos": {
-      "Gestão e RH": 61,
+      "Gestão e RH": 62,
       "Institucional": 47,
       "Ensino": 24,
       "Pesquisa": 11,
       "Extensão": 6
     },
     "abrangencia": {
-      "Imprensa Local": 106,
+      "Imprensa Local": 107,
       "Institucional / Governamental": 18,
       "Especializados (Nichos)": 11,
       "Imprensa (Nacional)": 7,
@@ -706,8 +706,8 @@
       "Agência Sertão": 35,
       "Prefeitura de Alagoinhas": 8,
       "SulBahiaNews": 8,
+      "Notícias da Lapa": 6,
       "GOV.BR": 6,
-      "Notícias da Lapa": 5,
       "Notícias de Bom Jesus da Lapa": 5,
       "InfoEscola": 5,
       "Mídia Externa": 4,
@@ -720,8 +720,8 @@
       "08": 16,
       "10": 13,
       "01": 13,
+      "06": 13,
       "12": 12,
-      "06": 12,
       "07": 11,
       "05": 11,
       "03": 10,
@@ -731,7 +731,7 @@
     "campuses": {
       "Geral / Não Especificado": 67,
       "Guanambi": 25,
-      "Bom Jesus da Lapa": 15,
+      "Bom Jesus da Lapa": 16,
       "Alagoinhas": 12,
       "Teixeira de Freitas": 6,
       "Senhor do Bonfim": 5,
@@ -755,7 +755,7 @@
       },
       {
         "ano": 2019,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2018,
