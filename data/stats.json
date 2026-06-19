@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 757,
+    "total": 759,
     "eixos": {
       "Gestão e RH": 444,
       "Institucional": 146,
       "Ensino": 123,
-      "Pesquisa": 28,
+      "Pesquisa": 30,
       "Extensão": 16
     },
     "abrangencia": {
-      "Imprensa Local": 480,
+      "Imprensa Local": 481,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 73,
-      "Institucional / Governamental": 55,
+      "Institucional / Governamental": 56,
       "Imprensa Regional (Bahia)": 49
     },
     "top_veiculos": {
@@ -25,7 +25,7 @@
       "Mídia Externa": 27,
       "Notícias da Lapa": 24,
       "Notícias de Bom Jesus da Lapa": 17,
-      "Prefeitura de Alagoinhas": 13
+      "Prefeitura de Alagoinhas": 14
     },
     "meses": {
       "05": 140,
@@ -37,7 +37,7 @@
       "09": 60,
       "03": 53,
       "08": 50,
-      "06": 45,
+      "06": 47,
       "02": 45,
       "07": 34
     },
@@ -46,7 +46,7 @@
       "Guanambi": 95,
       "Bom Jesus da Lapa": 62,
       "Teixeira de Freitas": 37,
-      "Alagoinhas": 34,
+      "Alagoinhas": 36,
       "Uruçuca": 27,
       "Catu": 24,
       "Senhor do Bonfim": 20,
@@ -66,7 +66,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 202
+        "total": 204
       },
       {
         "ano": 2025,
@@ -568,20 +568,20 @@
     ]
   },
   "2026": {
-    "total": 202,
+    "total": 204,
     "eixos": {
       "Gestão e RH": 156,
       "Institucional": 19,
       "Ensino": 13,
-      "Pesquisa": 10,
+      "Pesquisa": 12,
       "Extensão": 4
     },
     "abrangencia": {
-      "Imprensa Local": 104,
+      "Imprensa Local": 105,
       "Especializados (Nichos)": 39,
       "Imprensa (Nacional)": 34,
       "Imprensa Regional (Bahia)": 14,
-      "Institucional / Governamental": 11
+      "Institucional / Governamental": 12
     },
     "top_veiculos": {
       "Agência Sertão": 23,
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Bahia Na Política": 4
+      "Concursos no Brasil": 4
     },
     "meses": {
       "05": 104,
@@ -601,16 +601,16 @@
       "04": 26,
       "03": 22,
       "02": 17,
-      "06": 6
+      "06": 8
     },
     "campuses": {
       "Geral / Não Especificado": 94,
       "Guanambi": 29,
+      "Alagoinhas": 9,
       "Valença": 9,
-      "Xique-Xique": 9,
       "Senhor do Bonfim": 9,
+      "Xique-Xique": 9,
       "Bom Jesus da Lapa": 8,
-      "Alagoinhas": 7,
       "Uruçuca": 6,
       "Serrinha": 6,
       "Santa Inês": 5,
@@ -626,7 +626,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 202
+        "total": 204
       },
       {
         "ano": 2025,
