@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 759,
+    "total": 760,
     "eixos": {
       "Gestão e RH": 444,
       "Institucional": 146,
-      "Ensino": 123,
+      "Ensino": 124,
       "Pesquisa": 30,
       "Extensão": 16
     },
     "abrangencia": {
-      "Imprensa Local": 481,
+      "Imprensa Local": 482,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 73,
       "Institucional / Governamental": 56,
@@ -37,12 +37,12 @@
       "09": 60,
       "03": 53,
       "08": 50,
-      "06": 47,
+      "06": 48,
       "02": 45,
       "07": 34
     },
     "campuses": {
-      "Geral / Não Especificado": 342,
+      "Geral / Não Especificado": 343,
       "Guanambi": 95,
       "Bom Jesus da Lapa": 62,
       "Teixeira de Freitas": 37,
@@ -70,7 +70,7 @@
       },
       {
         "ano": 2025,
-        "total": 183
+        "total": 184
       },
       {
         "ano": 2024,
@@ -449,16 +449,16 @@
     ]
   },
   "2025": {
-    "total": 183,
+    "total": 184,
     "eixos": {
       "Gestão e RH": 105,
       "Institucional": 38,
-      "Ensino": 37,
+      "Ensino": 38,
       "Extensão": 2,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 99,
+      "Imprensa Local": 100,
       "Especializados (Nichos)": 31,
       "Imprensa (Nacional)": 19,
       "Imprensa Regional (Bahia)": 17,
@@ -484,14 +484,14 @@
       "09": 16,
       "01": 14,
       "03": 12,
+      "06": 11,
       "02": 11,
-      "06": 10,
       "04": 10,
       "07": 8,
       "05": 7
     },
     "campuses": {
-      "Geral / Não Especificado": 86,
+      "Geral / Não Especificado": 87,
       "Bom Jesus da Lapa": 18,
       "Guanambi": 13,
       "Santo Estêvão": 9,
@@ -511,7 +511,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 183
+        "total": 184
       },
       {
         "ano": 2024,
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Concursos no Brasil": 4
+      "Bahia Na Política": 4
     },
     "meses": {
       "05": 104,
@@ -630,7 +630,7 @@
       },
       {
         "ano": 2025,
-        "total": 183
+        "total": 184
       },
       {
         "ano": 2024,
