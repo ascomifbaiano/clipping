@@ -1,22 +1,22 @@
 {
   "geral": {
-    "total": 771,
+    "total": 772,
     "eixos": {
-      "Gestão e RH": 450,
+      "Gestão e RH": 451,
       "Institucional": 149,
       "Ensino": 125,
       "Pesquisa": 30,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 490,
+      "Imprensa Local": 491,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 73,
       "Institucional / Governamental": 56,
       "Imprensa Regional (Bahia)": 49
     },
     "top_veiculos": {
-      "Agência Sertão": 156,
+      "Agência Sertão": 157,
       "SulBahiaNews": 38,
       "PCI Concursos": 34,
       "G1": 31,
@@ -30,11 +30,11 @@
     "meses": {
       "05": 142,
       "12": 71,
+      "11": 70,
       "01": 69,
-      "11": 69,
       "04": 65,
-      "10": 61,
       "09": 61,
+      "10": 61,
       "03": 54,
       "08": 50,
       "06": 49,
@@ -46,7 +46,7 @@
       "Guanambi": 97,
       "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
-      "Alagoinhas": 36,
+      "Alagoinhas": 37,
       "Uruçuca": 27,
       "Catu": 24,
       "Senhor do Bonfim": 20,
@@ -54,9 +54,9 @@
       "Itaberaba": 15,
       "Serrinha": 14,
       "Xique-Xique": 12,
-      "Ribeira do Pombal": 10,
       "Santo Estêvão": 10,
       "Santa Inês": 10,
+      "Ribeira do Pombal": 10,
       "Itapetinga": 8,
       "Reitoria (Salvador)": 8,
       "Governador Mangabeira": 4,
@@ -78,7 +78,7 @@
       },
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
@@ -225,23 +225,23 @@
     ]
   },
   "2023": {
-    "total": 90,
+    "total": 91,
     "eixos": {
-      "Gestão e RH": 47,
+      "Gestão e RH": 48,
       "Ensino": 22,
       "Institucional": 16,
       "Pesquisa": 3,
       "Extensão": 2
     },
     "abrangencia": {
-      "Imprensa Local": 74,
+      "Imprensa Local": 75,
       "Especializados (Nichos)": 6,
       "Imprensa (Nacional)": 5,
       "Imprensa Regional (Bahia)": 3,
       "Institucional / Governamental": 2
     },
     "top_veiculos": {
-      "Agência Sertão": 35,
+      "Agência Sertão": 36,
       "SulBahiaNews": 6,
       "G1": 5,
       "Blog Gran Cursos Online": 3,
@@ -257,7 +257,7 @@
       "09": 14,
       "12": 13,
       "05": 10,
-      "11": 6,
+      "11": 7,
       "06": 5,
       "04": 5,
       "08": 4,
@@ -276,7 +276,7 @@
       "Itaberaba": 3,
       "Senhor do Bonfim": 3,
       "Valença": 2,
-      "Alagoinhas": 1,
+      "Alagoinhas": 2,
       "Remanso": 1,
       "Itapetinga": 1,
       "Serrinha": 1
@@ -284,7 +284,7 @@
     "historico": [
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
@@ -358,7 +358,7 @@
       "PEBSP": 2,
       "Mais Região": 2,
       "Preto no Branco | Com Sibelle Fonseca": 2,
-      "Se Liga Alagoinhas": 2
+      "Notícias de Bom Jesus da Lapa": 2
     },
     "meses": {
       "12": 16,
@@ -400,7 +400,7 @@
       },
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
@@ -519,7 +519,7 @@
       },
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Concursos no Brasil": 4
+      "Bahia Na Política": 4
     },
     "meses": {
       "05": 104,
@@ -638,7 +638,7 @@
       },
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
