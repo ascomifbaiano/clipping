@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 772,
+    "total": 773,
     "eixos": {
-      "Gestão e RH": 451,
+      "Gestão e RH": 452,
       "Institucional": 149,
       "Ensino": 125,
       "Pesquisa": 30,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 491,
+      "Imprensa Local": 492,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 73,
       "Institucional / Governamental": 56,
@@ -35,14 +35,14 @@
       "04": 65,
       "10": 61,
       "09": 61,
-      "03": 54,
+      "03": 55,
       "08": 50,
       "06": 49,
       "02": 46,
       "07": 34
     },
     "campuses": {
-      "Geral / Não Especificado": 346,
+      "Geral / Não Especificado": 347,
       "Guanambi": 97,
       "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
@@ -70,7 +70,7 @@
       },
       {
         "ano": 2025,
-        "total": 187
+        "total": 188
       },
       {
         "ano": 2024,
@@ -247,10 +247,10 @@
       "Notícias da Lapa": 3,
       "Blog Gran Cursos Online": 3,
       "Notícias de Bom Jesus da Lapa": 2,
-      "Jornal Nossa Voz": 2,
       "Pimenta Blog": 2,
+      "JC Concursos": 2,
       "Blog do Eloilton Cajuhy": 2,
-      "JC Concursos": 2
+      "Jornal Nossa Voz": 2
     },
     "meses": {
       "10": 18,
@@ -358,7 +358,7 @@
       "PEBSP": 2,
       "Mais Região": 2,
       "Preto no Branco | Com Sibelle Fonseca": 2,
-      "Se Liga Alagoinhas": 2
+      "Notícias de Bom Jesus da Lapa": 2
     },
     "meses": {
       "12": 16,
@@ -449,16 +449,16 @@
     ]
   },
   "2025": {
-    "total": 187,
+    "total": 188,
     "eixos": {
-      "Gestão e RH": 108,
+      "Gestão e RH": 109,
       "Institucional": 38,
       "Ensino": 38,
       "Extensão": 2,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 101,
+      "Imprensa Local": 102,
       "Especializados (Nichos)": 33,
       "Imprensa (Nacional)": 19,
       "Imprensa Regional (Bahia)": 17,
@@ -483,7 +483,7 @@
       "08": 20,
       "09": 17,
       "01": 14,
-      "03": 12,
+      "03": 13,
       "06": 12,
       "02": 11,
       "04": 10,
@@ -491,7 +491,7 @@
       "05": 7
     },
     "campuses": {
-      "Geral / Não Especificado": 88,
+      "Geral / Não Especificado": 89,
       "Bom Jesus da Lapa": 19,
       "Guanambi": 13,
       "Santo Estêvão": 9,
@@ -511,7 +511,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 187
+        "total": 188
       },
       {
         "ano": 2024,
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Bahia Na Política": 4
+      "Concursos no Brasil": 4
     },
     "meses": {
       "05": 104,
@@ -630,7 +630,7 @@
       },
       {
         "ano": 2025,
-        "total": 187
+        "total": 188
       },
       {
         "ano": 2024,
