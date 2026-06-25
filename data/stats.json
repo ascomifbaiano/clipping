@@ -1,22 +1,22 @@
 {
   "geral": {
-    "total": 775,
+    "total": 777,
     "eixos": {
-      "Gestão e RH": 454,
+      "Gestão e RH": 455,
       "Institucional": 149,
       "Ensino": 125,
       "Pesquisa": 30,
-      "Extensão": 17
+      "Extensão": 18
     },
     "abrangencia": {
-      "Imprensa Local": 493,
+      "Imprensa Local": 495,
       "Especializados (Nichos)": 104,
       "Imprensa (Nacional)": 73,
       "Institucional / Governamental": 56,
       "Imprensa Regional (Bahia)": 49
     },
     "top_veiculos": {
-      "Agência Sertão": 158,
+      "Agência Sertão": 160,
       "SulBahiaNews": 38,
       "PCI Concursos": 35,
       "G1": 31,
@@ -29,12 +29,12 @@
     },
     "meses": {
       "05": 143,
+      "11": 71,
       "12": 71,
-      "11": 70,
       "01": 69,
       "04": 65,
+      "09": 62,
       "10": 61,
-      "09": 61,
       "03": 56,
       "08": 50,
       "06": 49,
@@ -42,13 +42,13 @@
       "07": 34
     },
     "campuses": {
-      "Geral / Não Especificado": 348,
+      "Geral / Não Especificado": 349,
       "Guanambi": 97,
       "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
       "Alagoinhas": 37,
       "Uruçuca": 28,
-      "Catu": 24,
+      "Catu": 25,
       "Senhor do Bonfim": 20,
       "Valença": 19,
       "Itaberaba": 15,
@@ -74,11 +74,11 @@
       },
       {
         "ano": 2024,
-        "total": 103
+        "total": 104
       },
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
@@ -225,23 +225,23 @@
     ]
   },
   "2023": {
-    "total": 91,
+    "total": 92,
     "eixos": {
       "Gestão e RH": 48,
       "Ensino": 22,
       "Institucional": 16,
-      "Pesquisa": 3,
-      "Extensão": 2
+      "Extensão": 3,
+      "Pesquisa": 3
     },
     "abrangencia": {
-      "Imprensa Local": 75,
+      "Imprensa Local": 76,
       "Especializados (Nichos)": 6,
       "Imprensa (Nacional)": 5,
       "Imprensa Regional (Bahia)": 3,
       "Institucional / Governamental": 2
     },
     "top_veiculos": {
-      "Agência Sertão": 36,
+      "Agência Sertão": 37,
       "SulBahiaNews": 6,
       "G1": 5,
       "Notícias da Lapa": 3,
@@ -257,7 +257,7 @@
       "09": 14,
       "12": 13,
       "05": 10,
-      "11": 7,
+      "11": 8,
       "06": 5,
       "04": 5,
       "08": 4,
@@ -267,7 +267,7 @@
       "07": 3
     },
     "campuses": {
-      "Geral / Não Especificado": 35,
+      "Geral / Não Especificado": 36,
       "Guanambi": 18,
       "Teixeira de Freitas": 10,
       "Bom Jesus da Lapa": 8,
@@ -284,7 +284,7 @@
     "historico": [
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
@@ -333,23 +333,23 @@
     ]
   },
   "2024": {
-    "total": 103,
+    "total": 104,
     "eixos": {
-      "Gestão e RH": 67,
+      "Gestão e RH": 68,
       "Institucional": 18,
       "Ensino": 14,
       "Extensão": 2,
       "Pesquisa": 2
     },
     "abrangencia": {
-      "Imprensa Local": 78,
+      "Imprensa Local": 79,
       "Especializados (Nichos)": 10,
       "Imprensa Regional (Bahia)": 6,
       "Imprensa (Nacional)": 5,
       "Institucional / Governamental": 4
     },
     "top_veiculos": {
-      "Agência Sertão": 35,
+      "Agência Sertão": 36,
       "SulBahiaNews": 12,
       "Ache Concursos": 6,
       "iBahia": 6,
@@ -362,7 +362,7 @@
     },
     "meses": {
       "12": 16,
-      "09": 12,
+      "09": 13,
       "08": 10,
       "07": 9,
       "02": 8,
@@ -379,7 +379,7 @@
       "Teixeira de Freitas": 11,
       "Bom Jesus da Lapa": 9,
       "Guanambi": 7,
-      "Catu": 4,
+      "Catu": 5,
       "Ruy Barbosa": 4,
       "Uruçuca": 4,
       "Alagoinhas": 3,
@@ -396,11 +396,11 @@
     "historico": [
       {
         "ano": 2024,
-        "total": 103
+        "total": 104
       },
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
@@ -515,11 +515,11 @@
       },
       {
         "ano": 2024,
-        "total": 103
+        "total": 104
       },
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Bahia Na Política": 4
+      "Concursos no Brasil": 4
     },
     "meses": {
       "05": 104,
@@ -634,11 +634,11 @@
       },
       {
         "ano": 2024,
-        "total": 103
+        "total": 104
       },
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
