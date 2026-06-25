@@ -1,24 +1,24 @@
 {
   "geral": {
-    "total": 773,
+    "total": 775,
     "eixos": {
-      "Gestão e RH": 452,
+      "Gestão e RH": 454,
       "Institucional": 149,
       "Ensino": 125,
       "Pesquisa": 30,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 492,
-      "Especializados (Nichos)": 103,
+      "Imprensa Local": 493,
+      "Especializados (Nichos)": 104,
       "Imprensa (Nacional)": 73,
       "Institucional / Governamental": 56,
       "Imprensa Regional (Bahia)": 49
     },
     "top_veiculos": {
-      "Agência Sertão": 157,
+      "Agência Sertão": 158,
       "SulBahiaNews": 38,
-      "PCI Concursos": 34,
+      "PCI Concursos": 35,
       "G1": 31,
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
@@ -28,26 +28,26 @@
       "Prefeitura de Alagoinhas": 14
     },
     "meses": {
-      "05": 142,
+      "05": 143,
       "12": 71,
       "11": 70,
       "01": 69,
       "04": 65,
       "10": 61,
       "09": 61,
-      "03": 55,
+      "03": 56,
       "08": 50,
       "06": 49,
       "02": 46,
       "07": 34
     },
     "campuses": {
-      "Geral / Não Especificado": 347,
+      "Geral / Não Especificado": 348,
       "Guanambi": 97,
       "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
       "Alagoinhas": 37,
-      "Uruçuca": 27,
+      "Uruçuca": 28,
       "Catu": 24,
       "Senhor do Bonfim": 20,
       "Valença": 19,
@@ -70,7 +70,7 @@
       },
       {
         "ano": 2025,
-        "total": 188
+        "total": 190
       },
       {
         "ano": 2024,
@@ -358,7 +358,7 @@
       "PEBSP": 2,
       "Mais Região": 2,
       "Preto no Branco | Com Sibelle Fonseca": 2,
-      "Notícias de Bom Jesus da Lapa": 2
+      "Se Liga Alagoinhas": 2
     },
     "meses": {
       "12": 16,
@@ -449,25 +449,25 @@
     ]
   },
   "2025": {
-    "total": 188,
+    "total": 190,
     "eixos": {
-      "Gestão e RH": 109,
+      "Gestão e RH": 111,
       "Institucional": 38,
       "Ensino": 38,
       "Extensão": 2,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 102,
-      "Especializados (Nichos)": 33,
+      "Imprensa Local": 103,
+      "Especializados (Nichos)": 34,
       "Imprensa (Nacional)": 19,
       "Imprensa Regional (Bahia)": 17,
       "Institucional / Governamental": 17
     },
     "top_veiculos": {
-      "Agência Sertão": 23,
+      "Agência Sertão": 24,
+      "PCI Concursos": 12,
       "Ache Concursos": 12,
-      "PCI Concursos": 11,
       "G1": 10,
       "Notícias da Lapa": 8,
       "SulBahiaNews": 8,
@@ -482,25 +482,25 @@
       "10": 20,
       "08": 20,
       "09": 17,
+      "03": 14,
       "01": 14,
-      "03": 13,
       "06": 12,
       "02": 11,
       "04": 10,
-      "07": 8,
-      "05": 7
+      "05": 8,
+      "07": 8
     },
     "campuses": {
-      "Geral / Não Especificado": 89,
+      "Geral / Não Especificado": 90,
       "Bom Jesus da Lapa": 19,
       "Guanambi": 13,
       "Santo Estêvão": 9,
       "Catu": 8,
       "Serrinha": 7,
+      "Uruçuca": 7,
       "Teixeira de Freitas": 7,
-      "Ribeira do Pombal": 6,
       "Reitoria (Salvador)": 6,
-      "Uruçuca": 6,
+      "Ribeira do Pombal": 6,
       "Alagoinhas": 6,
       "Valença": 3,
       "Senhor do Bonfim": 3,
@@ -511,7 +511,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 188
+        "total": 190
       },
       {
         "ano": 2024,
@@ -593,7 +593,7 @@
       "O TEMPO": 6,
       "Acorda Cidade": 5,
       "G1": 5,
-      "Concursos no Brasil": 4
+      "Bahia Na Política": 4
     },
     "meses": {
       "05": 104,
@@ -630,7 +630,7 @@
       },
       {
         "ano": 2025,
-        "total": 188
+        "total": 190
       },
       {
         "ano": 2024,
