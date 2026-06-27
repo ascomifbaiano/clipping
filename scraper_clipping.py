@@ -1,207 +1,29 @@
-import requests
-import pandas as pd
 import os
-import html
-import urllib3
-import xml.etree.ElementTree as ET
-import re
+import glob
 import time
-import json
-from datetime import datetime
-from email.utils import parsedate_to_datetime
+import html
+import urllib.parse
+import xml.etree.ElementTree as ET
+import pandas as pd
+import requests
+import urllib3
+from clipping_utils import (
+    DIR_DATA, padronizar_data, classificar_eixo, 
+    classificar_abrangencia, resolver_url_direta, salvar_e_gerar_stats
+)
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# ==========================================
-# 1. CONFIGURAÇÕES E HEURÍSTICA
-# ==========================================
-DIR_DATA = 'data'
 ARQUIVO_ANTIGO = os.path.join(DIR_DATA, 'clipping.csv')
-ARQUIVO_STATS = os.path.join(DIR_DATA, 'stats.json')
 
-def padronizar_data(data_str, ano_referencia=str(datetime.now().year)):
-    if not data_str: return f"{ano_referencia}-01-01"
-    d_str = str(data_str).strip().lower()
-    
-    meses = {'janeiro':'01','fevereiro':'02','março':'03','marco':'03','abril':'04','maio':'05','junho':'06',
-             'julho':'07','agosto':'08','setembro':'09','outubro':'10','novembro':'11','dezembro':'12'}
-    for pt, num in meses.items():
-        d_str = d_str.replace(pt, num)
-        
-    match = re.search(r'(\d{4})-(\d{2})-(\d{2})', d_str)
-    if match: return match.group(0)
-
-    match = re.search(r'(\d{2})[-/](\d{2})[-/](\d{2,4})', d_str)
-    if match:
-        d, m, y = match.groups()
-        if len(y) == 2: y = '20' + y
-        return f"{y}-{m.zfill(2)}-{d.zfill(2)}"
-
-    try:
-        dt = parsedate_to_datetime(data_str)
-        return dt.strftime('%Y-%m-%d')
-    except: pass
-
-    return f"{ano_referencia}-01-01"
-
-def classificar_eixo(titulo):
-    t = str(titulo).lower()
-    if any(w in t for w in ['professor', 'substituto', 'concurso', 'processo seletivo', 'seleção', 'vaga', 'servidor', 'docente', 'edital']): return 'Gestão e RH'
-    if any(w in t for w in ['sisu', 'prosel', 'curso', 'graduação', 'especialização', 'técnico', 'matrícula', 'ensino', 'aluno', 'estudante', 'aula', 'partiu if']): return 'Ensino'
-    if any(w in t for w in ['pesquisa', 'ciência', 'tecnologia', 'inovação', 'patente', 'cnpq', 'artigo', 'fapesb', 'científica', 'pesquisador', 'desenvolve', 'biofilme']): return 'Pesquisa'
-    if any(w in t for w in ['extensão', 'comunidade', 'projeto', 'feira', 'evento', 'seminário', 'agricultura familiar', 'mulheres mil', 'oficina', 'tenda', 'jornada']): return 'Extensão'
-    return 'Institucional'
-
-def classificar_abrangencia(veiculo):
-    v = str(veiculo).lower()
-    if any(w in v for w in ['g1', 'cnn', 'r7', 'terra', 'estadao', 'msn', 'uol', 'record', 'band', 'catraca livre', 'o tempo', 'folha']): return 'Imprensa (Nacional)'
-    if any(w in v for w in ['a tarde', 'correio', 'bnews', 'aratu', 'ibahia', 'tribuna da bahia', 'bahia notícias', 'farol da bahia', 'bahia.ba', 'bahia já']): return 'Imprensa Regional (Bahia)'
-    if any(w in v for w in ['prefeitura', 'gov.br', 'conif', 'mec', 'if baiano', 'ufba', 'uesb', 'ifba', 'adab', 'codevasf', 'embrapa']): return 'Institucional / Governamental'
-    if any(w in v for w in ['concurso', 'pci', 'qconcursos', 'ache', 'direção', 'estrategia', 'educação', 'agro', 'rural', 'defesa', 'tecnologia', 'focus', 'gran', 'vestibular']): return 'Especializados (Nichos)'
-    
-    # Heurística para portais locais das cidades do IF Baiano e portais de notícias conhecidos
-    cidades_e_portais = [
-        'alagoinhas', 'lapa', 'catu', 'mangabeira', 'guanambi', 'itaberaba', 'itapetinga', 
-        'santa inês', 'santa ines', 'bonfim', 'serrinha', 'teixeira', 'uruçuca', 'urucuca', 
-        'valença', 'valenca', 'xique-xique', 'santo estêvão', 'santo estevao', 'pombal', 
-        'remanso', 'ruy barbosa', 'alta pressão', 'alta pressao', 'se liga alagoinhas', 
-        'fala alagoinhas', 'alagonews', 'agência sertão', 'agencia sertao', 'iguanambi', 
-        'alô cidade', 'alo cidade', 'folha do vale', 'sudoeste bahia', 'lapa oeste', 
-        'blog regional', 'gazeta da lapa', 'central da lapa', 'eloilton cajuhy', 
-        'ivan silva', 'bonfim digital', 'netto maravilha', 'cleber vieira', 
-        'teixeira news', 'extremosul', 'teixeira urgente', 'texas news', 'povo news', 
-        'liberdade news', 'sulbahianews', 'voz do campo', 'pimenta blog', 'politicos do sul'
-    ]
-    if any(w in v for w in cidades_e_portais):
-        return 'Imprensa Local'
-        
-    return 'Imprensa Local'
-
-def classificar_campus(titulo, veiculo):
-    t_v = (str(titulo) + " " + str(veiculo)).lower()
-    campuses = {
-        'Alagoinhas': ['alagoinhas'],
-        'Bom Jesus da Lapa': ['lapa', 'bom jesus da lapa'],
-        'Catu': ['catu'],
-        'Governador Mangabeira': ['mangabeira', 'governador mangabeira'],
-        'Guanambi': ['guanambi'],
-        'Itaberaba': ['itaberaba'],
-        'Itapetinga': ['itapetinga'],
-        'Santa Inês': ['santa inês', 'santa ines'],
-        'Senhor do Bonfim': ['bonfim', 'senhor do bonfim'],
-        'Serrinha': ['serrinha'],
-        'Teixeira de Freitas': ['teixeira', 'teixeira de freitas'],
-        'Uruçuca': ['uruçuca', 'urucuca'],
-        'Valença': ['valença', 'valenca'],
-        'Xique-Xique': ['xique-xique', 'xique xique'],
-        'Santo Estêvão': ['santo estêvão', 'santo estevao'],
-        'Ribeira do Pombal': ['pombal', 'ribeira do pombal'],
-        'Remanso': ['remanso'],
-        'Ruy Barbosa': ['ruy barbosa']
-    }
-    
-    for campus, termos in campuses.items():
-        if any(termo in t_v for termo in termos):
-            return campus
-            
-    if 'reitoria' in t_v or 'salvador' in t_v:
-        return 'Reitoria (Salvador)'
-        
-    return 'Geral / Não Especificado'
-
-def resolver_url_direta(url_rss):
-    try:
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
-        res = requests.head(url_rss, headers=headers, allow_redirects=True, timeout=5)
-        return res.url
-    except:
-        return url_rss
-
-termos_diretos = [
-    'if baiano', 'ifbaiano', 'if-baiano', 'if.baiano', 'if_baiano', 
-    'instituto federal baiano', 'ifbaiana', 'if baiana', 
-    'instituto federal baiana', 'federal baiano'
-]
-
-cidades_exclusivas = [
-    'alagoinhas', 'bom jesus da lapa', 'lapa', 'catu', 'governador mangabeira', 'mangabeira', 
-    'guanambi', 'itaberaba', 'itapetinga', 'santa inês', 'santa ines', 'senhor do bonfim', 'bonfim', 
-    'serrinha', 'teixeira de freitas', 'teixeira', 'uruçuca', 'urucuca', 'xique-xique', 'xique xique', 
-    'santo estêvão', 'santo estevao', 'ribeira do pombal', 'pombal', 'remanso', 'ruy barbosa'
-]
-
-termos_valenca_baiano = [
-    'agropecuária', 'agropecuaria', 'zootecnia', 'agronomia', 
-    'agricultura', 'agroecologia', 'florestas', 'alimento', 
-    'reitor', 'substituto', 'edital', 'estudante do if baiano'
-]
-
-def e_valido_baiano(titulo, campus):
-    t = str(titulo).lower()
-    c = str(campus)
-    
-    # 1. Se tem menções explícitas ao IF Baiano, é sempre válido
-    if any(term in t for term in termos_diretos):
-        return True
-        
-    # 2. Se fala de IFBA ou Instituto Federal da Bahia, vamos ver se é uma confusão
-    has_ifba_term = 'ifba' in t or 'instituto federal da bahia' in t
-    if has_ifba_term:
-        # Confusão em cidades exclusivas do IF Baiano (onde não há IFBA)
-        if any(cid in t for cid in cidades_exclusivas) or c in [x.title() for x in cidades_exclusivas]:
-            return True
-            
-        # Confusão em Valença (onde existem ambos)
-        if 'valença' in t or 'valenca' in t or c == 'Valença':
-            if any(term in t for term in termos_valenca_baiano):
-                return True
-                
-        # Confusão na Reitoria / Salvador (Imbuí)
-        if 'imbuí' in t or 'imbui' in t:
-            return True
-            
-        return False # Legítimo do IFBA (desprezar)
-        
-    # 3. Se menciona "Instituto Federal" generico e tem campus associado
-    has_generic_if = 'instituto federal' in t or 'institutos federais' in t or 'federal de educação' in t or 'rede federal' in t
-    if has_generic_if:
-        if c != 'Geral / Não Especificado':
-            return True
-            
-    # 4. Se menciona "campus" ou "reitoria" + cidade/campus
-    has_campus_ref = 'campus' in t or 'campi' in t or 'reitoria' in t
-    if has_campus_ref:
-        if c != 'Geral / Não Especificado':
-            if c == 'Valença':
-                if 'ifba' in t:
-                    return any(term in t for term in termos_valenca_baiano)
-            return True
-
-    return False
-
-# ==========================================
-# 2. MOTOR DE CLIPPING
-# ==========================================
 def processar_clipping():
-    print("Iniciando Motor de Clipping Inteligente...")
+    print("Iniciando Motor de Clipping Inteligente (Ponytail Mode)...")
     os.makedirs(DIR_DATA, exist_ok=True)
     
     links_conhecidos = set()
-    ARQUIVO_DESCARTADOS = os.path.join(DIR_DATA, 'links_descartados.txt')
-    if os.path.exists(ARQUIVO_DESCARTADOS):
-        try:
-            with open(ARQUIVO_DESCARTADOS, 'r', encoding='utf-8') as f:
-                for line in f:
-                    lnk = line.strip()
-                    if lnk:
-                        links_conhecidos.add(lnk)
-        except Exception as e:
-            print(f"Aviso ao ler {ARQUIVO_DESCARTADOS}: {e}")
-
     titulos_veiculos_conhecidos = set() 
     dfs_existentes = []
 
-    import glob
     arquivos_historicos = glob.glob(os.path.join(DIR_DATA, 'clipping_*.csv'))
     if os.path.exists(ARQUIVO_ANTIGO):
         arquivos_historicos.append(ARQUIVO_ANTIGO)
@@ -222,42 +44,25 @@ def processar_clipping():
 
     df_existente = pd.concat(dfs_existentes, ignore_index=True) if dfs_existentes else pd.DataFrame()
 
-    import urllib.parse
-    
-    # 1. Termos principais e variações do IF Baiano (inclusive variações comuns de gênero/grafia)
     termos_principais = [
-        '"IF Baiano"',
-        '"IFBAIANO"',
-        '"IF-Baiano"',
-        '"IF.Baiano"',
-        '"IF_Baiano"',
-        '"Instituto Federal Baiano"',
-        '"Instituto Federal de Educação, Ciência e Tecnologia Baiano"',
-        '"Instituto Federal de Educação Ciência e Tecnologia Baiano"',
-        '"IFBaiana"',
-        '"IF Baiana"',
-        '"Instituto Federal Baiana"',
-        '"Federal Baiano"'
+        '"IF Baiano"', '"IFBAIANO"', '"IF-Baiano"', '"IF.Baiano"', '"IF_Baiano"',
+        '"Instituto Federal Baiano"', '"Instituto Federal de Educação, Ciência e Tecnologia Baiano"',
+        '"Instituto Federal de Educação Ciência e Tecnologia Baiano"', '"IFBaiana"', '"IF Baiana"',
+        '"Instituto Federal Baiana"', '"Federal Baiano"'
     ]
     query_principal = " OR ".join(termos_principais)
 
-    # 2. Menções errôneas (IFBA ou Instituto Federal da Bahia) nas cidades do IF Baiano (evitando falsos positivos)
-    # Valença foi removida desta lista específica pois possui campi de ambas as instituições.
     cidades_exclusivas = [
         "Alagoinhas", "Bom Jesus da Lapa", "Catu", "Governador Mangabeira", 
         "Guanambi", "Itaberaba", "Itapetinga", "Santa Inês", "Senhor do Bonfim", 
         "Serrinha", "Teixeira de Freitas", "Uruçuca", "Xique-Xique", 
         "Santo Estêvão", "Ribeira do Pombal", "Remanso", "Ruy Barbosa"
     ]
-    termos_erro = [
-        '"IFBA"',
-        '"Instituto Federal da Bahia"'
-    ]
+    termos_erro = ['"IFBA"', '"Instituto Federal da Bahia"']
     cidades_quoted = [f'"{c}"' for c in cidades_exclusivas]
     query_erro = f"({' OR '.join(termos_erro)}) AND ({' OR '.join(cidades_quoted)})"
 
     queries = [query_principal, query_erro]
-    
     clipping_coletado = []
     fontes_pesquisa = []
     
@@ -266,7 +71,6 @@ def processar_clipping():
         fontes_pesquisa.append(("Google News", f'https://news.google.com/rss/search?q={q_encoded}&hl=pt-BR&gl=BR&ceid=BR:pt-419'))
         fontes_pesquisa.append(("Bing News", f'https://www.bing.com/news/search?q={q_encoded}&format=rss'))
 
-    # Adiciona varredura direta nos portais oficiais e parceiros chave diariamente
     dominios_alvo = [
         "mec.gov.br", "portal.mec.gov.br", "gov.br", "planalto.gov.br", "conif.org.br",
         "portallapaoeste.com.br", "bomjesusdalapanoticias.com.br", "centraldalapa.com",
@@ -329,91 +133,9 @@ def processar_clipping():
     df_novo = pd.DataFrame(clipping_coletado)
     df_final = pd.concat([df_novo, df_existente], ignore_index=True) if not df_novo.empty else df_existente
     
-    if not df_final.empty:
-        df_final['assunto'] = df_final['assunto'].astype(str).str.strip()
-        df_final['veiculo'] = df_final['veiculo'].astype(str).str.strip()
-        df_final = df_final.drop_duplicates(subset=['link'], keep='first')
-        df_final['tmp_key'] = df_final['assunto'].str.lower() + df_final['veiculo'].str.lower()
-        df_final = df_final.drop_duplicates(subset=['tmp_key'], keep='first').drop(columns=['tmp_key'])
-        
-        df_final['eixo_institucional'] = df_final['assunto'].apply(classificar_eixo)
-        df_final['abrangencia'] = df_final['veiculo'].apply(classificar_abrangencia)
-        df_final['campus'] = df_final.apply(lambda row: classificar_campus(row['assunto'], row['veiculo']), axis=1)
-        
-        # Filtra registros por relevância (remove ruídos e notícias legítimas do IFBA)
-        if not df_final.empty:
-            df_final['valido'] = df_final.apply(lambda r: e_valido_baiano(r['assunto'], r['campus']), axis=1)
-            
-            # Identifica e salva novos descartados
-            df_descartados = df_final[~df_final['valido']]
-            if not df_descartados.empty:
-                novos_descartados = df_descartados['link'].dropna().unique().tolist()
-                if novos_descartados:
-                    try:
-                        with open(ARQUIVO_DESCARTADOS, 'a', encoding='utf-8') as f:
-                            for l in novos_descartados:
-                                f.write(l + '\n')
-                    except Exception as e:
-                        print(f"Erro ao salvar links descartados: {e}")
-                        
-            df_final = df_final[df_final['valido']].drop(columns=['valido'])
-        
-        df_final['data'] = df_final['data'].astype(str)
-        df_final['ano_num'] = df_final['data'].apply(lambda x: int(x[:4]) if len(x) >= 4 else 0)
-
-        def definir_arquivo(data_str):
-            try:
-                ano = int(str(data_str)[:4])
-                return 'clipping_ate_2021.csv' if ano <= 2021 else f'clipping_{ano}.csv'
-            except: return 'clipping_extra.csv'
-
-        df_final['arquivo_destino'] = df_final['data'].apply(definir_arquivo)
-        
-        # Stats por Ano e Geral
-        stats_por_ano = {}
-        contagem_por_ano_real = df_final['ano_num'].value_counts().to_dict()
-        
-        # Otimização: Salvar um CSV "Geral" para carregamento sob demanda
-        caminho_geral = os.path.join(DIR_DATA, 'clipping_geral.csv')
-        df_final.sort_values(by=['data'], ascending=False).drop(columns=['arquivo_destino', 'ano_num']).to_csv(caminho_geral, index=False, encoding='utf-8-sig')
-
-        # Função auxiliar para gerar dict de stats
-        def gerar_stats_dict(df, key_name):
-            ano_ref = datetime.now().year if key_name == 'geral' else (2021 if key_name == 'ate_2021' else int(key_name))
-            historico = []
-            for a in range(ano_ref, 2011, -1):
-                if a in contagem_por_ano_real:
-                    historico.append({"ano": a, "total": int(contagem_por_ano_real[a])})
-            
-            return {
-                "total": len(df),
-                "eixos": df['eixo_institucional'].value_counts().to_dict(),
-                "abrangencia": df['abrangencia'].value_counts().to_dict(),
-                "top_veiculos": df['veiculo'].value_counts().head(10).to_dict(),
-                "meses": df['data'].str[5:7].value_counts().to_dict(),
-                "campuses": df['campus'].value_counts().to_dict(),
-                "historico": historico
-            }
-
-        # Stats Geral
-        stats_por_ano['geral'] = gerar_stats_dict(df_final, 'geral')
-
-        # Stats por arquivo
-        for arquivo, df_grupo in df_final.groupby('arquivo_destino'):
-            ano_key = arquivo.replace('clipping_', '').replace('.csv', '')
-            # Ordena do mais recente para o mais antigo antes de salvar e gerar estatísticas
-            df_grupo_sorted = df_grupo.sort_values(by=['data'], ascending=False)
-            stats_por_ano[ano_key] = gerar_stats_dict(df_grupo_sorted, ano_key)
-            caminho = os.path.join(DIR_DATA, arquivo)
-            df_grupo_sorted.drop(columns=['arquivo_destino', 'ano_num']).to_csv(caminho, index=False, encoding='utf-8-sig')
-
-        with open(ARQUIVO_STATS, 'w', encoding='utf-8') as f:
-            json.dump(stats_por_ano, f, ensure_ascii=False, indent=2)
-        
-        print(f"Sucesso! Dados limpos, CSV Geral e Stats JSON atualizados em {DIR_DATA}/")
-        
-        if os.path.exists(ARQUIVO_ANTIGO):
-            os.remove(ARQUIVO_ANTIGO)
+    salvar_e_gerar_stats(df_final)
+    if os.path.exists(ARQUIVO_ANTIGO):
+        os.remove(ARQUIVO_ANTIGO)
 
 if __name__ == "__main__":
     processar_clipping()

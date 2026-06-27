@@ -13,13 +13,13 @@
     
     <style>
         :root {
-            --brand-primary: #1b4332; /* Verde Forest Escuro IF Baiano */
-            --brand-secondary: #2d6a4f; /* Verde Médio */
-            --brand-accent: #d90429; /* Vermelho IF Baiano */
-            --brand-accent-hover: #ef233c;
-            --brand-light-green: #e8f5e9;
-            --brand-gradient: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
-            --brand-accent-gradient: linear-gradient(135deg, #d90429 0%, #ef233c 100%);
+            --brand-primary: #3E9A2D; /* Verde Forest Escuro IF Baiano */
+            --brand-secondary: #2E7D22; /* Verde Médio */
+            --brand-accent: #C80710; /* Vermelho IF Baiano */
+            --brand-accent-hover: #A6050D;
+            --brand-light-green: #F4F9F4;
+            --brand-gradient: linear-gradient(135deg, #3E9A2D 0%, #2E7D22 100%);
+            --brand-accent-gradient: linear-gradient(135deg, #C80710 0%, #A6050D 100%);
             
             --bg-main: #f8fafc;
             --bg-card: #ffffff;
@@ -1764,7 +1764,7 @@
         // Regra 3: Se for Salvador (onde o IF Baiano possui apenas a Reitoria, e o IFBA possui reitoria e campus)
         if (campus.includes('Reitoria') || campus.includes('Salvador')) {
             // Se mencionar termos da Reitoria do IF Baiano mas associar a IFBA
-            const termosReitoriaBaiano = ['reitor', 'reitoria', 'licitação', 'licitacao', 'concurso', 'imbuí', 'imbui'];
+            const termosReitoriaBaiano = ['reitor', 'reitoria', 'licitação', 'licitacao', 'concurso'];
             return termosReitoriaBaiano.some(t => titulo.includes(t));
         }
         
