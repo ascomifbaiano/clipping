@@ -117,6 +117,42 @@ def classificar_campus(titulo, veiculo):
         return 'Reitoria (Salvador)'
     return 'Geral / Não Especificado'
 
+def validar_noticia(titulo, veiculo):
+    t_v = remover_acentos(str(titulo) + " " + str(veiculo))
+    
+    # 1. Se contiver explicitamente alguma das variantes de "IF Baiano"
+    variantes_baiano = ['if baiano', 'ifbaiano', 'instituto federal baiano', 'ifbaiana', 'if baiana', 'federal baiano']
+    if any(var in t_v for var in variantes_baiano):
+        return True
+        
+    # 2. Se não contiver "IF Baiano", mas contiver variantes de "IFBA"
+    variantes_ifba = ['ifba', 'instituto federal da bahia']
+    if any(var in t_v for var in variantes_ifba):
+        # Somente é válida se houver indício de confusão com cidades exclusivas ou termos do IF Baiano
+        cidades_exclusivas = [
+            'alagoinhas', 'lapa', 'bom jesus da lapa', 'catu', 'mangabeira', 'governador mangabeira',
+            'guanambi', 'itaberaba', 'itapetinga', 'santa ines', 'bonfim', 'senhor do bonfim',
+            'serrinha', 'teixeira', 'teixeira de freitas', 'urucuca', 'xique-xique', 'xique xique',
+            'santo estevao', 'pombal', 'ribeira do pombal', 'remanso', 'ruy barbosa'
+        ]
+        if any(c in t_v for c in cidades_exclusivas):
+            return True
+            
+        # Caso especial para Valença
+        if 'valenca' in t_v:
+            termos_valenca = ['agropecuaria', 'zootecnia', 'agronomia', 'agricultura', 'agroecologia', 'florestas', 'alimento', 'reitor', 'substituto', 'edital']
+            if any(term in t_v for term in termos_valenca):
+                return True
+                
+        # Caso especial para Salvador/Reitoria
+        if 'reitoria' in t_v or 'salvador' in t_v:
+            termos_reitoria = ['reitor', 'reitoria', 'licitacao', 'licitaca', 'concurso']
+            if any(term in t_v for term in termos_reitoria):
+                return True
+                
+    # 3. Caso não se enquadre em nenhuma das regras acima, não é sobre o IF Baiano
+    return False
+
 def resolver_url_direta(url_rss):
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}

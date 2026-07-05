@@ -877,9 +877,12 @@
     </header>
 
     <!-- Navigation Tabs -->
-    <div class="tabs-nav">
+    <div class="tabs-nav" style="flex-wrap: wrap;">
         <button class="tab-btn active" id="tab-btn-metrics" onclick="abrirAba('aba-metricas')">📈 Painel Estatístico</button>
-        <button class="tab-btn" id="tab-btn-table" onclick="abrirAba('aba-tabela')">🗃️ Acervo de Notícias</button>
+        <button class="tab-btn" id="tab-btn-table" onclick="abrirAba('aba-tabela')">🗃️ Acervo Geral</button>
+        <button class="tab-btn" id="tab-btn-grande-midia" onclick="abrirAba('aba-grande-midia')">📺 Grande Mídia</button>
+        <button class="tab-btn" id="tab-btn-gov" onclick="abrirAba('aba-gov')">🏛️ Portais Governamentais</button>
+        <button class="tab-btn" id="tab-btn-edu" onclick="abrirAba('aba-edu')">🎓 Outras Inst. de Ensino</button>
         <button class="tab-btn" id="tab-btn-somos" onclick="abrirAba('aba-somos')">🏷️ Nós Somos o IF Baiano</button>
     </div>
 
@@ -1041,6 +1044,93 @@
                 <div class="pag-controls" id="pag-controls-container">
                     <!-- Botões de páginas dinâmicos -->
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grande Mídia View -->
+    <div id="aba-grande-midia" class="tab-content">
+        <div class="table-box">
+            <div class="table-header">
+                <h2 id="grande-midia-table-title">Notícias na Grande Mídia (Carregando...)</h2>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="100">Data</th>
+                            <th width="140">Campus</th>
+                            <th width="140">Eixo</th>
+                            <th width="150">Abrangência</th>
+                            <th width="200">Veículo</th>
+                            <th>Assunto</th>
+                            <th width="100" class="no-print">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="grande-midia-tabela-corpo"></tbody>
+                </table>
+            </div>
+            <div class="paginacao">
+                <div class="pag-info" id="grande-midia-info-pag">Exibindo 0 registros</div>
+                <div class="pag-controls" id="grande-midia-pag-controls-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portais Governamentais View -->
+    <div id="aba-gov" class="tab-content">
+        <div class="table-box">
+            <div class="table-header">
+                <h2 id="gov-table-title">Notícias em Portais Governamentais (Carregando...)</h2>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="100">Data</th>
+                            <th width="140">Campus</th>
+                            <th width="140">Eixo</th>
+                            <th width="150">Abrangência</th>
+                            <th width="200">Veículo</th>
+                            <th>Assunto</th>
+                            <th width="100" class="no-print">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gov-tabela-corpo"></tbody>
+                </table>
+            </div>
+            <div class="paginacao">
+                <div class="pag-info" id="gov-info-pag">Exibindo 0 registros</div>
+                <div class="pag-controls" id="gov-pag-controls-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Outras Instituições de Ensino View -->
+    <div id="aba-edu" class="tab-content">
+        <div class="table-box">
+            <div class="table-header">
+                <h2 id="edu-table-title">Notícias em Outras Instituições de Ensino (Carregando...)</h2>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="100">Data</th>
+                            <th width="140">Campus</th>
+                            <th width="140">Eixo</th>
+                            <th width="150">Abrangência</th>
+                            <th width="200">Veículo</th>
+                            <th>Assunto</th>
+                            <th width="100" class="no-print">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="edu-tabela-corpo"></tbody>
+                </table>
+            </div>
+            <div class="paginacao">
+                <div class="pag-info" id="edu-info-pag">Exibindo 0 registros</div>
+                <div class="pag-controls" id="edu-pag-controls-container"></div>
             </div>
         </div>
     </div>
@@ -1274,9 +1364,11 @@
         atualizarGraficos();
         gerarNuvemPalavras();
         renderizarTabela();
-        if(abaAtiva === 'aba-somos') {
-            renderizarTabelaSomos();
-        }
+        
+        if(abaAtiva === 'aba-grande-midia') renderizarTabelaGrandeMidia();
+        else if(abaAtiva === 'aba-gov') renderizarTabelaGov();
+        else if(abaAtiva === 'aba-edu') renderizarTabelaEdu();
+        else if(abaAtiva === 'aba-somos') renderizarTabelaSomos();
     }
 
     function recalcularKPIs() {
@@ -1848,6 +1940,18 @@
             document.getElementById('tab-btn-metrics').classList.add('active');
         } else if (id === 'aba-tabela') {
             document.getElementById('tab-btn-table').classList.add('active');
+        } else if (id === 'aba-grande-midia') {
+            document.getElementById('tab-btn-grande-midia').classList.add('active');
+            paginaGrandeMidia = 1;
+            renderizarTabelaGrandeMidia();
+        } else if (id === 'aba-gov') {
+            document.getElementById('tab-btn-gov').classList.add('active');
+            paginaGov = 1;
+            renderizarTabelaGov();
+        } else if (id === 'aba-edu') {
+            document.getElementById('tab-btn-edu').classList.add('active');
+            paginaEdu = 1;
+            renderizarTabelaEdu();
         } else if (id === 'aba-somos') {
             document.getElementById('tab-btn-somos').classList.add('active');
             renderizarTabelaSomos();
@@ -1856,6 +1960,171 @@
 
     function showLoading(show) { 
         document.getElementById('loading-global').style.display = show ? 'flex' : 'none'; 
+    }
+
+    let paginaGrandeMidia = 1;
+    let paginaGov = 1;
+    let paginaEdu = 1;
+
+    function renderizarTabelaGenerica(idTbody, idTitle, idInfoPag, idControls, tituloBase, filtroAbrangencia, getterPagina, setterPagina) {
+        const tbody = document.getElementById(idTbody);
+        if(!tbody) return;
+        tbody.innerHTML = '';
+        const pagContainer = document.getElementById(idControls);
+        if(pagContainer) pagContainer.innerHTML = '';
+
+        // Filtra os dados filtrados globais pelo subgrupo de abrangência
+        let subDados = [];
+        if (typeof filtroAbrangencia === 'function') {
+            subDados = dadosFiltrados.filter(filtroAbrangencia);
+        } else if (Array.isArray(filtroAbrangencia)) {
+            subDados = dadosFiltrados.filter(i => filtroAbrangencia.includes(i.abrangencia));
+        } else {
+            subDados = dadosFiltrados.filter(i => i.abrangencia === filtroAbrangencia);
+        }
+
+        const titleEl = document.getElementById(idTitle);
+        if(titleEl) titleEl.innerText = `${tituloBase} (${subDados.length})`;
+
+        if(subDados.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 40px; color: var(--text-muted);">Nenhuma notícia encontrada para esta categoria com os filtros ativos.</td></tr>`;
+            const infoPagEl = document.getElementById(idInfoPag);
+            if(infoPagEl) infoPagEl.innerText = `Nenhum registro`;
+            return;
+        }
+
+        const totalPags = Math.ceil(subDados.length / itensPorPagina);
+        const paginaAtualLocal = Math.min(getterPagina(), totalPags);
+        if (paginaAtualLocal !== getterPagina() && paginaAtualLocal > 0) {
+            setterPagina(paginaAtualLocal);
+        }
+        
+        const inicio = (paginaAtualLocal - 1) * itensPorPagina;
+        const fim = Math.min(inicio + itensPorPagina, subDados.length);
+        const itensExibidos = subDados.slice(inicio, fim);
+
+        tbody.innerHTML = itensExibidos.map(i => {
+            let classeEixo = 'badge-eixo-institucional';
+            const e = i.eixo_institucional;
+            if(e === 'Ensino') classeEixo = 'badge-eixo-ensino';
+            else if(e === 'Pesquisa') classeEixo = 'badge-eixo-pesquisa';
+            else if(e === 'Extensão') classeEixo = 'badge-eixo-extensão';
+            else if(e === 'Gestão e RH') classeEixo = 'badge-eixo-rh';
+
+            let classeAbr = 'badge-abrangencia-local';
+            const a = i.abrangencia;
+            if(a === 'Imprensa (Nacional)') classeAbr = 'badge-abrangencia-nac';
+            else if(a === 'Imprensa Regional (Bahia)') classeAbr = 'badge-abrangencia-reg';
+            else if(a === 'Governamental') classeAbr = 'badge-abrangencia-gov';
+            else if(a === 'Outras Instituições de Ensino') classeAbr = 'badge-abrangencia-edu';
+            else if(a === 'Especializados (Nichos)') classeAbr = 'badge-abrangencia-nicho';
+
+            const dataFmt = i.data ? i.data.split('-').reverse().join('/') : 'N/A';
+
+            return `
+                <tr>
+                    <td style="font-weight: 500; color: #475569;">${dataFmt}</td>
+                    <td><span class="badge badge-campus">${i.campus || 'Geral'}</span></td>
+                    <td><span class="badge ${classeEixo}">${i.eixo_institucional || 'Outros'}</span></td>
+                    <td><span class="badge ${classeAbr}">${i.abrangencia || 'Mídia Local'}</span></td>
+                    <td style="color: #475569; font-weight:600;">${i.veiculo || 'Mídia Externa'}</td>
+                    <td style="font-weight:500; color: var(--text-main); font-size:14.5px;">${i.assunto}</td>
+                    <td class="no-print"><a href="${i.link}" target="_blank" class="link-url">Acessar ↗</a></td>
+                </tr>
+            `;
+        }).join('');
+
+        const infoPagEl = document.getElementById(idInfoPag);
+        if(infoPagEl) infoPagEl.innerText = `Exibindo de ${inicio + 1} a ${fim} de ${subDados.length} notícias`;
+        
+        if(pagContainer) {
+            atualizarBotoesPaginacaoGenerica(idControls, totalPags, paginaAtualLocal, setterPagina, () => {
+                renderizarTabelaGenerica(idTbody, idTitle, idInfoPag, idControls, tituloBase, filtroAbrangencia, getterPagina, setterPagina);
+            });
+        }
+    }
+
+    function atualizarBotoesPaginacaoGenerica(idContainer, totalPags, paginaAtualLocal, setterPagina, callbackRender) {
+        const container = document.getElementById(idContainer);
+        if(!container) return;
+        container.innerHTML = '';
+        if (totalPags <= 1) return;
+
+        const irPara = (p) => {
+            setterPagina(p);
+            callbackRender();
+            container.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        // Botões de navegação
+        const btnFirst = document.createElement('button');
+        btnFirst.className = 'btn-pag'; btnFirst.innerHTML = '«'; btnFirst.disabled = paginaAtualLocal === 1;
+        btnFirst.onclick = () => irPara(1); container.appendChild(btnFirst);
+
+        const btnPrev = document.createElement('button');
+        btnPrev.className = 'btn-pag'; btnPrev.innerHTML = '◀'; btnPrev.disabled = paginaAtualLocal === 1;
+        btnPrev.onclick = () => irPara(paginaAtualLocal - 1); container.appendChild(btnPrev);
+
+        const maxVisible = 5;
+        let start = Math.max(1, paginaAtualLocal - 2);
+        let end = Math.min(totalPags, start + maxVisible - 1);
+        if (end - start + 1 < maxVisible) start = Math.max(1, end - maxVisible + 1);
+
+        if (start > 1) {
+            const btnPage = document.createElement('button'); btnPage.className = 'btn-pag'; btnPage.innerHTML = '1';
+            btnPage.onclick = () => irPara(1); container.appendChild(btnPage);
+            if (start > 2) {
+                const el = document.createElement('span'); el.className = 'pag-ellipsis'; el.innerHTML = '...';
+                container.appendChild(el);
+            }
+        }
+
+        for (let p = start; p <= end; p++) {
+            const btnPage = document.createElement('button');
+            btnPage.className = `btn-pag ${p === paginaAtualLocal ? 'active' : ''}`;
+            btnPage.innerHTML = p; btnPage.onclick = () => irPara(p); container.appendChild(btnPage);
+        }
+
+        if (end < totalPags) {
+            if (end < totalPags - 1) {
+                const el = document.createElement('span'); el.className = 'pag-ellipsis'; el.innerHTML = '...';
+                container.appendChild(el);
+            }
+            const btnPage = document.createElement('button'); btnPage.className = 'btn-pag'; btnPage.innerHTML = totalPags;
+            btnPage.onclick = () => irPara(totalPags); container.appendChild(btnPage);
+        }
+
+        const btnNext = document.createElement('button');
+        btnNext.className = 'btn-pag'; btnNext.innerHTML = '▶'; btnNext.disabled = paginaAtualLocal === totalPags;
+        btnNext.onclick = () => irPara(paginaAtualLocal + 1); container.appendChild(btnNext);
+
+        const btnLast = document.createElement('button');
+        btnLast.className = 'btn-pag'; btnLast.innerHTML = '»'; btnLast.disabled = paginaAtualLocal === totalPags;
+        btnLast.onclick = () => irPara(totalPags); container.appendChild(btnLast);
+    }
+
+    function renderizarTabelaGrandeMidia() {
+        renderizarTabelaGenerica(
+            'grande-midia-tabela-corpo', 'grande-midia-table-title', 'grande-midia-info-pag', 'grande-midia-pag-controls-container',
+            'Notícias na Grande Mídia', ['Imprensa (Nacional)', 'Imprensa Regional (Bahia)', 'Imprensa Local'],
+            () => paginaGrandeMidia, (val) => { paginaGrandeMidia = val; }
+        );
+    }
+
+    function renderizarTabelaGov() {
+        renderizarTabelaGenerica(
+            'gov-tabela-corpo', 'gov-table-title', 'gov-info-pag', 'gov-pag-controls-container',
+            'Notícias em Portais Governamentais', 'Governamental',
+            () => paginaGov, (val) => { paginaGov = val; }
+        );
+    }
+
+    function renderizarTabelaEdu() {
+        renderizarTabelaGenerica(
+            'edu-tabela-corpo', 'edu-table-title', 'edu-info-pag', 'edu-pag-controls-container',
+            'Notícias em Outras Instituições de Ensino', 'Outras Instituições de Ensino',
+            () => paginaEdu, (val) => { paginaEdu = val; }
+        );
     }
 
     // Inicia o painel

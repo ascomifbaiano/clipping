@@ -9,7 +9,7 @@ import requests
 import urllib3
 from clipping_utils import (
     DIR_DATA, padronizar_data, classificar_eixo, 
-    classificar_abrangencia, resolver_url_direta, salvar_e_gerar_stats
+    classificar_abrangencia, resolver_url_direta, salvar_e_gerar_stats, validar_noticia
 )
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -129,6 +129,10 @@ def processar_clipping():
 
                 chave_nova = f"{titulo.strip().lower()}|{veiculo.strip().lower()}"
                 if chave_nova in titulos_veiculos_conhecidos: continue
+
+                # Validar se a notícia é realmente sobre o IF Baiano (ou confusão válida com o IFBA)
+                if not validar_noticia(titulo, veiculo):
+                    continue
 
                 data_pub = padronizar_data(item.find('pubDate').text)
                 clipping_coletado.append({
