@@ -117,18 +117,22 @@ def classificar_campus(titulo, veiculo):
         return 'Reitoria (Salvador)'
     return 'Geral / Não Especificado'
 
-def validar_noticia(titulo, veiculo):
+def validar_noticia(titulo, veiculo, link=None):
+    # 1. Ignorar notícias vindas do próprio portal do IF Baiano (evitar auto-clipping)
+    if link and 'ifbaiano.edu.br' in str(link).lower():
+        return False
+
     t_v = remover_acentos(str(titulo) + " " + str(veiculo))
     
-    # 1. Se contiver explicitamente alguma das variantes de "IF Baiano"
+    # 2. Se contiver explicitamente alguma das variantes de "IF Baiano"
     variantes_baiano = ['if baiano', 'ifbaiano', 'instituto federal baiano', 'ifbaiana', 'if baiana', 'federal baiano']
     if any(var in t_v for var in variantes_baiano):
         return True
-        
-    # 2. Se não contiver "IF Baiano", mas contiver variantes de "IFBA"
+
+    # 3. Se não contiver "IF Baiano", mas contiver variantes de "IFBA"
     variantes_ifba = ['ifba', 'instituto federal da bahia']
     if any(var in t_v for var in variantes_ifba):
-        # Somente é válida se houver indício de confusão com cidades exclusivas ou termos do IF Baiano
+
         cidades_exclusivas = [
             'alagoinhas', 'lapa', 'bom jesus da lapa', 'catu', 'mangabeira', 'governador mangabeira',
             'guanambi', 'itaberaba', 'itapetinga', 'santa ines', 'bonfim', 'senhor do bonfim',

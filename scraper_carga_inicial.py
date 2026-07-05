@@ -102,7 +102,7 @@ def processar_carga_inicial():
                         if chave_nova in titulos_veiculos_conhecidos: continue
 
                         # Validar se a notícia é realmente sobre o IF Baiano (ou confusão válida com o IFBA)
-                        if not validar_noticia(titulo, veiculo):
+                        if not validar_noticia(titulo, veiculo, link_direto):
                             continue
 
                         data_pub = padronizar_data(item.find('pubDate').text)
@@ -170,7 +170,7 @@ def processar_carga_inicial():
                     if chave_nova in titulos_veiculos_conhecidos: continue
 
                     # Validar se a notícia é realmente sobre o IF Baiano (ou confusão válida com o IFBA)
-                    if not validar_noticia(titulo, veiculo):
+                    if not validar_noticia(titulo, veiculo, link_direto):
                         continue
 
                     data_pub = padronizar_data(item.find('pubDate').text)

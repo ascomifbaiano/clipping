@@ -131,7 +131,7 @@ def processar_clipping():
                 if chave_nova in titulos_veiculos_conhecidos: continue
 
                 # Validar se a notícia é realmente sobre o IF Baiano (ou confusão válida com o IFBA)
-                if not validar_noticia(titulo, veiculo):
+                if not validar_noticia(titulo, veiculo, link_direto):
                     continue
 
                 data_pub = padronizar_data(item.find('pubDate').text)
@@ -141,7 +141,7 @@ def processar_clipping():
                 })
                 links_conhecidos.add(link_direto)
                 titulos_veiculos_conhecidos.add(chave_nova)
-                time.sleep(0.5) 
+                time.sleep(0.5)
         except Exception as e:
             print(f"   X Erro no motor {nome_motor}: {e}")
 
