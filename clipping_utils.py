@@ -51,7 +51,27 @@ def classificar_abrangencia(veiculo):
     v = remover_acentos(veiculo)
     if any(w in v for w in ['g1', 'cnn', 'r7', 'terra', 'estadao', 'msn', 'uol', 'record', 'band', 'catraca livre', 'o tempo', 'folha']): return 'Imprensa (Nacional)'
     if any(w in v for w in ['a tarde', 'correio', 'bnews', 'aratu', 'ibahia', 'tribuna da bahia', 'bahia noticias', 'farol da bahia', 'bahia.ba', 'bahia ja']): return 'Imprensa Regional (Bahia)'
-    if any(w in v for w in ['prefeitura', 'gov.br', 'conif', 'mec', 'if baiano', 'ufba', 'uesb', 'ifba', 'adab', 'codevasf', 'embrapa']): return 'Institucional / Governamental'
+    
+    # Outras Instituições de Ensino (Universidades e outros IFs)
+    termos_edu = [
+        'ufba', 'uesb', 'ifba', 'ufrb', 'ufob', 'univasf', 'ifsc', 'ifsp', 'ifsertao', 
+        'ifpe', 'ifpb', 'ifrn', 'ifce', 'ifma', 'ifpi', 'ifal', 'ifse', 'ifmg', 
+        'ifsudestemg', 'ifnmg', 'ifgoiano', 'ifg', 'ifms', 'ifmt', 'ifpr', 'ifsul', 
+        'ifrs', 'iff', 'ifrj', 'coluni', 'ufmg', 'ufrj', 'usp', 'unicamp', 'unesp', 
+        'unb', 'ufrgs', 'cefet', 'universidade', 'faculdade', 'instituto federal', 
+        'ifes', 'ifs', 'reitoria'
+    ]
+    if any(w in v for w in termos_edu): 
+        return 'Outras Instituições de Ensino'
+        
+    # Governamental e órgãos públicos
+    termos_gov = [
+        'prefeitura', 'gov.br', 'conif', 'mec', 'adab', 'codevasf', 'embrapa', 
+        'governo', 'secretaria', 'ministerio', 'planalto', 'senado', 'camara'
+    ]
+    if any(w in v for w in termos_gov) or 'if baiano' in v: 
+        return 'Governamental'
+        
     if any(w in v for w in ['concurso', 'pci', 'qconcursos', 'ache', 'direcao', 'estrategia', 'educacao', 'agro', 'rural', 'defesa', 'tecnologia', 'focus', 'gran', 'vestibular']): return 'Especializados (Nichos)'
     
     cidades_e_portais = [

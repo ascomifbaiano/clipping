@@ -50,6 +50,7 @@ def processar_carga_inicial():
 
     query_templates = [
         '("IF Baiano" OR "IFBAIANO" OR "IF-Baiano" OR "Instituto Federal Baiano") after:{start} before:{end}',
+        '("IF Baiano" OR "IFBAIANO" OR "Instituto Federal Baiano") site:edu.br after:{start} before:{end}',
         '(("IFBA" OR "Instituto Federal da Bahia") AND ("Alagoinhas" OR "Bom Jesus da Lapa" OR "Catu" OR "Governador Mangabeira" OR "Guanambi" OR "Itaberaba" OR "Itapetinga" OR "Santa Inês" OR "Senhor do Bonfim" OR "Serrinha" OR "Teixeira de Freitas" OR "Uruçuca" OR "Xique-Xique" OR "Santo Estêvão" OR "Ribeira do Pombal" OR "Remanso" OR "Ruy Barbosa")) after:{start} before:{end}'
     ]
 
@@ -76,6 +77,10 @@ def processar_carga_inicial():
                         
                         link_direto = resolver_url_direta(link_original)
                         if link_direto in links_conhecidos: continue
+                        
+                        # Ignorar notícias vindas do próprio portal do IF Baiano (evitar auto-clipping)
+                        if 'ifbaiano.edu.br' in link_direto:
+                            continue
                         
                         titulo_completo = item.find('title').text or 'Sem Título'
                         veiculo = "Mídia Externa"
@@ -110,6 +115,8 @@ def processar_carga_inicial():
 
     dominios_alvo = [
         "mec.gov.br", "portal.mec.gov.br", "gov.br", "planalto.gov.br", "conif.org.br",
+        "ufba.br", "ifba.edu.br", "uneb.br", "uesb.br", "ufrb.edu.br", "ufob.edu.br", 
+        "univasf.edu.br", "ifsc.edu.br", "ifsp.edu.br", "ifsertao-pe.edu.br", "ifpe.edu.br",
         "atarde.com.br", "correio24horas.com.br", "bnews.com.br", "bahianoticias.com.br", "ibahia.com",
         "portallapaoeste.com.br", "bomjesusdalapanoticias.com.br", "centraldalapa.com", "rbjfm.com.br",
         "agenciasertao.com", "iguanambi.com.br", "ivansilvanoticia.com.br", "blogdoeloiltoncajuhy.com.br",
@@ -134,6 +141,10 @@ def processar_carga_inicial():
                     if link_original in links_conhecidos: continue
                     link_direto = resolver_url_direta(link_original)
                     if link_direto in links_conhecidos: continue
+                    
+                    # Ignorar notícias vindas do próprio portal do IF Baiano (evitar auto-clipping)
+                    if 'ifbaiano.edu.br' in link_direto:
+                        continue
                     
                     titulo_completo = item.find('title').text or 'Sem Título'
                     veiculo = dom

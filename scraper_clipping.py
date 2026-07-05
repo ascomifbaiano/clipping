@@ -71,8 +71,15 @@ def processar_clipping():
         fontes_pesquisa.append(("Google News", f'https://news.google.com/rss/search?q={q_encoded}&hl=pt-BR&gl=BR&ceid=BR:pt-419'))
         fontes_pesquisa.append(("Bing News", f'https://www.bing.com/news/search?q={q_encoded}&format=rss'))
 
+    # Reforço de busca para qualquer menção em domínios de instituições de ensino (.edu.br)
+    query_academic = '("IF Baiano" OR "IFBAIANO" OR "Instituto Federal Baiano") site:edu.br'
+    q_encoded_academic = urllib.parse.quote_plus(query_academic)
+    fontes_pesquisa.append(("Google News Acadêmico", f'https://news.google.com/rss/search?q={q_encoded_academic}&hl=pt-BR&gl=BR&ceid=BR:pt-419'))
+
     dominios_alvo = [
         "mec.gov.br", "portal.mec.gov.br", "gov.br", "planalto.gov.br", "conif.org.br",
+        "ufba.br", "ifba.edu.br", "uneb.br", "uesb.br", "ufrb.edu.br", "ufob.edu.br", 
+        "univasf.edu.br", "ifsc.edu.br", "ifsp.edu.br", "ifsertao-pe.edu.br", "ifpe.edu.br",
         "portallapaoeste.com.br", "bomjesusdalapanoticias.com.br", "centraldalapa.com",
         "agenciasertao.com", "iguanambi.com.br", "blogdoeloiltoncajuhy.com.br",
         "nettomaravilha.com.br", "teixeiranews.com.br", "bahiaextremosul.com.br",
@@ -99,6 +106,10 @@ def processar_clipping():
                 
                 link_direto = resolver_url_direta(link_original)
                 if link_direto in links_conhecidos: continue
+
+                # Ignorar notícias vindas do próprio portal do IF Baiano (evitar auto-clipping)
+                if 'ifbaiano.edu.br' in link_direto:
+                    continue
 
                 titulo_completo = item.find('title').text or 'Sem Título'
                 veiculo = "Mídia Externa"

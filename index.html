@@ -649,6 +649,7 @@
         .badge-abrangencia-nac { background: #ffebee; color: #c62828; border: 1px solid rgba(198,40,40,0.1); }
         .badge-abrangencia-reg { background: #e0f2f1; color: #00695c; border: 1px solid rgba(0,105,92,0.1); }
         .badge-abrangencia-gov { background: #f1f8e9; color: #33691e; border: 1px solid rgba(51,105,30,0.1); }
+        .badge-abrangencia-edu { background: #e0f7fa; color: #006064; border: 1px solid rgba(0,96,100,0.1); }
         .badge-abrangencia-nicho { background: #ede7f6; color: #4527a0; border: 1px solid rgba(69,39,160,0.1); }
         .badge-abrangencia-local { background: #eceff1; color: #37474f; border: 1px solid rgba(55,71,79,0.1); }
 
@@ -824,6 +825,31 @@
                 padding: 6px 8px;
             }
         }
+    
+        /* ===================== ACESSIBILIDADE & A11Y ===================== */
+        .a11y-toolbar-top {
+            display: flex; align-items: center; gap: 8px; margin-left: 15px;
+        }
+        .a11y-btn {
+            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+            color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem;
+            font-weight: 700; cursor: pointer; transition: 0.2s;
+        }
+        .a11y-btn:hover { background: #fff; color: #3E9A2D; }
+        
+        body.high-contrast {
+            background: #000000 !important; color: #ffffff !important;
+        }
+        body.high-contrast header, body.high-contrast footer, body.high-contrast section, body.high-contrast div, body.high-contrast table, body.high-contrast tr, body.high-contrast td, body.high-contrast th {
+            background: #000000 !important; color: #ffffff !important; border-color: #ffd700 !important;
+        }
+        body.high-contrast a, body.high-contrast h1, body.high-contrast h2, body.high-contrast h3, body.high-contrast p, body.high-contrast span {
+            color: #ffffff !important; text-shadow: none !important;
+        }
+        body.high-contrast button, body.high-contrast .badge {
+            background: #111111 !important; color: #ffd700 !important; border: 1px solid #ffd700 !important;
+        }
+
     </style>
 </head>
 <body>
@@ -901,7 +927,8 @@
                     <option value="Imprensa Local">Imprensa Local</option>
                     <option value="Imprensa Regional (Bahia)">Imprensa Regional (Bahia)</option>
                     <option value="Imprensa (Nacional)">Imprensa (Nacional)</option>
-                    <option value="Institucional / Governamental">Institucional / Governamental</option>
+                    <option value="Governamental">Governamental</option>
+                    <option value="Outras Instituições de Ensino">Outras Instituições de Ensino</option>
                     <option value="Especializados (Nichos)">Especializados (Nichos)</option>
                 </select>
             </div>
@@ -1389,7 +1416,8 @@
             const a = i.abrangencia;
             if(a === 'Imprensa (Nacional)') classeAbr = 'badge-abrangencia-nac';
             else if(a === 'Imprensa Regional (Bahia)') classeAbr = 'badge-abrangencia-reg';
-            else if(a === 'Institucional / Governamental') classeAbr = 'badge-abrangencia-gov';
+            else if(a === 'Governamental') classeAbr = 'badge-abrangencia-gov';
+            else if(a === 'Outras Instituições de Ensino') classeAbr = 'badge-abrangencia-edu';
             else if(a === 'Especializados (Nichos)') classeAbr = 'badge-abrangencia-nicho';
 
             // Data formatada dd/mm/aaaa
@@ -1584,7 +1612,7 @@
             labels: sortedAbr.map(x => x[0]),
             datasets: [{
                 data: sortedAbr.map(x => x[1]),
-                backgroundColor: ['#00695c', '#582f0e', '#d90429', '#475569', '#2d6a4f']
+                backgroundColor: ['#00695c', '#582f0e', '#d90429', '#33691e', '#006064', '#475569']
             }]
         }, {
             plugins: { legend: { position: 'bottom', labels: { boxWidth: 12 } } },
@@ -1702,7 +1730,8 @@
             const a = i.abrangencia;
             if(a === 'Imprensa (Nacional)') classeAbr = 'badge-abrangencia-nac';
             else if(a === 'Imprensa Regional (Bahia)') classeAbr = 'badge-abrangencia-reg';
-            else if(a === 'Institucional / Governamental') classeAbr = 'badge-abrangencia-gov';
+            else if(a === 'Governamental') classeAbr = 'badge-abrangencia-gov';
+            else if(a === 'Outras Instituições de Ensino') classeAbr = 'badge-abrangencia-edu';
             else if(a === 'Especializados (Nichos)') classeAbr = 'badge-abrangencia-nicho';
 
             const dataFmt = i.data ? i.data.split('-').reverse().join('/') : 'N/A';
@@ -1831,6 +1860,17 @@
 
     // Inicia o painel
     iniciar();
-</script>
+
+        // Acessibilidade (A11y)
+        let fontScale = 100;
+        function ajustarFonte(delta) {
+            fontScale = Math.min(135, Math.max(90, fontScale + delta));
+            document.documentElement.style.fontSize = fontScale + '%';
+        }
+        function toggleContraste() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+    </script>
 </body>
 </html>
