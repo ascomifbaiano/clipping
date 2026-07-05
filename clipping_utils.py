@@ -122,6 +122,12 @@ def validar_noticia(titulo, veiculo, link=None):
     if link and 'ifbaiano.edu.br' in str(link).lower():
         return False
 
+    # 1.2 Ignorar notícias onde o próprio veículo de publicação é o IF Baiano (evitar auto-clipping institucional)
+    veiculo_lower = remover_acentos(str(veiculo))
+    termos_auto_veiculo = ['if baiano', 'ifbaiano', 'instituto federal baiano', 'ifbaiana', 'if baiana', 'federal baiano']
+    if any(term in veiculo_lower for term in termos_auto_veiculo):
+        return False
+
     t_v = remover_acentos(str(titulo) + " " + str(veiculo))
     
     # 2. Se contiver explicitamente alguma das variantes de "IF Baiano"
@@ -132,6 +138,10 @@ def validar_noticia(titulo, veiculo, link=None):
     # 3. Se não contiver "IF Baiano", mas contiver variantes de "IFBA"
     variantes_ifba = ['ifba', 'instituto federal da bahia']
     if any(var in t_v for var in variantes_ifba):
+        # Se contiver termos de universidades parceiras ou cursos de engenharia, é o IFBA real (legítimo) e não confusão
+        termos_ifba_real = ['ufba', 'uneb', 'ufrb', 'uesb', 'ufob', 'engenharia', 'grupo petropolis', 'petropolis']
+        if any(term in t_v for term in termos_ifba_real):
+            return False
 
         cidades_exclusivas = [
             'alagoinhas', 'lapa', 'bom jesus da lapa', 'catu', 'mangabeira', 'governador mangabeira',

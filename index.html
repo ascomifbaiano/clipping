@@ -1864,6 +1864,10 @@
         
         if (!hasIfbaIsolated || hasIfbaiano) return false;
         
+        // Se contiver termos que indicam que é o IFBA de verdade (como menção a UFBA, engenharia, etc.)
+        const termosIfbaReal = ['ufba', 'uneb', 'ufrb', 'uesb', 'ufob', 'engenharia', 'grupo petropolis', 'petropolis'];
+        if (termosIfbaReal.some(term => titulo.includes(term) || veiculo.includes(term))) return false;
+        
         // Cidades exclusivas do IF Baiano (Valença e Salvador não estão aqui)
         const cidadesExclusivas = [
             'Alagoinhas', 'Bom Jesus da Lapa', 'Catu', 'Governador Mangabeira', 'Guanambi', 
