@@ -1,20 +1,20 @@
 {
   "geral": {
-    "total": 720,
+    "total": 722,
     "eixos": {
       "Gestão e RH": 439,
-      "Institucional": 123,
-      "Ensino": 113,
+      "Institucional": 124,
+      "Ensino": 114,
       "Pesquisa": 29,
       "Extensão": 16
     },
     "abrangencia": {
       "Imprensa Local": 445,
-      "Especializados (Nichos)": 101,
+      "Especializados (Nichos)": 102,
       "Imprensa (Nacional)": 70,
       "Governamental": 56,
       "Imprensa Regional (Bahia)": 42,
-      "Outras Instituições de Ensino": 6
+      "Outras Instituições de Ensino": 7
     },
     "top_veiculos": {
       "Agência Sertão": 155,
@@ -29,10 +29,10 @@
       "Prefeitura de Alagoinhas": 11
     },
     "meses": {
-      "05": 141,
+      "05": 142,
       "11": 66,
       "12": 64,
-      "04": 63,
+      "04": 64,
       "10": 57,
       "09": 56,
       "01": 55,
@@ -43,7 +43,7 @@
       "07": 32
     },
     "campuses": {
-      "Geral / Não Especificado": 348,
+      "Geral / Não Especificado": 349,
       "Guanambi": 85,
       "Bom Jesus da Lapa": 52,
       "Teixeira de Freitas": 36,
@@ -56,7 +56,7 @@
       "Serrinha": 13,
       "Xique-Xique": 12,
       "Itaberaba": 12,
-      "Reitoria (Salvador)": 9,
+      "Reitoria (Salvador)": 10,
       "Santa Inês": 8,
       "Ribeira do Pombal": 8,
       "Itapetinga": 7,
@@ -83,7 +83,7 @@
       },
       {
         "ano": 2022,
-        "total": 21
+        "total": 22
       },
       {
         "ano": 2021,
@@ -107,7 +107,7 @@
       },
       {
         "ano": 2016,
-        "total": 15
+        "total": 16
       },
       {
         "ano": 2015,
@@ -128,23 +128,23 @@
     ]
   },
   "2022": {
-    "total": 21,
+    "total": 22,
     "eixos": {
-      "Ensino": 8,
+      "Ensino": 9,
       "Gestão e RH": 7,
       "Institucional": 5,
       "Pesquisa": 1
     },
     "abrangencia": {
       "Imprensa Local": 13,
+      "Especializados (Nichos)": 4,
       "Imprensa (Nacional)": 3,
-      "Especializados (Nichos)": 3,
       "Governamental": 2
     },
     "top_veiculos": {
       "G1": 3,
+      "InfoEducação": 3,
       "Agência Sertão": 2,
-      "InfoEducação": 2,
       "Hora Brasil": 2,
       "Notícias de Bom Jesus da Lapa": 1,
       "Mídia Externa": 1,
@@ -154,8 +154,8 @@
       "blog do gusmão": 1
     },
     "meses": {
+      "05": 5,
       "04": 5,
-      "05": 4,
       "12": 3,
       "11": 3,
       "06": 2,
@@ -164,7 +164,7 @@
       "07": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 12,
+      "Geral / Não Especificado": 13,
       "Bom Jesus da Lapa": 2,
       "Alagoinhas": 2,
       "Guanambi": 1,
@@ -176,7 +176,7 @@
     "historico": [
       {
         "ano": 2022,
-        "total": 21
+        "total": 22
       },
       {
         "ano": 2021,
@@ -200,7 +200,7 @@
       },
       {
         "ano": 2016,
-        "total": 15
+        "total": 16
       },
       {
         "ano": 2015,
@@ -285,7 +285,7 @@
       },
       {
         "ano": 2022,
-        "total": 21
+        "total": 22
       },
       {
         "ano": 2021,
@@ -309,7 +309,7 @@
       },
       {
         "ano": 2016,
-        "total": 15
+        "total": 16
       },
       {
         "ano": 2015,
@@ -402,7 +402,7 @@
       },
       {
         "ano": 2022,
-        "total": 21
+        "total": 22
       },
       {
         "ano": 2021,
@@ -426,7 +426,7 @@
       },
       {
         "ano": 2016,
-        "total": 15
+        "total": 16
       },
       {
         "ano": 2015,
@@ -471,8 +471,8 @@
       "A TARDE": 7,
       "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Jornal Correio": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 27,
@@ -521,7 +521,7 @@
       },
       {
         "ano": 2022,
-        "total": 21
+        "total": 22
       },
       {
         "ano": 2021,
@@ -545,7 +545,7 @@
       },
       {
         "ano": 2016,
-        "total": 15
+        "total": 16
       },
       {
         "ano": 2015,
@@ -615,8 +615,8 @@
       "Reitoria (Salvador)": 4,
       "Catu": 4,
       "Ribeira do Pombal": 3,
-      "Itaberaba": 3,
       "Itapetinga": 3,
+      "Itaberaba": 3,
       "Santo Estêvão": 2,
       "Governador Mangabeira": 2,
       "Teixeira de Freitas": 2
@@ -640,7 +640,7 @@
       },
       {
         "ano": 2022,
-        "total": 21
+        "total": 22
       },
       {
         "ano": 2021,
@@ -664,7 +664,7 @@
       },
       {
         "ano": 2016,
-        "total": 15
+        "total": 16
       },
       {
         "ano": 2015,
@@ -685,10 +685,10 @@
     ]
   },
   "ate_2021": {
-    "total": 130,
+    "total": 131,
     "eixos": {
       "Gestão e RH": 59,
-      "Institucional": 33,
+      "Institucional": 34,
       "Ensino": 23,
       "Pesquisa": 9,
       "Extensão": 6
@@ -698,20 +698,20 @@
       "Governamental": 16,
       "Especializados (Nichos)": 10,
       "Imprensa (Nacional)": 6,
-      "Imprensa Regional (Bahia)": 4,
-      "Outras Instituições de Ensino": 4
+      "Outras Instituições de Ensino": 5,
+      "Imprensa Regional (Bahia)": 4
     },
     "top_veiculos": {
       "Agência Sertão": 32,
       "SulBahiaNews": 8,
       "Prefeitura de Alagoinhas": 7,
-      "Notícias de Bom Jesus da Lapa": 6,
       "GOV.BR": 6,
+      "Notícias de Bom Jesus da Lapa": 6,
       "InfoEscola": 5,
       "Mídia Externa": 4,
       "G1": 4,
-      "Jornal da Chapada": 3,
-      "Ache Concursos": 3
+      "Blog Gran Cursos Online": 3,
+      "Jornal da Chapada": 3
     },
     "meses": {
       "11": 23,
@@ -720,7 +720,7 @@
       "07": 11,
       "05": 11,
       "10": 10,
-      "04": 9,
+      "04": 10,
       "06": 9,
       "03": 9,
       "12": 8,
@@ -737,9 +737,9 @@
       "Uruçuca": 3,
       "Santa Inês": 2,
       "Itaberaba": 2,
+      "Reitoria (Salvador)": 2,
       "Valença": 2,
       "Governador Mangabeira": 1,
-      "Reitoria (Salvador)": 1,
       "Itapetinga": 1
     },
     "historico": [
@@ -765,7 +765,7 @@
       },
       {
         "ano": 2016,
-        "total": 15
+        "total": 16
       },
       {
         "ano": 2015,
