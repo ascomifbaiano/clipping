@@ -1,8 +1,8 @@
 {
   "geral": {
-    "total": 726,
+    "total": 727,
     "eixos": {
-      "Gestão e RH": 439,
+      "Gestão e RH": 440,
       "Institucional": 126,
       "Ensino": 115,
       "Pesquisa": 29,
@@ -10,7 +10,7 @@
     },
     "abrangencia": {
       "Imprensa Local": 449,
-      "Especializados (Nichos)": 102,
+      "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 70,
       "Governamental": 56,
       "Imprensa Regional (Bahia)": 42,
@@ -39,11 +39,11 @@
       "03": 51,
       "08": 48,
       "06": 47,
-      "02": 42,
+      "02": 43,
       "07": 32
     },
     "campuses": {
-      "Geral / Não Especificado": 351,
+      "Geral / Não Especificado": 352,
       "Guanambi": 86,
       "Bom Jesus da Lapa": 52,
       "Teixeira de Freitas": 37,
@@ -75,7 +75,7 @@
       },
       {
         "ano": 2024,
-        "total": 101
+        "total": 102
       },
       {
         "ano": 2023,
@@ -330,9 +330,9 @@
     ]
   },
   "2024": {
-    "total": 101,
+    "total": 102,
     "eixos": {
-      "Gestão e RH": 66,
+      "Gestão e RH": 67,
       "Institucional": 19,
       "Ensino": 13,
       "Extensão": 2,
@@ -340,7 +340,7 @@
     },
     "abrangencia": {
       "Imprensa Local": 75,
-      "Especializados (Nichos)": 10,
+      "Especializados (Nichos)": 11,
       "Imprensa Regional (Bahia)": 6,
       "Governamental": 5,
       "Imprensa (Nacional)": 4,
@@ -352,11 +352,11 @@
       "Ache Concursos": 6,
       "iBahia": 6,
       "G1": 3,
-      "Notícias de Bom Jesus da Lapa": 2,
-      "PEBSP": 2,
-      "Notícias da Lapa": 2,
       "Preto no Branco | Com Sibelle Fonseca": 2,
-      "Mais Região": 2
+      "Notícias de Bom Jesus da Lapa": 2,
+      "Notícias da Lapa": 2,
+      "PEBSP": 2,
+      "Catu Acontece": 2
     },
     "meses": {
       "12": 15,
@@ -364,16 +364,16 @@
       "10": 10,
       "08": 10,
       "07": 9,
+      "02": 8,
       "04": 8,
       "05": 7,
-      "06": 7,
       "01": 7,
-      "02": 7,
+      "06": 7,
       "11": 6,
       "03": 4
     },
     "campuses": {
-      "Geral / Não Especificado": 49,
+      "Geral / Não Especificado": 50,
       "Teixeira de Freitas": 11,
       "Bom Jesus da Lapa": 8,
       "Guanambi": 7,
@@ -394,7 +394,7 @@
     "historico": [
       {
         "ano": 2024,
-        "total": 101
+        "total": 102
       },
       {
         "ano": 2023,
@@ -513,7 +513,7 @@
       },
       {
         "ano": 2024,
-        "total": 101
+        "total": 102
       },
       {
         "ano": 2023,
@@ -632,7 +632,7 @@
       },
       {
         "ano": 2024,
-        "total": 101
+        "total": 102
       },
       {
         "ano": 2023,
