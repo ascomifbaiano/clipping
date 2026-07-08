@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 730,
+    "total": 731,
     "eixos": {
-      "Gestão e RH": 440,
+      "Gestão e RH": 441,
       "Institucional": 128,
       "Ensino": 116,
       "Pesquisa": 29,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 451,
+      "Imprensa Local": 452,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 70,
       "Governamental": 57,
@@ -24,7 +24,7 @@
       "G1": 29,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
-      "Notícias de Bom Jesus da Lapa": 16,
+      "Notícias de Bom Jesus da Lapa": 17,
       "Notícias da Lapa": 15,
       "GOV.BR": 11
     },
@@ -38,14 +38,14 @@
       "01": 55,
       "03": 51,
       "08": 48,
-      "06": 47,
+      "06": 48,
       "02": 43,
       "07": 33
     },
     "campuses": {
       "Geral / Não Especificado": 353,
       "Guanambi": 88,
-      "Bom Jesus da Lapa": 52,
+      "Bom Jesus da Lapa": 53,
       "Teixeira de Freitas": 37,
       "Alagoinhas": 28,
       "Uruçuca": 22,
@@ -95,7 +95,7 @@
       },
       {
         "ano": 2019,
-        "total": 27
+        "total": 28
       },
       {
         "ano": 2018,
@@ -188,7 +188,7 @@
       },
       {
         "ano": 2019,
-        "total": 27
+        "total": 28
       },
       {
         "ano": 2018,
@@ -245,9 +245,9 @@
       "Notícias de Bom Jesus da Lapa": 2,
       "Jornal Nossa Voz": 2,
       "JC Concursos": 2,
+      "Pimenta Blog": 2,
       "Blog do Eloilton Cajuhy": 2,
-      "Notícias da Lapa": 2,
-      "Pimenta Blog": 2
+      "Notícias da Lapa": 2
     },
     "meses": {
       "10": 17,
@@ -297,7 +297,7 @@
       },
       {
         "ano": 2019,
-        "total": 27
+        "total": 28
       },
       {
         "ano": 2018,
@@ -414,7 +414,7 @@
       },
       {
         "ano": 2019,
-        "total": 27
+        "total": 28
       },
       {
         "ano": 2018,
@@ -471,8 +471,8 @@
       "A TARDE": 7,
       "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Jornal Correio": 5,
-      "Notícias da Lapa": 5
+      "Notícias da Lapa": 5,
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 27,
@@ -533,7 +533,7 @@
       },
       {
         "ano": 2019,
-        "total": 27
+        "total": 28
       },
       {
         "ano": 2018,
@@ -616,8 +616,8 @@
       "Reitoria (Salvador)": 4,
       "Catu": 4,
       "Ribeira do Pombal": 3,
-      "Itapetinga": 3,
       "Itaberaba": 3,
+      "Itapetinga": 3,
       "Santo Estêvão": 2,
       "Governador Mangabeira": 2,
       "Teixeira de Freitas": 2
@@ -653,7 +653,7 @@
       },
       {
         "ano": 2019,
-        "total": 27
+        "total": 28
       },
       {
         "ano": 2018,
@@ -686,16 +686,16 @@
     ]
   },
   "ate_2021": {
-    "total": 134,
+    "total": 135,
     "eixos": {
-      "Gestão e RH": 59,
+      "Gestão e RH": 60,
       "Institucional": 36,
       "Ensino": 24,
       "Pesquisa": 9,
       "Extensão": 6
     },
     "abrangencia": {
-      "Imprensa Local": 92,
+      "Imprensa Local": 93,
       "Governamental": 17,
       "Especializados (Nichos)": 10,
       "Imprensa (Nacional)": 6,
@@ -705,8 +705,8 @@
     "top_veiculos": {
       "Agência Sertão": 33,
       "SulBahiaNews": 8,
+      "Notícias de Bom Jesus da Lapa": 7,
       "Prefeitura de Alagoinhas": 7,
-      "Notícias de Bom Jesus da Lapa": 6,
       "GOV.BR": 6,
       "InfoEscola": 5,
       "Mídia Externa": 4,
@@ -719,10 +719,10 @@
       "09": 14,
       "08": 14,
       "10": 11,
-      "05": 11,
-      "07": 11,
       "04": 11,
-      "06": 10,
+      "07": 11,
+      "06": 11,
+      "05": 11,
       "03": 9,
       "12": 8,
       "01": 7,
@@ -731,7 +731,7 @@
     "campuses": {
       "Geral / Não Especificado": 70,
       "Guanambi": 18,
-      "Bom Jesus da Lapa": 12,
+      "Bom Jesus da Lapa": 13,
       "Alagoinhas": 11,
       "Teixeira de Freitas": 7,
       "Senhor do Bonfim": 3,
@@ -754,7 +754,7 @@
       },
       {
         "ano": 2019,
-        "total": 27
+        "total": 28
       },
       {
         "ano": 2018,
