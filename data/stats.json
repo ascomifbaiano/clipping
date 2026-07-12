@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 737,
+    "total": 739,
     "eixos": {
       "Gestão e RH": 445,
-      "Institucional": 128,
+      "Institucional": 129,
       "Ensino": 118,
-      "Pesquisa": 29,
+      "Pesquisa": 30,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 458,
+      "Imprensa Local": 460,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 70,
       "Governamental": 57,
@@ -26,10 +26,10 @@
       "Mídia Externa": 27,
       "Notícias de Bom Jesus da Lapa": 17,
       "Notícias da Lapa": 15,
-      "GOV.BR": 11
+      "Prefeitura de Alagoinhas": 11
     },
     "meses": {
-      "05": 143,
+      "05": 144,
       "11": 67,
       "04": 66,
       "12": 65,
@@ -40,16 +40,16 @@
       "08": 49,
       "06": 48,
       "02": 43,
-      "07": 33
+      "07": 34
     },
     "campuses": {
-      "Geral / Não Especificado": 358,
+      "Geral / Não Especificado": 359,
       "Guanambi": 88,
       "Bom Jesus da Lapa": 53,
       "Teixeira de Freitas": 37,
       "Alagoinhas": 28,
+      "Uruçuca": 23,
       "Catu": 23,
-      "Uruçuca": 22,
       "Senhor do Bonfim": 17,
       "Valença": 17,
       "Santo Estêvão": 13,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 210
+        "total": 211
       },
       {
         "ano": 2025,
@@ -79,7 +79,7 @@
       },
       {
         "ano": 2023,
-        "total": 87
+        "total": 88
       },
       {
         "ano": 2022,
@@ -221,16 +221,16 @@
     ]
   },
   "2023": {
-    "total": 87,
+    "total": 88,
     "eixos": {
       "Gestão e RH": 46,
       "Ensino": 21,
       "Institucional": 13,
-      "Pesquisa": 4,
+      "Pesquisa": 5,
       "Extensão": 3
     },
     "abrangencia": {
-      "Imprensa Local": 69,
+      "Imprensa Local": 70,
       "Especializados (Nichos)": 6,
       "Imprensa (Nacional)": 5,
       "Governamental": 4,
@@ -242,18 +242,18 @@
       "SulBahiaNews": 6,
       "G1": 5,
       "Blog Gran Cursos Online": 3,
-      "Notícias de Bom Jesus da Lapa": 2,
       "Jornal Nossa Voz": 2,
+      "Notícias de Bom Jesus da Lapa": 2,
       "JC Concursos": 2,
-      "Pimenta Blog": 2,
       "Blog do Eloilton Cajuhy": 2,
+      "Pimenta Blog": 2,
       "Notícias da Lapa": 2
     },
     "meses": {
       "10": 17,
       "09": 15,
       "12": 12,
-      "05": 9,
+      "05": 10,
       "11": 7,
       "06": 5,
       "04": 5,
@@ -269,9 +269,9 @@
       "Teixeira de Freitas": 8,
       "Bom Jesus da Lapa": 7,
       "Catu": 4,
-      "Senhor do Bonfim": 3,
+      "Uruçuca": 3,
       "Itaberaba": 3,
-      "Uruçuca": 2,
+      "Senhor do Bonfim": 3,
       "Valença": 2,
       "Alagoinhas": 1,
       "Remanso": 1,
@@ -281,7 +281,7 @@
     "historico": [
       {
         "ano": 2023,
-        "total": 87
+        "total": 88
       },
       {
         "ano": 2022,
@@ -398,7 +398,7 @@
       },
       {
         "ano": 2023,
-        "total": 87
+        "total": 88
       },
       {
         "ano": 2022,
@@ -471,8 +471,8 @@
       "A TARDE": 7,
       "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Jornal Correio": 5,
-      "Notícias da Lapa": 5
+      "Notícias da Lapa": 5,
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 27,
@@ -517,7 +517,7 @@
       },
       {
         "ano": 2023,
-        "total": 87
+        "total": 88
       },
       {
         "ano": 2022,
@@ -566,16 +566,16 @@
     ]
   },
   "2026": {
-    "total": 210,
+    "total": 211,
     "eixos": {
       "Gestão e RH": 157,
-      "Institucional": 21,
+      "Institucional": 22,
       "Ensino": 15,
       "Pesquisa": 13,
       "Extensão": 4
     },
     "abrangencia": {
-      "Imprensa Local": 105,
+      "Imprensa Local": 106,
       "Especializados (Nichos)": 41,
       "Imprensa (Nacional)": 34,
       "Governamental": 17,
@@ -589,8 +589,8 @@
       "Ache Concursos": 9,
       "Sou Enfermagem": 8,
       "O TEMPO": 6,
-      "Acorda Cidade": 5,
       "GOV.BR": 5,
+      "Acorda Cidade": 5,
       "G1": 5
     },
     "meses": {
@@ -600,14 +600,14 @@
       "03": 22,
       "02": 17,
       "06": 12,
-      "07": 1
+      "07": 2
     },
     "campuses": {
-      "Geral / Não Especificado": 95,
+      "Geral / Não Especificado": 96,
       "Guanambi": 32,
-      "Senhor do Bonfim": 9,
       "Alagoinhas": 9,
       "Valença": 9,
+      "Senhor do Bonfim": 9,
       "Xique-Xique": 9,
       "Bom Jesus da Lapa": 8,
       "Uruçuca": 6,
@@ -625,7 +625,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 210
+        "total": 211
       },
       {
         "ano": 2025,
@@ -637,7 +637,7 @@
       },
       {
         "ano": 2023,
-        "total": 87
+        "total": 88
       },
       {
         "ano": 2022,
