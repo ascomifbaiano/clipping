@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 741,
+    "total": 742,
     "eixos": {
       "Gestão e RH": 446,
       "Institucional": 130,
       "Ensino": 118,
-      "Pesquisa": 30,
+      "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 462,
+      "Imprensa Local": 463,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 70,
       "Governamental": 57,
@@ -26,14 +26,14 @@
       "Mídia Externa": 27,
       "Notícias de Bom Jesus da Lapa": 18,
       "Notícias da Lapa": 15,
-      "GOV.BR": 11
+      "Prefeitura de Alagoinhas": 11
     },
     "meses": {
       "05": 144,
       "11": 67,
       "04": 66,
       "12": 65,
-      "10": 59,
+      "10": 60,
       "09": 57,
       "01": 55,
       "03": 52,
@@ -43,7 +43,7 @@
       "07": 35
     },
     "campuses": {
-      "Geral / Não Especificado": 359,
+      "Geral / Não Especificado": 360,
       "Guanambi": 88,
       "Bom Jesus da Lapa": 54,
       "Teixeira de Freitas": 37,
@@ -71,7 +71,7 @@
       },
       {
         "ano": 2025,
-        "total": 175
+        "total": 176
       },
       {
         "ano": 2024,
@@ -448,16 +448,16 @@
     ]
   },
   "2025": {
-    "total": 175,
+    "total": 176,
     "eixos": {
       "Gestão e RH": 105,
       "Ensino": 34,
       "Institucional": 33,
-      "Extensão": 2,
-      "Pesquisa": 1
+      "Pesquisa": 2,
+      "Extensão": 2
     },
     "abrangencia": {
-      "Imprensa Local": 97,
+      "Imprensa Local": 98,
       "Especializados (Nichos)": 31,
       "Imprensa (Nacional)": 18,
       "Imprensa Regional (Bahia)": 17,
@@ -470,16 +470,16 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Mídia Externa": 6,
+      "- Bahia Economica": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 27,
       "12": 26,
+      "10": 20,
       "08": 20,
-      "10": 19,
       "09": 15,
       "03": 14,
       "01": 12,
@@ -490,7 +490,7 @@
       "04": 6
     },
     "campuses": {
-      "Geral / Não Especificado": 89,
+      "Geral / Não Especificado": 90,
       "Bom Jesus da Lapa": 15,
       "Guanambi": 13,
       "Santo Estêvão": 9,
@@ -510,7 +510,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 175
+        "total": 176
       },
       {
         "ano": 2024,
@@ -630,7 +630,7 @@
       },
       {
         "ano": 2025,
-        "total": 175
+        "total": 176
       },
       {
         "ano": 2024,
