@@ -1,9 +1,9 @@
 {
   "geral": {
-    "total": 745,
+    "total": 746,
     "eixos": {
       "Gestão e RH": 447,
-      "Institucional": 131,
+      "Institucional": 132,
       "Ensino": 119,
       "Pesquisa": 31,
       "Extensão": 17
@@ -14,7 +14,7 @@
       "Imprensa (Nacional)": 70,
       "Governamental": 58,
       "Imprensa Regional (Bahia)": 43,
-      "Outras Instituições de Ensino": 7
+      "Outras Instituições de Ensino": 8
     },
     "top_veiculos": {
       "Agência Sertão": 159,
@@ -33,7 +33,7 @@
       "04": 67,
       "11": 67,
       "12": 65,
-      "10": 60,
+      "10": 61,
       "09": 57,
       "01": 55,
       "03": 52,
@@ -60,7 +60,7 @@
       "Ribeira do Pombal": 8,
       "Santa Inês": 8,
       "Itapetinga": 7,
-      "Governador Mangabeira": 4,
+      "Governador Mangabeira": 5,
       "Ruy Barbosa": 4,
       "Remanso": 3
     },
@@ -123,7 +123,7 @@
       },
       {
         "ano": 2012,
-        "total": 2
+        "total": 3
       }
     ]
   },
@@ -216,7 +216,7 @@
       },
       {
         "ano": 2012,
-        "total": 2
+        "total": 3
       }
     ]
   },
@@ -326,7 +326,7 @@
       },
       {
         "ano": 2012,
-        "total": 2
+        "total": 3
       }
     ]
   },
@@ -443,7 +443,7 @@
       },
       {
         "ano": 2012,
-        "total": 2
+        "total": 3
       }
     ]
   },
@@ -562,7 +562,7 @@
       },
       {
         "ano": 2012,
-        "total": 2
+        "total": 3
       }
     ]
   },
@@ -682,15 +682,15 @@
       },
       {
         "ano": 2012,
-        "total": 2
+        "total": 3
       }
     ]
   },
   "ate_2021": {
-    "total": 136,
+    "total": 137,
     "eixos": {
       "Gestão e RH": 60,
-      "Institucional": 36,
+      "Institucional": 37,
       "Ensino": 25,
       "Pesquisa": 9,
       "Extensão": 6
@@ -700,7 +700,7 @@
       "Governamental": 17,
       "Especializados (Nichos)": 10,
       "Imprensa (Nacional)": 6,
-      "Outras Instituições de Ensino": 5,
+      "Outras Instituições de Ensino": 6,
       "Imprensa Regional (Bahia)": 4
     },
     "top_veiculos": {
@@ -710,16 +710,16 @@
       "Prefeitura de Alagoinhas": 7,
       "GOV.BR": 6,
       "InfoEscola": 5,
-      "G1": 4,
       "Mídia Externa": 4,
-      "Jornal da Chapada": 3,
-      "Blog Gran Cursos Online": 3
+      "G1": 4,
+      "Blog Gran Cursos Online": 3,
+      "Jornal da Chapada": 3
     },
     "meses": {
       "11": 23,
       "09": 15,
       "08": 14,
-      "10": 11,
+      "10": 12,
       "04": 11,
       "07": 11,
       "06": 11,
@@ -737,11 +737,11 @@
       "Teixeira de Freitas": 7,
       "Uruçuca": 3,
       "Senhor do Bonfim": 3,
-      "Valença": 2,
+      "Governador Mangabeira": 2,
       "Santa Inês": 2,
       "Itaberaba": 2,
+      "Valença": 2,
       "Reitoria (Salvador)": 2,
-      "Governador Mangabeira": 1,
       "Catu": 1,
       "Itapetinga": 1
     },
@@ -784,7 +784,7 @@
       },
       {
         "ano": 2012,
-        "total": 2
+        "total": 3
       }
     ]
   }
