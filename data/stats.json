@@ -1,23 +1,23 @@
 {
   "geral": {
-    "total": 746,
+    "total": 748,
     "eixos": {
       "Gestão e RH": 447,
-      "Institucional": 132,
-      "Ensino": 119,
+      "Institucional": 133,
+      "Ensino": 120,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 464,
+      "Imprensa Local": 465,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 70,
       "Governamental": 58,
       "Imprensa Regional (Bahia)": 43,
-      "Outras Instituições de Ensino": 8
+      "Outras Instituições de Ensino": 9
     },
     "top_veiculos": {
-      "Agência Sertão": 159,
+      "Agência Sertão": 160,
       "SulBahiaNews": 37,
       "PCI Concursos": 34,
       "Ache Concursos": 30,
@@ -29,7 +29,7 @@
       "Prefeitura de Alagoinhas": 11
     },
     "meses": {
-      "05": 144,
+      "05": 145,
       "04": 67,
       "11": 67,
       "12": 65,
@@ -38,12 +38,12 @@
       "01": 55,
       "03": 52,
       "08": 51,
-      "06": 48,
+      "06": 49,
       "02": 43,
       "07": 36
     },
     "campuses": {
-      "Geral / Não Especificado": 360,
+      "Geral / Não Especificado": 362,
       "Guanambi": 88,
       "Bom Jesus da Lapa": 55,
       "Teixeira de Freitas": 37,
@@ -75,11 +75,11 @@
       },
       {
         "ano": 2024,
-        "total": 106
+        "total": 107
       },
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
@@ -221,16 +221,16 @@
     ]
   },
   "2023": {
-    "total": 90,
+    "total": 91,
     "eixos": {
       "Gestão e RH": 47,
       "Ensino": 21,
-      "Institucional": 14,
+      "Institucional": 15,
       "Pesquisa": 5,
       "Extensão": 3
     },
     "abrangencia": {
-      "Imprensa Local": 72,
+      "Imprensa Local": 73,
       "Especializados (Nichos)": 6,
       "Imprensa (Nacional)": 5,
       "Governamental": 4,
@@ -238,22 +238,22 @@
       "Outras Instituições de Ensino": 1
     },
     "top_veiculos": {
-      "Agência Sertão": 36,
+      "Agência Sertão": 37,
       "SulBahiaNews": 6,
       "G1": 5,
       "Blog Gran Cursos Online": 3,
       "Notícias de Bom Jesus da Lapa": 3,
       "Notícias da Lapa": 2,
-      "JC Concursos": 2,
-      "Blog do Eloilton Cajuhy": 2,
       "Jornal Nossa Voz": 2,
+      "Blog do Eloilton Cajuhy": 2,
+      "JC Concursos": 2,
       "Pimenta Blog": 2
     },
     "meses": {
       "10": 17,
       "09": 15,
       "12": 12,
-      "05": 10,
+      "05": 11,
       "11": 7,
       "08": 5,
       "06": 5,
@@ -264,7 +264,7 @@
       "01": 3
     },
     "campuses": {
-      "Geral / Não Especificado": 37,
+      "Geral / Não Especificado": 38,
       "Guanambi": 17,
       "Teixeira de Freitas": 8,
       "Bom Jesus da Lapa": 8,
@@ -282,7 +282,7 @@
     "historico": [
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
@@ -331,11 +331,11 @@
     ]
   },
   "2024": {
-    "total": 106,
+    "total": 107,
     "eixos": {
       "Gestão e RH": 70,
       "Institucional": 19,
-      "Ensino": 14,
+      "Ensino": 15,
       "Extensão": 2,
       "Pesquisa": 1
     },
@@ -345,7 +345,7 @@
       "Imprensa Regional (Bahia)": 6,
       "Governamental": 5,
       "Imprensa (Nacional)": 4,
-      "Outras Instituições de Ensino": 1
+      "Outras Instituições de Ensino": 2
     },
     "top_veiculos": {
       "Agência Sertão": 37,
@@ -357,7 +357,7 @@
       "G1": 3,
       "Preto no Branco | Com Sibelle Fonseca": 2,
       "Notícias da Lapa": 2,
-      "Catu Acontece": 2
+      "Mais Região": 2
     },
     "meses": {
       "12": 16,
@@ -367,14 +367,14 @@
       "04": 10,
       "07": 9,
       "02": 8,
-      "05": 7,
+      "06": 8,
       "01": 7,
-      "06": 7,
+      "05": 7,
       "11": 6,
       "03": 4
     },
     "campuses": {
-      "Geral / Não Especificado": 53,
+      "Geral / Não Especificado": 54,
       "Teixeira de Freitas": 11,
       "Bom Jesus da Lapa": 9,
       "Guanambi": 7,
@@ -395,11 +395,11 @@
     "historico": [
       {
         "ano": 2024,
-        "total": 106
+        "total": 107
       },
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
@@ -473,7 +473,7 @@
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
       "- Bahia Economica": 5,
-      "Notícias da Lapa": 5
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 27,
@@ -514,11 +514,11 @@
       },
       {
         "ano": 2024,
-        "total": 106
+        "total": 107
       },
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
@@ -634,11 +634,11 @@
       },
       {
         "ano": 2024,
-        "total": 106
+        "total": 107
       },
       {
         "ano": 2023,
-        "total": 90
+        "total": 91
       },
       {
         "ano": 2022,
