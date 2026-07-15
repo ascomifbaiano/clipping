@@ -1,8 +1,8 @@
 {
   "geral": {
-    "total": 748,
+    "total": 749,
     "eixos": {
-      "Gestão e RH": 447,
+      "Gestão e RH": 448,
       "Institucional": 133,
       "Ensino": 120,
       "Pesquisa": 31,
@@ -11,7 +11,7 @@
     "abrangencia": {
       "Imprensa Local": 465,
       "Especializados (Nichos)": 103,
-      "Imprensa (Nacional)": 70,
+      "Imprensa (Nacional)": 71,
       "Governamental": 58,
       "Imprensa Regional (Bahia)": 43,
       "Outras Instituições de Ensino": 9
@@ -40,10 +40,10 @@
       "08": 51,
       "06": 49,
       "02": 43,
-      "07": 36
+      "07": 37
     },
     "campuses": {
-      "Geral / Não Especificado": 362,
+      "Geral / Não Especificado": 363,
       "Guanambi": 88,
       "Bom Jesus da Lapa": 55,
       "Teixeira de Freitas": 37,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 212
+        "total": 213
       },
       {
         "ano": 2025,
@@ -244,9 +244,9 @@
       "Blog Gran Cursos Online": 3,
       "Notícias de Bom Jesus da Lapa": 3,
       "Notícias da Lapa": 2,
-      "Jornal Nossa Voz": 2,
-      "Blog do Eloilton Cajuhy": 2,
       "JC Concursos": 2,
+      "Blog do Eloilton Cajuhy": 2,
+      "Jornal Nossa Voz": 2,
       "Pimenta Blog": 2
     },
     "meses": {
@@ -350,13 +350,13 @@
     "top_veiculos": {
       "Agência Sertão": 37,
       "SulBahiaNews": 12,
-      "Ache Concursos": 6,
       "iBahia": 6,
+      "Ache Concursos": 6,
       "PEBSP": 4,
       "Notícias de Bom Jesus da Lapa": 3,
       "G1": 3,
-      "Preto no Branco | Com Sibelle Fonseca": 2,
       "Notícias da Lapa": 2,
+      "Preto no Branco | Com Sibelle Fonseca": 2,
       "Mais Região": 2
     },
     "meses": {
@@ -473,7 +473,7 @@
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
       "- Bahia Economica": 5,
-      "Jornal Correio": 5
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 27,
@@ -567,9 +567,9 @@
     ]
   },
   "2026": {
-    "total": 212,
+    "total": 213,
     "eixos": {
-      "Gestão e RH": 157,
+      "Gestão e RH": 158,
       "Institucional": 22,
       "Ensino": 16,
       "Pesquisa": 13,
@@ -578,7 +578,7 @@
     "abrangencia": {
       "Imprensa Local": 106,
       "Especializados (Nichos)": 41,
-      "Imprensa (Nacional)": 34,
+      "Imprensa (Nacional)": 35,
       "Governamental": 18,
       "Imprensa Regional (Bahia)": 13
     },
@@ -589,7 +589,7 @@
       "Mídia Externa": 16,
       "Ache Concursos": 9,
       "Sou Enfermagem": 8,
-      "O TEMPO": 6,
+      "O TEMPO": 7,
       "GOV.BR": 5,
       "Acorda Cidade": 5,
       "G1": 5
@@ -601,10 +601,10 @@
       "03": 22,
       "02": 17,
       "06": 12,
-      "07": 3
+      "07": 4
     },
     "campuses": {
-      "Geral / Não Especificado": 96,
+      "Geral / Não Especificado": 97,
       "Guanambi": 32,
       "Xique-Xique": 9,
       "Alagoinhas": 9,
@@ -626,7 +626,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 212
+        "total": 213
       },
       {
         "ano": 2025,
