@@ -1,10 +1,10 @@
 {
   "geral": {
-    "total": 749,
+    "total": 750,
     "eixos": {
       "Gestão e RH": 448,
       "Institucional": 133,
-      "Ensino": 120,
+      "Ensino": 121,
       "Pesquisa": 31,
       "Extensão": 17
     },
@@ -12,7 +12,7 @@
       "Imprensa Local": 465,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 71,
-      "Governamental": 58,
+      "Governamental": 59,
       "Imprensa Regional (Bahia)": 43,
       "Outras Instituições de Ensino": 9
     },
@@ -30,8 +30,8 @@
     },
     "meses": {
       "05": 145,
-      "04": 67,
       "11": 67,
+      "04": 67,
       "12": 65,
       "10": 61,
       "09": 57,
@@ -40,7 +40,7 @@
       "08": 51,
       "06": 49,
       "02": 43,
-      "07": 37
+      "07": 38
     },
     "campuses": {
       "Geral / Não Especificado": 363,
@@ -48,15 +48,15 @@
       "Bom Jesus da Lapa": 55,
       "Teixeira de Freitas": 37,
       "Alagoinhas": 28,
-      "Catu": 23,
       "Uruçuca": 23,
+      "Catu": 23,
       "Senhor do Bonfim": 18,
       "Valença": 17,
+      "Reitoria (Salvador)": 13,
       "Santo Estêvão": 13,
       "Serrinha": 13,
-      "Reitoria (Salvador)": 12,
-      "Itaberaba": 12,
       "Xique-Xique": 12,
+      "Itaberaba": 12,
       "Ribeira do Pombal": 8,
       "Santa Inês": 8,
       "Itapetinga": 7,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 213
+        "total": 214
       },
       {
         "ano": 2025,
@@ -567,11 +567,11 @@
     ]
   },
   "2026": {
-    "total": 213,
+    "total": 214,
     "eixos": {
       "Gestão e RH": 158,
       "Institucional": 22,
-      "Ensino": 16,
+      "Ensino": 17,
       "Pesquisa": 13,
       "Extensão": 4
     },
@@ -579,7 +579,7 @@
       "Imprensa Local": 106,
       "Especializados (Nichos)": 41,
       "Imprensa (Nacional)": 35,
-      "Governamental": 18,
+      "Governamental": 19,
       "Imprensa Regional (Bahia)": 13
     },
     "top_veiculos": {
@@ -601,7 +601,7 @@
       "03": 22,
       "02": 17,
       "06": 12,
-      "07": 4
+      "07": 5
     },
     "campuses": {
       "Geral / Não Especificado": 97,
@@ -611,8 +611,8 @@
       "Valença": 9,
       "Senhor do Bonfim": 9,
       "Bom Jesus da Lapa": 8,
+      "Reitoria (Salvador)": 6,
       "Uruçuca": 6,
-      "Reitoria (Salvador)": 5,
       "Serrinha": 5,
       "Santa Inês": 5,
       "Catu": 4,
@@ -626,7 +626,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 213
+        "total": 214
       },
       {
         "ano": 2025,
