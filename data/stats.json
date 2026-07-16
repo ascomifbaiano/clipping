@@ -1,17 +1,17 @@
 {
   "geral": {
-    "total": 750,
+    "total": 754,
     "eixos": {
-      "Gestão e RH": 448,
-      "Institucional": 133,
+      "Gestão e RH": 449,
+      "Institucional": 136,
       "Ensino": 121,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 465,
+      "Imprensa Local": 468,
       "Especializados (Nichos)": 103,
-      "Imprensa (Nacional)": 71,
+      "Imprensa (Nacional)": 72,
       "Governamental": 59,
       "Imprensa Regional (Bahia)": 43,
       "Outras Instituições de Ensino": 9
@@ -26,11 +26,11 @@
       "Mídia Externa": 27,
       "Notícias de Bom Jesus da Lapa": 19,
       "Notícias da Lapa": 15,
-      "Prefeitura de Alagoinhas": 11
+      "GOV.BR": 11
     },
     "meses": {
       "05": 145,
-      "11": 67,
+      "11": 68,
       "04": 67,
       "12": 65,
       "10": 61,
@@ -40,13 +40,13 @@
       "08": 51,
       "06": 49,
       "02": 43,
-      "07": 38
+      "07": 41
     },
     "campuses": {
-      "Geral / Não Especificado": 363,
-      "Guanambi": 88,
+      "Geral / Não Especificado": 364,
+      "Guanambi": 89,
       "Bom Jesus da Lapa": 55,
-      "Teixeira de Freitas": 37,
+      "Teixeira de Freitas": 38,
       "Alagoinhas": 28,
       "Uruçuca": 23,
       "Catu": 23,
@@ -57,8 +57,8 @@
       "Serrinha": 13,
       "Xique-Xique": 12,
       "Itaberaba": 12,
+      "Santa Inês": 9,
       "Ribeira do Pombal": 8,
-      "Santa Inês": 8,
       "Itapetinga": 7,
       "Governador Mangabeira": 5,
       "Ruy Barbosa": 4,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 214
+        "total": 217
       },
       {
         "ano": 2025,
@@ -95,7 +95,7 @@
       },
       {
         "ano": 2019,
-        "total": 28
+        "total": 29
       },
       {
         "ano": 2018,
@@ -188,7 +188,7 @@
       },
       {
         "ano": 2019,
-        "total": 28
+        "total": 29
       },
       {
         "ano": 2018,
@@ -298,7 +298,7 @@
       },
       {
         "ano": 2019,
-        "total": 28
+        "total": 29
       },
       {
         "ano": 2018,
@@ -415,7 +415,7 @@
       },
       {
         "ano": 2019,
-        "total": 28
+        "total": 29
       },
       {
         "ano": 2018,
@@ -473,7 +473,7 @@
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
       "- Bahia Economica": 5,
-      "Notícias da Lapa": 5
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 27,
@@ -534,7 +534,7 @@
       },
       {
         "ano": 2019,
-        "total": 28
+        "total": 29
       },
       {
         "ano": 2018,
@@ -567,18 +567,18 @@
     ]
   },
   "2026": {
-    "total": 214,
+    "total": 217,
     "eixos": {
-      "Gestão e RH": 158,
-      "Institucional": 22,
+      "Gestão e RH": 159,
+      "Institucional": 24,
       "Ensino": 17,
       "Pesquisa": 13,
       "Extensão": 4
     },
     "abrangencia": {
-      "Imprensa Local": 106,
+      "Imprensa Local": 108,
       "Especializados (Nichos)": 41,
-      "Imprensa (Nacional)": 35,
+      "Imprensa (Nacional)": 36,
       "Governamental": 19,
       "Imprensa Regional (Bahia)": 13
     },
@@ -588,11 +588,11 @@
       "Folha Dirigida": 21,
       "Mídia Externa": 16,
       "Ache Concursos": 9,
+      "O TEMPO": 8,
       "Sou Enfermagem": 8,
-      "O TEMPO": 7,
-      "GOV.BR": 5,
+      "iGuanambi": 5,
       "Acorda Cidade": 5,
-      "G1": 5
+      "GOV.BR": 5
     },
     "meses": {
       "05": 102,
@@ -601,20 +601,20 @@
       "03": 22,
       "02": 17,
       "06": 12,
-      "07": 5
+      "07": 8
     },
     "campuses": {
-      "Geral / Não Especificado": 97,
-      "Guanambi": 32,
-      "Xique-Xique": 9,
+      "Geral / Não Especificado": 98,
+      "Guanambi": 33,
       "Alagoinhas": 9,
       "Valença": 9,
+      "Xique-Xique": 9,
       "Senhor do Bonfim": 9,
       "Bom Jesus da Lapa": 8,
       "Reitoria (Salvador)": 6,
       "Uruçuca": 6,
+      "Santa Inês": 6,
       "Serrinha": 5,
-      "Santa Inês": 5,
       "Catu": 4,
       "Ribeira do Pombal": 3,
       "Itapetinga": 3,
@@ -626,7 +626,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 214
+        "total": 217
       },
       {
         "ano": 2025,
@@ -654,7 +654,7 @@
       },
       {
         "ano": 2019,
-        "total": 28
+        "total": 29
       },
       {
         "ano": 2018,
@@ -687,16 +687,16 @@
     ]
   },
   "ate_2021": {
-    "total": 137,
+    "total": 138,
     "eixos": {
       "Gestão e RH": 60,
-      "Institucional": 37,
+      "Institucional": 38,
       "Ensino": 25,
       "Pesquisa": 9,
       "Extensão": 6
     },
     "abrangencia": {
-      "Imprensa Local": 94,
+      "Imprensa Local": 95,
       "Governamental": 17,
       "Especializados (Nichos)": 10,
       "Imprensa (Nacional)": 6,
@@ -712,11 +712,11 @@
       "InfoEscola": 5,
       "Mídia Externa": 4,
       "G1": 4,
-      "Blog Gran Cursos Online": 3,
-      "Jornal da Chapada": 3
+      "Ache Concursos": 3,
+      "Blog Gran Cursos Online": 3
     },
     "meses": {
-      "11": 23,
+      "11": 24,
       "09": 15,
       "08": 14,
       "10": 12,
@@ -734,7 +734,7 @@
       "Guanambi": 18,
       "Bom Jesus da Lapa": 13,
       "Alagoinhas": 11,
-      "Teixeira de Freitas": 7,
+      "Teixeira de Freitas": 8,
       "Uruçuca": 3,
       "Senhor do Bonfim": 3,
       "Governador Mangabeira": 2,
@@ -756,7 +756,7 @@
       },
       {
         "ano": 2019,
-        "total": 28
+        "total": 29
       },
       {
         "ano": 2018,
