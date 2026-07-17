@@ -1,8 +1,8 @@
 {
   "geral": {
-    "total": 754,
+    "total": 755,
     "eixos": {
-      "Gestão e RH": 449,
+      "Gestão e RH": 450,
       "Institucional": 136,
       "Ensino": 121,
       "Pesquisa": 31,
@@ -12,7 +12,7 @@
       "Imprensa Local": 468,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 72,
-      "Governamental": 59,
+      "Governamental": 60,
       "Imprensa Regional (Bahia)": 43,
       "Outras Instituições de Ensino": 9
     },
@@ -31,7 +31,7 @@
     "meses": {
       "05": 145,
       "11": 68,
-      "04": 67,
+      "04": 68,
       "12": 65,
       "10": 61,
       "09": 57,
@@ -52,7 +52,7 @@
       "Catu": 23,
       "Senhor do Bonfim": 18,
       "Valença": 17,
-      "Reitoria (Salvador)": 13,
+      "Reitoria (Salvador)": 14,
       "Santo Estêvão": 13,
       "Serrinha": 13,
       "Xique-Xique": 12,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 217
+        "total": 218
       },
       {
         "ano": 2025,
@@ -473,7 +473,7 @@
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
       "- Bahia Economica": 5,
-      "Jornal Correio": 5
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 27,
@@ -567,9 +567,9 @@
     ]
   },
   "2026": {
-    "total": 217,
+    "total": 218,
     "eixos": {
-      "Gestão e RH": 159,
+      "Gestão e RH": 160,
       "Institucional": 24,
       "Ensino": 17,
       "Pesquisa": 13,
@@ -579,7 +579,7 @@
       "Imprensa Local": 108,
       "Especializados (Nichos)": 41,
       "Imprensa (Nacional)": 36,
-      "Governamental": 19,
+      "Governamental": 20,
       "Imprensa Regional (Bahia)": 13
     },
     "top_veiculos": {
@@ -592,11 +592,11 @@
       "Sou Enfermagem": 8,
       "iGuanambi": 5,
       "Acorda Cidade": 5,
-      "GOV.BR": 5
+      "redeintegra.mec.gov.br": 5
     },
     "meses": {
       "05": 102,
-      "04": 30,
+      "04": 31,
       "01": 26,
       "03": 22,
       "02": 17,
@@ -611,7 +611,7 @@
       "Xique-Xique": 9,
       "Senhor do Bonfim": 9,
       "Bom Jesus da Lapa": 8,
-      "Reitoria (Salvador)": 6,
+      "Reitoria (Salvador)": 7,
       "Uruçuca": 6,
       "Santa Inês": 6,
       "Serrinha": 5,
@@ -626,7 +626,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 217
+        "total": 218
       },
       {
         "ano": 2025,
