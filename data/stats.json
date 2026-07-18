@@ -1,24 +1,24 @@
 {
   "geral": {
-    "total": 755,
+    "total": 757,
     "eixos": {
-      "Gestão e RH": 450,
+      "Gestão e RH": 452,
       "Institucional": 136,
       "Ensino": 121,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 468,
+      "Imprensa Local": 469,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 72,
-      "Governamental": 60,
+      "Governamental": 61,
       "Imprensa Regional (Bahia)": 43,
       "Outras Instituições de Ensino": 9
     },
     "top_veiculos": {
       "Agência Sertão": 160,
-      "SulBahiaNews": 37,
+      "SulBahiaNews": 38,
       "PCI Concursos": 34,
       "Ache Concursos": 30,
       "G1": 29,
@@ -30,11 +30,11 @@
     },
     "meses": {
       "05": 145,
+      "04": 69,
       "11": 68,
-      "04": 68,
       "12": 65,
       "10": 61,
-      "09": 57,
+      "09": 58,
       "01": 55,
       "03": 52,
       "08": 51,
@@ -46,13 +46,13 @@
       "Geral / Não Especificado": 364,
       "Guanambi": 89,
       "Bom Jesus da Lapa": 55,
-      "Teixeira de Freitas": 38,
+      "Teixeira de Freitas": 39,
       "Alagoinhas": 28,
       "Uruçuca": 23,
       "Catu": 23,
       "Senhor do Bonfim": 18,
       "Valença": 17,
-      "Reitoria (Salvador)": 14,
+      "Reitoria (Salvador)": 15,
       "Santo Estêvão": 13,
       "Serrinha": 13,
       "Xique-Xique": 12,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 218
+        "total": 219
       },
       {
         "ano": 2025,
@@ -87,7 +87,7 @@
       },
       {
         "ano": 2021,
-        "total": 31
+        "total": 32
       },
       {
         "ano": 2020,
@@ -180,7 +180,7 @@
       },
       {
         "ano": 2021,
-        "total": 31
+        "total": 32
       },
       {
         "ano": 2020,
@@ -290,7 +290,7 @@
       },
       {
         "ano": 2021,
-        "total": 31
+        "total": 32
       },
       {
         "ano": 2020,
@@ -407,7 +407,7 @@
       },
       {
         "ano": 2021,
-        "total": 31
+        "total": 32
       },
       {
         "ano": 2020,
@@ -473,7 +473,7 @@
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
       "- Bahia Economica": 5,
-      "Notícias da Lapa": 5
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 27,
@@ -526,7 +526,7 @@
       },
       {
         "ano": 2021,
-        "total": 31
+        "total": 32
       },
       {
         "ano": 2020,
@@ -567,9 +567,9 @@
     ]
   },
   "2026": {
-    "total": 218,
+    "total": 219,
     "eixos": {
-      "Gestão e RH": 160,
+      "Gestão e RH": 161,
       "Institucional": 24,
       "Ensino": 17,
       "Pesquisa": 13,
@@ -579,7 +579,7 @@
       "Imprensa Local": 108,
       "Especializados (Nichos)": 41,
       "Imprensa (Nacional)": 36,
-      "Governamental": 20,
+      "Governamental": 21,
       "Imprensa Regional (Bahia)": 13
     },
     "top_veiculos": {
@@ -590,13 +590,13 @@
       "Ache Concursos": 9,
       "O TEMPO": 8,
       "Sou Enfermagem": 8,
+      "redeintegra.mec.gov.br": 6,
       "iGuanambi": 5,
-      "redeintegra.mec.gov.br": 5,
       "Acorda Cidade": 5
     },
     "meses": {
       "05": 102,
-      "04": 31,
+      "04": 32,
       "01": 26,
       "03": 22,
       "02": 17,
@@ -611,7 +611,7 @@
       "Xique-Xique": 9,
       "Senhor do Bonfim": 9,
       "Bom Jesus da Lapa": 8,
-      "Reitoria (Salvador)": 7,
+      "Reitoria (Salvador)": 8,
       "Uruçuca": 6,
       "Santa Inês": 6,
       "Serrinha": 5,
@@ -626,7 +626,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 218
+        "total": 219
       },
       {
         "ano": 2025,
@@ -646,7 +646,7 @@
       },
       {
         "ano": 2021,
-        "total": 31
+        "total": 32
       },
       {
         "ano": 2020,
@@ -687,16 +687,16 @@
     ]
   },
   "ate_2021": {
-    "total": 138,
+    "total": 139,
     "eixos": {
-      "Gestão e RH": 60,
+      "Gestão e RH": 61,
       "Institucional": 38,
       "Ensino": 25,
       "Pesquisa": 9,
       "Extensão": 6
     },
     "abrangencia": {
-      "Imprensa Local": 95,
+      "Imprensa Local": 96,
       "Governamental": 17,
       "Especializados (Nichos)": 10,
       "Imprensa (Nacional)": 6,
@@ -705,7 +705,7 @@
     },
     "top_veiculos": {
       "Agência Sertão": 33,
-      "SulBahiaNews": 8,
+      "SulBahiaNews": 9,
       "Notícias de Bom Jesus da Lapa": 7,
       "Prefeitura de Alagoinhas": 7,
       "GOV.BR": 6,
@@ -717,7 +717,7 @@
     },
     "meses": {
       "11": 24,
-      "09": 15,
+      "09": 16,
       "08": 14,
       "10": 12,
       "04": 11,
@@ -734,7 +734,7 @@
       "Guanambi": 18,
       "Bom Jesus da Lapa": 13,
       "Alagoinhas": 11,
-      "Teixeira de Freitas": 8,
+      "Teixeira de Freitas": 9,
       "Uruçuca": 3,
       "Senhor do Bonfim": 3,
       "Governador Mangabeira": 2,
@@ -748,7 +748,7 @@
     "historico": [
       {
         "ano": 2021,
-        "total": 31
+        "total": 32
       },
       {
         "ano": 2020,
