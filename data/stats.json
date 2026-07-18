@@ -1,24 +1,24 @@
 {
   "geral": {
-    "total": 757,
+    "total": 760,
     "eixos": {
-      "Gestão e RH": 452,
+      "Gestão e RH": 454,
       "Institucional": 136,
-      "Ensino": 121,
+      "Ensino": 122,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 469,
+      "Imprensa Local": 470,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 72,
       "Governamental": 61,
       "Imprensa Regional (Bahia)": 43,
-      "Outras Instituições de Ensino": 9
+      "Outras Instituições de Ensino": 11
     },
     "top_veiculos": {
       "Agência Sertão": 160,
-      "SulBahiaNews": 38,
+      "SulBahiaNews": 39,
       "PCI Concursos": 34,
       "Ache Concursos": 30,
       "G1": 29,
@@ -36,17 +36,17 @@
       "10": 61,
       "09": 58,
       "01": 55,
-      "03": 52,
+      "03": 54,
       "08": 51,
-      "06": 49,
+      "06": 50,
       "02": 43,
       "07": 41
     },
     "campuses": {
-      "Geral / Não Especificado": 364,
-      "Guanambi": 89,
+      "Geral / Não Especificado": 365,
+      "Guanambi": 90,
       "Bom Jesus da Lapa": 55,
-      "Teixeira de Freitas": 39,
+      "Teixeira de Freitas": 40,
       "Alagoinhas": 28,
       "Uruçuca": 23,
       "Catu": 23,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 219
+        "total": 220
       },
       {
         "ano": 2025,
@@ -83,7 +83,7 @@
       },
       {
         "ano": 2022,
-        "total": 24
+        "total": 25
       },
       {
         "ano": 2021,
@@ -99,7 +99,7 @@
       },
       {
         "ano": 2018,
-        "total": 14
+        "total": 15
       },
       {
         "ano": 2017,
@@ -128,15 +128,15 @@
     ]
   },
   "2022": {
-    "total": 24,
+    "total": 25,
     "eixos": {
+      "Gestão e RH": 9,
       "Ensino": 9,
-      "Gestão e RH": 8,
       "Institucional": 6,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 15,
+      "Imprensa Local": 16,
       "Especializados (Nichos)": 4,
       "Imprensa (Nacional)": 3,
       "Governamental": 2
@@ -144,8 +144,8 @@
     "top_veiculos": {
       "G1": 3,
       "Agência Sertão": 3,
+      "SulBahiaNews": 3,
       "InfoEducação": 3,
-      "SulBahiaNews": 2,
       "Hora Brasil": 2,
       "Notícias de Bom Jesus da Lapa": 1,
       "Tribuna do Recôncavo": 1,
@@ -158,14 +158,15 @@
       "04": 5,
       "11": 4,
       "12": 3,
-      "06": 2,
       "10": 2,
+      "06": 2,
       "09": 1,
-      "07": 1
+      "07": 1,
+      "03": 1
     },
     "campuses": {
       "Geral / Não Especificado": 14,
-      "Teixeira de Freitas": 2,
+      "Teixeira de Freitas": 3,
       "Bom Jesus da Lapa": 2,
       "Alagoinhas": 2,
       "Guanambi": 1,
@@ -176,7 +177,7 @@
     "historico": [
       {
         "ano": 2022,
-        "total": 24
+        "total": 25
       },
       {
         "ano": 2021,
@@ -192,7 +193,7 @@
       },
       {
         "ano": 2018,
-        "total": 14
+        "total": 15
       },
       {
         "ano": 2017,
@@ -286,7 +287,7 @@
       },
       {
         "ano": 2022,
-        "total": 24
+        "total": 25
       },
       {
         "ano": 2021,
@@ -302,7 +303,7 @@
       },
       {
         "ano": 2018,
-        "total": 14
+        "total": 15
       },
       {
         "ano": 2017,
@@ -403,7 +404,7 @@
       },
       {
         "ano": 2022,
-        "total": 24
+        "total": 25
       },
       {
         "ano": 2021,
@@ -419,7 +420,7 @@
       },
       {
         "ano": 2018,
-        "total": 14
+        "total": 15
       },
       {
         "ano": 2017,
@@ -473,7 +474,7 @@
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
       "- Bahia Economica": 5,
-      "Jornal Correio": 5
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 27,
@@ -522,7 +523,7 @@
       },
       {
         "ano": 2022,
-        "total": 24
+        "total": 25
       },
       {
         "ano": 2021,
@@ -538,7 +539,7 @@
       },
       {
         "ano": 2018,
-        "total": 14
+        "total": 15
       },
       {
         "ano": 2017,
@@ -567,11 +568,11 @@
     ]
   },
   "2026": {
-    "total": 219,
+    "total": 220,
     "eixos": {
       "Gestão e RH": 161,
       "Institucional": 24,
-      "Ensino": 17,
+      "Ensino": 18,
       "Pesquisa": 13,
       "Extensão": 4
     },
@@ -580,7 +581,8 @@
       "Especializados (Nichos)": 41,
       "Imprensa (Nacional)": 36,
       "Governamental": 21,
-      "Imprensa Regional (Bahia)": 13
+      "Imprensa Regional (Bahia)": 13,
+      "Outras Instituições de Ensino": 1
     },
     "top_veiculos": {
       "Agência Sertão": 25,
@@ -598,13 +600,13 @@
       "05": 102,
       "04": 32,
       "01": 26,
-      "03": 22,
+      "03": 23,
       "02": 17,
       "06": 12,
       "07": 8
     },
     "campuses": {
-      "Geral / Não Especificado": 98,
+      "Geral / Não Especificado": 99,
       "Guanambi": 33,
       "Alagoinhas": 9,
       "Valença": 9,
@@ -626,7 +628,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 219
+        "total": 220
       },
       {
         "ano": 2025,
@@ -642,7 +644,7 @@
       },
       {
         "ano": 2022,
-        "total": 24
+        "total": 25
       },
       {
         "ano": 2021,
@@ -658,7 +660,7 @@
       },
       {
         "ano": 2018,
-        "total": 14
+        "total": 15
       },
       {
         "ano": 2017,
@@ -687,9 +689,9 @@
     ]
   },
   "ate_2021": {
-    "total": 139,
+    "total": 140,
     "eixos": {
-      "Gestão e RH": 61,
+      "Gestão e RH": 62,
       "Institucional": 38,
       "Ensino": 25,
       "Pesquisa": 9,
@@ -699,8 +701,8 @@
       "Imprensa Local": 96,
       "Governamental": 17,
       "Especializados (Nichos)": 10,
+      "Outras Instituições de Ensino": 7,
       "Imprensa (Nacional)": 6,
-      "Outras Instituições de Ensino": 6,
       "Imprensa Regional (Bahia)": 4
     },
     "top_veiculos": {
@@ -720,9 +722,9 @@
       "09": 16,
       "08": 14,
       "10": 12,
+      "06": 12,
       "04": 11,
       "07": 11,
-      "06": 11,
       "05": 11,
       "03": 9,
       "12": 8,
@@ -731,7 +733,7 @@
     },
     "campuses": {
       "Geral / Não Especificado": 70,
-      "Guanambi": 18,
+      "Guanambi": 19,
       "Bom Jesus da Lapa": 13,
       "Alagoinhas": 11,
       "Teixeira de Freitas": 9,
@@ -760,7 +762,7 @@
       },
       {
         "ano": 2018,
-        "total": 14
+        "total": 15
       },
       {
         "ano": 2017,
