@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 760,
+    "total": 761,
     "eixos": {
-      "Gestão e RH": 454,
+      "Gestão e RH": 455,
       "Institucional": 136,
       "Ensino": 122,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 470,
+      "Imprensa Local": 471,
       "Especializados (Nichos)": 103,
       "Imprensa (Nacional)": 72,
       "Governamental": 61,
@@ -18,7 +18,7 @@
     },
     "top_veiculos": {
       "Agência Sertão": 160,
-      "SulBahiaNews": 39,
+      "SulBahiaNews": 40,
       "PCI Concursos": 34,
       "Ache Concursos": 30,
       "G1": 29,
@@ -30,8 +30,8 @@
     },
     "meses": {
       "05": 145,
+      "11": 69,
       "04": 69,
-      "11": 68,
       "12": 65,
       "10": 61,
       "09": 58,
@@ -46,7 +46,7 @@
       "Geral / Não Especificado": 365,
       "Guanambi": 90,
       "Bom Jesus da Lapa": 55,
-      "Teixeira de Freitas": 40,
+      "Teixeira de Freitas": 41,
       "Alagoinhas": 28,
       "Uruçuca": 23,
       "Catu": 23,
@@ -83,7 +83,7 @@
       },
       {
         "ano": 2022,
-        "total": 25
+        "total": 26
       },
       {
         "ano": 2021,
@@ -128,23 +128,23 @@
     ]
   },
   "2022": {
-    "total": 25,
+    "total": 26,
     "eixos": {
-      "Gestão e RH": 9,
+      "Gestão e RH": 10,
       "Ensino": 9,
       "Institucional": 6,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 16,
+      "Imprensa Local": 17,
       "Especializados (Nichos)": 4,
       "Imprensa (Nacional)": 3,
       "Governamental": 2
     },
     "top_veiculos": {
+      "SulBahiaNews": 4,
       "G1": 3,
       "Agência Sertão": 3,
-      "SulBahiaNews": 3,
       "InfoEducação": 3,
       "Hora Brasil": 2,
       "Notícias de Bom Jesus da Lapa": 1,
@@ -156,7 +156,7 @@
     "meses": {
       "05": 6,
       "04": 5,
-      "11": 4,
+      "11": 5,
       "12": 3,
       "10": 2,
       "06": 2,
@@ -166,7 +166,7 @@
     },
     "campuses": {
       "Geral / Não Especificado": 14,
-      "Teixeira de Freitas": 3,
+      "Teixeira de Freitas": 4,
       "Bom Jesus da Lapa": 2,
       "Alagoinhas": 2,
       "Guanambi": 1,
@@ -177,7 +177,7 @@
     "historico": [
       {
         "ano": 2022,
-        "total": 25
+        "total": 26
       },
       {
         "ano": 2021,
@@ -287,7 +287,7 @@
       },
       {
         "ano": 2022,
-        "total": 25
+        "total": 26
       },
       {
         "ano": 2021,
@@ -404,7 +404,7 @@
       },
       {
         "ano": 2022,
-        "total": 25
+        "total": 26
       },
       {
         "ano": 2021,
@@ -523,7 +523,7 @@
       },
       {
         "ano": 2022,
-        "total": 25
+        "total": 26
       },
       {
         "ano": 2021,
@@ -644,7 +644,7 @@
       },
       {
         "ano": 2022,
-        "total": 25
+        "total": 26
       },
       {
         "ano": 2021,
