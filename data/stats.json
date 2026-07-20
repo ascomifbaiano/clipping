@@ -1,8 +1,8 @@
 {
   "geral": {
-    "total": 761,
+    "total": 762,
     "eixos": {
-      "Gestão e RH": 455,
+      "Gestão e RH": 456,
       "Institucional": 136,
       "Ensino": 122,
       "Pesquisa": 31,
@@ -10,7 +10,7 @@
     },
     "abrangencia": {
       "Imprensa Local": 471,
-      "Especializados (Nichos)": 103,
+      "Especializados (Nichos)": 104,
       "Imprensa (Nacional)": 72,
       "Governamental": 61,
       "Imprensa Regional (Bahia)": 43,
@@ -35,7 +35,7 @@
       "12": 65,
       "10": 61,
       "09": 58,
-      "01": 55,
+      "01": 56,
       "03": 54,
       "08": 51,
       "06": 50,
@@ -43,7 +43,7 @@
       "07": 41
     },
     "campuses": {
-      "Geral / Não Especificado": 365,
+      "Geral / Não Especificado": 366,
       "Guanambi": 90,
       "Bom Jesus da Lapa": 55,
       "Teixeira de Freitas": 41,
@@ -71,7 +71,7 @@
       },
       {
         "ano": 2025,
-        "total": 177
+        "total": 178
       },
       {
         "ano": 2024,
@@ -449,9 +449,9 @@
     ]
   },
   "2025": {
-    "total": 177,
+    "total": 178,
     "eixos": {
-      "Gestão e RH": 105,
+      "Gestão e RH": 106,
       "Institucional": 34,
       "Ensino": 34,
       "Pesquisa": 2,
@@ -459,7 +459,7 @@
     },
     "abrangencia": {
       "Imprensa Local": 98,
-      "Especializados (Nichos)": 31,
+      "Especializados (Nichos)": 32,
       "Imprensa (Nacional)": 18,
       "Imprensa Regional (Bahia)": 18,
       "Governamental": 12
@@ -483,7 +483,7 @@
       "10": 20,
       "09": 15,
       "03": 14,
-      "01": 12,
+      "01": 13,
       "06": 11,
       "02": 9,
       "07": 8,
@@ -491,7 +491,7 @@
       "04": 6
     },
     "campuses": {
-      "Geral / Não Especificado": 90,
+      "Geral / Não Especificado": 91,
       "Bom Jesus da Lapa": 15,
       "Guanambi": 13,
       "Santo Estêvão": 9,
@@ -511,7 +511,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 177
+        "total": 178
       },
       {
         "ano": 2024,
@@ -632,7 +632,7 @@
       },
       {
         "ano": 2025,
-        "total": 177
+        "total": 178
       },
       {
         "ano": 2024,
