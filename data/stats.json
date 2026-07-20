@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 762,
+    "total": 764,
     "eixos": {
-      "Gestão e RH": 456,
+      "Gestão e RH": 457,
       "Institucional": 136,
-      "Ensino": 122,
+      "Ensino": 123,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 471,
+      "Imprensa Local": 473,
       "Especializados (Nichos)": 104,
       "Imprensa (Nacional)": 72,
       "Governamental": 61,
@@ -17,7 +17,7 @@
       "Outras Instituições de Ensino": 11
     },
     "top_veiculos": {
-      "Agência Sertão": 160,
+      "Agência Sertão": 161,
       "SulBahiaNews": 40,
       "PCI Concursos": 34,
       "Ache Concursos": 30,
@@ -30,9 +30,9 @@
     },
     "meses": {
       "05": 145,
-      "11": 69,
+      "11": 70,
       "04": 69,
-      "12": 65,
+      "12": 66,
       "10": 61,
       "09": 58,
       "01": 56,
@@ -43,7 +43,7 @@
       "07": 41
     },
     "campuses": {
-      "Geral / Não Especificado": 366,
+      "Geral / Não Especificado": 367,
       "Guanambi": 90,
       "Bom Jesus da Lapa": 55,
       "Teixeira de Freitas": 41,
@@ -57,8 +57,8 @@
       "Serrinha": 13,
       "Xique-Xique": 12,
       "Itaberaba": 12,
+      "Ribeira do Pombal": 9,
       "Santa Inês": 9,
-      "Ribeira do Pombal": 8,
       "Itapetinga": 7,
       "Governador Mangabeira": 5,
       "Ruy Barbosa": 4,
@@ -71,7 +71,7 @@
       },
       {
         "ano": 2025,
-        "total": 178
+        "total": 179
       },
       {
         "ano": 2024,
@@ -79,7 +79,7 @@
       },
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
@@ -222,16 +222,16 @@
     ]
   },
   "2023": {
-    "total": 91,
+    "total": 92,
     "eixos": {
-      "Gestão e RH": 47,
+      "Gestão e RH": 48,
       "Ensino": 21,
       "Institucional": 15,
       "Pesquisa": 5,
       "Extensão": 3
     },
     "abrangencia": {
-      "Imprensa Local": 73,
+      "Imprensa Local": 74,
       "Especializados (Nichos)": 6,
       "Imprensa (Nacional)": 5,
       "Governamental": 4,
@@ -239,7 +239,7 @@
       "Outras Instituições de Ensino": 1
     },
     "top_veiculos": {
-      "Agência Sertão": 37,
+      "Agência Sertão": 38,
       "SulBahiaNews": 6,
       "G1": 5,
       "Blog Gran Cursos Online": 3,
@@ -253,7 +253,7 @@
     "meses": {
       "10": 17,
       "09": 15,
-      "12": 12,
+      "12": 13,
       "05": 11,
       "11": 7,
       "08": 5,
@@ -265,7 +265,7 @@
       "01": 3
     },
     "campuses": {
-      "Geral / Não Especificado": 38,
+      "Geral / Não Especificado": 39,
       "Guanambi": 17,
       "Teixeira de Freitas": 8,
       "Bom Jesus da Lapa": 8,
@@ -283,7 +283,7 @@
     "historico": [
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
@@ -400,7 +400,7 @@
       },
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
@@ -449,16 +449,16 @@
     ]
   },
   "2025": {
-    "total": 178,
+    "total": 179,
     "eixos": {
       "Gestão e RH": 106,
+      "Ensino": 35,
       "Institucional": 34,
-      "Ensino": 34,
       "Pesquisa": 2,
       "Extensão": 2
     },
     "abrangencia": {
-      "Imprensa Local": 98,
+      "Imprensa Local": 99,
       "Especializados (Nichos)": 32,
       "Imprensa (Nacional)": 18,
       "Imprensa Regional (Bahia)": 18,
@@ -471,13 +471,13 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
-      "- Bahia Economica": 5,
-      "Jornal Correio": 5
+      "Folha Dirigida": 6,
+      "Notícias da Lapa": 5,
+      "- Bahia Economica": 5
     },
     "meses": {
-      "11": 27,
+      "11": 28,
       "12": 26,
       "08": 21,
       "10": 20,
@@ -499,8 +499,8 @@
       "Serrinha": 7,
       "Teixeira de Freitas": 7,
       "Uruçuca": 6,
+      "Ribeira do Pombal": 5,
       "Reitoria (Salvador)": 4,
-      "Ribeira do Pombal": 4,
       "Valença": 3,
       "Alagoinhas": 3,
       "Senhor do Bonfim": 3,
@@ -511,7 +511,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 178
+        "total": 179
       },
       {
         "ano": 2024,
@@ -519,7 +519,7 @@
       },
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
@@ -632,7 +632,7 @@
       },
       {
         "ano": 2025,
-        "total": 178
+        "total": 179
       },
       {
         "ano": 2024,
@@ -640,7 +640,7 @@
       },
       {
         "ano": 2023,
-        "total": 91
+        "total": 92
       },
       {
         "ano": 2022,
