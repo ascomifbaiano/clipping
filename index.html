@@ -745,35 +745,107 @@
             font-weight: 600;
         }
 
-        /* LOADING */
+        /* LOADING COM LOGO VERTICAL DO IF BAIANO - ANIMADO LÍQUIDO */
         .loading-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255,255,255,0.9);
+            background-color: var(--brand-light-green);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+            z-index: 99999;
+            opacity: 0;
+            visibility: hidden;
             display: none;
-            gap: 20px;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
             backdrop-filter: blur(8px);
         }
 
-        .spinner {
-            width: 54px;
-            height: 54px;
-            border: 4px solid var(--border-color);
-            border-top-color: var(--brand-primary);
-            border-radius: 50%;
-            animation: spin 0.85s linear infinite;
+        .loader-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .loader-logo-wrapper {
+            position: relative;
+            width: 140px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .loader-logo-bg {
+            position: absolute;
+            height: 160px;
+            object-fit: contain;
+            filter: brightness(0) opacity(0.12); /* Silhueta escura de fundo (apenas contorno/forma) */
+        }
+
+        .loader-logo-fill {
+            position: absolute;
+            height: 160px;
+            object-fit: contain;
+            clip-path: inset(100% 0 0 0);
+            animation: fill-liquid 3.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fill-liquid {
+            0% {
+                clip-path: inset(100% 0 0 0);
+            }
+            80% {
+                clip-path: inset(0 0 0 0);
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background-color: #cbd5e1;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .loader-progress {
+            width: 40%;
+            height: 100%;
+            background-color: var(--brand-primary);
+            border-radius: 10px;
+            animation: slide-progress 1.5s infinite ease-in-out;
+        }
+
+        @keyframes slide-progress {
+            0% { margin-left: -40%; }
+            50% { margin-left: 100%; }
+            100% { margin-left: -40%; }
+        }
+
+        .loader-text {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--brand-secondary);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            animation: pulse-text 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse-text {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
         }
 
         .tab-content {
@@ -856,8 +928,16 @@
 
 <!-- Global loading indicator -->
 <div id="loading-global" class="loading-overlay">
-    <div class="spinner"></div>
-    <div style="font-weight:600; color:var(--brand-primary)">Processando acervo de mídia...</div>
+    <div class="loader-container">
+        <div class="loader-logo-wrapper">
+            <img src="marca-if-baiano-vertical.png" alt="Logo IF Baiano" class="loader-logo-bg">
+            <img src="marca-if-baiano-vertical.png" alt="Logo IF Baiano" class="loader-logo-fill">
+        </div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <div class="loader-text">Processando acervo de mídia...</div>
+    </div>
 </div>
 
 <div class="container">
@@ -1198,6 +1278,7 @@
         'de', 'do', 'dos', 'no', 'na', 'nos', 'nas', 'ao', 'aos', 'pelo', 'pelos', 'pela', 'pelas', 'com', 'sem', 'por', 'para'
     ]);
 
+    let startTimeLoading = 0;
     async function iniciar() {
         showLoading(true);
         try {
@@ -1963,7 +2044,27 @@
     }
 
     function showLoading(show) { 
-        document.getElementById('loading-global').style.display = show ? 'flex' : 'none'; 
+        const loader = document.getElementById('loading-global');
+        if (show) {
+            startTimeLoading = Date.now();
+            loader.style.display = 'flex';
+            // Força reflow para garantir a ativação da transição de opacidade
+            loader.offsetHeight;
+            loader.style.opacity = '1';
+            loader.style.visibility = 'visible';
+        } else {
+            const elapsed = Date.now() - startTimeLoading;
+            const minDuration = 6000; // Mínimo de 6 segundos (2 loops completos da animação de 3s)
+            const remaining = Math.max(0, minDuration - elapsed);
+            
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 400);
+            }, remaining);
+        }
     }
 
     let paginaGrandeMidia = 1;

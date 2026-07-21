@@ -14,6 +14,18 @@ def remover_acentos(texto):
     if not texto: return ""
     return ''.join(c for c in unicodedata.normalize('NFKD', str(texto)) if not unicodedata.combining(c)).lower()
 
+def normalizar_para_busca(texto):
+    t = remover_acentos(texto)
+    # Remove termos ambiguos para evitar falsos positivos geograficos/culturais
+    t = t.replace("anisio teixeira", "")
+    t = t.replace("lavagem do bonfim", "")
+    t = t.replace("festa do bonfim", "")
+    t = t.replace("igreja do bonfim", "")
+    t = t.replace("estacao da lapa", "")
+    t = t.replace("shopping lapa", "")
+    t = t.replace("nova lapa", "")
+    return t
+
 def padronizar_data(data_str, ano_referencia=str(datetime.now().year)):
     if not data_str: return f"{ano_referencia}-01-01"
     d_str = remover_acentos(data_str).strip()
@@ -89,7 +101,7 @@ def classificar_abrangencia(veiculo):
     return 'Imprensa Local'
 
 def classificar_campus(titulo, veiculo):
-    t_v = remover_acentos(str(titulo) + " " + str(veiculo))
+    t_v = normalizar_para_busca(str(titulo) + " " + str(veiculo))
     campuses = {
         'Alagoinhas': ['alagoinhas'],
         'Bom Jesus da Lapa': ['lapa', 'bom jesus da lapa'],
@@ -117,7 +129,20 @@ def classificar_campus(titulo, veiculo):
         return 'Reitoria (Salvador)'
     return 'Geral / Não Especificado'
 
-def validar_noticia(titulo, veiculo, link=None):
+def limpar_html(html_content):
+    if not html_content:
+        return ""
+    # Remove tags script e style e seus conteudos
+    text = re.sub(r'<(script|style)\b[^>]*>([\s\S]*?)<\/\1>', ' ', html_content, flags=re.IGNORECASE)
+    # Remove todas as outras tags HTML
+    text = re.sub(r'<[^>]+>', ' ', text)
+    # Decodifica entidades HTML (como &aacute;, &lt;, etc.)
+    text = html.unescape(text)
+    # Reduz multiplos espacos para um unico espaco
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
+def validar_noticia(titulo, veiculo, link=None, puxar_conteudo=False):
     # 1. Ignorar notícias vindas do próprio portal do IF Baiano (evitar auto-clipping)
     if link and 'ifbaiano.edu.br' in str(link).lower():
         return False
@@ -128,7 +153,7 @@ def validar_noticia(titulo, veiculo, link=None):
     if any(term in veiculo_lower for term in termos_auto_veiculo):
         return False
 
-    t_v = remover_acentos(str(titulo) + " " + str(veiculo))
+    t_v = normalizar_para_busca(str(titulo) + " " + str(veiculo))
     
     # 2. Se contiver explicitamente alguma das variantes de "IF Baiano"
     variantes_baiano = ['if baiano', 'ifbaiano', 'instituto federal baiano', 'ifbaiana', 'if baiana', 'federal baiano']
@@ -143,6 +168,58 @@ def validar_noticia(titulo, veiculo, link=None):
         if any(term in t_v for term in termos_ifba_real):
             return False
 
+        # Se habilitado o puxamento de conteúdo profundo (e o link estiver disponível), varre o corpo da página
+        if link and puxar_conteudo:
+            try:
+                headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}
+                res = requests.get(link, headers=headers, timeout=8, verify=False)
+                if res.status_code == 200:
+                    conteudo = normalizar_para_busca(limpar_html(res.text))
+                    
+                    # 3.1 Se o corpo da notícia cita explicitamente o IF Baiano, é um clipping legítimo
+                    if any(var in conteudo for var in variantes_baiano):
+                        return True
+
+                    cidades_exclusivas = [
+                        'alagoinhas', 'lapa', 'bom jesus da lapa', 'catu', 'mangabeira', 'governador mangabeira',
+                        'guanambi', 'itaberaba', 'itapetinga', 'santa ines', 'bonfim', 'senhor do bonfim',
+                        'serrinha', 'teixeira', 'teixeira de freitas', 'urucuca', 'xique-xique', 'xique xique',
+                        'santo estevao', 'pombal', 'ribeira do pombal', 'remanso', 'ruy barbosa'
+                    ]
+
+                    # 3.2 Se contiver marcas nítidas de confusão associadas a cidades exclusivas
+                    termos_confusao = [f"ifba {c}" for c in cidades_exclusivas] + [f"ifba de {c}" for c in cidades_exclusivas] + [f"campus {c}" for c in cidades_exclusivas]
+                    if any(tc in conteudo for tc in termos_confusao):
+                        return True
+
+                    # 3.3 Caso especial de Valença no corpo do texto (cursos agrícolas exclusivos do IF Baiano)
+                    if 'valenca' in conteudo:
+                        termos_valenca = ['agropecuaria', 'zootecnia', 'agronomia', 'agricultura', 'agroecologia', 'florestas', 'alimento', 'alimentos', 'agroecologico']
+                        if any(term in conteudo for term in termos_valenca):
+                            return True
+
+                    # 3.4 Caso especial de Salvador/Reitoria no corpo do texto (cita reitor do IF Baiano ou bairro Imbuí)
+                    if 'reitoria' in conteudo or 'salvador' in conteudo:
+                        if any(term in conteudo for term in ['aecio', 'imbui']):
+                            return True
+
+                    # 3.5 Se o texto cita alguma cidade exclusiva de atuação do IF Baiano e não cita NENHUMA cidade com campus legítimo do IFBA
+                    campi_reais_ifba = [
+                        'salvador', 'feira de santana', 'camacari', 'barreiras', 'jequie', 'eunapolis', 
+                        'ilheus', 'irece', 'jacobina', 'paulo afonso', 'porto seguro', 'santo amaro', 
+                        'seabra', 'simoes filho', 'valenca', 'vitoria da conquista', 'brumado', 'juazeiro', 
+                        'lauro de freitas', 'santo antonio de jesus'
+                    ]
+                    if any(c in conteudo for c in cidades_exclusivas) and not any(camp in conteudo for camp in campi_reais_ifba):
+                        return True
+
+                    # 3.6 Se não caiu nas regras de confusão e o texto só fala do IFBA legítimo, descarta a notícia
+                    return False
+            except Exception as e:
+                # Falha ao carregar conteúdo externo (timeout, SSL, etc.) -> Faz o fallback para a heurística original de metadados
+                pass
+
+        # Heurística original de metadados (Título e Veículo) como fallback
         cidades_exclusivas = [
             'alagoinhas', 'lapa', 'bom jesus da lapa', 'catu', 'mangabeira', 'governador mangabeira',
             'guanambi', 'itaberaba', 'itapetinga', 'santa ines', 'bonfim', 'senhor do bonfim',
@@ -154,14 +231,13 @@ def validar_noticia(titulo, veiculo, link=None):
             
         # Caso especial para Valença
         if 'valenca' in t_v:
-            termos_valenca = ['agropecuaria', 'zootecnia', 'agronomia', 'agricultura', 'agroecologia', 'florestas', 'alimento', 'reitor', 'substituto', 'edital']
+            termos_valenca = ['agropecuaria', 'zootecnia', 'agronomia', 'agricultura', 'agroecologia', 'florestas', 'alimento', 'alimentos', 'agroecologico']
             if any(term in t_v for term in termos_valenca):
                 return True
                 
         # Caso especial para Salvador/Reitoria
         if 'reitoria' in t_v or 'salvador' in t_v:
-            termos_reitoria = ['reitor', 'reitoria', 'licitacao', 'licitaca', 'concurso']
-            if any(term in t_v for term in termos_reitoria):
+            if any(term in t_v for term in ['aecio', 'imbui']):
                 return True
                 
     # 3. Caso não se enquadre em nenhuma das regras acima, não é sobre o IF Baiano
