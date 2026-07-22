@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 756,
+    "total": 757,
     "eixos": {
       "Gestão e RH": 455,
-      "Institucional": 133,
+      "Institucional": 134,
       "Ensino": 120,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 476,
+      "Imprensa Local": 477,
       "Especializados (Nichos)": 104,
       "Imprensa (Nacional)": 72,
       "Governamental": 51,
@@ -29,7 +29,7 @@
       "Prefeitura de Alagoinhas": 11
     },
     "meses": {
-      "05": 145,
+      "05": 146,
       "11": 70,
       "12": 67,
       "04": 62,
@@ -61,7 +61,7 @@
       "Reitoria (Salvador)": 7,
       "Itapetinga": 7,
       "Governador Mangabeira": 5,
-      "Ruy Barbosa": 4,
+      "Ruy Barbosa": 5,
       "Remanso": 3
     },
     "historico": [
@@ -71,7 +71,7 @@
       },
       {
         "ano": 2025,
-        "total": 179
+        "total": 180
       },
       {
         "ano": 2024,
@@ -449,16 +449,16 @@
     ]
   },
   "2025": {
-    "total": 179,
+    "total": 180,
     "eixos": {
       "Gestão e RH": 106,
+      "Institucional": 35,
       "Ensino": 35,
-      "Institucional": 34,
       "Pesquisa": 2,
       "Extensão": 2
     },
     "abrangencia": {
-      "Imprensa Local": 99,
+      "Imprensa Local": 100,
       "Especializados (Nichos)": 32,
       "Imprensa (Nacional)": 18,
       "Imprensa Regional (Bahia)": 18,
@@ -471,9 +471,9 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Notícias da Lapa": 5,
+      "Mídia Externa": 6,
+      "Jornal Correio": 5,
       "- Bahia Economica": 5
     },
     "meses": {
@@ -486,8 +486,8 @@
       "01": 13,
       "06": 11,
       "02": 9,
+      "05": 9,
       "07": 8,
-      "05": 8,
       "04": 6
     },
     "campuses": {
@@ -501,17 +501,18 @@
       "Uruçuca": 6,
       "Ribeira do Pombal": 5,
       "Reitoria (Salvador)": 4,
-      "Valença": 3,
-      "Alagoinhas": 3,
       "Senhor do Bonfim": 3,
+      "Alagoinhas": 3,
+      "Valença": 3,
       "Itaberaba": 2,
       "Xique-Xique": 2,
-      "Itapetinga": 1
+      "Itapetinga": 1,
+      "Ruy Barbosa": 1
     },
     "historico": [
       {
         "ano": 2025,
-        "total": 179
+        "total": 180
       },
       {
         "ano": 2024,
@@ -631,7 +632,7 @@
       },
       {
         "ano": 2025,
-        "total": 179
+        "total": 180
       },
       {
         "ano": 2024,
