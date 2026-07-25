@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 757,
+    "total": 758,
     "eixos": {
       "Gestão e RH": 455,
-      "Institucional": 134,
+      "Institucional": 135,
       "Ensino": 120,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 477,
+      "Imprensa Local": 478,
       "Especializados (Nichos)": 104,
       "Imprensa (Nacional)": 72,
       "Governamental": 51,
@@ -29,7 +29,7 @@
       "Prefeitura de Alagoinhas": 11
     },
     "meses": {
-      "05": 146,
+      "05": 147,
       "11": 70,
       "12": 67,
       "04": 62,
@@ -46,7 +46,7 @@
       "Geral / Não Especificado": 367,
       "Guanambi": 90,
       "Bom Jesus da Lapa": 56,
-      "Teixeira de Freitas": 39,
+      "Teixeira de Freitas": 40,
       "Alagoinhas": 28,
       "Uruçuca": 24,
       "Catu": 23,
@@ -83,7 +83,7 @@
       },
       {
         "ano": 2022,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2021,
@@ -128,15 +128,15 @@
     ]
   },
   "2022": {
-    "total": 26,
+    "total": 27,
     "eixos": {
       "Gestão e RH": 10,
       "Ensino": 9,
-      "Institucional": 6,
+      "Institucional": 7,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 17,
+      "Imprensa Local": 18,
       "Especializados (Nichos)": 4,
       "Imprensa (Nacional)": 3,
       "Governamental": 2
@@ -147,14 +147,14 @@
       "Agência Sertão": 3,
       "InfoEducação": 3,
       "Hora Brasil": 2,
-      "Notícias de Bom Jesus da Lapa": 1,
-      "Tribuna do Recôncavo": 1,
       "Mídia Externa": 1,
+      "Tribuna do Recôncavo": 1,
       "Jornal Grande Bahia": 1,
+      "Notícias de Bom Jesus da Lapa": 1,
       "blog do gusmão": 1
     },
     "meses": {
-      "05": 6,
+      "05": 7,
       "04": 5,
       "11": 5,
       "12": 3,
@@ -166,7 +166,7 @@
     },
     "campuses": {
       "Geral / Não Especificado": 14,
-      "Teixeira de Freitas": 4,
+      "Teixeira de Freitas": 5,
       "Bom Jesus da Lapa": 2,
       "Alagoinhas": 2,
       "Guanambi": 1,
@@ -177,7 +177,7 @@
     "historico": [
       {
         "ano": 2022,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2021,
@@ -287,7 +287,7 @@
       },
       {
         "ano": 2022,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2021,
@@ -404,7 +404,7 @@
       },
       {
         "ano": 2022,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2021,
@@ -524,7 +524,7 @@
       },
       {
         "ano": 2022,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2021,
@@ -644,7 +644,7 @@
       },
       {
         "ano": 2022,
-        "total": 26
+        "total": 27
       },
       {
         "ano": 2021,
