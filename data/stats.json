@@ -1,8 +1,8 @@
 {
   "geral": {
-    "total": 760,
+    "total": 761,
     "eixos": {
-      "Gestão e RH": 456,
+      "Gestão e RH": 457,
       "Institucional": 136,
       "Ensino": 120,
       "Pesquisa": 31,
@@ -10,7 +10,7 @@
     },
     "abrangencia": {
       "Imprensa Local": 478,
-      "Especializados (Nichos)": 105,
+      "Especializados (Nichos)": 106,
       "Imprensa (Nacional)": 72,
       "Governamental": 52,
       "Imprensa Regional (Bahia)": 43,
@@ -34,8 +34,8 @@
       "12": 67,
       "04": 63,
       "10": 60,
+      "01": 58,
       "09": 58,
-      "01": 57,
       "03": 54,
       "08": 51,
       "06": 50,
@@ -43,7 +43,7 @@
       "07": 39
     },
     "campuses": {
-      "Geral / Não Especificado": 368,
+      "Geral / Não Especificado": 369,
       "Guanambi": 90,
       "Bom Jesus da Lapa": 56,
       "Teixeira de Freitas": 40,
@@ -75,7 +75,7 @@
       },
       {
         "ano": 2024,
-        "total": 111
+        "total": 112
       },
       {
         "ano": 2023,
@@ -332,9 +332,9 @@
     ]
   },
   "2024": {
-    "total": 111,
+    "total": 112,
     "eixos": {
-      "Gestão e RH": 73,
+      "Gestão e RH": 74,
       "Institucional": 20,
       "Ensino": 15,
       "Extensão": 2,
@@ -342,7 +342,7 @@
     },
     "abrangencia": {
       "Imprensa Local": 81,
-      "Especializados (Nichos)": 12,
+      "Especializados (Nichos)": 13,
       "Imprensa Regional (Bahia)": 6,
       "Governamental": 6,
       "Imprensa (Nacional)": 4,
@@ -366,16 +366,16 @@
       "04": 11,
       "08": 11,
       "10": 10,
+      "01": 9,
       "02": 9,
       "07": 9,
-      "01": 8,
       "06": 8,
       "11": 7,
       "05": 7,
       "03": 4
     },
     "campuses": {
-      "Geral / Não Especificado": 55,
+      "Geral / Não Especificado": 56,
       "Teixeira de Freitas": 11,
       "Bom Jesus da Lapa": 10,
       "Guanambi": 7,
@@ -396,7 +396,7 @@
     "historico": [
       {
         "ano": 2024,
-        "total": 111
+        "total": 112
       },
       {
         "ano": 2023,
@@ -516,7 +516,7 @@
       },
       {
         "ano": 2024,
-        "total": 111
+        "total": 112
       },
       {
         "ano": 2023,
@@ -636,7 +636,7 @@
       },
       {
         "ano": 2024,
-        "total": 111
+        "total": 112
       },
       {
         "ano": 2023,
