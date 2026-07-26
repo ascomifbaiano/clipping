@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 758,
+    "total": 760,
     "eixos": {
-      "Gestão e RH": 455,
-      "Institucional": 135,
+      "Gestão e RH": 456,
+      "Institucional": 136,
       "Ensino": 120,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
       "Imprensa Local": 478,
-      "Especializados (Nichos)": 104,
+      "Especializados (Nichos)": 105,
       "Imprensa (Nacional)": 72,
-      "Governamental": 51,
+      "Governamental": 52,
       "Imprensa Regional (Bahia)": 43,
       "Outras Instituições de Ensino": 10
     },
@@ -32,18 +32,18 @@
       "05": 147,
       "11": 70,
       "12": 67,
-      "04": 62,
+      "04": 63,
       "10": 60,
       "09": 58,
       "01": 57,
       "03": 54,
       "08": 51,
       "06": 50,
-      "02": 43,
+      "02": 44,
       "07": 39
     },
     "campuses": {
-      "Geral / Não Especificado": 367,
+      "Geral / Não Especificado": 368,
       "Guanambi": 90,
       "Bom Jesus da Lapa": 56,
       "Teixeira de Freitas": 40,
@@ -56,8 +56,8 @@
       "Serrinha": 13,
       "Itaberaba": 12,
       "Xique-Xique": 12,
+      "Ribeira do Pombal": 10,
       "Santa Inês": 9,
-      "Ribeira do Pombal": 9,
       "Itapetinga": 7,
       "Reitoria (Salvador)": 7,
       "Governador Mangabeira": 5,
@@ -75,7 +75,7 @@
       },
       {
         "ano": 2024,
-        "total": 109
+        "total": 111
       },
       {
         "ano": 2023,
@@ -332,19 +332,19 @@
     ]
   },
   "2024": {
-    "total": 109,
+    "total": 111,
     "eixos": {
-      "Gestão e RH": 72,
-      "Institucional": 19,
+      "Gestão e RH": 73,
+      "Institucional": 20,
       "Ensino": 15,
       "Extensão": 2,
       "Pesquisa": 1
     },
     "abrangencia": {
       "Imprensa Local": 81,
-      "Especializados (Nichos)": 11,
+      "Especializados (Nichos)": 12,
       "Imprensa Regional (Bahia)": 6,
-      "Governamental": 5,
+      "Governamental": 6,
       "Imprensa (Nacional)": 4,
       "Outras Instituições de Ensino": 2
     },
@@ -354,28 +354,28 @@
       "Ache Concursos": 6,
       "iBahia": 6,
       "PEBSP": 4,
+      "G1": 3,
       "Notícias da Lapa": 3,
       "Notícias de Bom Jesus da Lapa": 3,
-      "G1": 3,
-      "Jornal Grande Bahia": 2,
-      "Preto no Branco | Com Sibelle Fonseca": 2
+      "Preto no Branco | Com Sibelle Fonseca": 2,
+      "Catu Acontece": 2
     },
     "meses": {
       "12": 16,
       "09": 11,
+      "04": 11,
       "08": 11,
       "10": 10,
-      "04": 10,
+      "02": 9,
       "07": 9,
       "01": 8,
       "06": 8,
-      "02": 8,
       "11": 7,
       "05": 7,
       "03": 4
     },
     "campuses": {
-      "Geral / Não Especificado": 54,
+      "Geral / Não Especificado": 55,
       "Teixeira de Freitas": 11,
       "Bom Jesus da Lapa": 10,
       "Guanambi": 7,
@@ -385,18 +385,18 @@
       "Remanso": 2,
       "Alagoinhas": 2,
       "Santo Estêvão": 2,
-      "Itaberaba": 1,
+      "Ribeira do Pombal": 2,
       "Governador Mangabeira": 1,
+      "Itaberaba": 1,
       "Valença": 1,
       "Santa Inês": 1,
       "Itapetinga": 1,
-      "Ribeira do Pombal": 1,
       "Xique-Xique": 1
     },
     "historico": [
       {
         "ano": 2024,
-        "total": 109
+        "total": 111
       },
       {
         "ano": 2023,
@@ -516,7 +516,7 @@
       },
       {
         "ano": 2024,
-        "total": 109
+        "total": 111
       },
       {
         "ano": 2023,
@@ -594,8 +594,8 @@
       "O TEMPO": 8,
       "Sou Enfermagem": 8,
       "iGuanambi": 5,
-      "G1": 5,
-      "Acorda Cidade": 5
+      "Acorda Cidade": 5,
+      "G1": 5
     },
     "meses": {
       "05": 102,
@@ -636,7 +636,7 @@
       },
       {
         "ano": 2024,
-        "total": 109
+        "total": 111
       },
       {
         "ano": 2023,
