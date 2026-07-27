@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 763,
+    "total": 764,
     "eixos": {
       "Gestão e RH": 458,
       "Institucional": 136,
-      "Ensino": 121,
+      "Ensino": 122,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 480,
+      "Imprensa Local": 481,
       "Especializados (Nichos)": 106,
       "Imprensa (Nacional)": 72,
       "Governamental": 52,
@@ -34,7 +34,7 @@
       "12": 67,
       "04": 65,
       "10": 60,
-      "01": 58,
+      "01": 59,
       "09": 58,
       "03": 54,
       "08": 51,
@@ -43,7 +43,7 @@
       "07": 39
     },
     "campuses": {
-      "Geral / Não Especificado": 370,
+      "Geral / Não Especificado": 371,
       "Guanambi": 91,
       "Bom Jesus da Lapa": 56,
       "Teixeira de Freitas": 40,
@@ -71,7 +71,7 @@
       },
       {
         "ano": 2025,
-        "total": 181
+        "total": 182
       },
       {
         "ano": 2024,
@@ -449,16 +449,16 @@
     ]
   },
   "2025": {
-    "total": 181,
+    "total": 182,
     "eixos": {
       "Gestão e RH": 106,
-      "Ensino": 36,
+      "Ensino": 37,
       "Institucional": 35,
       "Pesquisa": 2,
       "Extensão": 2
     },
     "abrangencia": {
-      "Imprensa Local": 101,
+      "Imprensa Local": 102,
       "Especializados (Nichos)": 32,
       "Imprensa (Nacional)": 18,
       "Imprensa Regional (Bahia)": 18,
@@ -473,8 +473,8 @@
       "A TARDE": 7,
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
-      "- Bahia Economica": 5,
-      "Notícias da Lapa": 5
+      "Jornal Correio": 5,
+      "- Bahia Economica": 5
     },
     "meses": {
       "11": 28,
@@ -483,7 +483,7 @@
       "10": 20,
       "09": 15,
       "03": 14,
-      "01": 13,
+      "01": 14,
       "06": 11,
       "02": 9,
       "05": 9,
@@ -491,7 +491,7 @@
       "04": 7
     },
     "campuses": {
-      "Geral / Não Especificado": 91,
+      "Geral / Não Especificado": 92,
       "Bom Jesus da Lapa": 15,
       "Guanambi": 14,
       "Santo Estêvão": 9,
@@ -512,7 +512,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 181
+        "total": 182
       },
       {
         "ano": 2024,
@@ -632,7 +632,7 @@
       },
       {
         "ano": 2025,
-        "total": 181
+        "total": 182
       },
       {
         "ano": 2024,
