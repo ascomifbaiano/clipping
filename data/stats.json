@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 761,
+    "total": 763,
     "eixos": {
-      "Gestão e RH": 457,
+      "Gestão e RH": 458,
       "Institucional": 136,
-      "Ensino": 120,
+      "Ensino": 121,
       "Pesquisa": 31,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 478,
+      "Imprensa Local": 480,
       "Especializados (Nichos)": 106,
       "Imprensa (Nacional)": 72,
       "Governamental": 52,
@@ -32,7 +32,7 @@
       "05": 147,
       "11": 70,
       "12": 67,
-      "04": 63,
+      "04": 65,
       "10": 60,
       "01": 58,
       "09": 58,
@@ -43,8 +43,8 @@
       "07": 39
     },
     "campuses": {
-      "Geral / Não Especificado": 369,
-      "Guanambi": 90,
+      "Geral / Não Especificado": 370,
+      "Guanambi": 91,
       "Bom Jesus da Lapa": 56,
       "Teixeira de Freitas": 40,
       "Alagoinhas": 28,
@@ -71,11 +71,11 @@
       },
       {
         "ano": 2025,
-        "total": 180
+        "total": 181
       },
       {
         "ano": 2024,
-        "total": 112
+        "total": 113
       },
       {
         "ano": 2023,
@@ -332,16 +332,16 @@
     ]
   },
   "2024": {
-    "total": 112,
+    "total": 113,
     "eixos": {
-      "Gestão e RH": 74,
+      "Gestão e RH": 75,
       "Institucional": 20,
       "Ensino": 15,
       "Extensão": 2,
       "Pesquisa": 1
     },
     "abrangencia": {
-      "Imprensa Local": 81,
+      "Imprensa Local": 82,
       "Especializados (Nichos)": 13,
       "Imprensa Regional (Bahia)": 6,
       "Governamental": 6,
@@ -351,20 +351,20 @@
     "top_veiculos": {
       "Agência Sertão": 37,
       "SulBahiaNews": 12,
-      "Ache Concursos": 6,
       "iBahia": 6,
+      "Ache Concursos": 6,
       "PEBSP": 4,
-      "G1": 3,
       "Notícias da Lapa": 3,
       "Notícias de Bom Jesus da Lapa": 3,
-      "Preto no Branco | Com Sibelle Fonseca": 2,
-      "Catu Acontece": 2
+      "G1": 3,
+      "Mais Região": 2,
+      "Preto no Branco | Com Sibelle Fonseca": 2
     },
     "meses": {
       "12": 16,
-      "09": 11,
-      "04": 11,
+      "04": 12,
       "08": 11,
+      "09": 11,
       "10": 10,
       "01": 9,
       "02": 9,
@@ -375,7 +375,7 @@
       "03": 4
     },
     "campuses": {
-      "Geral / Não Especificado": 56,
+      "Geral / Não Especificado": 57,
       "Teixeira de Freitas": 11,
       "Bom Jesus da Lapa": 10,
       "Guanambi": 7,
@@ -396,7 +396,7 @@
     "historico": [
       {
         "ano": 2024,
-        "total": 112
+        "total": 113
       },
       {
         "ano": 2023,
@@ -449,16 +449,16 @@
     ]
   },
   "2025": {
-    "total": 180,
+    "total": 181,
     "eixos": {
       "Gestão e RH": 106,
+      "Ensino": 36,
       "Institucional": 35,
-      "Ensino": 35,
       "Pesquisa": 2,
       "Extensão": 2
     },
     "abrangencia": {
-      "Imprensa Local": 100,
+      "Imprensa Local": 101,
       "Especializados (Nichos)": 32,
       "Imprensa (Nacional)": 18,
       "Imprensa Regional (Bahia)": 18,
@@ -473,8 +473,8 @@
       "A TARDE": 7,
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
-      "Jornal Correio": 5,
-      "- Bahia Economica": 5
+      "- Bahia Economica": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 28,
@@ -488,12 +488,12 @@
       "02": 9,
       "05": 9,
       "07": 8,
-      "04": 6
+      "04": 7
     },
     "campuses": {
       "Geral / Não Especificado": 91,
       "Bom Jesus da Lapa": 15,
-      "Guanambi": 13,
+      "Guanambi": 14,
       "Santo Estêvão": 9,
       "Catu": 8,
       "Serrinha": 7,
@@ -512,11 +512,11 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 180
+        "total": 181
       },
       {
         "ano": 2024,
-        "total": 112
+        "total": 113
       },
       {
         "ano": 2023,
@@ -632,11 +632,11 @@
       },
       {
         "ano": 2025,
-        "total": 180
+        "total": 181
       },
       {
         "ano": 2024,
-        "total": 112
+        "total": 113
       },
       {
         "ano": 2023,
