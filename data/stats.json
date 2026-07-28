@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 767,
+    "total": 768,
     "eixos": {
-      "Gestão e RH": 458,
+      "Gestão e RH": 459,
       "Institucional": 137,
       "Ensino": 123,
       "Pesquisa": 32,
       "Extensão": 17
     },
     "abrangencia": {
-      "Imprensa Local": 482,
+      "Imprensa Local": 483,
       "Especializados (Nichos)": 106,
       "Imprensa (Nacional)": 73,
       "Governamental": 53,
@@ -24,14 +24,14 @@
       "G1": 29,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
-      "Notícias de Bom Jesus da Lapa": 19,
+      "Notícias de Bom Jesus da Lapa": 20,
       "Notícias da Lapa": 16,
       "Prefeitura de Alagoinhas": 11
     },
     "meses": {
       "05": 147,
       "11": 70,
-      "12": 67,
+      "12": 68,
       "04": 65,
       "10": 61,
       "01": 59,
@@ -45,7 +45,7 @@
     "campuses": {
       "Geral / Não Especificado": 372,
       "Guanambi": 92,
-      "Bom Jesus da Lapa": 56,
+      "Bom Jesus da Lapa": 57,
       "Teixeira de Freitas": 40,
       "Alagoinhas": 28,
       "Uruçuca": 24,
@@ -79,7 +79,7 @@
       },
       {
         "ano": 2023,
-        "total": 93
+        "total": 94
       },
       {
         "ano": 2022,
@@ -222,16 +222,16 @@
     ]
   },
   "2023": {
-    "total": 93,
+    "total": 94,
     "eixos": {
-      "Gestão e RH": 49,
+      "Gestão e RH": 50,
       "Ensino": 22,
       "Institucional": 13,
       "Pesquisa": 6,
       "Extensão": 3
     },
     "abrangencia": {
-      "Imprensa Local": 75,
+      "Imprensa Local": 76,
       "Especializados (Nichos)": 6,
       "Imprensa (Nacional)": 6,
       "Governamental": 3,
@@ -242,8 +242,8 @@
       "Agência Sertão": 39,
       "SulBahiaNews": 6,
       "G1": 5,
+      "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
-      "Notícias de Bom Jesus da Lapa": 3,
       "Notícias da Lapa": 2,
       "JC Concursos": 2,
       "Blog do Eloilton Cajuhy": 2,
@@ -252,8 +252,8 @@
     },
     "meses": {
       "10": 17,
+      "12": 15,
       "09": 15,
-      "12": 14,
       "05": 11,
       "11": 6,
       "08": 5,
@@ -267,7 +267,7 @@
     "campuses": {
       "Geral / Não Especificado": 40,
       "Guanambi": 17,
-      "Bom Jesus da Lapa": 8,
+      "Bom Jesus da Lapa": 9,
       "Teixeira de Freitas": 6,
       "Catu": 4,
       "Itaberaba": 3,
@@ -284,7 +284,7 @@
     "historico": [
       {
         "ano": 2023,
-        "total": 93
+        "total": 94
       },
       {
         "ano": 2022,
@@ -401,7 +401,7 @@
       },
       {
         "ano": 2023,
-        "total": 93
+        "total": 94
       },
       {
         "ano": 2022,
@@ -521,7 +521,7 @@
       },
       {
         "ano": 2023,
-        "total": 93
+        "total": 94
       },
       {
         "ano": 2022,
@@ -641,7 +641,7 @@
       },
       {
         "ano": 2023,
-        "total": 93
+        "total": 94
       },
       {
         "ano": 2022,
