@@ -1,28 +1,32 @@
-name: Atualizacao Diaria e Saneamento do Clipping IF Baiano
+name: Varredura Histórica 2012-Hoje (Manual)
 
+# Disparo exclusivamente manual. Executa uma varredura completa desde 2012
+# até a data atual, usando o scraper_carga_inicial.py com escopo ampliado.
+# ATENÇÃO: Esta execução pode levar até 5 horas pelo volume de dados.
+# Execute apenas quando necessário para recompor a base histórica completa.
 on:
-  schedule:
-    # Executa 3 vezes ao dia (06:00, 12:00 e 18:00 no horário de Brasília - 09:00, 15:00 e 21:00 UTC)
-    - cron: '0 9,15,21 * * *'
   workflow_dispatch:
     inputs:
-      executar_saneamento:
-        description: 'Executar saneamento de falsos positivos'
-        required: false
-        default: 'true'
-        type: boolean
+      confirmar_execucao:
+        description: 'Digite "CONFIRMAR" para iniciar a varredura histórica completa'
+        required: true
+        type: string
 
 permissions:
-  contents: write # Permite salvar as atualizações no repositório
+  contents: write
 
 env:
   PYTHONUNBUFFERED: "1"
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+  ANO_INICIO_HISTORICO: "2012"
 
 jobs:
-  run-clipping:
+  varredura-historica:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 300
+
+    # Proteção: só executa se o usuário digitou "CONFIRMAR"
+    if: ${{ github.event.inputs.confirmar_execucao == 'CONFIRMAR' }}
 
     steps:
       - name: Checkout Código (Histórico Completo)
@@ -41,14 +45,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Executar Motor de Coleta de Clipping
+      - name: Executar Varredura Histórica Completa (2012 - Hoje)
         env:
           SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
-        run: python scraper_clipping.py
+        run: python scraper_carga_inicial.py
 
       - name: Executar Saneamento de Falsos Positivos
-        if: ${{ github.event.inputs.executar_saneamento != 'false' }}
         run: python limpar_clipping_falsos_positivos.py
 
       - name: Sincronizar e Enviar Dados para o GitHub
@@ -57,10 +60,10 @@ jobs:
           git config --global user.email "automacao@dicom.ifbaiano.edu.br"
           git pull --rebase origin main || true
           git add -A
-          
+
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-update: Recortes de mídia coletados e saneados [skip ci]"
+            git commit -m "Varredura histórica 2012-hoje: base histórica recomposta [skip ci]"
             git push origin main
           else
-            echo "Nenhuma alteração de dados detectada."
+            echo "Nenhum novo registro histórico encontrado."
           fi

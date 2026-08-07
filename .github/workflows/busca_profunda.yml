@@ -1,28 +1,27 @@
-name: Atualizacao Diaria e Saneamento do Clipping IF Baiano
+name: Busca Profunda de Menções Perdidas (Manual)
 
+# Disparo exclusivamente manual. Use quando o motor diário ficou inativo por
+# vários dias e é necessário recuperar menções da janela perdida.
 on:
-  schedule:
-    # Executa 3 vezes ao dia (06:00, 12:00 e 18:00 no horário de Brasília - 09:00, 15:00 e 21:00 UTC)
-    - cron: '0 9,15,21 * * *'
   workflow_dispatch:
     inputs:
-      executar_saneamento:
-        description: 'Executar saneamento de falsos positivos'
+      dias_atras:
+        description: 'Quantos dias para trás a busca deve cobrir (padrão: 45)'
         required: false
-        default: 'true'
-        type: boolean
+        default: '45'
+        type: string
 
 permissions:
-  contents: write # Permite salvar as atualizações no repositório
+  contents: write
 
 env:
   PYTHONUNBUFFERED: "1"
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 jobs:
-  run-clipping:
+  busca-profunda:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
 
     steps:
       - name: Checkout Código (Histórico Completo)
@@ -41,14 +40,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Executar Motor de Coleta de Clipping
+      - name: Executar Motor de Busca Profunda
         env:
           SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
-        run: python scraper_clipping.py
+          DIAS_ATRAS: ${{ github.event.inputs.dias_atras }}
+        run: python scraper_busca_profunda.py
 
       - name: Executar Saneamento de Falsos Positivos
-        if: ${{ github.event.inputs.executar_saneamento != 'false' }}
         run: python limpar_clipping_falsos_positivos.py
 
       - name: Sincronizar e Enviar Dados para o GitHub
@@ -57,10 +56,10 @@ jobs:
           git config --global user.email "automacao@dicom.ifbaiano.edu.br"
           git pull --rebase origin main || true
           git add -A
-          
+
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-update: Recortes de mídia coletados e saneados [skip ci]"
+            git commit -m "Busca profunda: menções recuperadas (janela ${{ github.event.inputs.dias_atras }} dias) [skip ci]"
             git push origin main
           else
-            echo "Nenhuma alteração de dados detectada."
+            echo "Nenhuma nova menção encontrada na janela de busca."
           fi
