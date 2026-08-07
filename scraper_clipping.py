@@ -17,7 +17,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 ARQUIVO_ANTIGO = os.path.join(DIR_DATA, 'clipping.csv')
 
 def processar_clipping():
-    print("Iniciando Motor de Clipping Inteligente (Ponytail Mode)...")
+    print("Iniciando Motor de Clipping Inteligente (Ponytail Fast Mode)...", flush=True)
     os.makedirs(DIR_DATA, exist_ok=True)
 
     links_conhecidos = set()
@@ -40,7 +40,7 @@ def processar_clipping():
                         chave = f"{str(row['assunto']).strip().lower()}|{str(row['veiculo']).strip().lower()}"
                         titulos_veiculos_conhecidos.add(chave)
         except Exception as e:
-            print(f"Aviso ao ler {arq}: {e}")
+            print(f"Aviso ao ler {arq}: {e}", flush=True)
 
     df_existente = pd.concat(dfs_existentes, ignore_index=True) if dfs_existentes else pd.DataFrame()
 
@@ -62,52 +62,35 @@ def processar_clipping():
     cidades_quoted = [f'"{c}"' for c in cidades_exclusivas]
     query_erro = f"({' OR '.join(termos_erro)}) AND ({' OR '.join(cidades_quoted)})"
 
-    queries = [query_principal, query_erro]
-    clipping_coletado = []
-    fontes_pesquisa = []
+    # Reforço de busca para qualquer menção em domínios de instituições de ensino (.edu.br) e portais governamentais (.gov.br)
+    query_academic = '("IF Baiano" OR "IFBAIANO" OR "Instituto Federal Baiano") (site:edu.br OR site:gov.br OR site:conif.org.br)'
 
-    for q_text in queries:
-        q_encoded = urllib.parse.quote_plus(q_text)
-        fontes_pesquisa.append(("Google News", f'https://news.google.com/rss/search?q={q_encoded}&hl=pt-BR&gl=BR&ceid=BR:pt-419'))
-        fontes_pesquisa.append(("Bing News", f'https://www.bing.com/news/search?q={q_encoded}&format=rss'))
-
-    # Reforço de busca para qualquer menção em domínios de instituições de ensino (.edu.br)
-    query_academic = '("IF Baiano" OR "IFBAIANO" OR "Instituto Federal Baiano") site:edu.br'
-    q_encoded_academic = urllib.parse.quote_plus(query_academic)
-    fontes_pesquisa.append(("Google News Acadêmico", f'https://news.google.com/rss/search?q={q_encoded_academic}&hl=pt-BR&gl=BR&ceid=BR:pt-419'))
-
-    dominios_alvo = [
-        "mec.gov.br", "portal.mec.gov.br", "gov.br", "planalto.gov.br", "conif.org.br",
-        "ufba.br", "ifba.edu.br", "uneb.br", "uesb.br", "ufrb.edu.br", "ufob.edu.br", 
-        "univasf.edu.br", "ifsc.edu.br", "ifsp.edu.br", "ifsertao-pe.edu.br", "ifpe.edu.br",
-        "portallapaoeste.com.br", "bomjesusdalapanoticias.com.br", "centraldalapa.com",
-        "agenciasertao.com", "iguanambi.com.br", "blogdoeloiltoncajuhy.com.br",
-        "nettomaravilha.com.br", "teixeiranews.com.br", "bahiaextremosul.com.br",
-        "liberdadenews.com.br", "sulbahianews.com.br", "seligaalagoinhas.com.br",
-        "alta-pressao.com", "valencaagora.com.br", "catunoticias.com.br",
-        "itapetingaagora.com.br", "blogdomarcosfrahm.com", "portalalerta.com.br",
-        "remansonoticias.com.br", "ruybarbosanoticias.com.br"
+    fontes_pesquisa = [
+        ("Google News Principal", f'https://news.google.com/rss/search?q={urllib.parse.quote_plus(query_principal)}&hl=pt-BR&gl=BR&ceid=BR:pt-419'),
+        ("Bing News Principal", f'https://www.bing.com/news/search?q={urllib.parse.quote_plus(query_principal)}&format=rss'),
+        ("Google News Erros Mídia", f'https://news.google.com/rss/search?q={urllib.parse.quote_plus(query_erro)}&hl=pt-BR&gl=BR&ceid=BR:pt-419'),
+        ("Google News Acadêmico e Gov", f'https://news.google.com/rss/search?q={urllib.parse.quote_plus(query_academic)}&hl=pt-BR&gl=BR&ceid=BR:pt-419')
     ]
-    for dom in dominios_alvo:
-        q_text_dom = f'("IF Baiano" OR "IFBAIANO" OR "Instituto Federal Baiano" OR "IFBA" OR "Instituto Federal da Bahia") site:{dom}'
-        q_encoded_dom = urllib.parse.quote_plus(q_text_dom)
-        fontes_pesquisa.append((f"Site {dom}", f'https://news.google.com/rss/search?q={q_encoded_dom}&hl=pt-BR&gl=BR&ceid=BR:pt-419'))
 
+    clipping_coletado = []
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}
 
     for nome_motor, url_rss in fontes_pesquisa:
-        print(f" -> Varrendo {nome_motor}...")
+        print(f" -> Varrendo {nome_motor}...", flush=True)
         try:
-            response = requests.get(url_rss, headers=headers, timeout=30)
+            response = requests.get(url_rss, headers=headers, timeout=10)
+            if response.status_code != 200:
+                continue
             root = ET.fromstring(response.content)
             for item in root.findall('./channel/item'):
-                link_original = item.find('link').text
-                if link_original in links_conhecidos: continue 
+                link_original = item.find('link').text or ''
+                if not link_original or link_original in links_conhecidos:
+                    continue 
 
                 link_direto = resolver_url_direta(link_original)
-                if link_direto in links_conhecidos: continue
+                if link_direto in links_conhecidos:
+                    continue
 
-                # Ignorar notícias vindas do próprio portal do IF Baiano (evitar auto-clipping)
                 if 'ifbaiano.edu.br' in link_direto:
                     continue
 
@@ -128,9 +111,10 @@ def processar_clipping():
                         titulo = html.unescape(titulo_completo)
 
                 chave_nova = f"{titulo.strip().lower()}|{veiculo.strip().lower()}"
-                if chave_nova in titulos_veiculos_conhecidos: continue
+                if chave_nova in titulos_veiculos_conhecidos:
+                    continue
 
-                # Validar se a notícia é realmente sobre o IF Baiano (ou confusão válida com o IFBA)
+                # Valida se a notícia é sobre o IF Baiano (usando scraping profundo apenas em casos ambíguos)
                 if not validar_noticia(titulo, veiculo, link_direto, puxar_conteudo=True):
                     continue
 
@@ -141,9 +125,8 @@ def processar_clipping():
                 })
                 links_conhecidos.add(link_direto)
                 titulos_veiculos_conhecidos.add(chave_nova)
-                time.sleep(0.5)
         except Exception as e:
-            print(f"   X Erro no motor {nome_motor}: {e}")
+            print(f"   X Erro no motor {nome_motor}: {e}", flush=True)
 
     df_novo = pd.DataFrame(clipping_coletado)
     df_final = pd.concat([df_novo, df_existente], ignore_index=True) if not df_novo.empty else df_existente

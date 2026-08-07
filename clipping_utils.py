@@ -133,13 +133,9 @@ def classificar_campus(titulo, veiculo):
 def limpar_html(html_content):
     if not html_content:
         return ""
-    # Remove tags script e style e seus conteudos
     text = re.sub(r'<(script|style)\b[^>]*>([\s\S]*?)<\/\1>', ' ', html_content, flags=re.IGNORECASE)
-    # Remove todas as outras tags HTML
     text = re.sub(r'<[^>]+>', ' ', text)
-    # Decodifica entidades HTML (como &aacute;, &lt;, etc.)
     text = html.unescape(text)
-    # Reduz multiplos espacos para um unico espaco
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
@@ -164,20 +160,18 @@ def validar_noticia(titulo, veiculo, link=None, puxar_conteudo=False):
     # 3. Se não contiver "IF Baiano", mas contiver variantes de "IFBA"
     variantes_ifba = ['ifba', 'instituto federal da bahia']
     if any(var in t_v for var in variantes_ifba):
-        # Se contiver termos de universidades parceiras ou cursos de engenharia, é o IFBA real (legítimo) e não confusão
         termos_ifba_real = ['ufba', 'uneb', 'ufrb', 'uesb', 'ufob', 'engenharia', 'grupo petropolis', 'petropolis']
         if any(term in t_v for term in termos_ifba_real):
             return False
 
-    # Se habilitado o puxamento de conteúdo profundo (e o link estiver disponível), varre o corpo da página
+    # Puxamento de conteúdo profundo (apenas se o título for ambíguo e solicitar raspagem profunda)
     if link and puxar_conteudo:
         try:
             headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}
-            res = requests.get(link, headers=headers, timeout=8, verify=False)
+            res = requests.get(link, headers=headers, timeout=4, verify=False)
             if res.status_code == 200:
                 conteudo = normalizar_para_busca(limpar_html(res.text))
 
-                # 3.1 Se o corpo da notícia cita explicitamente o IF Baiano, é um clipping legítimo
                 if any(var in conteudo for var in variantes_baiano):
                     return True
 
@@ -188,23 +182,19 @@ def validar_noticia(titulo, veiculo, link=None, puxar_conteudo=False):
                     'santo estevao', 'pombal', 'ribeira do pombal', 'remanso', 'ruy barbosa'
                 ]
 
-                # 3.2 Se contiver marcas nítidas de confusão associadas a cidades exclusivas
                 termos_confusao = [f"ifba {c}" for c in cidades_exclusivas] + [f"ifba de {c}" for c in cidades_exclusivas] + [f"campus {c}" for c in cidades_exclusivas]
                 if any(tc in conteudo for tc in termos_confusao):
                     return True
 
-                # 3.3 Caso especial de Valença no corpo do texto (cursos agrícolas exclusivos do IF Baiano)
                 if 'valenca' in conteudo:
                     termos_valenca = ['agropecuaria', 'zootecnia', 'agronomia', 'agricultura', 'agroecologia', 'florestas', 'alimento', 'alimentos', 'agroecologico']
                     if any(term in conteudo for term in termos_valenca):
                         return True
 
-                # 3.4 Caso especial de Salvador/Reitoria no corpo do texto (cita reitor do IF Baiano ou bairro Imbuí)
                 if 'reitoria' in conteudo or 'salvador' in conteudo:
                     if any(term in conteudo for term in ['aecio', 'imbui']):
                         return True
 
-                # 3.5 Se o texto cita alguma cidade exclusiva de atuação do IF Baiano e não cita NENHUMA cidade com campus legítimo do IFBA
                 campi_reais_ifba = [
                     'salvador', 'feira de santana', 'camacari', 'barreiras', 'jequie', 'eunapolis', 
                     'ilheus', 'irece', 'jacobina', 'paulo afonso', 'porto seguro', 'santo amaro', 
@@ -214,13 +204,10 @@ def validar_noticia(titulo, veiculo, link=None, puxar_conteudo=False):
                 if any(c in conteudo for c in cidades_exclusivas) and not any(camp in conteudo for camp in campi_reais_ifba):
                     return True
 
-                # 3.6 Se não caiu nas regras de confusão e o texto só fala do IFBA legítimo, descarta a notícia
                 return False
-        except Exception as e:
-            # Falha ao carregar conteúdo externo (timeout, SSL, etc.) -> Faz o fallback para a heurística original de metadados
+        except Exception:
             pass
 
-    # Heurística original de metadados (Título e Veículo) como fallback
     cidades_exclusivas = [
         'alagoinhas', 'lapa', 'bom jesus da lapa', 'catu', 'mangabeira', 'governador mangabeira',
         'guanambi', 'itaberaba', 'itapetinga', 'santa ines', 'bonfim', 'senhor do bonfim',
@@ -230,26 +217,26 @@ def validar_noticia(titulo, veiculo, link=None, puxar_conteudo=False):
     if any(c in t_v for c in cidades_exclusivas):
         return True
 
-    # Caso especial para Valença
     if 'valenca' in t_v:
         termos_valenca = ['agropecuaria', 'zootecnia', 'agronomia', 'agricultura', 'agroecologia', 'florestas', 'alimento', 'alimentos', 'agroecologico']
         if any(term in t_v for term in termos_valenca):
             return True
 
-    # Caso especial para Salvador/Reitoria
     if 'reitoria' in t_v or 'salvador' in t_v:
         if any(term in t_v for term in ['aecio', 'imbui']):
             return True
 
-    # 3. Caso não se enquadre em nenhuma das regras acima, não é sobre o IF Baiano
     return False
 
 def resolver_url_direta(url_rss):
+    # Otimização de alta velocidade: só faz a requisição de resolução se for link de redirecionamento do Google/Bing News
+    if not url_rss or not ('google.com/rss' in url_rss or 'news.google.com' in url_rss or 'bing.com/news' in url_rss or 'news.google' in url_rss):
+        return url_rss
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'}
-        res = requests.head(url_rss, headers=headers, allow_redirects=True, timeout=5)
+        res = requests.head(url_rss, headers=headers, allow_redirects=True, timeout=3)
         return res.url
-    except:
+    except Exception:
         return url_rss
 
 def salvar_e_gerar_stats(df_final, dir_data=DIR_DATA):
@@ -312,4 +299,4 @@ def salvar_e_gerar_stats(df_final, dir_data=DIR_DATA):
     with open(arquivo_stats, 'w', encoding='utf-8') as f:
         json.dump(stats_por_ano, f, ensure_ascii=False, indent=2)
 
-    print(f"Sucesso! Dados limpos, CSV Geral e Stats JSON atualizados em {dir_data}/")
+    print(f"Sucesso! Dados limpos, CSV Geral e Stats JSON atualizados em {dir_data}/", flush=True)

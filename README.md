@@ -32,6 +32,12 @@ O Motor de Clipping Inteligente monitora diariamente matérias veiculadas na gra
 
 ##  Log de Atualizações (Changelog)
 
+###  07/08/2026 - Motor de Busca Profunda e Varredura Histórica 2012 (Recuperação de Menções Perdidas)
+- Novo Script `scraper_busca_profunda.py`: Motor de recuperação de menções em janela temporal configurável (padrão: 45 dias). Opera em três fases sequenciais — Serper API com filtro de data preciso (Fase 1), Google News RSS com parâmetros after/before (Fase 2) e Bing News RSS como terceiro motor de diversidade (Fase 3).
+- Novo Workflow `busca_profunda.yml`: Disparo exclusivamente manual via GitHub Actions. Aceita o parâmetro `dias_atras` (padrão: 45) para configurar a janela de recuperação sem alterar a rotina diária.
+- Novo Workflow `varredura_historica_2012.yml`: Disparo manual com confirmação obrigatória (digitar "CONFIRMAR"). Executa o `scraper_carga_inicial.py` com timeout de 300 minutos para varredura completa desde 2012 até hoje, recompondo a base histórica integral.
+- Proteção de Dados: Todos os três workflows incluem `fetch-depth: 0`, `git pull --rebase origin main` e saneamento de falsos positivos antes do commit.
+
 ###  07/08/2026 - Reestruturação e Unificação do Workflow do GitHub Actions (.yml)
 - Unificação de Workflows: Removido o arquivo duplicado update_clipping.yml (30 minutos) e consolidado o fluxo de coleta e saneamento no arquivo clipping_diario.yml.
 - Remoção de Arquivo Inadequado: Deletado o arquivo de dados clipping.csv salvo erroneamente na pasta .github/workflows/.
