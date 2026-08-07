@@ -32,7 +32,14 @@ O Motor de Clipping Inteligente monitora diariamente matérias veiculadas na gra
 
 ##  Log de Atualizações (Changelog)
 
+###  07/08/2026 - Reestruturação e Unificação do Workflow do GitHub Actions (.yml)
+- Unificação de Workflows: Removido o arquivo duplicado update_clipping.yml (30 minutos) e consolidado o fluxo de coleta e saneamento no arquivo clipping_diario.yml.
+- Remoção de Arquivo Inadequado: Deletado o arquivo de dados clipping.csv salvo erroneamente na pasta .github/workflows/.
+- Estabilidade de Git Push: Adicionado fetch-depth: 0 no actions/checkout@v4 e incluído o comando git pull --rebase origin main para prevenir rejeições de commit e perda de menções.
+- Segurança e Timeouts: Adicionados timeout-minutes: 30 e permissões explícitas permissions: contents: write.
+
 ###  20/07/2026 - Desambiguação Profunda (Web Scraping) & Prevenção de Falsos Positivos (IFBA)
+
 - ‍ **Desambiguação por Web Scraping (puxar_conteudo)**: Verificação profunda na função `validar_noticia` de [clipping_utils.py](file:///G:/Meu%20Drive/APP/2.%20Projetos%20e%20Aplica%C3%A7%C3%B5es/2.2%20Aplica%C3%A7%C3%B5es%20e%20C%C3%B3digos%20(GitHub)/IF%20Baiano%20APPs/clipping-completo/clipping_utils.py) que realiza requisições HTTP (`requests.get`) para baixar e analisar o texto completo da notícia em tempo real (limpando o HTML com regex em `limpar_html`), garantindo a exclusão de notícias legítimas do IFBA com base na presença de seus 20 campi oficiais.
 -  **Normalização Antiacidentes Geográficos**: Criação da rotina `normalizar_para_busca` que higieniza e remove termos ambíguos comuns (como a "Medalha Anísio Teixeira", a "Lavagem do Bonfim" e a "Estação da Lapa" em Salvador) antes das buscas de correspondência de campus e validação. Isso impede a falsa associação de prêmios e festivais de Salvador a cidades como Teixeira de Freitas, Senhor do Bonfim e Bom Jesus da Lapa.
 -  **Refinamento de Regras Salvador e Valença**: Remoção de palavras genéricas (como "reitor", "concurso", "edital") dos termos sinalizadores de confusão nas cidades de Salvador e Valença, evitando o descarte de portarias, licitações e contratações legítimas do IFBA dessas regiões.
