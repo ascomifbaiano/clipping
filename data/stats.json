@@ -1,19 +1,19 @@
 {
   "geral": {
-    "total": 820,
+    "total": 831,
     "eixos": {
-      "Gestão e RH": 488,
-      "Institucional": 146,
-      "Ensino": 132,
+      "Gestão e RH": 497,
+      "Institucional": 140,
+      "Ensino": 139,
       "Pesquisa": 34,
-      "Extensão": 20
+      "Extensão": 21
     },
     "abrangencia": {
-      "Imprensa Local": 522,
-      "Especializados (Nichos)": 108,
+      "Imprensa Local": 524,
+      "Especializados (Nichos)": 99,
       "Imprensa (Nacional)": 79,
+      "Imprensa Regional (Bahia)": 65,
       "Governamental": 53,
-      "Imprensa Regional (Bahia)": 47,
       "Outras Instituições de Ensino": 11
     },
     "top_veiculos": {
@@ -24,35 +24,35 @@
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
+      "Notícias da Lapa": 20,
       "Notícias de Bom Jesus da Lapa": 20,
-      "Notícias da Lapa": 19,
       "O TEMPO": 13
     },
     "meses": {
       "05": 147,
+      "08": 77,
       "11": 71,
       "12": 70,
-      "08": 69,
       "04": 66,
       "10": 64,
+      "07": 63,
       "01": 60,
-      "07": 60,
       "09": 58,
       "03": 55,
       "06": 54,
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 399,
+      "Geral / Não Especificado": 404,
       "Guanambi": 101,
-      "Bom Jesus da Lapa": 62,
+      "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
       "Alagoinhas": 28,
       "Uruçuca": 25,
       "Catu": 24,
-      "Valença": 21,
+      "Valença": 24,
       "Senhor do Bonfim": 19,
-      "Xique-Xique": 15,
+      "Xique-Xique": 17,
       "Santo Estêvão": 14,
       "Serrinha": 13,
       "Itaberaba": 12,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 249
+        "total": 260
       },
       {
         "ano": 2025,
@@ -124,6 +124,14 @@
       {
         "ano": 2012,
         "total": 3
+      },
+      {
+        "ano": 2011,
+        "total": 1
+      },
+      {
+        "ano": 2009,
+        "total": 1
       }
     ]
   },
@@ -137,9 +145,10 @@
     },
     "abrangencia": {
       "Imprensa Local": 19,
-      "Especializados (Nichos)": 4,
       "Imprensa (Nacional)": 3,
-      "Governamental": 2
+      "Especializados (Nichos)": 3,
+      "Governamental": 2,
+      "Imprensa Regional (Bahia)": 1
     },
     "top_veiculos": {
       "Agência Sertão": 4,
@@ -218,6 +227,14 @@
       {
         "ano": 2012,
         "total": 3
+      },
+      {
+        "ano": 2011,
+        "total": 1
+      },
+      {
+        "ano": 2009,
+        "total": 1
       }
     ]
   },
@@ -329,6 +346,14 @@
       {
         "ano": 2012,
         "total": 3
+      },
+      {
+        "ano": 2011,
+        "total": 1
+      },
+      {
+        "ano": 2009,
+        "total": 1
       }
     ]
   },
@@ -336,15 +361,15 @@
     "total": 117,
     "eixos": {
       "Gestão e RH": 75,
-      "Institucional": 20,
-      "Ensino": 16,
+      "Ensino": 18,
+      "Institucional": 18,
       "Extensão": 4,
       "Pesquisa": 2
     },
     "abrangencia": {
       "Imprensa Local": 86,
-      "Especializados (Nichos)": 13,
-      "Imprensa Regional (Bahia)": 6,
+      "Especializados (Nichos)": 11,
+      "Imprensa Regional (Bahia)": 8,
       "Governamental": 6,
       "Imprensa (Nacional)": 4,
       "Outras Instituições de Ensino": 2
@@ -446,6 +471,14 @@
       {
         "ano": 2012,
         "total": 3
+      },
+      {
+        "ano": 2011,
+        "total": 1
+      },
+      {
+        "ano": 2009,
+        "total": 1
       }
     ]
   },
@@ -454,15 +487,15 @@
     "eixos": {
       "Gestão e RH": 107,
       "Ensino": 38,
-      "Institucional": 35,
-      "Pesquisa": 2,
-      "Extensão": 2
+      "Institucional": 33,
+      "Extensão": 4,
+      "Pesquisa": 2
     },
     "abrangencia": {
-      "Imprensa Local": 104,
-      "Especializados (Nichos)": 32,
+      "Imprensa Local": 101,
+      "Especializados (Nichos)": 29,
+      "Imprensa Regional (Bahia)": 24,
       "Imprensa (Nacional)": 18,
-      "Imprensa Regional (Bahia)": 18,
       "Governamental": 12
     },
     "top_veiculos": {
@@ -472,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
+      "Mídia Externa": 6,
       "Notícias da Lapa": 5,
       "Jornal Correio": 5
     },
@@ -566,23 +599,31 @@
       {
         "ano": 2012,
         "total": 3
+      },
+      {
+        "ano": 2011,
+        "total": 1
+      },
+      {
+        "ano": 2009,
+        "total": 1
       }
     ]
   },
   "2026": {
-    "total": 249,
+    "total": 260,
     "eixos": {
-      "Gestão e RH": 182,
-      "Institucional": 29,
-      "Ensino": 20,
+      "Gestão e RH": 191,
+      "Institucional": 28,
+      "Ensino": 23,
       "Pesquisa": 13,
       "Extensão": 5
     },
     "abrangencia": {
-      "Imprensa Local": 132,
-      "Especializados (Nichos)": 43,
+      "Imprensa Local": 137,
       "Imprensa (Nacional)": 42,
-      "Imprensa Regional (Bahia)": 17,
+      "Especializados (Nichos)": 40,
+      "Imprensa Regional (Bahia)": 26,
       "Governamental": 13,
       "Outras Instituições de Ensino": 2
     },
@@ -593,27 +634,27 @@
       "Mídia Externa": 16,
       "O TEMPO": 11,
       "Ache Concursos": 9,
-      "Sou Enfermagem": 8,
       "G1": 8,
-      "Notícias da Lapa": 6,
+      "Sou Enfermagem": 8,
+      "Notícias da Lapa": 7,
       "Acorda Cidade": 6
     },
     "meses": {
       "05": 102,
-      "04": 26,
+      "07": 27,
       "01": 26,
-      "07": 24,
+      "04": 26,
+      "08": 25,
       "03": 23,
-      "08": 17,
       "02": 17,
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 120,
+      "Geral / Não Especificado": 125,
       "Guanambi": 36,
-      "Valença": 13,
-      "Xique-Xique": 12,
-      "Bom Jesus da Lapa": 11,
+      "Valença": 16,
+      "Xique-Xique": 14,
+      "Bom Jesus da Lapa": 12,
       "Senhor do Bonfim": 10,
       "Alagoinhas": 9,
       "Uruçuca": 7,
@@ -630,7 +671,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 249
+        "total": 260
       },
       {
         "ano": 2025,
@@ -687,6 +728,14 @@
       {
         "ano": 2012,
         "total": 3
+      },
+      {
+        "ano": 2011,
+        "total": 1
+      },
+      {
+        "ano": 2009,
+        "total": 1
       }
     ]
   },
@@ -694,10 +743,10 @@
     "total": 144,
     "eixos": {
       "Gestão e RH": 62,
-      "Institucional": 41,
-      "Ensino": 25,
+      "Institucional": 40,
+      "Ensino": 27,
       "Pesquisa": 10,
-      "Extensão": 6
+      "Extensão": 5
     },
     "abrangencia": {
       "Imprensa Local": 101,
@@ -789,6 +838,14 @@
       {
         "ano": 2012,
         "total": 3
+      },
+      {
+        "ano": 2011,
+        "total": 1
+      },
+      {
+        "ano": 2009,
+        "total": 1
       }
     ]
   }
