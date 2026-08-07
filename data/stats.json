@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 833,
+    "total": 839,
     "eixos": {
-      "Gestão e RH": 498,
+      "Gestão e RH": 502,
+      "Ensino": 141,
       "Institucional": 141,
-      "Ensino": 139,
       "Pesquisa": 34,
       "Extensão": 21
     },
     "abrangencia": {
-      "Imprensa Local": 526,
+      "Imprensa Local": 532,
       "Especializados (Nichos)": 99,
       "Imprensa (Nacional)": 79,
       "Imprensa Regional (Bahia)": 65,
@@ -30,11 +30,11 @@
     },
     "meses": {
       "05": 147,
-      "08": 78,
+      "08": 81,
       "11": 71,
       "12": 70,
+      "07": 67,
       "04": 66,
-      "07": 64,
       "10": 64,
       "01": 60,
       "09": 58,
@@ -43,16 +43,16 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 405,
+      "Geral / Não Especificado": 408,
       "Guanambi": 101,
       "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
       "Alagoinhas": 28,
-      "Uruçuca": 25,
+      "Uruçuca": 26,
       "Valença": 24,
       "Catu": 24,
       "Senhor do Bonfim": 19,
-      "Xique-Xique": 17,
+      "Xique-Xique": 19,
       "Santo Estêvão": 14,
       "Serrinha": 13,
       "Itaberaba": 12,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 262
+        "total": 268
       },
       {
         "ano": 2025,
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Jornal Correio": 5,
-      "Notícias da Lapa": 5
+      "Mídia Externa": 6,
+      "Notícias da Lapa": 5,
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 28,
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 262,
+    "total": 268,
     "eixos": {
-      "Gestão e RH": 192,
+      "Gestão e RH": 196,
       "Institucional": 29,
-      "Ensino": 23,
+      "Ensino": 25,
       "Pesquisa": 13,
       "Extensão": 5
     },
     "abrangencia": {
-      "Imprensa Local": 139,
+      "Imprensa Local": 145,
       "Imprensa (Nacional)": 42,
       "Especializados (Nichos)": 40,
       "Imprensa Regional (Bahia)": 26,
@@ -641,8 +641,8 @@
     },
     "meses": {
       "05": 102,
-      "07": 28,
-      "08": 26,
+      "07": 31,
+      "08": 29,
       "04": 26,
       "01": 26,
       "03": 23,
@@ -650,14 +650,14 @@
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 126,
+      "Geral / Não Especificado": 129,
       "Guanambi": 36,
       "Valença": 16,
-      "Xique-Xique": 14,
+      "Xique-Xique": 16,
       "Bom Jesus da Lapa": 12,
       "Senhor do Bonfim": 10,
       "Alagoinhas": 9,
-      "Uruçuca": 7,
+      "Uruçuca": 8,
       "Santa Inês": 6,
       "Serrinha": 5,
       "Catu": 4,
@@ -672,7 +672,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 262
+        "total": 268
       },
       {
         "ano": 2025,
