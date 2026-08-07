@@ -1,50 +1,54 @@
-name: Atualização Periódica do Clipping de Mídia
+name: Atualizacao Diaria e Saneamento do Clipping IF Baiano
 
 on:
   schedule:
-    # Roda a cada 12 horas (ex: 03:00 e 15:00 UTC)
-    - cron: '0 */12 * * *'
-  workflow_dispatch:
-    # Permite rodar o robô manualmente pelo painel do GitHub a qualquer momento
+    # Executa 3 vezes ao dia (06:00, 12:00 e 18:00 no horário de Brasília - 09:00, 15:00 e 21:00 UTC)
+    - cron: '0 9,15,21 * * *'
+  workflow_dispatch: # Permite disparar manualmente pelo painel do GitHub
+
+permissions:
+  contents: write # Permite salvar as atualizações no repositório
 
 jobs:
-  run-scraper:
+  run-clipping:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-    - name: Configurar código-fonte
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - name: Checkout Código (Histórico Completo)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Configurar ambiente Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        cache: 'pip'
+      - name: Configurar Ambiente Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
 
-    - name: Instalar dependências
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Instalar Dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Executar Motor de Clipping
-      run: |
-        python scraper_clipping.py
+      - name: Executar Motor de Coleta de Clipping
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+        run: python scraper_clipping.py
 
-    - name: Executar Saneamento de Dados (Falsos Positivos e Auto-Clipping)
-      run: |
-        python limpar_clipping_falsos_positivos.py
+      - name: Executar Saneamento de Falsos Positivos
+        run: python limpar_clipping_falsos_positivos.py
 
-    - name: Commit e Push dos dados atualizados
-      run: |
-        git config --global user.name "GitHub Actions Scraper"
-        git config --global user.email "actions@github.com"
-        git add data/
-        # Só realiza o commit se houver modificações nos arquivos de dados
-        if ! git diff --cached --quiet; then
-          git commit -m "Atualização automática: novos recortes de mídia coletados [skip ci]"
-          git push
-        else
-          echo "Sem novidades ou alterações para commitar."
-        fi
+      - name: Sincronizar e Enviar Dados para o GitHub
+        run: |
+          git config --global user.name "Robo Clipping IF Baiano"
+          git config --global user.email "automacao@dicom.ifbaiano.edu.br"
+          git add data/ stats.json
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-update: Recortes de mídia coletados e saneados [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "Nenhuma alteração de dados detectada."
+          fi
