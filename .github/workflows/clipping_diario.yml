@@ -4,10 +4,19 @@ on:
   schedule:
     # Executa 3 vezes ao dia (06:00, 12:00 e 18:00 no horário de Brasília - 09:00, 15:00 e 21:00 UTC)
     - cron: '0 9,15,21 * * *'
-  workflow_dispatch: # Permite disparar manualmente pelo painel do GitHub
+  workflow_dispatch:
+    inputs:
+      executar_saneamento:
+        description: 'Executar saneamento de falsos positivos'
+        required: false
+        default: 'true'
+        type: boolean
 
 permissions:
   contents: write # Permite salvar as atualizações no repositório
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 jobs:
   run-clipping:
@@ -34,16 +43,18 @@ jobs:
       - name: Executar Motor de Coleta de Clipping
         env:
           SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
         run: python scraper_clipping.py
 
       - name: Executar Saneamento de Falsos Positivos
+        if: ${{ github.event.inputs.executar_saneamento != 'false' }}
         run: python limpar_clipping_falsos_positivos.py
 
       - name: Sincronizar e Enviar Dados para o GitHub
         run: |
           git config --global user.name "Robo Clipping IF Baiano"
           git config --global user.email "automacao@dicom.ifbaiano.edu.br"
-          git add data/ stats.json
+          git add -A
           
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update: Recortes de mídia coletados e saneados [skip ci]"
