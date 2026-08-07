@@ -22,15 +22,24 @@ O Motor de Clipping Inteligente monitora diariamente matérias veiculadas na gra
 - **Dashboard Frontend**: HTML5 Semântico, Vanilla CSS3 (Custom Properties), JavaScript ES6+, Chart.js, PapaParse.
 
 ##  Estrutura do Projeto
-- `clipping_utils.py`: Módulo central de heurísticas, normalização de strings, padronização de datas e geração de estatísticas.
-- `scraper_clipping.py`: Motor diário de captura incremental de notícias.
-- `scraper_carga_inicial.py`: Robô para reconstrução histórica de acervo (brackets de 2008 a 2026).
+- `clipping_utils.py`: Módulo central v2.0 — heurísticas, normalização, resolver de URLs com Base64 Google News, Full-Text Scan em portais `.edu.br`/`.gov.br` e geração de estatísticas.
+- `scraper_clipping.py`: Motor diário v2.0 — Arquitetura Multi-Engine de 4 Camadas (Serper Organic+News, Google RSS fragmentado, Bing RSS, Scraping Direto de 60+ portais locais da Bahia). Janela móvel de 7 dias.
+- `scraper_busca_profunda.py`: Motor de recuperação de menções perdidas em janela temporal configurável (`DIAS_ATRAS`, padrão: 45 dias). Disparo manual via GitHub Actions.
+- `scraper_carga_inicial.py`: Motor de varredura histórica v2.0 — Brackets anuais desde 2008 com Serper API + Google RSS + Scraping Direto de portais locais. Checkpoints a cada 3 anos.
 - `index.html`: Dashboard analytics para visualização, busca e geração de relatórios.
 - `data/`: Diretório contendo os bancos de dados históricos em CSV e estatísticas em `stats.json`.
 
 ---
 
 ##  Log de Atualizações (Changelog)
+
+###  07/08/2026 - Reestruturação Radical dos Motores de Busca v2.0 (Arquitetura Multi-Engine 4 Camadas)
+- **Diagnóstico de Falhas**: Identificadas e corrigidas as causas exatas de 5 notícias reais perdidas pelo robô antigo (portais locais, redirecionamentos Google RSS, matérias com título genérico mas corpo citando o IF Baiano).
+- **`clipping_utils.py` v2.0**: Resolver de URL robusto com decodificação Base64 de links do Google News e extração de Tag Canonical `<link rel="canonical">`. Full-Text Content Scan automático em portais `.edu.br` e `.gov.br` — notícias como a do Univerciência (UESB) agora são capturadas mesmo sem o nome "IF Baiano" no título.
+- **`scraper_clipping.py` v2.0**: Arquitetura Multi-Engine de 4 Camadas — (1) Serper API Organic + News, (2) Google News RSS fragmentado em sub-queries curtas, (3) Bing News RSS, (4) Scraping Direto de 60+ portais locais da Bahia via Serper `site:domínio`. Janela móvel de 7 dias para capturar matérias indexadas com atraso.
+- **`scraper_busca_profunda.py` v2.0**: Versão intensificada do diário com 30+ queries e inspeção de corpo de texto. Janela temporal configurável via parâmetro `DIAS_ATRAS` no GitHub Actions.
+- **`scraper_carga_inicial.py` v2.0**: Varredura histórica 2008-hoje com brackets anuais via Serper API (Organic+News) + Google RSS + Scraping Direto de portais locais. Checkpoints automáticos a cada 3 anos para preservar progresso.
+- **Garantia de Layout**: O `index.html` foi mantido **100% intocado**. Toda a ampliação ocorreu exclusivamente na camada de backend Python.
 
 ###  07/08/2026 - Motor de Busca Profunda e Varredura Histórica 2012 (Recuperação de Menções Perdidas)
 - Novo Script `scraper_busca_profunda.py`: Motor de recuperação de menções em janela temporal configurável (padrão: 45 dias). Opera em três fases sequenciais — Serper API com filtro de data preciso (Fase 1), Google News RSS com parâmetros after/before (Fase 2) e Bing News RSS como terceiro motor de diversidade (Fase 3).
