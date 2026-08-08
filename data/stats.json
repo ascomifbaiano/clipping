@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 839,
+    "total": 841,
     "eixos": {
-      "Gestão e RH": 502,
-      "Ensino": 141,
+      "Gestão e RH": 503,
+      "Ensino": 142,
       "Institucional": 141,
       "Pesquisa": 34,
       "Extensão": 21
     },
     "abrangencia": {
-      "Imprensa Local": 532,
+      "Imprensa Local": 534,
       "Especializados (Nichos)": 99,
       "Imprensa (Nacional)": 79,
       "Imprensa Regional (Bahia)": 65,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 81,
+      "08": 83,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -43,7 +43,7 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 408,
+      "Geral / Não Especificado": 409,
       "Guanambi": 101,
       "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
@@ -51,8 +51,8 @@
       "Uruçuca": 26,
       "Valença": 24,
       "Catu": 24,
+      "Xique-Xique": 20,
       "Senhor do Bonfim": 19,
-      "Xique-Xique": 19,
       "Santo Estêvão": 14,
       "Serrinha": 13,
       "Itaberaba": 12,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 268
+        "total": 270
       },
       {
         "ano": 2025,
@@ -262,8 +262,8 @@
       "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
       "JC Concursos": 2,
-      "Pimenta Blog": 2,
       "Notícias da Lapa": 2,
+      "Pimenta Blog": 2,
       "Jornal Nossa Voz": 2,
       "Blog do Eloilton Cajuhy": 2
     },
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
+      "Folha Dirigida": 6,
       "Jornal Correio": 5,
       "Notícias da Lapa": 5
     },
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 268,
+    "total": 270,
     "eixos": {
-      "Gestão e RH": 196,
+      "Gestão e RH": 197,
       "Institucional": 29,
-      "Ensino": 25,
+      "Ensino": 26,
       "Pesquisa": 13,
       "Extensão": 5
     },
     "abrangencia": {
-      "Imprensa Local": 145,
+      "Imprensa Local": 147,
       "Imprensa (Nacional)": 42,
       "Especializados (Nichos)": 40,
       "Imprensa Regional (Bahia)": 26,
@@ -637,12 +637,12 @@
       "Sou Enfermagem": 8,
       "G1": 8,
       "Notícias da Lapa": 7,
-      "Acorda Cidade": 6
+      "Fala Você Notícias": 6
     },
     "meses": {
       "05": 102,
+      "08": 31,
       "07": 31,
-      "08": 29,
       "04": 26,
       "01": 26,
       "03": 23,
@@ -650,10 +650,10 @@
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 129,
+      "Geral / Não Especificado": 130,
       "Guanambi": 36,
+      "Xique-Xique": 17,
       "Valença": 16,
-      "Xique-Xique": 16,
       "Bom Jesus da Lapa": 12,
       "Senhor do Bonfim": 10,
       "Alagoinhas": 9,
@@ -672,7 +672,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 268
+        "total": 270
       },
       {
         "ano": 2025,
