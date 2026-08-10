@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 843,
+    "total": 844,
     "eixos": {
-      "Gestão e RH": 504,
+      "Gestão e RH": 505,
       "Ensino": 143,
       "Institucional": 141,
       "Pesquisa": 34,
       "Extensão": 21
     },
     "abrangencia": {
-      "Imprensa Local": 536,
+      "Imprensa Local": 537,
       "Especializados (Nichos)": 99,
       "Imprensa (Nacional)": 79,
       "Imprensa Regional (Bahia)": 65,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 85,
+      "08": 86,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -43,7 +43,7 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 410,
+      "Geral / Não Especificado": 411,
       "Guanambi": 101,
       "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 272
+        "total": 273
       },
       {
         "ano": 2025,
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
+      "Mídia Externa": 6,
       "Notícias da Lapa": 5,
       "Jornal Correio": 5
     },
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 272,
+    "total": 273,
     "eixos": {
-      "Gestão e RH": 198,
+      "Gestão e RH": 199,
       "Institucional": 29,
       "Ensino": 27,
       "Pesquisa": 13,
       "Extensão": 5
     },
     "abrangencia": {
-      "Imprensa Local": 149,
+      "Imprensa Local": 150,
       "Imprensa (Nacional)": 42,
       "Especializados (Nichos)": 40,
       "Imprensa Regional (Bahia)": 26,
@@ -641,7 +641,7 @@
     },
     "meses": {
       "05": 102,
-      "08": 33,
+      "08": 34,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -650,7 +650,7 @@
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 131,
+      "Geral / Não Especificado": 132,
       "Guanambi": 36,
       "Xique-Xique": 17,
       "Valença": 16,
@@ -672,7 +672,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 272
+        "total": 273
       },
       {
         "ano": 2025,
