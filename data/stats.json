@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 844,
+    "total": 845,
     "eixos": {
-      "Gestão e RH": 505,
+      "Gestão e RH": 506,
       "Ensino": 143,
       "Institucional": 141,
       "Pesquisa": 34,
       "Extensão": 21
     },
     "abrangencia": {
-      "Imprensa Local": 537,
+      "Imprensa Local": 538,
       "Especializados (Nichos)": 99,
       "Imprensa (Nacional)": 79,
       "Imprensa Regional (Bahia)": 65,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 86,
+      "08": 87,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -43,7 +43,7 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 411,
+      "Geral / Não Especificado": 412,
       "Guanambi": 101,
       "Bom Jesus da Lapa": 63,
       "Teixeira de Freitas": 40,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 273
+        "total": 274
       },
       {
         "ano": 2025,
@@ -262,8 +262,8 @@
       "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
       "JC Concursos": 2,
-      "Pimenta Blog": 2,
       "Notícias da Lapa": 2,
+      "Pimenta Blog": 2,
       "Jornal Nossa Voz": 2,
       "Blog do Eloilton Cajuhy": 2
     },
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
-      "Jornal Correio": 5,
-      "Notícias da Lapa": 5
+      "Folha Dirigida": 6,
+      "Notícias da Lapa": 5,
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 28,
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 273,
+    "total": 274,
     "eixos": {
-      "Gestão e RH": 199,
+      "Gestão e RH": 200,
       "Institucional": 29,
       "Ensino": 27,
       "Pesquisa": 13,
       "Extensão": 5
     },
     "abrangencia": {
-      "Imprensa Local": 150,
+      "Imprensa Local": 151,
       "Imprensa (Nacional)": 42,
       "Especializados (Nichos)": 40,
       "Imprensa Regional (Bahia)": 26,
@@ -634,14 +634,14 @@
       "Mídia Externa": 16,
       "O TEMPO": 11,
       "Ache Concursos": 9,
-      "Sou Enfermagem": 8,
       "G1": 8,
+      "Sou Enfermagem": 8,
       "Notícias da Lapa": 7,
-      "Acorda Cidade": 6
+      "Fala Você Notícias": 6
     },
     "meses": {
       "05": 102,
-      "08": 34,
+      "08": 35,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -650,7 +650,7 @@
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 132,
+      "Geral / Não Especificado": 133,
       "Guanambi": 36,
       "Xique-Xique": 17,
       "Valença": 16,
@@ -672,7 +672,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 273
+        "total": 274
       },
       {
         "ano": 2025,
