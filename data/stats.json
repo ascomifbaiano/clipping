@@ -24,8 +24,8 @@
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
-      "Notícias de Bom Jesus da Lapa": 20,
       "Notícias da Lapa": 20,
+      "Notícias de Bom Jesus da Lapa": 20,
       "O TEMPO": 13
     },
     "meses": {
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Jornal Correio": 5,
-      "Notícias da Lapa": 5
+      "Mídia Externa": 6,
+      "Notícias da Lapa": 5,
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 28,
