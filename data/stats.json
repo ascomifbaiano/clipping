@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 856,
+    "total": 863,
     "eixos": {
-      "Gestão e RH": 509,
+      "Gestão e RH": 514,
       "Institucional": 147,
-      "Ensino": 144,
+      "Ensino": 146,
       "Pesquisa": 35,
       "Extensão": 21
     },
     "abrangencia": {
-      "Imprensa Local": 544,
+      "Imprensa Local": 548,
       "Especializados (Nichos)": 100,
-      "Imprensa (Nacional)": 83,
-      "Imprensa Regional (Bahia)": 65,
+      "Imprensa (Nacional)": 84,
+      "Imprensa Regional (Bahia)": 67,
       "Governamental": 53,
       "Outras Instituições de Ensino": 11
     },
@@ -20,17 +20,17 @@
       "Agência Sertão": 176,
       "SulBahiaNews": 42,
       "PCI Concursos": 34,
-      "G1": 32,
+      "G1": 33,
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
-      "Notícias da Lapa": 20,
       "Notícias de Bom Jesus da Lapa": 20,
+      "Notícias da Lapa": 20,
       "O TEMPO": 17
     },
     "meses": {
       "05": 147,
-      "08": 98,
+      "08": 105,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -43,17 +43,17 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 413,
+      "Geral / Não Especificado": 417,
       "Guanambi": 101,
       "Bom Jesus da Lapa": 64,
       "Teixeira de Freitas": 41,
       "Alagoinhas": 29,
       "Valença": 28,
-      "Uruçuca": 27,
+      "Uruçuca": 28,
       "Catu": 25,
       "Xique-Xique": 20,
       "Senhor do Bonfim": 19,
-      "Santo Estêvão": 15,
+      "Santo Estêvão": 17,
       "Serrinha": 13,
       "Itaberaba": 12,
       "Ribeira do Pombal": 10,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 285
+        "total": 292
       },
       {
         "ano": 2025,
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
+      "Mídia Externa": 6,
       "Notícias da Lapa": 5,
       "Jornal Correio": 5
     },
@@ -611,19 +611,19 @@
     ]
   },
   "2026": {
-    "total": 285,
+    "total": 292,
     "eixos": {
-      "Gestão e RH": 203,
+      "Gestão e RH": 208,
       "Institucional": 35,
-      "Ensino": 28,
+      "Ensino": 30,
       "Pesquisa": 14,
       "Extensão": 5
     },
     "abrangencia": {
-      "Imprensa Local": 157,
-      "Imprensa (Nacional)": 46,
+      "Imprensa Local": 161,
+      "Imprensa (Nacional)": 47,
       "Especializados (Nichos)": 41,
-      "Imprensa Regional (Bahia)": 26,
+      "Imprensa Regional (Bahia)": 28,
       "Governamental": 13,
       "Outras Instituições de Ensino": 2
     },
@@ -633,15 +633,15 @@
       "Folha Dirigida": 21,
       "Mídia Externa": 16,
       "O TEMPO": 15,
+      "G1": 9,
       "Ache Concursos": 9,
-      "G1": 8,
       "Sou Enfermagem": 8,
-      "Notícias da Lapa": 7,
-      "Fala Você Notícias": 6
+      "Acorda Cidade": 7,
+      "Notícias da Lapa": 7
     },
     "meses": {
       "05": 102,
-      "08": 46,
+      "08": 53,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -650,18 +650,18 @@
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 134,
+      "Geral / Não Especificado": 138,
       "Guanambi": 36,
       "Valença": 20,
       "Xique-Xique": 17,
       "Bom Jesus da Lapa": 13,
       "Senhor do Bonfim": 10,
+      "Uruçuca": 10,
       "Alagoinhas": 10,
-      "Uruçuca": 9,
+      "Santo Estêvão": 6,
       "Santa Inês": 6,
-      "Serrinha": 5,
       "Catu": 5,
-      "Santo Estêvão": 4,
+      "Serrinha": 5,
       "Itaberaba": 3,
       "Teixeira de Freitas": 3,
       "Itapetinga": 3,
@@ -673,7 +673,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 285
+        "total": 292
       },
       {
         "ano": 2025,
