@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 863,
+    "total": 864,
     "eixos": {
       "Gestão e RH": 514,
       "Institucional": 147,
       "Ensino": 146,
       "Pesquisa": 35,
-      "Extensão": 21
+      "Extensão": 22
     },
     "abrangencia": {
-      "Imprensa Local": 548,
+      "Imprensa Local": 549,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 84,
       "Imprensa Regional (Bahia)": 67,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 105,
+      "08": 106,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -44,7 +44,7 @@
     },
     "campuses": {
       "Geral / Não Especificado": 417,
-      "Guanambi": 101,
+      "Guanambi": 102,
       "Bom Jesus da Lapa": 64,
       "Teixeira de Freitas": 41,
       "Alagoinhas": 29,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 292
+        "total": 293
       },
       {
         "ano": 2025,
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Folha Dirigida": 6,
+      "Jornal Correio": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 28,
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 292,
+    "total": 293,
     "eixos": {
       "Gestão e RH": 208,
       "Institucional": 35,
       "Ensino": 30,
       "Pesquisa": 14,
-      "Extensão": 5
+      "Extensão": 6
     },
     "abrangencia": {
-      "Imprensa Local": 161,
+      "Imprensa Local": 162,
       "Imprensa (Nacional)": 47,
       "Especializados (Nichos)": 41,
       "Imprensa Regional (Bahia)": 28,
@@ -636,12 +636,12 @@
       "G1": 9,
       "Ache Concursos": 9,
       "Sou Enfermagem": 8,
-      "Acorda Cidade": 7,
-      "Notícias da Lapa": 7
+      "Notícias da Lapa": 7,
+      "Acorda Cidade": 7
     },
     "meses": {
       "05": 102,
-      "08": 53,
+      "08": 54,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -651,13 +651,13 @@
     },
     "campuses": {
       "Geral / Não Especificado": 138,
-      "Guanambi": 36,
+      "Guanambi": 37,
       "Valença": 20,
       "Xique-Xique": 17,
       "Bom Jesus da Lapa": 13,
       "Senhor do Bonfim": 10,
-      "Uruçuca": 10,
       "Alagoinhas": 10,
+      "Uruçuca": 10,
       "Santo Estêvão": 6,
       "Santa Inês": 6,
       "Catu": 5,
@@ -673,7 +673,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 292
+        "total": 293
       },
       {
         "ano": 2025,
