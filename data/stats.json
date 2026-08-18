@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 864,
+    "total": 867,
     "eixos": {
-      "Gestão e RH": 514,
-      "Institucional": 147,
+      "Gestão e RH": 515,
+      "Institucional": 149,
       "Ensino": 146,
       "Pesquisa": 35,
       "Extensão": 22
     },
     "abrangencia": {
-      "Imprensa Local": 549,
+      "Imprensa Local": 551,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 84,
-      "Imprensa Regional (Bahia)": 67,
+      "Imprensa Regional (Bahia)": 68,
       "Governamental": 53,
       "Outras Instituições de Ensino": 11
     },
@@ -24,13 +24,13 @@
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
-      "Notícias de Bom Jesus da Lapa": 20,
       "Notícias da Lapa": 20,
+      "Notícias de Bom Jesus da Lapa": 20,
       "O TEMPO": 17
     },
     "meses": {
       "05": 147,
-      "08": 106,
+      "08": 109,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -45,7 +45,7 @@
     "campuses": {
       "Geral / Não Especificado": 417,
       "Guanambi": 102,
-      "Bom Jesus da Lapa": 64,
+      "Bom Jesus da Lapa": 65,
       "Teixeira de Freitas": 41,
       "Alagoinhas": 29,
       "Valença": 28,
@@ -53,13 +53,13 @@
       "Catu": 25,
       "Xique-Xique": 20,
       "Senhor do Bonfim": 19,
-      "Santo Estêvão": 17,
+      "Santo Estêvão": 18,
       "Serrinha": 13,
       "Itaberaba": 12,
       "Ribeira do Pombal": 10,
       "Santa Inês": 9,
+      "Itapetinga": 8,
       "Reitoria (Salvador)": 8,
-      "Itapetinga": 7,
       "Ruy Barbosa": 6,
       "Governador Mangabeira": 6,
       "Remanso": 3
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 293
+        "total": 296
       },
       {
         "ano": 2025,
@@ -262,8 +262,8 @@
       "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
       "JC Concursos": 2,
-      "Pimenta Blog": 2,
       "Notícias da Lapa": 2,
+      "Pimenta Blog": 2,
       "Jornal Nossa Voz": 2,
       "Blog do Eloilton Cajuhy": 2
     },
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
+      "Folha Dirigida": 6,
       "Jornal Correio": 5,
       "Notícias da Lapa": 5
     },
@@ -611,19 +611,19 @@
     ]
   },
   "2026": {
-    "total": 293,
+    "total": 296,
     "eixos": {
-      "Gestão e RH": 208,
-      "Institucional": 35,
+      "Gestão e RH": 209,
+      "Institucional": 37,
       "Ensino": 30,
       "Pesquisa": 14,
       "Extensão": 6
     },
     "abrangencia": {
-      "Imprensa Local": 162,
+      "Imprensa Local": 164,
       "Imprensa (Nacional)": 47,
       "Especializados (Nichos)": 41,
-      "Imprensa Regional (Bahia)": 28,
+      "Imprensa Regional (Bahia)": 29,
       "Governamental": 13,
       "Outras Instituições de Ensino": 2
     },
@@ -636,12 +636,12 @@
       "G1": 9,
       "Ache Concursos": 9,
       "Sou Enfermagem": 8,
-      "Acorda Cidade": 7,
-      "Notícias da Lapa": 7
+      "Acorda Cidade": 8,
+      "Fala Você Notícias": 8
     },
     "meses": {
       "05": 102,
-      "08": 54,
+      "08": 57,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -654,26 +654,26 @@
       "Guanambi": 37,
       "Valença": 20,
       "Xique-Xique": 17,
-      "Bom Jesus da Lapa": 13,
+      "Bom Jesus da Lapa": 14,
       "Senhor do Bonfim": 10,
-      "Alagoinhas": 10,
       "Uruçuca": 10,
-      "Santo Estêvão": 6,
+      "Alagoinhas": 10,
+      "Santo Estêvão": 7,
       "Santa Inês": 6,
       "Catu": 5,
       "Serrinha": 5,
-      "Itaberaba": 3,
-      "Teixeira de Freitas": 3,
-      "Itapetinga": 3,
+      "Itapetinga": 4,
       "Ribeira do Pombal": 3,
+      "Teixeira de Freitas": 3,
+      "Itaberaba": 3,
       "Governador Mangabeira": 2,
-      "Reitoria (Salvador)": 1,
-      "Ruy Barbosa": 1
+      "Ruy Barbosa": 1,
+      "Reitoria (Salvador)": 1
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 293
+        "total": 296
       },
       {
         "ano": 2025,
