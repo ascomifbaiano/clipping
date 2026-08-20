@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 870,
+    "total": 873,
     "eixos": {
-      "Gestão e RH": 517,
+      "Gestão e RH": 519,
       "Institucional": 149,
       "Ensino": 146,
       "Pesquisa": 35,
-      "Extensão": 23
+      "Extensão": 24
     },
     "abrangencia": {
-      "Imprensa Local": 553,
+      "Imprensa Local": 556,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 85,
       "Imprensa Regional (Bahia)": 68,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 112,
+      "08": 115,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -47,9 +47,9 @@
       "Guanambi": 102,
       "Bom Jesus da Lapa": 66,
       "Teixeira de Freitas": 41,
-      "Uruçuca": 29,
-      "Alagoinhas": 29,
-      "Valença": 28,
+      "Uruçuca": 30,
+      "Alagoinhas": 30,
+      "Valença": 29,
       "Catu": 25,
       "Xique-Xique": 20,
       "Senhor do Bonfim": 19,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 299
+        "total": 302
       },
       {
         "ano": 2025,
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
+      "Mídia Externa": 6,
       "Notícias da Lapa": 5,
       "Jornal Correio": 5
     },
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 299,
+    "total": 302,
     "eixos": {
-      "Gestão e RH": 211,
+      "Gestão e RH": 213,
       "Institucional": 37,
       "Ensino": 30,
       "Pesquisa": 14,
-      "Extensão": 7
+      "Extensão": 8
     },
     "abrangencia": {
-      "Imprensa Local": 166,
+      "Imprensa Local": 169,
       "Imprensa (Nacional)": 48,
       "Especializados (Nichos)": 41,
       "Imprensa Regional (Bahia)": 29,
@@ -641,7 +641,7 @@
     },
     "meses": {
       "05": 102,
-      "08": 60,
+      "08": 63,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -652,11 +652,11 @@
     "campuses": {
       "Geral / Não Especificado": 139,
       "Guanambi": 37,
-      "Valença": 20,
+      "Valença": 21,
       "Xique-Xique": 17,
       "Bom Jesus da Lapa": 15,
-      "Uruçuca": 11,
-      "Alagoinhas": 10,
+      "Uruçuca": 12,
+      "Alagoinhas": 11,
       "Senhor do Bonfim": 10,
       "Santo Estêvão": 7,
       "Santa Inês": 6,
@@ -673,7 +673,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 299
+        "total": 302
       },
       {
         "ano": 2025,
