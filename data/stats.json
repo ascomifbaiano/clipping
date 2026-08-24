@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 874,
+    "total": 875,
     "eixos": {
       "Gestão e RH": 519,
-      "Institucional": 149,
+      "Institucional": 150,
       "Ensino": 146,
       "Pesquisa": 35,
       "Extensão": 25
     },
     "abrangencia": {
-      "Imprensa Local": 556,
+      "Imprensa Local": 557,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 85,
       "Imprensa Regional (Bahia)": 68,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 116,
+      "08": 117,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -56,7 +56,7 @@
       "Santo Estêvão": 18,
       "Serrinha": 13,
       "Itaberaba": 12,
-      "Ribeira do Pombal": 10,
+      "Ribeira do Pombal": 11,
       "Santa Inês": 9,
       "Itapetinga": 8,
       "Reitoria (Salvador)": 8,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 303
+        "total": 304
       },
       {
         "ano": 2025,
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Mídia Externa": 6,
+      "Jornal Correio": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 28,
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 303,
+    "total": 304,
     "eixos": {
       "Gestão e RH": 213,
-      "Institucional": 37,
+      "Institucional": 38,
       "Ensino": 30,
       "Pesquisa": 14,
       "Extensão": 9
     },
     "abrangencia": {
-      "Imprensa Local": 169,
+      "Imprensa Local": 170,
       "Imprensa (Nacional)": 48,
       "Especializados (Nichos)": 41,
       "Imprensa Regional (Bahia)": 29,
@@ -641,7 +641,7 @@
     },
     "meses": {
       "05": 102,
-      "08": 64,
+      "08": 65,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -655,15 +655,15 @@
       "Valença": 21,
       "Xique-Xique": 17,
       "Bom Jesus da Lapa": 15,
-      "Alagoinhas": 12,
       "Uruçuca": 12,
+      "Alagoinhas": 12,
       "Senhor do Bonfim": 10,
       "Santo Estêvão": 7,
       "Santa Inês": 6,
-      "Catu": 5,
       "Serrinha": 5,
+      "Catu": 5,
+      "Ribeira do Pombal": 4,
       "Itapetinga": 4,
-      "Ribeira do Pombal": 3,
       "Teixeira de Freitas": 3,
       "Itaberaba": 3,
       "Governador Mangabeira": 2,
@@ -673,7 +673,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 303
+        "total": 304
       },
       {
         "ano": 2025,
