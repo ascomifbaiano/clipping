@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Mídia Externa": 6,
+      "Jornal Correio": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 28,
@@ -635,8 +635,8 @@
       "O TEMPO": 16,
       "G1": 9,
       "Ache Concursos": 9,
-      "Acorda Cidade": 8,
       "Fala Você Notícias": 8,
+      "Acorda Cidade": 8,
       "Sou Enfermagem": 8
     },
     "meses": {
