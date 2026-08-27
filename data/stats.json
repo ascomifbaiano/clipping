@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 882,
+    "total": 883,
     "eixos": {
       "Gestão e RH": 523,
-      "Institucional": 152,
+      "Institucional": 153,
       "Ensino": 146,
       "Pesquisa": 35,
       "Extensão": 26
     },
     "abrangencia": {
-      "Imprensa Local": 563,
+      "Imprensa Local": 564,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 85,
       "Imprensa Regional (Bahia)": 68,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 124,
+      "08": 125,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -46,7 +46,7 @@
       "Geral / Não Especificado": 418,
       "Guanambi": 105,
       "Bom Jesus da Lapa": 67,
-      "Teixeira de Freitas": 43,
+      "Teixeira de Freitas": 44,
       "Alagoinhas": 31,
       "Uruçuca": 30,
       "Valença": 29,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 311
+        "total": 312
       },
       {
         "ano": 2025,
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Folha Dirigida": 6,
+      "Jornal Correio": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 28,
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 311,
+    "total": 312,
     "eixos": {
       "Gestão e RH": 217,
-      "Institucional": 40,
+      "Institucional": 41,
       "Ensino": 30,
       "Pesquisa": 14,
       "Extensão": 10
     },
     "abrangencia": {
-      "Imprensa Local": 176,
+      "Imprensa Local": 177,
       "Imprensa (Nacional)": 48,
       "Especializados (Nichos)": 41,
       "Imprensa Regional (Bahia)": 29,
@@ -631,17 +631,17 @@
       "Agência Sertão": 28,
       "PCI Concursos": 22,
       "Folha Dirigida": 21,
-      "Mídia Externa": 16,
       "O TEMPO": 16,
+      "Mídia Externa": 16,
       "G1": 9,
-      "Ache Concursos": 9,
       "Fala Você Notícias": 9,
+      "Ache Concursos": 9,
       "Acorda Cidade": 8,
       "Sou Enfermagem": 8
     },
     "meses": {
       "05": 102,
-      "08": 72,
+      "08": 73,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -659,8 +659,8 @@
       "Alagoinhas": 12,
       "Senhor do Bonfim": 10,
       "Santo Estêvão": 7,
+      "Teixeira de Freitas": 6,
       "Santa Inês": 6,
-      "Teixeira de Freitas": 5,
       "Serrinha": 5,
       "Catu": 5,
       "Ribeira do Pombal": 5,
@@ -673,7 +673,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 311
+        "total": 312
       },
       {
         "ano": 2025,
