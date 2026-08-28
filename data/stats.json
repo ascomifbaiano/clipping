@@ -1,24 +1,24 @@
 {
   "geral": {
-    "total": 883,
+    "total": 886,
     "eixos": {
       "Gestão e RH": 523,
-      "Institucional": 153,
-      "Ensino": 146,
+      "Institucional": 154,
+      "Ensino": 147,
       "Pesquisa": 35,
-      "Extensão": 26
+      "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 564,
+      "Imprensa Local": 566,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 85,
       "Imprensa Regional (Bahia)": 68,
       "Governamental": 55,
-      "Outras Instituições de Ensino": 11
+      "Outras Instituições de Ensino": 12
     },
     "top_veiculos": {
       "Agência Sertão": 177,
-      "SulBahiaNews": 42,
+      "SulBahiaNews": 43,
       "PCI Concursos": 34,
       "G1": 33,
       "Ache Concursos": 30,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 125,
+      "08": 128,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -46,19 +46,19 @@
       "Geral / Não Especificado": 418,
       "Guanambi": 105,
       "Bom Jesus da Lapa": 67,
-      "Teixeira de Freitas": 44,
+      "Teixeira de Freitas": 45,
       "Alagoinhas": 31,
       "Uruçuca": 30,
       "Valença": 29,
       "Catu": 25,
-      "Xique-Xique": 20,
+      "Xique-Xique": 21,
       "Senhor do Bonfim": 19,
       "Santo Estêvão": 18,
       "Serrinha": 13,
       "Itaberaba": 12,
       "Ribeira do Pombal": 12,
+      "Itapetinga": 9,
       "Santa Inês": 9,
-      "Itapetinga": 8,
       "Reitoria (Salvador)": 8,
       "Ruy Barbosa": 6,
       "Governador Mangabeira": 6,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 312
+        "total": 315
       },
       {
         "ano": 2025,
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Jornal Correio": 5,
-      "Notícias da Lapa": 5
+      "Mídia Externa": 6,
+      "Notícias da Lapa": 5,
+      "Jornal Correio": 5
     },
     "meses": {
       "11": 28,
@@ -611,21 +611,21 @@
     ]
   },
   "2026": {
-    "total": 312,
+    "total": 315,
     "eixos": {
       "Gestão e RH": 217,
-      "Institucional": 41,
-      "Ensino": 30,
+      "Institucional": 42,
+      "Ensino": 31,
       "Pesquisa": 14,
-      "Extensão": 10
+      "Extensão": 11
     },
     "abrangencia": {
-      "Imprensa Local": 177,
+      "Imprensa Local": 179,
       "Imprensa (Nacional)": 48,
       "Especializados (Nichos)": 41,
       "Imprensa Regional (Bahia)": 29,
       "Governamental": 15,
-      "Outras Instituições de Ensino": 2
+      "Outras Instituições de Ensino": 3
     },
     "top_veiculos": {
       "Agência Sertão": 28,
@@ -633,15 +633,15 @@
       "Folha Dirigida": 21,
       "O TEMPO": 16,
       "Mídia Externa": 16,
+      "Ache Concursos": 9,
       "G1": 9,
       "Fala Você Notícias": 9,
-      "Ache Concursos": 9,
       "Acorda Cidade": 8,
       "Sou Enfermagem": 8
     },
     "meses": {
       "05": 102,
-      "08": 73,
+      "08": 76,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -653,27 +653,27 @@
       "Geral / Não Especificado": 139,
       "Guanambi": 40,
       "Valença": 21,
-      "Xique-Xique": 17,
+      "Xique-Xique": 18,
       "Bom Jesus da Lapa": 16,
       "Uruçuca": 12,
       "Alagoinhas": 12,
       "Senhor do Bonfim": 10,
+      "Teixeira de Freitas": 7,
       "Santo Estêvão": 7,
-      "Teixeira de Freitas": 6,
       "Santa Inês": 6,
+      "Itapetinga": 5,
+      "Ribeira do Pombal": 5,
       "Serrinha": 5,
       "Catu": 5,
-      "Ribeira do Pombal": 5,
-      "Itapetinga": 4,
       "Itaberaba": 3,
       "Governador Mangabeira": 2,
-      "Ruy Barbosa": 1,
-      "Reitoria (Salvador)": 1
+      "Reitoria (Salvador)": 1,
+      "Ruy Barbosa": 1
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 312
+        "total": 315
       },
       {
         "ano": 2025,
