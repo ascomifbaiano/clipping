@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 886,
+    "total": 893,
     "eixos": {
-      "Gestão e RH": 523,
-      "Institucional": 154,
-      "Ensino": 147,
+      "Gestão e RH": 528,
+      "Institucional": 155,
+      "Ensino": 148,
       "Pesquisa": 35,
       "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 566,
+      "Imprensa Local": 571,
       "Especializados (Nichos)": 100,
-      "Imprensa (Nacional)": 85,
-      "Imprensa Regional (Bahia)": 68,
+      "Imprensa (Nacional)": 86,
+      "Imprensa Regional (Bahia)": 69,
       "Governamental": 55,
       "Outras Instituições de Ensino": 12
     },
@@ -20,7 +20,7 @@
       "Agência Sertão": 177,
       "SulBahiaNews": 43,
       "PCI Concursos": 34,
-      "G1": 33,
+      "G1": 34,
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 128,
+      "08": 135,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -43,8 +43,8 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 418,
-      "Guanambi": 105,
+      "Geral / Não Especificado": 424,
+      "Guanambi": 106,
       "Bom Jesus da Lapa": 67,
       "Teixeira de Freitas": 45,
       "Alagoinhas": 31,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 315
+        "total": 322
       },
       {
         "ano": 2025,
@@ -262,8 +262,8 @@
       "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
       "JC Concursos": 2,
-      "Pimenta Blog": 2,
       "Notícias da Lapa": 2,
+      "Pimenta Blog": 2,
       "Jornal Nossa Voz": 2,
       "Blog do Eloilton Cajuhy": 2
     },
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
+      "Folha Dirigida": 6,
       "Jornal Correio": 5,
       "Notícias da Lapa": 5
     },
@@ -611,19 +611,19 @@
     ]
   },
   "2026": {
-    "total": 315,
+    "total": 322,
     "eixos": {
-      "Gestão e RH": 217,
-      "Institucional": 42,
-      "Ensino": 31,
+      "Gestão e RH": 222,
+      "Institucional": 43,
+      "Ensino": 32,
       "Pesquisa": 14,
       "Extensão": 11
     },
     "abrangencia": {
-      "Imprensa Local": 179,
-      "Imprensa (Nacional)": 48,
+      "Imprensa Local": 184,
+      "Imprensa (Nacional)": 49,
       "Especializados (Nichos)": 41,
-      "Imprensa Regional (Bahia)": 29,
+      "Imprensa Regional (Bahia)": 30,
       "Governamental": 15,
       "Outras Instituições de Ensino": 3
     },
@@ -633,15 +633,15 @@
       "Folha Dirigida": 21,
       "O TEMPO": 16,
       "Mídia Externa": 16,
+      "G1": 10,
+      "Fala Você Notícias": 10,
       "Ache Concursos": 9,
-      "G1": 9,
-      "Fala Você Notícias": 9,
       "Acorda Cidade": 8,
       "Sou Enfermagem": 8
     },
     "meses": {
       "05": 102,
-      "08": 76,
+      "08": 83,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -650,16 +650,16 @@
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 139,
-      "Guanambi": 40,
+      "Geral / Não Especificado": 145,
+      "Guanambi": 41,
       "Valença": 21,
       "Xique-Xique": 18,
       "Bom Jesus da Lapa": 16,
       "Uruçuca": 12,
       "Alagoinhas": 12,
       "Senhor do Bonfim": 10,
-      "Teixeira de Freitas": 7,
       "Santo Estêvão": 7,
+      "Teixeira de Freitas": 7,
       "Santa Inês": 6,
       "Itapetinga": 5,
       "Ribeira do Pombal": 5,
@@ -673,7 +673,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 315
+        "total": 322
       },
       {
         "ano": 2025,
