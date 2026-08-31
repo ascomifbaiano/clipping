@@ -1,26 +1,26 @@
 {
   "geral": {
-    "total": 896,
+    "total": 898,
     "eixos": {
-      "Gestão e RH": 530,
+      "Gestão e RH": 532,
       "Institucional": 156,
       "Ensino": 148,
       "Pesquisa": 35,
       "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 574,
+      "Imprensa Local": 575,
       "Especializados (Nichos)": 100,
       "Imprensa (Nacional)": 86,
-      "Imprensa Regional (Bahia)": 69,
+      "Imprensa Regional (Bahia)": 70,
       "Governamental": 55,
       "Outras Instituições de Ensino": 12
     },
     "top_veiculos": {
       "Agência Sertão": 177,
       "SulBahiaNews": 43,
-      "PCI Concursos": 34,
       "G1": 34,
+      "PCI Concursos": 34,
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "05": 147,
-      "08": 138,
+      "08": 140,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -43,7 +43,7 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 426,
+      "Geral / Não Especificado": 428,
       "Guanambi": 106,
       "Bom Jesus da Lapa": 68,
       "Teixeira de Freitas": 45,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 325
+        "total": 327
       },
       {
         "ano": 2025,
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
+      "Folha Dirigida": 6,
       "Notícias da Lapa": 5,
       "Jornal Correio": 5
     },
@@ -611,19 +611,19 @@
     ]
   },
   "2026": {
-    "total": 325,
+    "total": 327,
     "eixos": {
-      "Gestão e RH": 224,
+      "Gestão e RH": 226,
       "Institucional": 44,
       "Ensino": 32,
       "Pesquisa": 14,
       "Extensão": 11
     },
     "abrangencia": {
-      "Imprensa Local": 187,
+      "Imprensa Local": 188,
       "Imprensa (Nacional)": 49,
       "Especializados (Nichos)": 41,
-      "Imprensa Regional (Bahia)": 30,
+      "Imprensa Regional (Bahia)": 31,
       "Governamental": 15,
       "Outras Instituições de Ensino": 3
     },
@@ -633,15 +633,15 @@
       "Folha Dirigida": 21,
       "O TEMPO": 16,
       "Mídia Externa": 16,
-      "G1": 10,
       "Fala Você Notícias": 10,
+      "G1": 10,
       "Ache Concursos": 9,
       "Acorda Cidade": 8,
       "Sou Enfermagem": 8
     },
     "meses": {
       "05": 102,
-      "08": 86,
+      "08": 88,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -650,7 +650,7 @@
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 147,
+      "Geral / Não Especificado": 149,
       "Guanambi": 41,
       "Valença": 21,
       "Xique-Xique": 18,
@@ -673,7 +673,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 325
+        "total": 327
       },
       {
         "ano": 2025,
