@@ -1,25 +1,25 @@
 {
   "geral": {
-    "total": 898,
+    "total": 915,
     "eixos": {
-      "Gestão e RH": 532,
+      "Gestão e RH": 548,
       "Institucional": 156,
-      "Ensino": 148,
+      "Ensino": 149,
       "Pesquisa": 35,
       "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 575,
-      "Especializados (Nichos)": 100,
-      "Imprensa (Nacional)": 86,
-      "Imprensa Regional (Bahia)": 70,
+      "Imprensa Local": 586,
+      "Especializados (Nichos)": 101,
+      "Imprensa (Nacional)": 87,
+      "Imprensa Regional (Bahia)": 74,
       "Governamental": 55,
       "Outras Instituições de Ensino": 12
     },
     "top_veiculos": {
       "Agência Sertão": 177,
       "SulBahiaNews": 43,
-      "G1": 34,
+      "G1": 35,
       "PCI Concursos": 34,
       "Ache Concursos": 30,
       "Folha Dirigida": 28,
@@ -29,8 +29,8 @@
       "O TEMPO": 18
     },
     "meses": {
+      "08": 157,
       "05": 147,
-      "08": 140,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -43,23 +43,23 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 428,
+      "Geral / Não Especificado": 441,
       "Guanambi": 106,
       "Bom Jesus da Lapa": 68,
       "Teixeira de Freitas": 45,
       "Alagoinhas": 31,
+      "Valença": 31,
       "Uruçuca": 30,
-      "Valença": 29,
       "Catu": 25,
       "Xique-Xique": 21,
-      "Senhor do Bonfim": 19,
+      "Senhor do Bonfim": 20,
       "Santo Estêvão": 18,
       "Serrinha": 13,
       "Itaberaba": 12,
       "Ribeira do Pombal": 12,
       "Itapetinga": 9,
+      "Reitoria (Salvador)": 9,
       "Santa Inês": 9,
-      "Reitoria (Salvador)": 8,
       "Ruy Barbosa": 6,
       "Governador Mangabeira": 6,
       "Remanso": 3
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 327
+        "total": 344
       },
       {
         "ano": 2025,
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Mídia Externa": 6,
       "Folha Dirigida": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Mídia Externa": 6,
+      "Jornal Correio": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 28,
@@ -611,19 +611,19 @@
     ]
   },
   "2026": {
-    "total": 327,
+    "total": 344,
     "eixos": {
-      "Gestão e RH": 226,
+      "Gestão e RH": 242,
       "Institucional": 44,
-      "Ensino": 32,
+      "Ensino": 33,
       "Pesquisa": 14,
       "Extensão": 11
     },
     "abrangencia": {
-      "Imprensa Local": 188,
-      "Imprensa (Nacional)": 49,
-      "Especializados (Nichos)": 41,
-      "Imprensa Regional (Bahia)": 31,
+      "Imprensa Local": 199,
+      "Imprensa (Nacional)": 50,
+      "Especializados (Nichos)": 42,
+      "Imprensa Regional (Bahia)": 35,
       "Governamental": 15,
       "Outras Instituições de Ensino": 3
     },
@@ -631,17 +631,17 @@
       "Agência Sertão": 28,
       "PCI Concursos": 22,
       "Folha Dirigida": 21,
-      "O TEMPO": 16,
       "Mídia Externa": 16,
+      "O TEMPO": 16,
+      "G1": 11,
       "Fala Você Notícias": 10,
-      "G1": 10,
       "Ache Concursos": 9,
       "Acorda Cidade": 8,
       "Sou Enfermagem": 8
     },
     "meses": {
+      "08": 105,
       "05": 102,
-      "08": 88,
       "07": 31,
       "04": 26,
       "01": 26,
@@ -650,30 +650,30 @@
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 149,
+      "Geral / Não Especificado": 162,
       "Guanambi": 41,
-      "Valença": 21,
+      "Valença": 23,
       "Xique-Xique": 18,
       "Bom Jesus da Lapa": 17,
-      "Alagoinhas": 12,
       "Uruçuca": 12,
-      "Senhor do Bonfim": 10,
+      "Alagoinhas": 12,
+      "Senhor do Bonfim": 11,
       "Teixeira de Freitas": 7,
       "Santo Estêvão": 7,
       "Santa Inês": 6,
-      "Itapetinga": 5,
-      "Ribeira do Pombal": 5,
       "Serrinha": 5,
+      "Ribeira do Pombal": 5,
+      "Itapetinga": 5,
       "Catu": 5,
       "Itaberaba": 3,
+      "Reitoria (Salvador)": 2,
       "Governador Mangabeira": 2,
-      "Reitoria (Salvador)": 1,
       "Ruy Barbosa": 1
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 327
+        "total": 344
       },
       {
         "ano": 2025,
