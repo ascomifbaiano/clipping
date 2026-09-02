@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 918,
+    "total": 919,
     "eixos": {
-      "Gestão e RH": 549,
+      "Gestão e RH": 550,
       "Institucional": 156,
       "Ensino": 151,
       "Pesquisa": 35,
       "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 588,
+      "Imprensa Local": 589,
       "Especializados (Nichos)": 101,
       "Imprensa (Nacional)": 87,
       "Imprensa Regional (Bahia)": 74,
@@ -29,7 +29,7 @@
       "O TEMPO": 18
     },
     "meses": {
-      "08": 157,
+      "08": 158,
       "05": 147,
       "11": 71,
       "12": 70,
@@ -43,7 +43,7 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 441,
+      "Geral / Não Especificado": 442,
       "Guanambi": 106,
       "Bom Jesus da Lapa": 68,
       "Teixeira de Freitas": 45,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 347
+        "total": 348
       },
       {
         "ano": 2025,
@@ -262,8 +262,8 @@
       "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
       "JC Concursos": 2,
-      "Notícias da Lapa": 2,
       "Pimenta Blog": 2,
+      "Notícias da Lapa": 2,
       "Jornal Nossa Voz": 2,
       "Blog do Eloilton Cajuhy": 2
     },
@@ -507,8 +507,8 @@
       "A TARDE": 7,
       "Folha Dirigida": 6,
       "Mídia Externa": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Jornal Correio": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 28,
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 347,
+    "total": 348,
     "eixos": {
-      "Gestão e RH": 243,
+      "Gestão e RH": 244,
       "Institucional": 44,
       "Ensino": 35,
       "Pesquisa": 14,
       "Extensão": 11
     },
     "abrangencia": {
-      "Imprensa Local": 201,
+      "Imprensa Local": 202,
       "Imprensa (Nacional)": 50,
       "Especializados (Nichos)": 42,
       "Imprensa Regional (Bahia)": 35,
@@ -640,7 +640,7 @@
       "Sou Enfermagem": 8
     },
     "meses": {
-      "08": 105,
+      "08": 106,
       "05": 102,
       "07": 31,
       "01": 26,
@@ -651,7 +651,7 @@
       "09": 3
     },
     "campuses": {
-      "Geral / Não Especificado": 162,
+      "Geral / Não Especificado": 163,
       "Guanambi": 41,
       "Valença": 23,
       "Xique-Xique": 18,
@@ -674,7 +674,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 347
+        "total": 348
       },
       {
         "ano": 2025,
