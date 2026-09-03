@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 919,
+    "total": 920,
     "eixos": {
-      "Gestão e RH": 550,
+      "Gestão e RH": 551,
       "Institucional": 156,
       "Ensino": 151,
       "Pesquisa": 35,
       "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 589,
+      "Imprensa Local": 590,
       "Especializados (Nichos)": 101,
       "Imprensa (Nacional)": 87,
       "Imprensa Regional (Bahia)": 74,
@@ -36,14 +36,14 @@
       "07": 67,
       "04": 66,
       "10": 64,
-      "09": 61,
+      "09": 62,
       "01": 60,
       "03": 55,
       "06": 54,
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 442,
+      "Geral / Não Especificado": 443,
       "Guanambi": 106,
       "Bom Jesus da Lapa": 68,
       "Teixeira de Freitas": 45,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 348
+        "total": 349
       },
       {
         "ano": 2025,
@@ -262,8 +262,8 @@
       "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
       "JC Concursos": 2,
-      "Pimenta Blog": 2,
       "Notícias da Lapa": 2,
+      "Pimenta Blog": 2,
       "Jornal Nossa Voz": 2,
       "Blog do Eloilton Cajuhy": 2
     },
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
+      "Folha Dirigida": 6,
       "Jornal Correio": 5,
       "Notícias da Lapa": 5
     },
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 348,
+    "total": 349,
     "eixos": {
-      "Gestão e RH": 244,
+      "Gestão e RH": 245,
       "Institucional": 44,
       "Ensino": 35,
       "Pesquisa": 14,
       "Extensão": 11
     },
     "abrangencia": {
-      "Imprensa Local": 202,
+      "Imprensa Local": 203,
       "Imprensa (Nacional)": 50,
       "Especializados (Nichos)": 42,
       "Imprensa Regional (Bahia)": 35,
@@ -648,10 +648,10 @@
       "03": 23,
       "02": 17,
       "06": 14,
-      "09": 3
+      "09": 4
     },
     "campuses": {
-      "Geral / Não Especificado": 163,
+      "Geral / Não Especificado": 164,
       "Guanambi": 41,
       "Valença": 23,
       "Xique-Xique": 18,
@@ -674,7 +674,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 348
+        "total": 349
       },
       {
         "ano": 2025,
