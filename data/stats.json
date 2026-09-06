@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 928,
+    "total": 929,
     "eixos": {
       "Gestão e RH": 555,
       "Institucional": 158,
-      "Ensino": 152,
+      "Ensino": 153,
       "Pesquisa": 36,
       "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 596,
+      "Imprensa Local": 597,
       "Especializados (Nichos)": 101,
       "Imprensa (Nacional)": 88,
       "Imprensa Regional (Bahia)": 75,
@@ -33,8 +33,8 @@
       "05": 147,
       "11": 71,
       "12": 70,
+      "09": 68,
       "07": 67,
-      "09": 67,
       "04": 66,
       "10": 64,
       "01": 60,
@@ -47,7 +47,7 @@
       "Guanambi": 106,
       "Bom Jesus da Lapa": 68,
       "Teixeira de Freitas": 45,
-      "Alagoinhas": 34,
+      "Alagoinhas": 35,
       "Valença": 31,
       "Uruçuca": 30,
       "Catu": 25,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 357
+        "total": 358
       },
       {
         "ano": 2025,
@@ -262,8 +262,8 @@
       "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
       "JC Concursos": 2,
-      "Notícias da Lapa": 2,
       "Pimenta Blog": 2,
+      "Notícias da Lapa": 2,
       "Jornal Nossa Voz": 2,
       "Blog do Eloilton Cajuhy": 2
     },
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 357,
+    "total": 358,
     "eixos": {
       "Gestão e RH": 249,
       "Institucional": 46,
-      "Ensino": 36,
+      "Ensino": 37,
       "Pesquisa": 15,
       "Extensão": 11
     },
     "abrangencia": {
-      "Imprensa Local": 209,
+      "Imprensa Local": 210,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 42,
       "Imprensa Regional (Bahia)": 36,
@@ -648,7 +648,7 @@
       "03": 23,
       "02": 17,
       "06": 14,
-      "09": 9
+      "09": 10
     },
     "campuses": {
       "Geral / Não Especificado": 169,
@@ -656,7 +656,7 @@
       "Valença": 23,
       "Xique-Xique": 18,
       "Bom Jesus da Lapa": 17,
-      "Alagoinhas": 15,
+      "Alagoinhas": 16,
       "Uruçuca": 12,
       "Senhor do Bonfim": 11,
       "Santo Estêvão": 9,
@@ -664,8 +664,8 @@
       "Santa Inês": 6,
       "Serrinha": 5,
       "Catu": 5,
-      "Ribeira do Pombal": 5,
       "Itapetinga": 5,
+      "Ribeira do Pombal": 5,
       "Itaberaba": 4,
       "Reitoria (Salvador)": 2,
       "Governador Mangabeira": 2,
@@ -674,7 +674,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 357
+        "total": 358
       },
       {
         "ano": 2025,
