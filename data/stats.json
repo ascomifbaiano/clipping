@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 937,
+    "total": 939,
     "eixos": {
       "Gestão e RH": 559,
-      "Institucional": 161,
+      "Institucional": 163,
       "Ensino": 154,
       "Pesquisa": 36,
       "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 604,
+      "Imprensa Local": 606,
       "Especializados (Nichos)": 101,
       "Imprensa (Nacional)": 88,
       "Imprensa Regional (Bahia)": 75,
@@ -31,7 +31,7 @@
     "meses": {
       "08": 161,
       "05": 147,
-      "09": 76,
+      "09": 78,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -47,7 +47,7 @@
       "Guanambi": 107,
       "Bom Jesus da Lapa": 68,
       "Teixeira de Freitas": 45,
-      "Alagoinhas": 37,
+      "Alagoinhas": 39,
       "Valença": 31,
       "Uruçuca": 30,
       "Catu": 27,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 366
+        "total": 368
       },
       {
         "ano": 2025,
@@ -505,10 +505,10 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
-      "Notícias da Lapa": 5,
-      "Jornal Correio": 5
+      "Folha Dirigida": 6,
+      "Jornal Correio": 5,
+      "Notícias da Lapa": 5
     },
     "meses": {
       "11": 28,
@@ -611,16 +611,16 @@
     ]
   },
   "2026": {
-    "total": 366,
+    "total": 368,
     "eixos": {
       "Gestão e RH": 253,
-      "Institucional": 49,
+      "Institucional": 51,
       "Ensino": 38,
       "Pesquisa": 15,
       "Extensão": 11
     },
     "abrangencia": {
-      "Imprensa Local": 217,
+      "Imprensa Local": 219,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 42,
       "Imprensa Regional (Bahia)": 36,
@@ -635,8 +635,8 @@
       "Mídia Externa": 16,
       "Fala Você Notícias": 13,
       "G1": 11,
-      "Acorda Cidade": 9,
       "Ache Concursos": 9,
+      "Acorda Cidade": 9,
       "Sou Enfermagem": 8
     },
     "meses": {
@@ -646,7 +646,7 @@
       "01": 26,
       "04": 26,
       "03": 23,
-      "09": 18,
+      "09": 20,
       "02": 17,
       "06": 14
     },
@@ -654,7 +654,7 @@
       "Geral / Não Especificado": 171,
       "Guanambi": 42,
       "Valença": 23,
-      "Alagoinhas": 18,
+      "Alagoinhas": 20,
       "Xique-Xique": 18,
       "Bom Jesus da Lapa": 17,
       "Uruçuca": 12,
@@ -674,7 +674,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 366
+        "total": 368
       },
       {
         "ano": 2025,
