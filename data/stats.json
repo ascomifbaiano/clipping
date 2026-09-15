@@ -1,23 +1,23 @@
 {
   "geral": {
-    "total": 940,
+    "total": 944,
     "eixos": {
       "Gestão e RH": 560,
-      "Institucional": 163,
+      "Institucional": 165,
       "Ensino": 154,
-      "Pesquisa": 36,
-      "Extensão": 27
+      "Pesquisa": 37,
+      "Extensão": 28
     },
     "abrangencia": {
-      "Imprensa Local": 607,
+      "Imprensa Local": 610,
       "Especializados (Nichos)": 101,
       "Imprensa (Nacional)": 88,
-      "Imprensa Regional (Bahia)": 75,
+      "Imprensa Regional (Bahia)": 76,
       "Governamental": 57,
       "Outras Instituições de Ensino": 12
     },
     "top_veiculos": {
-      "Agência Sertão": 177,
+      "Agência Sertão": 178,
       "SulBahiaNews": 43,
       "G1": 35,
       "PCI Concursos": 34,
@@ -31,7 +31,7 @@
     "meses": {
       "08": 161,
       "05": 147,
-      "09": 79,
+      "09": 83,
       "11": 71,
       "12": 70,
       "07": 67,
@@ -43,11 +43,11 @@
       "02": 46
     },
     "campuses": {
-      "Geral / Não Especificado": 451,
-      "Guanambi": 107,
+      "Geral / Não Especificado": 452,
+      "Guanambi": 109,
       "Bom Jesus da Lapa": 68,
       "Teixeira de Freitas": 45,
-      "Alagoinhas": 39,
+      "Alagoinhas": 40,
       "Valença": 31,
       "Uruçuca": 30,
       "Catu": 27,
@@ -67,7 +67,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 369
+        "total": 373
       },
       {
         "ano": 2025,
@@ -262,8 +262,8 @@
       "Notícias de Bom Jesus da Lapa": 4,
       "Blog Gran Cursos Online": 3,
       "JC Concursos": 2,
-      "Pimenta Blog": 2,
       "Notícias da Lapa": 2,
+      "Pimenta Blog": 2,
       "Jornal Nossa Voz": 2,
       "Blog do Eloilton Cajuhy": 2
     },
@@ -505,8 +505,8 @@
       "G1": 9,
       "SulBahiaNews": 8,
       "A TARDE": 7,
-      "Folha Dirigida": 6,
       "Mídia Externa": 6,
+      "Folha Dirigida": 6,
       "Notícias da Lapa": 5,
       "Jornal Correio": 5
     },
@@ -611,32 +611,32 @@
     ]
   },
   "2026": {
-    "total": 369,
+    "total": 373,
     "eixos": {
       "Gestão e RH": 254,
-      "Institucional": 51,
+      "Institucional": 53,
       "Ensino": 38,
-      "Pesquisa": 15,
-      "Extensão": 11
+      "Pesquisa": 16,
+      "Extensão": 12
     },
     "abrangencia": {
-      "Imprensa Local": 220,
+      "Imprensa Local": 223,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 42,
-      "Imprensa Regional (Bahia)": 36,
+      "Imprensa Regional (Bahia)": 37,
       "Governamental": 17,
       "Outras Instituições de Ensino": 3
     },
     "top_veiculos": {
-      "Agência Sertão": 28,
+      "Agência Sertão": 29,
       "PCI Concursos": 22,
       "Folha Dirigida": 21,
       "O TEMPO": 17,
       "Mídia Externa": 16,
-      "Fala Você Notícias": 13,
+      "Fala Você Notícias": 14,
       "G1": 11,
+      "Acorda Cidade": 10,
       "Ache Concursos": 9,
-      "Acorda Cidade": 9,
       "Sou Enfermagem": 8
     },
     "meses": {
@@ -645,16 +645,16 @@
       "07": 31,
       "01": 26,
       "04": 26,
+      "09": 25,
       "03": 23,
-      "09": 21,
       "02": 17,
       "06": 14
     },
     "campuses": {
-      "Geral / Não Especificado": 172,
-      "Guanambi": 42,
+      "Geral / Não Especificado": 173,
+      "Guanambi": 44,
       "Valença": 23,
-      "Alagoinhas": 20,
+      "Alagoinhas": 21,
       "Xique-Xique": 18,
       "Bom Jesus da Lapa": 17,
       "Uruçuca": 12,
@@ -674,7 +674,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 369
+        "total": 373
       },
       {
         "ano": 2025,
