@@ -47,6 +47,9 @@ jobs:
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
         run: python scraper_clipping.py
 
+      - name: Ingerir Curadoria Manual DICOM (Google Docs Read-Only)
+        run: python ingestao_clipping_manual.py --apply
+
       - name: Executar Saneamento de Falsos Positivos
         if: ${{ github.event.inputs.executar_saneamento != 'false' }}
         run: python limpar_clipping_falsos_positivos.py
