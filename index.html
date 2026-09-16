@@ -44,11 +44,189 @@ font-family: 'Outfit', sans-serif;
 background-color: var(--bg-main);
 color: var(--text-main);
 line-height: 1.6;
-padding: 32px 24px;
+padding: calc(38px + 24px) 24px 32px 24px;
 background-image: 
 radial-gradient(at 0% 0%, rgba(45, 106, 79, 0.03) 0px, transparent 50%),
 radial-gradient(at 100% 100%, rgba(217, 4, 41, 0.015) 0px, transparent 50%);
 background-attachment: fixed;
+transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Accessibility Bar */
+.accessibility-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  height: 38px;
+  border-bottom: 1.5px solid #3E9A2D;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.acc-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  height: 100%;
+}
+
+.acc-label {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.acc-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.acc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  height: 26px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.acc-btn svg {
+  stroke: #0f172a !important;
+}
+
+.acc-btn:hover {
+  background: #f4f9f4 !important;
+  border-color: #3E9A2D !important;
+  color: #2E7D22 !important;
+  box-shadow: 0 2px 4px rgba(62,154,45,0.15);
+}
+
+.acc-btn:hover svg {
+  stroke: #2E7D22 !important;
+}
+
+.acc-btn:active {
+  transform: scale(0.96);
+}
+
+/* HIGH CONTRAST MODE (WCAG 2.1 AAA) */
+body.high-contrast {
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+body.high-contrast .accessibility-bar {
+  background: #000000 !important;
+  border-bottom: 2px solid #ffff00 !important;
+}
+
+body.high-contrast .acc-label {
+  color: #ffff00 !important;
+}
+
+body.high-contrast .acc-btn {
+  background: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+body.high-contrast .acc-btn svg {
+  stroke: #ffff00 !important;
+}
+
+body.high-contrast header,
+body.high-contrast .card,
+body.high-contrast .filter-panel,
+body.high-contrast .table-container,
+body.high-contrast .metric-card,
+body.high-contrast .modal-content,
+body.high-contrast .tabs-nav {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffff00 !important;
+  box-shadow: none !important;
+}
+
+body.high-contrast .header-title h1,
+body.high-contrast .card-title,
+body.high-contrast .metric-value,
+body.high-contrast th,
+body.high-contrast strong {
+  color: #ffff00 !important;
+}
+
+body.high-contrast .header-title p,
+body.high-contrast .metric-label,
+body.high-contrast .text-muted,
+body.high-contrast td {
+  color: #ffffff !important;
+}
+
+body.high-contrast .tab-btn {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffffff !important;
+}
+
+body.high-contrast .tab-btn.active {
+  background: #ffff00 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border-color: #ffff00 !important;
+}
+
+body.high-contrast a,
+body.high-contrast .btn-curadoria,
+body.high-contrast .btn-primary,
+body.high-contrast .btn-accent {
+  background: #000000 !important;
+  color: #ffff00 !important;
+  border: 1.5px solid #ffff00 !important;
+}
+
+body.high-contrast select,
+body.high-contrast input {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffff00 !important;
+}
+
+body.high-contrast th {
+  background: #111111 !important;
+  border-bottom: 2px solid #ffff00 !important;
+}
+
+body.high-contrast td {
+  border-bottom: 1px solid #333333 !important;
 }
 
 .container {
@@ -894,6 +1072,7 @@ to { opacity: 1; transform: translateY(0); }
 
 /* PRINT STYLES - Geral (nao relatorio mensal) */
 @media print {
+    body:not(.imprimindo-relatorio-mensal) .accessibility-bar,
     body:not(.imprimindo-relatorio-mensal) .tabs-nav,
     body:not(.imprimindo-relatorio-mensal) .filter-panel,
     body:not(.imprimindo-relatorio-mensal) .paginacao,
@@ -934,6 +1113,24 @@ to { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
+
+<!-- ============================== BARRA DE ACESSIBILIDADE ============================== -->
+<div class="accessibility-bar" role="region" aria-label="Acessibilidade">
+    <div class="acc-container">
+        <span class="acc-label">Acessibilidade:</span>
+        <div class="acc-group">
+            <button id="btn-contrast" class="acc-btn" onclick="toggleContraste()" aria-label="Alternar modo de alto contraste" title="Alto Contraste">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+                <span>Contraste</span>
+            </button>
+            <div class="font-controls">
+                <button id="btn-font-dec" class="acc-btn" onclick="ajustarFonte(-5)" aria-label="Diminuir fonte" title="Diminuir Fonte">A−</button>
+                <button id="btn-font-normal" class="acc-btn" onclick="ajustarFonte(0)" aria-label="Fonte padrão" title="Fonte Padrão">A</button>
+                <button id="btn-font-inc" class="acc-btn" onclick="ajustarFonte(5)" aria-label="Aumentar fonte" title="Aumentar Fonte">A+</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Global loading indicator -->
 <div id="loading-global" class="loading-overlay">
@@ -2270,12 +2467,30 @@ iniciar();
 // Acessibilidade (A11y)
 let fontScale = 100;
 function ajustarFonte(delta) {
-fontScale = Math.min(135, Math.max(90, fontScale + delta));
-document.documentElement.style.fontSize = fontScale + '%';
+    if (delta === 0) {
+        fontScale = 100;
+    } else {
+        fontScale = Math.min(135, Math.max(90, fontScale + delta));
+    }
+    document.documentElement.style.fontSize = fontScale + '%';
+    try { localStorage.setItem('clipping-font-scale', fontScale); } catch (e) {}
 }
 function toggleContraste() {
-document.body.classList.toggle('high-contrast');
+    const isHigh = document.body.classList.toggle('high-contrast');
+    try { localStorage.setItem('clipping-high-contrast', isHigh ? 'true' : 'false'); } catch (e) {}
 }
+
+// Restaurar preferências salvas de acessibilidade
+try {
+    if (localStorage.getItem('clipping-high-contrast') === 'true') {
+        document.body.classList.add('high-contrast');
+    }
+    const savedScale = localStorage.getItem('clipping-font-scale');
+    if (savedScale) {
+        fontScale = parseInt(savedScale, 10);
+        document.documentElement.style.fontSize = fontScale + '%';
+    }
+} catch (e) {}
 
 
 
