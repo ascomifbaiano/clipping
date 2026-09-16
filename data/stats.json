@@ -1,27 +1,27 @@
 {
   "geral": {
-    "total": 1463,
+    "total": 1469,
     "eixos": {
-      "Gestão e RH": 689,
-      "Ensino": 349,
-      "Institucional": 306,
-      "Extensão": 64,
+      "Gestão e RH": 690,
+      "Ensino": 352,
+      "Institucional": 309,
+      "Extensão": 63,
       "Pesquisa": 55
     },
     "abrangencia": {
-      "Imprensa Local": 1093,
+      "Imprensa Local": 1100,
       "Especializados (Nichos)": 108,
       "Imprensa (Nacional)": 94,
       "Imprensa Regional (Bahia)": 84,
       "Governamental": 69,
-      "Outras Instituições de Ensino": 15
+      "Outras Instituições de Ensino": 14
     },
     "top_veiculos": {
       "Agência Sertão": 202,
-      "Guanambi": 86,
+      "Guanambi": 89,
       "SulBahiaNews": 43,
-      "PCI Concursos": 35,
       "G1": 35,
+      "PCI Concursos": 35,
       "Ache Concursos": 30,
       "Uruçuca": 29,
       "Folha Dirigida": 28,
@@ -29,9 +29,9 @@
       "Teixeira de Freitas": 24
     },
     "meses": {
-      "08": 212,
+      "08": 211,
       "05": 208,
-      "09": 123,
+      "09": 130,
       "04": 115,
       "10": 115,
       "03": 108,
@@ -44,21 +44,21 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 461,
-      "Guanambi": 238,
+      "Geral / Não Especificado": 460,
+      "Guanambi": 241,
       "Bom Jesus da Lapa": 122,
-      "Alagoinhas": 87,
+      "Alagoinhas": 88,
       "Uruçuca": 86,
       "Teixeira de Freitas": 77,
       "Catu": 59,
       "Senhor do Bonfim": 47,
       "Xique-Xique": 38,
+      "Valença": 35,
       "Itaberaba": 34,
-      "Valença": 34,
-      "Serrinha": 33,
+      "Serrinha": 34,
       "Santa Inês": 31,
       "Santo Estêvão": 30,
-      "Governador Mangabeira": 25,
+      "Governador Mangabeira": 26,
       "Itapetinga": 22,
       "Ribeira do Pombal": 18,
       "Reitoria (Salvador)": 9,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 473
+        "total": 480
       },
       {
         "ano": 2025,
@@ -84,7 +84,7 @@
       },
       {
         "ano": 2022,
-        "total": 93
+        "total": 92
       },
       {
         "ano": 2021,
@@ -137,12 +137,12 @@
     ]
   },
   "2022": {
-    "total": 93,
+    "total": 92,
     "eixos": {
       "Ensino": 40,
       "Institucional": 26,
       "Gestão e RH": 18,
-      "Extensão": 7,
+      "Extensão": 6,
       "Pesquisa": 2
     },
     "abrangencia": {
@@ -150,8 +150,7 @@
       "Governamental": 7,
       "Imprensa (Nacional)": 6,
       "Especializados (Nichos)": 5,
-      "Imprensa Regional (Bahia)": 3,
-      "Outras Instituições de Ensino": 1
+      "Imprensa Regional (Bahia)": 3
     },
     "top_veiculos": {
       "Agência Sertão": 10,
@@ -159,11 +158,11 @@
       "Se Liga Alagoinhas": 7,
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
-      "InfoEducação": 3,
       "Pimenta Blog": 3,
+      "InfoEducação": 3,
       "G1": 3,
-      "Prefeitura de Alagoinhas": 3,
-      "Se liga Alagoinhas": 3
+      "Se liga Alagoinhas": 3,
+      "Prefeitura de Alagoinhas": 3
     },
     "meses": {
       "11": 13,
@@ -176,12 +175,12 @@
       "10": 6,
       "02": 6,
       "07": 6,
-      "08": 4,
+      "08": 3,
       "09": 2
     },
     "campuses": {
       "Alagoinhas": 17,
-      "Geral / Não Especificado": 16,
+      "Geral / Não Especificado": 15,
       "Uruçuca": 13,
       "Bom Jesus da Lapa": 11,
       "Guanambi": 10,
@@ -195,7 +194,7 @@
     "historico": [
       {
         "ano": 2022,
-        "total": 93
+        "total": 92
       },
       {
         "ano": 2021,
@@ -317,7 +316,7 @@
       },
       {
         "ano": 2022,
-        "total": 93
+        "total": 92
       },
       {
         "ano": 2021,
@@ -444,7 +443,7 @@
       },
       {
         "ano": 2022,
-        "total": 93
+        "total": 92
       },
       {
         "ano": 2021,
@@ -551,8 +550,8 @@
       "Alagoinhas": 12,
       "Xique-Xique": 8,
       "Santa Inês": 8,
-      "Ribeira do Pombal": 7,
       "Governador Mangabeira": 7,
+      "Ribeira do Pombal": 7,
       "Reitoria (Salvador)": 4,
       "Itaberaba": 3,
       "Valença": 3,
@@ -575,7 +574,7 @@
       },
       {
         "ano": 2022,
-        "total": 93
+        "total": 92
       },
       {
         "ano": 2021,
@@ -628,16 +627,16 @@
     ]
   },
   "2026": {
-    "total": 473,
+    "total": 480,
     "eixos": {
-      "Gestão e RH": 273,
-      "Institucional": 94,
-      "Ensino": 60,
+      "Gestão e RH": 274,
+      "Institucional": 97,
+      "Ensino": 63,
       "Extensão": 23,
       "Pesquisa": 23
     },
     "abrangencia": {
-      "Imprensa Local": 322,
+      "Imprensa Local": 329,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 42,
       "Imprensa Regional (Bahia)": 38,
@@ -645,8 +644,8 @@
       "Outras Instituições de Ensino": 3
     },
     "top_veiculos": {
+      "Guanambi": 32,
       "Agência Sertão": 29,
-      "Guanambi": 29,
       "PCI Concursos": 22,
       "Folha Dirigida": 21,
       "O TEMPO": 17,
@@ -654,7 +653,7 @@
       "Fala Você Notícias": 14,
       "G1": 11,
       "Acorda Cidade": 10,
-      "Uruçuca": 9
+      "Alagoinhas": 10
     },
     "meses": {
       "08": 121,
@@ -662,29 +661,29 @@
       "07": 47,
       "03": 39,
       "04": 39,
+      "09": 37,
       "01": 33,
-      "09": 30,
       "06": 25,
       "02": 21
     },
     "campuses": {
       "Geral / Não Especificado": 175,
-      "Guanambi": 75,
-      "Alagoinhas": 33,
+      "Guanambi": 78,
+      "Alagoinhas": 34,
       "Bom Jesus da Lapa": 25,
-      "Valença": 23,
+      "Valença": 24,
       "Uruçuca": 21,
       "Xique-Xique": 20,
       "Senhor do Bonfim": 16,
       "Santo Estêvão": 12,
+      "Serrinha": 10,
       "Catu": 10,
-      "Teixeira de Freitas": 9,
+      "Governador Mangabeira": 9,
       "Ribeira do Pombal": 9,
-      "Serrinha": 9,
-      "Santa Inês": 8,
-      "Itaberaba": 8,
+      "Teixeira de Freitas": 9,
       "Itapetinga": 8,
-      "Governador Mangabeira": 8,
+      "Itaberaba": 8,
+      "Santa Inês": 8,
       "Reitoria (Salvador)": 2,
       "Ruy Barbosa": 1,
       "Remanso": 1
@@ -692,7 +691,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 473
+        "total": 480
       },
       {
         "ano": 2025,
@@ -708,7 +707,7 @@
       },
       {
         "ano": 2022,
-        "total": 93
+        "total": 92
       },
       {
         "ano": 2021,
