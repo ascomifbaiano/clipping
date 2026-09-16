@@ -160,9 +160,9 @@
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
       "InfoEducação": 3,
-      "Prefeitura de Alagoinhas": 3,
-      "G1": 3,
       "Pimenta Blog": 3,
+      "G1": 3,
+      "Prefeitura de Alagoinhas": 3,
       "Se liga Alagoinhas": 3
     },
     "meses": {
@@ -551,8 +551,8 @@
       "Alagoinhas": 12,
       "Xique-Xique": 8,
       "Santa Inês": 8,
-      "Governador Mangabeira": 7,
       "Ribeira do Pombal": 7,
+      "Governador Mangabeira": 7,
       "Reitoria (Salvador)": 4,
       "Itaberaba": 3,
       "Valença": 3,
@@ -633,8 +633,8 @@
       "Gestão e RH": 273,
       "Institucional": 94,
       "Ensino": 60,
-      "Pesquisa": 23,
-      "Extensão": 23
+      "Extensão": 23,
+      "Pesquisa": 23
     },
     "abrangencia": {
       "Imprensa Local": 322,
@@ -678,11 +678,11 @@
       "Senhor do Bonfim": 16,
       "Santo Estêvão": 12,
       "Catu": 10,
-      "Ribeira do Pombal": 9,
       "Teixeira de Freitas": 9,
+      "Ribeira do Pombal": 9,
       "Serrinha": 9,
-      "Itaberaba": 8,
       "Santa Inês": 8,
+      "Itaberaba": 8,
       "Itapetinga": 8,
       "Governador Mangabeira": 8,
       "Reitoria (Salvador)": 2,
