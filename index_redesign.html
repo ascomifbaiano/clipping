@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipping IF Baiano | Monitoramento e Inteligência de Mídia</title>
+
+    <!-- Favicon Oficial IF Baiano -->
+    <link rel="icon" type="image/x-icon" href="favicon-if-baiano.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-if-baiano.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-if-baiano.png">
+    <link rel="apple-touch-icon" href="favicon-if-baiano.png">
+    <meta property="og:image" content="favicon-if-baiano.png">
+
+    <!-- Tipografia Google Fonts & Bibliotecas de Gráficos / CSV -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Utility Bar Institucional -->
+    <header class="top-bar">
+        <div class="top-bar-branding">
+            <img src="marca-if-baiano-horizontal.png" alt="IF Baiano" class="top-bar-logo">
+            <span class="top-bar-title">Diretoria de Comunicação (DICOM / Reitoria)</span>
+        </div>
+        <div class="top-bar-status">
+            <span class="status-dot"></span>
+            <span id="sync-status">Base de Inteligência Atualizada</span>
+        </div>
+        <div class="top-bar-controls">
+            <button class="btn-accessibility" id="btn-font-dec" aria-label="Diminuir fonte">A-</button>
+            <button class="btn-accessibility" id="btn-font-inc" aria-label="Aumentar fonte">A+</button>
+            <button class="btn-accessibility" id="btn-contrast" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+        </div>
+    </header>
+
+    <!-- Global Loading Overlay -->
+    <!-- Global loading indicator IF Baiano -->
+<div id="loading-global" class="loading-overlay" role="status" aria-live="polite">
+    <div class="loader-container">
+        <div class="loader-logo-wrapper">
+            <img src="marca-if-baiano-vertical.png" alt="Logo IF Baiano" class="loader-logo-bg">
+            <img src="marca-if-baiano-vertical.png" alt="Logo IF Baiano" class="loader-logo-fill">
+        </div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <div id="loading-global-text" class="loader-text">Processando acervo de mídia e dados estatísticos...</div>
+    </div>
+</div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Hero Banner Estilo Ana Xisdê -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <img src="marca-if-baiano-vertical.png" alt="Logo IF Baiano" class="hero-avatar-logo">
+                <div class="hero-text">
+                    <h1>Boas-vindas ao Clipping IF Baiano!</h1>
+                    <p>Acompanhe em tempo real as estatísticas, gráficos de alcance e presença do IF Baiano na imprensa regional e nacional.</p>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="https://docs.google.com/document/d/1zsI6248qboGF5PVj8FM2O-GcIKCcaMC5whaifuR-EHg/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-curadoria" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Planilha de Curadoria
+                </a>
+                <button class="btn-pill btn-pill-accent" onclick="abrirModalRelatorioMensal()">Relatório Mensal DICOM</button>
+                <button class="btn-pill" onclick="exportarCSV()">Exportar CSV</button>
+                <button class="btn-pill" onclick="prepararEImprimir()">Imprimir</button>
+            </div>
+        </section>
+
+        <!-- Navegação por Abas em Cápsulas (Pill Tabs) -->
+        <nav class="tabs-nav-pills">
+            <button class="tab-btn-pill active" id="tab-btn-metrics" onclick="abrirAba('aba-metricas')">Painel Estatístico</button>
+            <button class="tab-btn-pill" id="tab-btn-table" onclick="abrirAba('aba-tabela')">Acervo Geral</button>
+            <button class="tab-btn-pill" id="tab-btn-grande-midia" onclick="abrirAba('aba-grande-midia')">Grande Mídia</button>
+            <button class="tab-btn-pill" id="tab-btn-gov" onclick="abrirAba('aba-gov')">Portais Governamentais</button>
+            <button class="tab-btn-pill" id="tab-btn-edu" onclick="abrirAba('aba-edu')">Outras Inst. de Ensino</button>
+            <button class="tab-btn-pill" id="tab-btn-somos" onclick="abrirAba('aba-somos')">Nós Somos o IF Baiano</button>
+        </nav>
+
+        <!-- Painel de Filtros em Cartão Arredondado -->
+        <section class="card-rounded filter-panel">
+            <div class="filter-row">
+                <div class="filter-select-group" style="flex: 0 0 100%;">
+                    <label>Selecione o Ano do Acervo</label>
+                    <div class="year-filters" id="clipping-years-container">
+                        <!-- Botões de ano carregados via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-selects">
+                <div class="search-box-container">
+                    <label for="inputBusca">Pesquisar Título ou Veículo</label>
+                    <div class="search-input-wrapper">
+                        <input type="text" id="inputBusca" placeholder="Ex: concurso, reitor, esporte, Alagoinhas..." onkeyup="aplicarFiltros()">
+                        <button class="search-clear-btn" id="search-clear-btn" onclick="limparBusca()">Limpar</button>
+                    </div>
+                </div>
+
+                <div class="filter-select-group">
+                    <label for="selectCampus">Campus / Cidade</label>
+                    <select id="selectCampus" onchange="aplicarFiltros()">
+                        <option value="">Todos os Campi / Geral</option>
+                    </select>
+                </div>
+
+                <div class="filter-select-group">
+                    <label for="selectEixo">Eixo Temático</label>
+                    <select id="selectEixo" onchange="aplicarFiltros()">
+                        <option value="">Todos os Eixos</option>
+                        <option value="Ensino">Ensino</option>
+                        <option value="Pesquisa">Pesquisa</option>
+                        <option value="Extensão">Extensão</option>
+                        <option value="Gestão e RH">Gestão e RH</option>
+                        <option value="Institucional">Institucional</option>
+                    </select>
+                </div>
+
+                <div class="filter-select-group">
+                    <label for="selectAbrangencia">Abrangência</label>
+                    <select id="selectAbrangencia" onchange="aplicarFiltros()">
+                        <option value="">Todas as Abrangências</option>
+                        <option value="Imprensa Local">Imprensa Local</option>
+                        <option value="Imprensa Regional (Bahia)">Imprensa Regional (Bahia)</option>
+                        <option value="Imprensa (Nacional)">Imprensa (Nacional)</option>
+                        <option value="Governamental">Governamental</option>
+                        <option value="Outras Instituições de Ensino">Outras Instituições de Ensino</option>
+                        <option value="Especializados (Nichos)">Especializados (Nichos)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 1: Painel Estatístico & Gráficos -->
+        <div id="aba-metricas" class="tab-content active">
+            
+            <!-- Bento Grid de KPIs Arredondados -->
+            <div class="stats-grid">
+                <div class="stat-card-rounded">
+                    <h3>Total de Menções</h3>
+                    <div id="kpi-total" class="valor">-</div>
+                    <div class="subtext">matérias coletadas no período</div>
+                </div>
+
+                <div class="stat-card-rounded accent-blue">
+                    <h3>Veículos de Imprensa</h3>
+                    <div id="kpi-veiculos" class="valor">-</div>
+                    <div class="subtext">portais de notícias únicos</div>
+                </div>
+
+                <div class="stat-card-rounded accent-orange">
+                    <h3>Campus Mais Citado</h3>
+                    <div id="kpi-top-campus" class="valor">-</div>
+                    <div class="subtext">líder em espaço na mídia</div>
+                </div>
+
+                <div class="stat-card-rounded accent-red">
+                    <h3>Eixo Temático Principal</h3>
+                    <div id="kpi-top-eixo" class="valor">-</div>
+                    <div class="subtext">pauta institucional mais forte</div>
+                </div>
+            </div>
+
+            <!-- Gráfico 1: Evolução Temporal -->
+            <div class="charts-row-full">
+                <div class="chart-box-rounded">
+                    <h3>Evolução Mensal da Cobertura de Mídia</h3>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="chartEvolucao"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráficos 2, 3 e 4 (Grid 3 colunas) -->
+            <div class="charts-grid-3">
+                <div class="chart-box-rounded">
+                    <h3>Eixos Institucionais</h3>
+                    <div class="chart-container">
+                        <canvas id="chartEixos"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-box-rounded">
+                    <h3>Alcance da Notícia (Abrangência)</h3>
+                    <div class="chart-container">
+                        <canvas id="chartAbrangencia"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-box-rounded">
+                    <h3>Menções por Campus / Cidade</h3>
+                    <div class="chart-container">
+                        <canvas id="chartCampi"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 5 e Nuvem de Palavras-Chave -->
+            <div class="charts-grid-3" style="grid-template-columns: 2fr 1fr;">
+                <div class="chart-box-rounded">
+                    <h3>Top 10 Veículos de Notícia mais Ativos</h3>
+                    <div class="chart-container">
+                        <canvas id="chartVeiculos"></canvas>
+                    </div>
+                </div>
+
+                <div class="keywords-card-rounded">
+                    <h3>Palavras-Chave Frequentes nos Títulos</h3>
+                    <div class="subtext">Clique em uma tag para filtrar a pesquisa</div>
+                    <div id="tags-cloud-container" class="tags-container">
+                        <!-- Tags dinâmicas JS -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ABA 2: Acervo Geral Tabular -->
+        <div id="aba-tabela" class="tab-content">
+            <div class="table-box-rounded">
+                <div class="table-header">
+                    <h2 id="table-title">Registros Encontrados (Carregando...)</h2>
+                </div>
+                <div class="table-wrapper-rounded">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="100">Data</th>
+                                <th width="140">Campus</th>
+                                <th width="140">Eixo</th>
+                                <th width="150">Abrangência</th>
+                                <th width="200">Veículo</th>
+                                <th>Assunto</th>
+                                <th width="100" class="no-print">Link</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-corpo"></tbody>
+                    </table>
+                </div>
+
+                <div class="paginacao">
+                    <div class="pag-info" id="info-pag">Exibindo 0 registros</div>
+                    <div class="pag-controls" id="pag-controls-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA 3: Grande Mídia -->
+        <div id="aba-grande-midia" class="tab-content">
+            <div class="table-box-rounded">
+                <div class="table-header">
+                    <h2 id="grande-midia-table-title">Notícias na Grande Mídia (Carregando...)</h2>
+                </div>
+                <div class="table-wrapper-rounded">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="100">Data</th>
+                                <th width="140">Campus</th>
+                                <th width="140">Eixo</th>
+                                <th width="150">Abrangência</th>
+                                <th width="200">Veículo</th>
+                                <th>Assunto</th>
+                                <th width="100" class="no-print">Link</th>
+                            </tr>
+                        </thead>
+                        <tbody id="grande-midia-tabela-corpo"></tbody>
+                    </table>
+                </div>
+                <div class="paginacao">
+                    <div class="pag-info" id="grande-midia-info-pag">Exibindo 0 registros</div>
+                    <div class="pag-controls" id="grande-midia-pag-controls-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA 4: Portais Governamentais -->
+        <div id="aba-gov" class="tab-content">
+            <div class="table-box-rounded">
+                <div class="table-header">
+                    <h2 id="gov-table-title">Notícias em Portais Governamentais (Carregando...)</h2>
+                </div>
+                <div class="table-wrapper-rounded">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="100">Data</th>
+                                <th width="140">Campus</th>
+                                <th width="140">Eixo</th>
+                                <th width="150">Abrangência</th>
+                                <th width="200">Veículo</th>
+                                <th>Assunto</th>
+                                <th width="100" class="no-print">Link</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gov-tabela-corpo"></tbody>
+                    </table>
+                </div>
+                <div class="paginacao">
+                    <div class="pag-info" id="gov-info-pag">Exibindo 0 registros</div>
+                    <div class="pag-controls" id="gov-pag-controls-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA 5: Outras Instituições de Ensino -->
+        <div id="aba-edu" class="tab-content">
+            <div class="table-box-rounded">
+                <div class="table-header">
+                    <h2 id="edu-table-title">Notícias em Outras Instituições de Ensino (Carregando...)</h2>
+                </div>
+                <div class="table-wrapper-rounded">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="100">Data</th>
+                                <th width="140">Campus</th>
+                                <th width="140">Eixo</th>
+                                <th width="150">Abrangência</th>
+                                <th width="200">Veículo</th>
+                                <th>Assunto</th>
+                                <th width="100" class="no-print">Link</th>
+                            </tr>
+                        </thead>
+                        <tbody id="edu-tabela-corpo"></tbody>
+                    </table>
+                </div>
+                <div class="paginacao">
+                    <div class="pag-info" id="edu-info-pag">Exibindo 0 registros</div>
+                    <div class="pag-controls" id="edu-pag-controls-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA 6: Nós Somos o IF Baiano (Correções Históricas) -->
+        <div id="aba-somos" class="tab-content">
+            <div class="card-rounded" style="border-left: 5px solid var(--brand-accent); background-color: #fff5f5;">
+                <div>
+                    <h3 style="color: var(--brand-accent); font-weight: 800; font-size: 18px;">Espaço de Identidade e Correção Histórica</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">
+                        Esta aba reúne todas as notícias capturadas onde jornais e portais se referiram incorretamente ao <strong>IF Baiano</strong> utilizando o termo <strong>IFBA</strong> ou <strong>Instituto Federal da Bahia</strong> em cidades de atuação exclusiva do IF Baiano.
+                    </p>
+                </div>
+            </div>
+
+            <div class="table-box-rounded">
+                <div class="table-header">
+                    <h2 id="somos-table-title" style="color: var(--brand-accent);">Menções Incorretas Detectadas (0)</h2>
+                </div>
+                <div class="table-wrapper-rounded">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="100">Data</th>
+                                <th width="160">Campus Afetado</th>
+                                <th width="200">Veículo / Portal</th>
+                                <th>Título da Matéria (Como foi publicado)</th>
+                                <th width="160">Termo Incorreto Lido</th>
+                                <th width="100" class="no-print">Link</th>
+                            </tr>
+                        </thead>
+                        <tbody id="somos-tabela-corpo"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Rodapé Institucional -->
+    <footer class="no-print" style="margin-top: 40px; padding: 28px 40px; background: var(--brand-secondary); color: #FFFFFF; border-radius: 24px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; align-items: center; gap: 20px; font-size: 13.5px;">
+        <div>
+            <div style="font-weight: 800; font-size: 16px; margin-bottom: 4px; color: #ffffff;">Equipe de Comunicação | DICOM IF Baiano</div>
+            <div style="color: #cbd5e1; font-size: 13px; line-height: 1.4;">
+                Cristina Mascarenhas (Diretora de Comunicação)<br>
+                Bianca Brito (Jornalista) | Rhamayana Barreto (Jornalista) | Yuri Luna (Técnico de TI)
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 4px;">Contato de Imprensa</div>
+            <a href="mailto:imprensa@ifbaiano.edu.br" style="color: #4ade80; text-decoration: none; font-weight: 800; font-size: 15px;">imprensa@ifbaiano.edu.br</a>
+        </div>
+        <div style="text-align: right;">
+            <img src="marca-if-baiano-horizontal.png" style="height: 48px; object-fit: contain; filter: brightness(0) invert(1);" alt="Marca IF Baiano">
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+<script>
+
+let startTimeLoading = 0;
+function showLoading(show, message) {
+    const loader = document.getElementById('loading-global');
+    if (!loader) return;
+    if (show) {
+        if (message) {
+            const textEl = document.getElementById('loading-global-text') || loader.querySelector('.loader-text');
+            if (textEl) textEl.textContent = message;
+        }
+        startTimeLoading = Date.now();
+        loader.style.display = 'flex';
+        void loader.offsetHeight;
+        loader.style.opacity = '1';
+        loader.style.visibility = 'visible';
+    } else {
+        const elapsed = Date.now() - startTimeLoading;
+        const minDuration = 1200;
+        const remaining = Math.max(0, minDuration - elapsed);
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            loader.style.visibility = 'hidden';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 400);
+        }, remaining);
+    }
+}
+
+</script>
+</body>
+</html>
