@@ -1,10 +1,10 @@
 {
   "geral": {
-    "total": 1472,
+    "total": 1473,
     "eixos": {
       "Gestão e RH": 691,
       "Ensino": 353,
-      "Institucional": 308,
+      "Institucional": 309,
       "Extensão": 65,
       "Pesquisa": 55
     },
@@ -14,14 +14,14 @@
       "Imprensa (Nacional)": 94,
       "Imprensa Regional (Bahia)": 84,
       "Governamental": 69,
-      "Outras Instituições de Ensino": 14
+      "Outras Instituições de Ensino": 15
     },
     "top_veiculos": {
       "Agência Sertão": 202,
       "Guanambi": 89,
       "SulBahiaNews": 43,
-      "G1": 35,
       "PCI Concursos": 35,
+      "G1": 35,
       "Ache Concursos": 30,
       "Uruçuca": 29,
       "Folha Dirigida": 28,
@@ -30,7 +30,7 @@
     },
     "meses": {
       "08": 212,
-      "05": 207,
+      "05": 208,
       "09": 133,
       "04": 115,
       "10": 115,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 460,
+      "Geral / Não Especificado": 461,
       "Guanambi": 241,
       "Bom Jesus da Lapa": 122,
       "Alagoinhas": 89,
@@ -88,7 +88,7 @@
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -160,9 +160,9 @@
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
       "InfoEducação": 3,
-      "Pimenta Blog": 3,
-      "G1": 3,
       "Prefeitura de Alagoinhas": 3,
+      "G1": 3,
+      "Pimenta Blog": 3,
       "Se liga Alagoinhas": 3
     },
     "meses": {
@@ -199,7 +199,7 @@
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -299,9 +299,9 @@
       "Teixeira de Freitas": 11,
       "Senhor do Bonfim": 7,
       "Alagoinhas": 6,
-      "Catu": 5,
-      "Itaberaba": 5,
       "Serrinha": 5,
+      "Itaberaba": 5,
+      "Catu": 5,
       "Governador Mangabeira": 4,
       "Xique-Xique": 4,
       "Itapetinga": 3,
@@ -321,7 +321,7 @@
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -448,7 +448,7 @@
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -579,7 +579,7 @@
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -653,8 +653,8 @@
       "Mídia Externa": 16,
       "Fala Você Notícias": 14,
       "G1": 11,
-      "Acorda Cidade": 10,
-      "Alagoinhas": 10
+      "Alagoinhas": 10,
+      "Acorda Cidade": 10
     },
     "meses": {
       "08": 121,
@@ -712,7 +712,7 @@
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -761,10 +761,10 @@
     ]
   },
   "ate_2021": {
-    "total": 194,
+    "total": 195,
     "eixos": {
       "Gestão e RH": 78,
-      "Institucional": 66,
+      "Institucional": 67,
       "Ensino": 30,
       "Pesquisa": 12,
       "Extensão": 8
@@ -774,8 +774,8 @@
       "Governamental": 23,
       "Especializados (Nichos)": 12,
       "Imprensa (Nacional)": 9,
-      "Imprensa Regional (Bahia)": 8,
-      "Outras Instituições de Ensino": 7
+      "Outras Instituições de Ensino": 8,
+      "Imprensa Regional (Bahia)": 8
     },
     "top_veiculos": {
       "Agência Sertão": 49,
@@ -783,8 +783,8 @@
       "Prefeitura de Alagoinhas": 8,
       "Notícias de Bom Jesus da Lapa": 7,
       "Conif": 7,
-      "GOV.BR": 6,
       "Notícias da Lapa": 6,
+      "GOV.BR": 6,
       "InfoEscola": 5,
       "Mídia Externa": 4,
       "G1": 4
@@ -792,8 +792,8 @@
     "meses": {
       "11": 24,
       "03": 20,
+      "05": 19,
       "09": 19,
-      "05": 18,
       "06": 18,
       "10": 17,
       "04": 17,
@@ -804,7 +804,7 @@
       "02": 5
     },
     "campuses": {
-      "Geral / Não Especificado": 77,
+      "Geral / Não Especificado": 78,
       "Guanambi": 40,
       "Bom Jesus da Lapa": 19,
       "Alagoinhas": 13,
@@ -822,7 +822,7 @@
     "historico": [
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
