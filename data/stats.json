@@ -1,19 +1,19 @@
 {
   "geral": {
-    "total": 1472,
+    "total": 1476,
     "eixos": {
-      "Gestão e RH": 691,
+      "Gestão e RH": 692,
       "Ensino": 353,
-      "Institucional": 309,
+      "Institucional": 310,
       "Extensão": 65,
-      "Pesquisa": 54
+      "Pesquisa": 56
     },
     "abrangencia": {
-      "Imprensa Local": 1103,
+      "Imprensa Local": 1106,
       "Especializados (Nichos)": 108,
       "Imprensa (Nacional)": 94,
       "Imprensa Regional (Bahia)": 84,
-      "Governamental": 68,
+      "Governamental": 69,
       "Outras Instituições de Ensino": 15
     },
     "top_veiculos": {
@@ -29,9 +29,9 @@
       "Teixeira de Freitas": 24
     },
     "meses": {
-      "08": 211,
+      "08": 212,
       "05": 208,
-      "09": 133,
+      "09": 136,
       "04": 115,
       "10": 115,
       "03": 108,
@@ -44,8 +44,8 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 460,
-      "Guanambi": 241,
+      "Geral / Não Especificado": 462,
+      "Guanambi": 243,
       "Bom Jesus da Lapa": 122,
       "Alagoinhas": 89,
       "Uruçuca": 86,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 483
+        "total": 486
       },
       {
         "ano": 2025,
@@ -84,7 +84,7 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
@@ -137,18 +137,18 @@
     ]
   },
   "2022": {
-    "total": 92,
+    "total": 93,
     "eixos": {
       "Ensino": 40,
       "Institucional": 26,
       "Gestão e RH": 18,
       "Extensão": 7,
-      "Pesquisa": 1
+      "Pesquisa": 2
     },
     "abrangencia": {
       "Imprensa Local": 71,
+      "Governamental": 7,
       "Imprensa (Nacional)": 6,
-      "Governamental": 6,
       "Especializados (Nichos)": 5,
       "Imprensa Regional (Bahia)": 3,
       "Outras Instituições de Ensino": 1
@@ -159,11 +159,11 @@
       "Se Liga Alagoinhas": 7,
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
-      "Pimenta Blog": 3,
       "InfoEducação": 3,
+      "Prefeitura de Alagoinhas": 3,
       "G1": 3,
-      "Se liga Alagoinhas": 3,
-      "Prefeitura de Alagoinhas": 3
+      "Pimenta Blog": 3,
+      "Se liga Alagoinhas": 3
     },
     "meses": {
       "11": 13,
@@ -176,12 +176,12 @@
       "10": 6,
       "02": 6,
       "07": 6,
-      "08": 3,
+      "08": 4,
       "09": 2
     },
     "campuses": {
       "Alagoinhas": 17,
-      "Geral / Não Especificado": 15,
+      "Geral / Não Especificado": 16,
       "Uruçuca": 13,
       "Bom Jesus da Lapa": 11,
       "Guanambi": 10,
@@ -195,7 +195,7 @@
     "historico": [
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
@@ -317,7 +317,7 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
@@ -444,7 +444,7 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
@@ -575,7 +575,7 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
@@ -628,16 +628,16 @@
     ]
   },
   "2026": {
-    "total": 483,
+    "total": 486,
     "eixos": {
-      "Gestão e RH": 275,
-      "Institucional": 97,
+      "Gestão e RH": 276,
+      "Institucional": 98,
       "Ensino": 64,
       "Extensão": 24,
-      "Pesquisa": 23
+      "Pesquisa": 24
     },
     "abrangencia": {
-      "Imprensa Local": 332,
+      "Imprensa Local": 335,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 42,
       "Imprensa Regional (Bahia)": 38,
@@ -653,14 +653,14 @@
       "Mídia Externa": 16,
       "Fala Você Notícias": 14,
       "G1": 11,
-      "Acorda Cidade": 10,
-      "Alagoinhas": 10
+      "Alagoinhas": 10,
+      "Acorda Cidade": 10
     },
     "meses": {
       "08": 121,
       "05": 118,
       "07": 47,
-      "09": 40,
+      "09": 43,
       "04": 39,
       "03": 39,
       "01": 33,
@@ -668,8 +668,8 @@
       "02": 21
     },
     "campuses": {
-      "Geral / Não Especificado": 175,
-      "Guanambi": 78,
+      "Geral / Não Especificado": 176,
+      "Guanambi": 80,
       "Alagoinhas": 35,
       "Bom Jesus da Lapa": 25,
       "Valença": 24,
@@ -692,7 +692,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 483
+        "total": 486
       },
       {
         "ano": 2025,
@@ -708,7 +708,7 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
