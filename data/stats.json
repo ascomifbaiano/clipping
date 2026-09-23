@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1480,
+    "total": 1481,
     "eixos": {
-      "Gestão e RH": 694,
+      "Gestão e RH": 695,
       "Ensino": 355,
       "Institucional": 310,
       "Extensão": 65,
       "Pesquisa": 56
     },
     "abrangencia": {
-      "Imprensa Local": 1110,
+      "Imprensa Local": 1111,
       "Especializados (Nichos)": 108,
       "Imprensa (Nacional)": 94,
       "Imprensa Regional (Bahia)": 84,
@@ -31,9 +31,9 @@
     "meses": {
       "08": 212,
       "05": 208,
-      "09": 139,
-      "04": 115,
+      "09": 140,
       "10": 115,
+      "04": 115,
       "03": 109,
       "12": 107,
       "01": 106,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 464,
+      "Geral / Não Especificado": 465,
       "Guanambi": 244,
       "Bom Jesus da Lapa": 122,
       "Alagoinhas": 89,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 489
+        "total": 490
       },
       {
         "ano": 2025,
@@ -160,9 +160,9 @@
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
       "InfoEducação": 3,
-      "Prefeitura de Alagoinhas": 3,
-      "G1": 3,
       "Pimenta Blog": 3,
+      "G1": 3,
+      "Prefeitura de Alagoinhas": 3,
       "Se liga Alagoinhas": 3
     },
     "meses": {
@@ -551,8 +551,8 @@
       "Alagoinhas": 12,
       "Xique-Xique": 8,
       "Santa Inês": 8,
-      "Governador Mangabeira": 7,
       "Ribeira do Pombal": 7,
+      "Governador Mangabeira": 7,
       "Reitoria (Salvador)": 4,
       "Itaberaba": 3,
       "Valença": 3,
@@ -628,16 +628,16 @@
     ]
   },
   "2026": {
-    "total": 489,
+    "total": 490,
     "eixos": {
-      "Gestão e RH": 278,
+      "Gestão e RH": 279,
       "Institucional": 98,
       "Ensino": 65,
       "Extensão": 24,
       "Pesquisa": 24
     },
     "abrangencia": {
-      "Imprensa Local": 338,
+      "Imprensa Local": 339,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 42,
       "Imprensa Regional (Bahia)": 38,
@@ -651,7 +651,7 @@
       "Folha Dirigida": 21,
       "O TEMPO": 17,
       "Mídia Externa": 16,
-      "Fala Você Notícias": 14,
+      "Fala Você Notícias": 15,
       "G1": 11,
       "Acorda Cidade": 10,
       "Alagoinhas": 10
@@ -659,8 +659,8 @@
     "meses": {
       "08": 121,
       "05": 118,
+      "09": 47,
       "07": 47,
-      "09": 46,
       "04": 39,
       "03": 39,
       "01": 33,
@@ -668,7 +668,7 @@
       "02": 21
     },
     "campuses": {
-      "Geral / Não Especificado": 178,
+      "Geral / Não Especificado": 179,
       "Guanambi": 80,
       "Alagoinhas": 35,
       "Bom Jesus da Lapa": 25,
@@ -692,7 +692,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 489
+        "total": 490
       },
       {
         "ano": 2025,
