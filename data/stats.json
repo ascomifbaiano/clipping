@@ -1,27 +1,27 @@
 {
   "geral": {
-    "total": 1479,
+    "total": 1481,
     "eixos": {
       "Gestão e RH": 695,
       "Ensino": 355,
-      "Institucional": 309,
+      "Institucional": 310,
       "Extensão": 65,
-      "Pesquisa": 55
+      "Pesquisa": 56
     },
     "abrangencia": {
       "Imprensa Local": 1111,
       "Especializados (Nichos)": 108,
       "Imprensa (Nacional)": 94,
       "Imprensa Regional (Bahia)": 84,
-      "Governamental": 68,
-      "Outras Instituições de Ensino": 14
+      "Governamental": 69,
+      "Outras Instituições de Ensino": 15
     },
     "top_veiculos": {
       "Agência Sertão": 202,
       "Guanambi": 89,
       "SulBahiaNews": 43,
-      "PCI Concursos": 35,
       "G1": 35,
+      "PCI Concursos": 35,
       "Ache Concursos": 30,
       "Uruçuca": 29,
       "Folha Dirigida": 28,
@@ -29,11 +29,11 @@
       "Teixeira de Freitas": 24
     },
     "meses": {
-      "08": 211,
-      "05": 207,
+      "08": 212,
+      "05": 208,
       "09": 140,
-      "04": 115,
       "10": 115,
+      "04": 115,
       "03": 109,
       "12": 107,
       "01": 106,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 463,
+      "Geral / Não Especificado": 465,
       "Guanambi": 244,
       "Bom Jesus da Lapa": 122,
       "Alagoinhas": 89,
@@ -84,11 +84,11 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -137,18 +137,18 @@
     ]
   },
   "2022": {
-    "total": 92,
+    "total": 93,
     "eixos": {
       "Ensino": 40,
       "Institucional": 26,
       "Gestão e RH": 18,
       "Extensão": 7,
-      "Pesquisa": 1
+      "Pesquisa": 2
     },
     "abrangencia": {
       "Imprensa Local": 71,
+      "Governamental": 7,
       "Imprensa (Nacional)": 6,
-      "Governamental": 6,
       "Especializados (Nichos)": 5,
       "Imprensa Regional (Bahia)": 3,
       "Outras Instituições de Ensino": 1
@@ -159,11 +159,11 @@
       "Se Liga Alagoinhas": 7,
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
-      "Pimenta Blog": 3,
       "InfoEducação": 3,
+      "Pimenta Blog": 3,
       "G1": 3,
-      "Se liga Alagoinhas": 3,
-      "Prefeitura de Alagoinhas": 3
+      "Prefeitura de Alagoinhas": 3,
+      "Se liga Alagoinhas": 3
     },
     "meses": {
       "11": 13,
@@ -176,12 +176,12 @@
       "10": 6,
       "02": 6,
       "07": 6,
-      "08": 3,
+      "08": 4,
       "09": 2
     },
     "campuses": {
       "Alagoinhas": 17,
-      "Geral / Não Especificado": 15,
+      "Geral / Não Especificado": 16,
       "Uruçuca": 13,
       "Bom Jesus da Lapa": 11,
       "Guanambi": 10,
@@ -195,11 +195,11 @@
     "historico": [
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -317,11 +317,11 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -444,11 +444,11 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -551,8 +551,8 @@
       "Alagoinhas": 12,
       "Xique-Xique": 8,
       "Santa Inês": 8,
-      "Ribeira do Pombal": 7,
       "Governador Mangabeira": 7,
+      "Ribeira do Pombal": 7,
       "Reitoria (Salvador)": 4,
       "Itaberaba": 3,
       "Valença": 3,
@@ -575,11 +575,11 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -708,11 +708,11 @@
       },
       {
         "ano": 2022,
-        "total": 92
+        "total": 93
       },
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
@@ -761,10 +761,10 @@
     ]
   },
   "ate_2021": {
-    "total": 194,
+    "total": 195,
     "eixos": {
       "Gestão e RH": 78,
-      "Institucional": 66,
+      "Institucional": 67,
       "Ensino": 30,
       "Pesquisa": 12,
       "Extensão": 8
@@ -774,8 +774,8 @@
       "Governamental": 23,
       "Especializados (Nichos)": 12,
       "Imprensa (Nacional)": 9,
-      "Imprensa Regional (Bahia)": 8,
-      "Outras Instituições de Ensino": 7
+      "Outras Instituições de Ensino": 8,
+      "Imprensa Regional (Bahia)": 8
     },
     "top_veiculos": {
       "Agência Sertão": 49,
@@ -783,8 +783,8 @@
       "Prefeitura de Alagoinhas": 8,
       "Notícias de Bom Jesus da Lapa": 7,
       "Conif": 7,
-      "GOV.BR": 6,
       "Notícias da Lapa": 6,
+      "GOV.BR": 6,
       "InfoEscola": 5,
       "Mídia Externa": 4,
       "G1": 4
@@ -792,8 +792,8 @@
     "meses": {
       "11": 24,
       "03": 20,
+      "05": 19,
       "09": 19,
-      "05": 18,
       "06": 18,
       "10": 17,
       "04": 17,
@@ -804,7 +804,7 @@
       "02": 5
     },
     "campuses": {
-      "Geral / Não Especificado": 77,
+      "Geral / Não Especificado": 78,
       "Guanambi": 40,
       "Bom Jesus da Lapa": 19,
       "Alagoinhas": 13,
@@ -822,7 +822,7 @@
     "historico": [
       {
         "ano": 2021,
-        "total": 63
+        "total": 64
       },
       {
         "ano": 2020,
