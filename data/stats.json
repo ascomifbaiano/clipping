@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 1481,
+    "total": 1486,
     "eixos": {
-      "Gestão e RH": 695,
+      "Gestão e RH": 696,
       "Ensino": 355,
-      "Institucional": 310,
-      "Extensão": 65,
-      "Pesquisa": 56
+      "Institucional": 312,
+      "Extensão": 66,
+      "Pesquisa": 57
     },
     "abrangencia": {
-      "Imprensa Local": 1111,
+      "Imprensa Local": 1115,
       "Especializados (Nichos)": 108,
       "Imprensa (Nacional)": 94,
-      "Imprensa Regional (Bahia)": 84,
+      "Imprensa Regional (Bahia)": 85,
       "Governamental": 69,
       "Outras Instituições de Ensino": 15
     },
@@ -26,12 +26,12 @@
       "Uruçuca": 29,
       "Folha Dirigida": 28,
       "Mídia Externa": 27,
-      "Teixeira de Freitas": 24
+      "Senhor do Bonfim": 24
     },
     "meses": {
       "08": 212,
       "05": 208,
-      "09": 140,
+      "09": 145,
       "10": 115,
       "04": 115,
       "03": 109,
@@ -44,20 +44,20 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 465,
+      "Geral / Não Especificado": 467,
       "Guanambi": 244,
       "Bom Jesus da Lapa": 122,
       "Alagoinhas": 89,
       "Uruçuca": 86,
       "Teixeira de Freitas": 77,
       "Catu": 59,
-      "Senhor do Bonfim": 47,
+      "Senhor do Bonfim": 48,
       "Xique-Xique": 38,
       "Valença": 35,
-      "Itaberaba": 34,
       "Serrinha": 34,
+      "Itaberaba": 34,
+      "Santo Estêvão": 32,
       "Santa Inês": 31,
-      "Santo Estêvão": 30,
       "Governador Mangabeira": 29,
       "Itapetinga": 22,
       "Ribeira do Pombal": 18,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 490
+        "total": 495
       },
       {
         "ano": 2025,
@@ -160,9 +160,9 @@
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
       "InfoEducação": 3,
-      "Prefeitura de Alagoinhas": 3,
-      "G1": 3,
       "Pimenta Blog": 3,
+      "G1": 3,
+      "Prefeitura de Alagoinhas": 3,
       "Se liga Alagoinhas": 3
     },
     "meses": {
@@ -628,19 +628,19 @@
     ]
   },
   "2026": {
-    "total": 490,
+    "total": 495,
     "eixos": {
-      "Gestão e RH": 279,
-      "Institucional": 98,
+      "Gestão e RH": 280,
+      "Institucional": 100,
       "Ensino": 65,
-      "Extensão": 24,
-      "Pesquisa": 24
+      "Pesquisa": 25,
+      "Extensão": 25
     },
     "abrangencia": {
-      "Imprensa Local": 339,
+      "Imprensa Local": 343,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 42,
-      "Imprensa Regional (Bahia)": 38,
+      "Imprensa Regional (Bahia)": 39,
       "Governamental": 17,
       "Outras Instituições de Ensino": 3
     },
@@ -659,7 +659,7 @@
     "meses": {
       "08": 121,
       "05": 118,
-      "09": 47,
+      "09": 52,
       "07": 47,
       "04": 39,
       "03": 39,
@@ -668,18 +668,18 @@
       "02": 21
     },
     "campuses": {
-      "Geral / Não Especificado": 179,
+      "Geral / Não Especificado": 181,
       "Guanambi": 80,
       "Alagoinhas": 35,
       "Bom Jesus da Lapa": 25,
       "Valença": 24,
       "Uruçuca": 21,
       "Xique-Xique": 20,
-      "Senhor do Bonfim": 16,
+      "Senhor do Bonfim": 17,
+      "Santo Estêvão": 14,
       "Governador Mangabeira": 12,
-      "Santo Estêvão": 12,
-      "Catu": 10,
       "Serrinha": 10,
+      "Catu": 10,
       "Ribeira do Pombal": 9,
       "Teixeira de Freitas": 9,
       "Itapetinga": 8,
@@ -692,7 +692,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 490
+        "total": 495
       },
       {
         "ano": 2025,
