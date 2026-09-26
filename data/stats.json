@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1487,
+    "total": 1488,
     "eixos": {
-      "Gestão e RH": 696,
+      "Gestão e RH": 697,
       "Ensino": 355,
       "Institucional": 312,
       "Extensão": 66,
       "Pesquisa": 58
     },
     "abrangencia": {
-      "Imprensa Local": 1116,
+      "Imprensa Local": 1117,
       "Especializados (Nichos)": 108,
       "Imprensa (Nacional)": 94,
       "Imprensa Regional (Bahia)": 85,
@@ -20,8 +20,8 @@
       "Agência Sertão": 202,
       "Guanambi": 89,
       "SulBahiaNews": 43,
-      "PCI Concursos": 35,
       "G1": 35,
+      "PCI Concursos": 35,
       "Ache Concursos": 30,
       "Uruçuca": 29,
       "Folha Dirigida": 28,
@@ -31,7 +31,7 @@
     "meses": {
       "08": 212,
       "05": 208,
-      "09": 146,
+      "09": 147,
       "10": 115,
       "04": 115,
       "03": 109,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 468,
+      "Geral / Não Especificado": 469,
       "Guanambi": 244,
       "Bom Jesus da Lapa": 122,
       "Alagoinhas": 89,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 496
+        "total": 497
       },
       {
         "ano": 2025,
@@ -160,9 +160,9 @@
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
       "InfoEducação": 3,
-      "Pimenta Blog": 3,
-      "G1": 3,
       "Prefeitura de Alagoinhas": 3,
+      "G1": 3,
+      "Pimenta Blog": 3,
       "Se liga Alagoinhas": 3
     },
     "meses": {
@@ -628,16 +628,16 @@
     ]
   },
   "2026": {
-    "total": 496,
+    "total": 497,
     "eixos": {
-      "Gestão e RH": 280,
+      "Gestão e RH": 281,
       "Institucional": 100,
       "Ensino": 65,
       "Pesquisa": 26,
       "Extensão": 25
     },
     "abrangencia": {
-      "Imprensa Local": 344,
+      "Imprensa Local": 345,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 42,
       "Imprensa Regional (Bahia)": 39,
@@ -650,7 +650,7 @@
       "PCI Concursos": 22,
       "Folha Dirigida": 21,
       "O TEMPO": 17,
-      "Fala Você Notícias": 16,
+      "Fala Você Notícias": 17,
       "Mídia Externa": 16,
       "G1": 11,
       "Acorda Cidade": 10,
@@ -659,7 +659,7 @@
     "meses": {
       "08": 121,
       "05": 118,
-      "09": 53,
+      "09": 54,
       "07": 47,
       "04": 39,
       "03": 39,
@@ -668,7 +668,7 @@
       "02": 21
     },
     "campuses": {
-      "Geral / Não Especificado": 182,
+      "Geral / Não Especificado": 183,
       "Guanambi": 80,
       "Alagoinhas": 35,
       "Bom Jesus da Lapa": 25,
@@ -692,7 +692,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 496
+        "total": 497
       },
       {
         "ano": 2025,
