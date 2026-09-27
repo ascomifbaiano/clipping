@@ -1,16 +1,16 @@
 {
   "geral": {
-    "total": 1488,
+    "total": 1489,
     "eixos": {
       "Gestão e RH": 697,
-      "Ensino": 355,
+      "Ensino": 356,
       "Institucional": 312,
       "Extensão": 66,
       "Pesquisa": 58
     },
     "abrangencia": {
       "Imprensa Local": 1117,
-      "Especializados (Nichos)": 108,
+      "Especializados (Nichos)": 109,
       "Imprensa (Nacional)": 94,
       "Imprensa Regional (Bahia)": 85,
       "Governamental": 69,
@@ -20,8 +20,8 @@
       "Agência Sertão": 202,
       "Guanambi": 89,
       "SulBahiaNews": 43,
-      "PCI Concursos": 35,
       "G1": 35,
+      "PCI Concursos": 35,
       "Ache Concursos": 30,
       "Uruçuca": 29,
       "Folha Dirigida": 28,
@@ -31,7 +31,7 @@
     "meses": {
       "08": 212,
       "05": 208,
-      "09": 147,
+      "09": 148,
       "10": 115,
       "04": 115,
       "03": 109,
@@ -45,7 +45,7 @@
     },
     "campuses": {
       "Geral / Não Especificado": 469,
-      "Guanambi": 244,
+      "Guanambi": 245,
       "Bom Jesus da Lapa": 122,
       "Alagoinhas": 89,
       "Uruçuca": 86,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 497
+        "total": 498
       },
       {
         "ano": 2025,
@@ -160,9 +160,9 @@
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
       "InfoEducação": 3,
-      "Prefeitura de Alagoinhas": 3,
-      "G1": 3,
       "Pimenta Blog": 3,
+      "G1": 3,
+      "Prefeitura de Alagoinhas": 3,
       "Se liga Alagoinhas": 3
     },
     "meses": {
@@ -628,18 +628,18 @@
     ]
   },
   "2026": {
-    "total": 497,
+    "total": 498,
     "eixos": {
       "Gestão e RH": 281,
       "Institucional": 100,
-      "Ensino": 65,
+      "Ensino": 66,
       "Pesquisa": 26,
       "Extensão": 25
     },
     "abrangencia": {
       "Imprensa Local": 345,
       "Imprensa (Nacional)": 51,
-      "Especializados (Nichos)": 42,
+      "Especializados (Nichos)": 43,
       "Imprensa Regional (Bahia)": 39,
       "Governamental": 17,
       "Outras Instituições de Ensino": 3
@@ -659,7 +659,7 @@
     "meses": {
       "08": 121,
       "05": 118,
-      "09": 54,
+      "09": 55,
       "07": 47,
       "04": 39,
       "03": 39,
@@ -669,7 +669,7 @@
     },
     "campuses": {
       "Geral / Não Especificado": 183,
-      "Guanambi": 80,
+      "Guanambi": 81,
       "Alagoinhas": 35,
       "Bom Jesus da Lapa": 25,
       "Valença": 24,
@@ -692,7 +692,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 497
+        "total": 498
       },
       {
         "ano": 2025,
