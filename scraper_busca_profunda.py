@@ -150,7 +150,7 @@ def coletar_google_rss_profunda(
         itens = _fetch_rss(url)
         print(f'      {len(itens)} item(s) no feed.', flush=True)
         for item in itens:
-            titulo_completo, veiculo, link, data_raw = _extrair_item_rss(item)
+            titulo_completo, veiculo, link, data_raw, _trecho = _extrair_item_rss(item)
             registro = _processar_resultado(
                 titulo_raw=titulo_completo, veiculo_raw=veiculo,
                 link_original=link, data_raw=data_raw,

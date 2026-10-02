@@ -158,7 +158,7 @@ def coletar_rss_historico(
         if itens:
             print(f'   -> RSS [{ano}]: "{query[:50]}..." — {len(itens)} item(s).', flush=True)
         for item in itens:
-            titulo_completo, veiculo, link, data_raw = _extrair_item_rss(item)
+            titulo_completo, veiculo, link, data_raw, _trecho = _extrair_item_rss(item)
             registro = _processar_resultado(
                 titulo_raw=titulo_completo, veiculo_raw=veiculo,
                 link_original=link, data_raw=data_raw,

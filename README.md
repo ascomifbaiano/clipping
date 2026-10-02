@@ -23,8 +23,11 @@ O Motor de Clipping Inteligente monitora diariamente matérias veiculadas na gra
 - **Dashboard Frontend**: HTML5 Semântico, Vanilla CSS3 (Custom Properties), JavaScript ES6+, Chart.js, PapaParse.
 
 ## Estrutura do Projeto
-- `clipping_utils.py`: Módulo central v2.0 com heurísticas, normalização, resolver de URLs com Base64 Google News, Full-Text Scan em portais `.edu.br`/`.gov.br` e geração de estatísticas.
-- `scraper_clipping.py`: Motor diário v2.0 com Arquitetura Multi-Engine de 4 Camadas (Serper Organic+News, Google RSS fragmentado, Bing RSS, Scraping Direto de 60+ portais locais da Bahia). Janela móvel de 7 dias.
+- `clipping_utils.py`: Módulo central v3.0 com as listas de unidades do IF Baiano e de campi do IFBA, classificação da menção nos dois sentidos (`tipo_mencao`), validação, decodificação dos links do Google News, datas relativas e geração de estatísticas.
+- `scraper_clipping.py`: Motor diário v3.0 com 4 camadas (Serper News e orgânico, Google News RSS, Bing RSS, portais locais agrupados uma vez por dia). Janela móvel de 7 dias e resolução gradual dos links `news.google.com` antigos.
+- `ingestao_clipping_manual.py`: Leitura somente leitura do documento de curadoria da DICOM, por nome de coluna, com a marca `origem = curadoria_dicom`.
+- `limpar_clipping_falsos_positivos.py`: Saneamento da base, sem acesso à rede e sem tocar na curadoria. Só roda no disparo manual do workflow.
+- `planejamento_motor_busca_clipping_v3.md`: Diagnóstico e plano da versão 3.0.
 - `scraper_busca_profunda.py`: Motor de recuperação de menções perdidas em janela temporal configurável (`DIAS_ATRAS`, padrão: 45 dias). Disparo manual via GitHub Actions.
 - `scraper_carga_inicial.py`: Motor de varredura histórica v2.0 com brackets anuais desde 2008 via Serper API + Google RSS + Scraping Direto de portais locais. Checkpoints a cada 3 anos.
 - `index.html`: Dashboard analytics para visualização, busca, acessibilidade e geração de relatórios.
@@ -33,6 +36,15 @@ O Motor de Clipping Inteligente monitora diariamente matérias veiculadas na gra
 ---
 
 ## Log de Atualizações (Changelog)
+
+### 02/10/2026 - Motor de Busca v3.0: curadoria preservada, Serper corrigido e "Nós Somos" nos dois sentidos
+- **Curadoria da DICOM**: a ingestão adicionava as notícias dos jornalistas e o saneamento apagava todas na mesma execução. O documento passou a ser lido pelo nome das colunas (o campus não vai mais para o lugar do veículo), a deduplicação usa só a URL e a curadoria não passa pelo validador automático. A base de teste passou de 1.504 para cerca de 2.700 notícias.
+- **Serper**: a camada nunca trazia resultados, porque a chave recusa `num` acima de 10 (erro 400) e o filtro de datas no formato AAAA-MM-DD voltava vazio. Corrigido para `num: 10` e datas em M/D/AAAA, com o erro registrado no log. A camada 4 agrupa os portais com `site:a OR site:b` e roda uma vez por dia: cerca de 16 consultas por rodada.
+- **Validação**: comparação por palavra inteira, sem a variante "federal baiano"; nome de cidade só vale com termo de instituição; trecho de resumo usado só em notícias; redes sociais, páginas iniciais e páginas de listagem descartadas; leitura do corpo só em portais `.gov.br`, `.edu.br` e Conif.
+- **"Nós Somos o IF Baiano"**: coluna `tipo_mencao` calculada no Python (`correta`, `ambos_citados`, `ifba_no_lugar_do_ifbaiano`, `ifbaiano_no_lugar_do_ifba`) pela sigla colada ao nome da cidade. IFBA citado no lugar de IF Baiano conta no clipping com etiqueta; IF Baiano citado no lugar de IFBA aparece só na aba e fica fora das estatísticas. A regra em JavaScript foi removida do `index.html`. Novas buscas no RSS para o sentido inverso.
+- **Links do Google News**: decodificação do formato novo (batchexecute), com a ScraperAPI como contingência. Os links antigos são resolvidos até 150 por execução, e os que já existiam na base com o endereço real são removidos como duplicados.
+- **Outros**: datas relativas ("3 days ago", "há 2 dias") e abreviadas, campus decidido pelo título antes do nome do veículo, ordenação estável na gravação, `stats.json` com contagem por origem e por direção de confusão.
+- **Workflow**: saneamento só no disparo manual; opção `forcar_camada4`.
 
 ### 16/09/2026 - Implementação da Barra de Acessibilidade Institucional e Alto Contraste (WCAG 2.1 AAA)
 - **Barra Superior Fixa de Acessibilidade**: Inserção da barra institucional padronizada no topo do `index.html`, contendo botão de alternância de Alto Contraste com ícone vetorial SVG e controles de escala tipográfica (`A-`, `A` normal e `A+`).

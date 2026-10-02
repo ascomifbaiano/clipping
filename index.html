@@ -1434,8 +1434,8 @@ Planilha de Curadoria
 <div>
 <h3 style="color:var(--brand-accent); font-weight:800; font-size:18px;">Espaço de Identidade e Correção Histórica</h3>
 <p style="color:var(--text-muted); font-size:14px; margin-top:2px;">
-Esta aba reúne todas as notícias capturadas onde jornais e portais de notícias se referiram incorretamente ao <strong>IF Baiano</strong> utilizando o termo <strong>IFBA</strong> ou <strong>Instituto Federal da Bahia</strong>. 
-Estas menções ocorrem frequentemente em cidades onde apenas o IF Baiano atua.
+Esta aba reúne todas as notícias capturadas onde jornais e portais de notícias se referiram incorretamente ao <strong>IF Baiano</strong> utilizando o termo <strong>IFBA</strong> ou <strong>Instituto Federal da Bahia</strong>, e também o caso inverso, quando a matéria falava do IFBA e usou o nome <strong>IF Baiano</strong>.
+O primeiro caso conta no clipping do IF Baiano; o segundo aparece só aqui. As menções ocorrem com frequência em cidades onde apenas uma das duas instituições atua.
 </p>
 </div>
 </div>
@@ -1454,7 +1454,7 @@ Estas menções ocorrem frequentemente em cidades onde apenas o IF Baiano atua.
 <th width="160">Campus Afetado</th>
 <th width="200">Veículo / Portal</th>
 <th>Título da Matéria (Como foi publicado)</th>
-<th width="160">Termo Incorreto Lido</th>
+<th width="160">Direção do Erro</th>
 <th width="100" class="no-print">Link</th>
 </tr>
 </thead>
@@ -1486,7 +1486,14 @@ Estas menções ocorrem frequentemente em cidades onde apenas o IF Baiano atua.
 <script>
 const ts = new Date().getTime();
 let statsGlobais = {};
-let cacheDados = {}; 
+let cacheDados = {};
+// Menções ao IF Baiano que na verdade eram do IFBA: só aparecem na aba "Nós Somos"
+let cacheInversas = {};
+let dadosInversas = [];
+const TIPO_INVERSO = 'ifbaiano_no_lugar_do_ifba';
+function escaparHTML(s) {
+return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
 let dadosOriginais = []; // Dados originais do ano ativo
 let dadosFiltrados = [];  // Dados após filtros aplicados
 
@@ -1576,6 +1583,7 @@ aplicarFiltros();
 async function carregarCSVDoAno(ano) {
 if (cacheDados[ano]) {
 dadosOriginais = cacheDados[ano];
+dadosInversas = cacheInversas[ano] || [];
 return;
 }
 showLoading(true);
@@ -1591,8 +1599,10 @@ const dataA = a.data ? a.data.trim() : "";
 const dataB = b.data ? b.data.trim() : "";
 return dataB.localeCompare(dataA);
 });
-cacheDados[ano] = res.data;
-dadosOriginais = res.data;
+cacheInversas[ano] = res.data.filter(r => r.tipo_mencao === TIPO_INVERSO);
+cacheDados[ano] = res.data.filter(r => r.tipo_mencao !== TIPO_INVERSO);
+dadosOriginais = cacheDados[ano];
+dadosInversas = cacheInversas[ano];
 showLoading(false);
 resolve();
 },
@@ -2160,85 +2170,43 @@ showLoading(false);
 }, 1000);
 }
 
+// A direção da confusão vem calculada do motor Python (coluna tipo_mencao),
+// a mesma regra usada na coleta: sigla colada ao nome da cidade.
 function ehConfusao(row) {
-const titulo = (row.assunto || '').toLowerCase();
-const veiculo = (row.veiculo || '').toLowerCase();
-const campus = row.campus || '';
-
-// Verifica se o título contém "ifba" (mas não "ifbaiano") ou "instituto federal da bahia"
-const regexIfba = /\bifba(?!iano)\b/i;
-const hasIfbaIsolated = regexIfba.test(titulo) || titulo.includes('instituto federal da bahia');
-
-// Se contém IFBA ou IF da Bahia, mas não contém as grafias corretas do IF Baiano
-const hasIfbaiano = titulo.includes('if baiano') || titulo.includes('ifbaiano') || titulo.includes('instituto federal baiano') || titulo.includes('ifbaiana') || titulo.includes('if baiana') || titulo.includes('federal baiano');
-
-if (!hasIfbaIsolated || hasIfbaiano) return false;
-
-// Se contiver termos que indicam que é o IFBA de verdade (como menção a UFBA, engenharia, etc.)
-const termosIfbaReal = ['ufba', 'uneb', 'ufrb', 'uesb', 'ufob', 'engenharia', 'grupo petropolis', 'petropolis'];
-if (termosIfbaReal.some(term => titulo.includes(term) || veiculo.includes(term))) return false;
-
-// Cidades exclusivas do IF Baiano (Valença e Salvador não estão aqui)
-const cidadesExclusivas = [
-'Alagoinhas', 'Bom Jesus da Lapa', 'Catu', 'Governador Mangabeira', 'Guanambi', 
-'Itaberaba', 'Itapetinga', 'Santa Inês', 'Senhor do Bonfim', 'Serrinha', 
-'Teixeira de Freitas', 'Uruçuca', 'Xique-Xique', 'Santo Estêvão', 'Ribeira do Pombal', 
-'Remanso', 'Ruy Barbosa'
-];
-
-// Regra 1: Se cita explicitamente um campus exclusivo, é 100% erro
-if (cidadesExclusivas.includes(campus)) return true;
-
-// Regra 2: Se for Valença (onde ambos possuem campus)
-if (campus === 'Valença') {
-// Cursos e áreas típicas do IF Baiano em Valença (Agropecuária, Meio Ambiente, etc.)
-const termosValencaBaiano = ['agropecuária', 'agropecuaria', 'zootecnia', 'agronomia', 'agricultura', 'agroecologia', 'florestas', 'alimento', 'reitor', 'substituto', 'edital'];
-return termosValencaBaiano.some(t => titulo.includes(t));
-}
-
-// Regra 3: Se for Salvador (onde o IF Baiano possui apenas a Reitoria, e o IFBA possui reitoria e campus)
-if (campus.includes('Reitoria') || campus.includes('Salvador')) {
-// Se mencionar termos da Reitoria do IF Baiano mas associar a IFBA
-const termosReitoriaBaiano = ['reitor', 'reitoria', 'licitação', 'licitacao', 'concurso'];
-return termosReitoriaBaiano.some(t => titulo.includes(t));
-}
-
-// Regra 4: Caso geral - se o título contém o nome de alguma cidade exclusiva no texto
-const cidadesExclusivasLower = cidadesExclusivas.map(c => c.toLowerCase());
-return cidadesExclusivasLower.some(c => titulo.includes(c));
+return row.tipo_mencao === 'ifba_no_lugar_do_ifbaiano';
 }
 
 function renderizarTabelaSomos() {
-const confusões = dadosOriginais.filter(ehConfusao);
+const confusões = dadosOriginais.filter(ehConfusao)
+.concat(dadosInversas)
+.sort((a, b) => (b.data || '').localeCompare(a.data || ''));
 
 const tbody = document.getElementById('somos-tabela-corpo');
-document.getElementById('somos-table-title').innerText = `Menções Incorretas Detectadas (${confusões.length})`;
+const nDireta = confusões.filter(ehConfusao).length;
+const nInversa = confusões.length - nDireta;
+document.getElementById('somos-table-title').innerText = `Menções Incorretas Detectadas (${confusões.length}: ${nDireta} IFBA no lugar de IF Baiano, ${nInversa} IF Baiano no lugar de IFBA)`;
 
 if(confusões.length === 0) {
-tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 40px; color: var(--text-muted);">Nenhuma menção incorreta detectada neste período. Parabéns aos portais! </td></tr>`;
+tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 40px; color: var(--text-muted);">Nenhuma menção incorreta detectada neste período.</td></tr>`;
 return;
 }
 
 tbody.innerHTML = confusões.map(i => {
 const dataFmt = i.data ? i.data.split('-').reverse().join('/') : 'N/A';
-const titulo = i.assunto.toLowerCase();
-let termoLido = 'IFBA / IF da Bahia';
-if (titulo.includes('instituto federal da bahia')) {
-termoLido = 'Instituto Federal da Bahia';
-} else if (/\bifba(?!iano)\b/i.test(titulo)) {
-termoLido = 'IFBA';
-}
+const inversa = i.tipo_mencao === TIPO_INVERSO;
+const direcao = inversa ? 'IF Baiano no lugar de IFBA' : 'IFBA no lugar de IF Baiano';
+const nota = inversa ? 'Não conta no clipping' : 'Conta no clipping';
 
 return `
 <tr>
 <td style="font-weight: 500; color: #475569;">${dataFmt}</td>
-<td><span class="badge badge-campus" style="background-color:#fee2e2; color:#991b1b; border-color:#fecaca;"> ${i.campus || 'Geral'}</span></td>
-<td style="color: #475569; font-weight:600;">${i.veiculo || 'Mídia Externa'}</td>
+<td><span class="badge badge-campus" style="background-color:#fee2e2; color:#991b1b; border-color:#fecaca;"> ${escaparHTML(i.campus || 'Geral')}</span></td>
+<td style="color: #475569; font-weight:600;">${escaparHTML(i.veiculo || 'Mídia Externa')}</td>
 <td style="font-weight:500; color: var(--text-main); font-size:14.5px;">
-<span style="text-decoration: line-through; color: var(--brand-accent); font-weight:normal; margin-right:6px;">[Confundido]</span> ${i.assunto}
+<span style="text-decoration: line-through; color: var(--brand-accent); font-weight:normal; margin-right:6px;">[Confundido]</span> ${escaparHTML(i.assunto)}
 </td>
-<td><span class="badge" style="background-color:#fee2e2; color:#991b1b; border:1px solid #fecaca; font-weight:bold;"> ${termoLido}</span></td>
-<td class="no-print"><a href="${i.link}" target="_blank" class="link-url" style="color:var(--brand-accent);">Acessar </a></td>
+<td><span class="badge" style="background-color:#fee2e2; color:#991b1b; border:1px solid #fecaca; font-weight:bold;" title="${nota}"> ${direcao}</span><div style="font-size:12px; color: var(--text-muted); margin-top:4px;">${nota}</div></td>
+<td class="no-print"><a href="${escaparHTML(i.link)}" target="_blank" rel="noopener" class="link-url" style="color:var(--brand-accent);">Acessar </a></td>
 </tr>
 `;
 }).join('');

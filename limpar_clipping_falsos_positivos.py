@@ -33,8 +33,13 @@ def limpar_banco_clipping():
             if total_antes == 0:
                 continue
 
-            # Aplica o filtro de validação de notícia passando o link
-            mascara_validas = df.apply(lambda row: validar_noticia(row['assunto'], row['veiculo'], row.get('link')), axis=1)
+            # Validação sem acesso à rede (resultado reproduzível). A curadoria da
+            # DICOM é conferida por jornalistas e não passa pelo filtro (D2, 02/10/2026).
+            origem = df['origem'].astype(str) if 'origem' in df.columns else pd.Series('', index=df.index)
+            mascara_validas = (origem == 'curadoria_dicom') | df.apply(
+                lambda row: validar_noticia(row['assunto'], row['veiculo'], row.get('link'), permitir_rede=False),
+                axis=1,
+            )
             df_limpo = df[mascara_validas].copy()
             total_depois = len(df_limpo)
             removidos = total_antes - total_depois

@@ -6,10 +6,10 @@ Diretriz Mandatória: Operação Estritamente SOMENTE LEITURA (READ-ONLY) na fon
 Funcionalidade:
 1. Conecta-se via HTTP GET (modo somente leitura) ao endpoint de exportação pública HTML do Google Docs.
 2. Extrai e normaliza todas as matérias catalogadas manualmente pelos jornalistas da DICOM.
-3. Desduplica os registros contra o acervo consolidado do portal (clipping_geral.csv) em 3 camadas:
-   - Camada 1: URL Canônica Normalizada (expurgo de UTMs, redirecionamentos e protocolos)
-   - Camada 2: Chave Composta de Título Normalizado + Veículo
-   - Camada 3: Verificação de Similaridade Textual
+3. Desduplica os registros contra o acervo consolidado (clipping_geral.csv) só pela
+   URL canônica (sem UTMs, redirecionamentos e protocolo). Desde a v3.0 (02/10/2026),
+   a mesma pauta em veículos diferentes conta como repercussão, as tabelas são lidas
+   pelo nome das colunas e cada linha recebe origem = curadoria_dicom.
 4. Aplica os classificadores heurísticos de clipping_utils (Eixo, Abrangência e Campus).
 5. Se executado com --dry-run (padrão em testes), apenas audita e exibe métricas sem alterar arquivos.
 6. Se executado com --apply (ou em ambiente de CI/CD), consolida e particiona os CSVs e stats.json.
@@ -35,6 +35,7 @@ from clipping_utils import (
     classificar_campus,
     salvar_e_gerar_stats,
     remover_acentos,
+    normalizar_campus_curadoria,
 )
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -94,7 +95,7 @@ def normalizar_url_canonica(url_bruta: str) -> str:
 
 
 def gerar_slug_titulo_veiculo(assunto: str, veiculo: str) -> str:
-    """Gera chave composta única de título e veículo desconsiderando acentos e pontuação."""
+    """Chave de título e veículo sem acentos e pontuação (mantida para compatibilidade)."""
     a = remover_acentos(str(assunto)).strip().lower()
     v = remover_acentos(str(veiculo)).strip().lower()
     a_clean = re.sub(r'[^a-z0-9]', '', a)
@@ -102,10 +103,76 @@ def gerar_slug_titulo_veiculo(assunto: str, veiculo: str) -> str:
     return f"{a_clean}|{v_clean}"
 
 
+def desembrulhar_link(url: str) -> str:
+    """Troca https://www.google.com/url?q=<real>&sa=... pelo endereço real."""
+    url = (url or "").strip()
+    if "google.com/url?" in url:
+        q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query).get("q")
+        if q and q[0].startswith("http"):
+            return q[0]
+    return url
+
+
+def veiculo_pelo_dominio(url: str) -> str:
+    netloc = urllib.parse.urlparse(url).netloc.lower()
+    return netloc[4:] if netloc.startswith("www.") else netloc
+
+
+def _veiculo_suspeito(valor: str) -> bool:
+    """Veículo que na verdade é campus, a própria instituição ou texto genérico."""
+    v = remover_acentos(valor).strip()
+    if not v or v in ("portal de noticias", "midia externa", "nan"):
+        return True
+    if "if baiano" in v or "ifbaiano" in v:
+        return True
+    return bool(normalizar_campus_curadoria(valor)) and len(v.split()) <= 4 and not re.search(r"noticia|news|blog|portal|jornal|radio|tv|agencia|folha|gazeta", v)
+
+
+def _mapear_colunas(cabecalho: list) -> dict:
+    """Localiza as colunas pelo nome; as tabelas do documento mudaram de formato ao longo dos anos."""
+    mapa = {}
+    for i, nome in enumerate(cabecalho):
+        n = remover_acentos(nome).strip()
+        if n.startswith("data") and "data" not in mapa:
+            mapa["data"] = i
+        elif n.startswith("assunto"):
+            mapa["assunto"] = i
+        elif n.startswith("veiculo"):
+            mapa["veiculo"] = i
+        elif n.startswith("campus") or n.startswith("unidade"):
+            mapa["campus"] = i
+        elif n.startswith("link"):
+            mapa["link"] = i
+    return mapa if {"data", "assunto"} <= mapa.keys() else {}
+
+
+def _converter_data(data_raw: str, link: str, ano_corrente: int) -> str:
+    m = re.search(r"^(\d{1,2})/(\d{1,2})/(20\d{2})", data_raw)
+    if m:
+        return f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+    m = re.search(r"^(\d{1,2})/(\d{1,2})/(\d{2})\b", data_raw)
+    if m:
+        return f"20{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+    m = re.search(r"^(\d{1,2})/(\d{1,2})", data_raw)
+    if m:
+        m_ano = re.search(r"/(20[2-3]\d)/", link)
+        ano = int(m_ano.group(1)) if m_ano else ano_corrente
+        return f"{ano}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+    m = re.search(r"/(20[2-3]\d)/(\d{2})/(\d{2})/", link)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+    m = re.search(r"/(20[2-3]\d)/(\d{2})/", link)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}-01"
+    return f"{ano_corrente}-01-01"
+
+
 def extrair_noticias_google_docs(url_export: str = DOC_EXPORT_URL) -> list:
     """
-    Realiza leitura estritamente READ-ONLY do documento Google Docs exportado em HTML.
-    Percorre seções mensais, normaliza datas, assuntos, veículos e links.
+    Leitura estritamente READ-ONLY do documento exportado em HTML.
+    Cada tabela é lida pelo seu cabeçalho (Data, Assunto, Tema, Campus/Unidade,
+    Veículo, Link), porque a ordem das colunas mudou ao longo dos anos. Tabelas
+    sem cabeçalho seguem o formato antigo: Data, Assunto, Veículo, Link.
     """
     headers = {
         "User-Agent": (
@@ -126,216 +193,167 @@ def extrair_noticias_google_docs(url_export: str = DOC_EXPORT_URL) -> list:
         print("Erro: Estrutura HTML do documento nao contem elemento body.")
         return []
 
-    noticias_extraidas = []
-    current_year = 2020
+    noticias = []
+    ano_corrente = 2020
+    mapa_padrao = {"data": 0, "assunto": 1, "veiculo": 2, "link": 3}
 
-    # Percorre os elementos mantendo rastreamento de ano por cabeçalhos
-    elementos = body.find_all(["h1", "h2", "h3", "h4", "h5", "h6", "p", "tr"])
-    for elem in elementos:
-        if elem.name in ["h1", "h2", "h3", "h4", "h5", "h6", "p"]:
-            txt = elem.get_text(strip=True)
-            m_year = re.search(r"\b(202[0-6])\b", txt)
-            if m_year:
-                current_year = int(m_year.group(1))
+    for elem in body.find_all(["h1", "h2", "h3", "h4", "h5", "h6", "p", "table"]):
+        if elem.name != "table":
+            # Títulos de mês e ano fora das tabelas definem o ano corrente
+            if elem.find_parent("table") is None:
+                m_ano = re.search(r"\b(20[2-3]\d)\b", elem.get_text(strip=True))
+                if m_ano:
+                    ano_corrente = int(m_ano.group(1))
+            continue
 
-        elif elem.name == "tr":
-            tds = elem.find_all("td")
-            if len(tds) < 3:
+        linhas = elem.find_all("tr")
+        if not linhas:
+            continue
+        mapa = _mapear_colunas([td.get_text(strip=True) for td in linhas[0].find_all("td")])
+        if mapa:
+            linhas = linhas[1:]
+        else:
+            mapa = mapa_padrao
+
+        for tr in linhas:
+            tds = tr.find_all("td")
+            celulas = [c.get_text(" ", strip=True) for c in tds]
+            if len(celulas) < 3:
                 continue
 
-            cells = [c.get_text(strip=True) for c in tds]
-            row_text = " ".join(cells)
-
-            # Extração de URL (âncoras ou texto plano)
-            link_encontrado = None
-            for a_tag in elem.find_all("a", href=True):
-                href = a_tag["href"].strip()
-                if href.startswith("http"):
-                    link_encontrado = href
+            link = None
+            for a_tag in tr.find_all("a", href=True):
+                if a_tag["href"].strip().startswith("http"):
+                    link = a_tag["href"].strip()
                     break
+            if not link:
+                m_url = re.search(r'(https?://[^\s"\'<>]+)', " ".join(celulas))
+                link = m_url.group(1) if m_url else None
+            if not link:
+                continue
+            link = desembrulhar_link(link)
 
-            if not link_encontrado:
-                m_url = re.search(r'(https?://[^\s"\'<>]+)', row_text)
-                if m_url:
-                    link_encontrado = m_url.group(1).strip()
+            def celula(chave):
+                i = mapa.get(chave)
+                return celulas[i].strip() if i is not None and i < len(celulas) else ""
 
-            if not link_encontrado:
+            assunto = celula("assunto")
+            if len(assunto) < 4 or remover_acentos(assunto).startswith("assunto"):
                 continue
 
-            data_raw = cells[0].strip()
-            assunto = cells[1].strip() if len(cells) > 1 else ""
-            veiculo = cells[2].strip() if len(cells) > 2 else ""
+            veiculo = celula("veiculo")
+            campus_bruto = celula("campus")
+            if _veiculo_suspeito(veiculo):
+                # No formato antigo o "veículo" às vezes trazia o campus
+                if not campus_bruto:
+                    campus_bruto = veiculo
+                veiculo = veiculo_pelo_dominio(link) or "Mídia Externa"
 
-            # Descarta linhas de cabeçalho interno das tabelas
-            if "data" in data_raw.lower() or "assunto" in assunto.lower():
-                continue
-
-            if not assunto or len(assunto) < 4:
-                continue
-
-            # Resolução e normalização robusta de data para formato ISO YYYY-MM-DD
-            data_iso = None
-
-            # 1. Padrão DD/MM/YYYY
-            m_dmy = re.search(r"^(\d{1,2})/(\d{1,2})/(20\d{2})", data_raw)
-            if m_dmy:
-                data_iso = f"{m_dmy.group(3)}-{int(m_dmy.group(2)):02d}-{int(m_dmy.group(1)):02d}"
-            else:
-                # 2. Padrão DD/MM/YY
-                m_dmy2 = re.search(r"^(\d{1,2})/(\d{1,2})/(\d{2})", data_raw)
-                if m_dmy2:
-                    data_iso = f"20{m_dmy2.group(3)}-{int(m_dmy2.group(2)):02d}-{int(m_dmy2.group(1)):02d}"
-                else:
-                    # 3. Padrão DD/MM ou DD/MM/
-                    m_dm = re.search(r"^(\d{1,2})/(\d{1,2})/?", data_raw)
-                    if m_dm:
-                        m_url_yr = re.search(r"/(202[0-6])/", link_encontrado)
-                        yr = int(m_url_yr.group(1)) if m_url_yr else current_year
-                        data_iso = f"{yr}-{int(m_dm.group(2)):02d}-{int(m_dm.group(1)):02d}"
-                    else:
-                        # 4. Busca data estruturada na própria URL
-                        m_url_date = re.search(r"/(202[0-6])/(\d{2})/(\d{2})/", link_encontrado)
-                        if m_url_date:
-                            data_iso = f"{m_url_date.group(1)}-{m_url_date.group(2)}-{m_url_date.group(3)}"
-                        else:
-                            m_url_mo = re.search(r"/(202[0-6])/(\d{2})/", link_encontrado)
-                            if m_url_mo:
-                                data_iso = f"{m_url_mo.group(1)}-{m_url_mo.group(2)}-01"
-                            else:
-                                data_iso = f"{current_year}-01-01"
-
-            noticias_extraidas.append({
-                "data": data_iso,
+            noticias.append({
+                "data": _converter_data(celula("data"), link, ano_corrente),
                 "assunto": assunto,
-                "veiculo": veiculo if veiculo else "Portal de Notícias",
-                "link": link_encontrado,
+                "veiculo": veiculo,
+                "link": link,
+                "campus": normalizar_campus_curadoria(campus_bruto),
+                "origem": "curadoria_dicom",
             })
 
-    print(f"Total de registros brutos extraídos do Google Docs: {len(noticias_extraidas)}")
-    return noticias_extraidas
+    print(f"Total de registros brutos extraídos do Google Docs: {len(noticias)}")
+    return noticias
 
 
 def executar_pipeline_ingestao(dry_run: bool = True, dir_data: str = DIR_DATA):
     """
-    Executa o cruzamento completo da curadoria manual com o acervo automatizado existente.
+    Cruza a curadoria manual com o acervo. A deduplicação é só por URL canônica:
+    a mesma pauta em veículos diferentes é repercussão e conta mais de uma vez.
+    Linhas da curadoria já presentes no acervo são corrigidas (origem, veículo
+    e campus), porque versões anteriores gravavam o campus no lugar do veículo.
     """
     print("=" * 70)
-    print("INICIANDO INGESTÃO DE CURADORIA MANUAL DICOM (GOOGLE DOCS READ-ONLY)")
-    print(f"Modo de Operação: {'DRY-RUN (Simulação - sem alteração de arquivos)' if dry_run else 'APPLY (Consolidação em disco)'}")
+    print("INGESTÃO DA CURADORIA MANUAL DICOM (GOOGLE DOCS READ-ONLY)")
+    print(f"Modo: {'DRY-RUN (simulação)' if dry_run else 'APPLY (grava em disco)'}")
     print("=" * 70)
 
-    # 1. Carrega o acervo existente
     caminho_geral = os.path.join(dir_data, "clipping_geral.csv")
     if os.path.exists(caminho_geral):
-        df_existente = pd.read_csv(caminho_geral)
-        print(f"Acervo atual carregado: {len(df_existente)} notícias existentes.")
+        df_existente = pd.read_csv(caminho_geral, encoding="utf-8-sig")
+        print(f"Acervo atual: {len(df_existente)} notícias.")
     else:
         df_existente = pd.DataFrame(columns=["data", "assunto", "veiculo", "link"])
-        print("Aviso: Acervo atual não encontrado. Uma nova base será inicializada.")
+        print("Aviso: acervo não encontrado. Uma nova base será iniciada.")
 
-    # 2. Constrói índices de busca rápida para desduplicação
-    urls_canonicas_existentes = set()
-    slugs_existentes = set()
+    for col in ("campus", "origem", "tipo_mencao"):
+        if col not in df_existente.columns:
+            df_existente[col] = ""
+    df_existente = df_existente.fillna("")
 
-    for _, row in df_existente.iterrows():
-        url_c = normalizar_url_canonica(str(row.get("link", "")))
-        if url_c:
-            urls_canonicas_existentes.add(url_c)
-        
-        slug = gerar_slug_titulo_veiculo(str(row.get("assunto", "")), str(row.get("veiculo", "")))
-        if slug:
-            slugs_existentes.add(slug)
+    indice_existente = {}
+    for idx, url in df_existente["link"].astype(str).items():
+        chave = normalizar_url_canonica(url)
+        if chave:
+            indice_existente.setdefault(chave, idx)
 
-    # 3. Extrai registros da planilha/doc manual (somente leitura)
-    registros_manuais = extrair_noticias_google_docs()
-    if not registros_manuais:
-        print("Nenhum registro recuperado da curadoria manual. Encerrando operação.")
+    registros = extrair_noticias_google_docs()
+    if not registros:
+        print("Nenhum registro recuperado da curadoria. Encerrando.")
         return
 
-    # 4. Processa e desduplica
-    novos_registros = []
-    duplicados_url = 0
-    duplicados_slug = 0
-    duplicados_internos = 0
+    novos, vistos = [], set()
+    duplicados_internos = corrigidos = autoclipping = 0
 
-    urls_vistas_nesta_execucao = set()
-    slugs_vistos_nesta_execucao = set()
-
-    for item in registros_manuais:
-        url_canonica = normalizar_url_canonica(item["link"])
-        slug = gerar_slug_titulo_veiculo(item["assunto"], item["veiculo"])
-
-        # Desduplicação interna na própria planilha
-        if url_canonica in urls_vistas_nesta_execucao or slug in slugs_vistos_nesta_execucao:
+    for item in registros:
+        if "ifbaiano.edu.br" in item["link"].lower():
+            autoclipping += 1
+            continue
+        chave = normalizar_url_canonica(item["link"])
+        if chave in vistos:
             duplicados_internos += 1
             continue
+        vistos.add(chave)
 
-        urls_vistas_nesta_execucao.add(url_canonica)
-        slugs_vistos_nesta_execucao.add(slug)
-
-        # Desduplicação contra o acervo consolidado existente
-        if url_canonica in urls_canonicas_existentes:
-            duplicados_url += 1
+        idx = indice_existente.get(chave)
+        if idx is None:
+            novos.append(item)
             continue
 
-        if slug in slugs_existentes:
-            duplicados_slug += 1
-            continue
+        # Já está no acervo: a curadoria é a fonte confiável de origem e campus
+        linha = df_existente.loc[idx]
+        df_existente.at[idx, "origem"] = "curadoria_dicom"
+        df_existente.at[idx, "link"] = desembrulhar_link(str(linha["link"]))
+        if _veiculo_suspeito(str(linha["veiculo"])):
+            df_existente.at[idx, "veiculo"] = item["veiculo"]
+        if item["campus"]:
+            df_existente.at[idx, "campus"] = item["campus"]
+        corrigidos += 1
 
-        novos_registros.append(item)
+    print("\n--- Relatório ---")
+    print(f"Registros na fonte: {len(registros)}")
+    print(f"Links do próprio portal ifbaiano.edu.br (ignorados): {autoclipping}")
+    print(f"Links repetidos dentro do documento: {duplicados_internos}")
+    print(f"Já presentes no acervo (origem e veículo conferidos): {corrigidos}")
+    print(f"Novas notícias: {len(novos)}")
 
-    total_duplicados = duplicados_url + duplicados_slug + duplicados_internos
-    print("\n--- Relatório de Desduplicação ---")
-    print(f"Total de registros na fonte: {len(registros_manuais)}")
-    print(f"Duplicatas internas no documento: {duplicados_internos}")
-    print(f"Duplicatas por URL com acervo: {duplicados_url}")
-    print(f"Duplicatas por Título+Veículo com acervo: {duplicados_slug}")
-    print(f"Total descartado (já presente no acervo): {total_duplicados}")
-    print(f"Novas notícias homologadas para inclusão: {len(novos_registros)}")
+    df_novos = pd.DataFrame(novos)
+    if not df_novos.empty:
+        print("Novas por campus (5 maiores):")
+        for campus, n in df_novos["campus"].replace("", "Não informado").value_counts().head(5).items():
+            print(f"  - {campus}: {n}")
 
-    if not novos_registros:
-        print("Nenhuma nova notícia para adicionar. O acervo já está 100% atualizado com a curadoria.")
+    if dry_run:
+        print("\nDRY-RUN concluído. Nenhum arquivo alterado. Use --apply para gravar.")
         return
 
-    # 5. Classificação Semântica Automática dos novos registros
-    print("\nAplicando classificadores heurísticos (Eixo Institucional, Abrangência e Campus)...")
-    df_novos = pd.DataFrame(novos_registros)
-    df_novos["eixo_institucional"] = df_novos["assunto"].apply(classificar_eixo)
-    df_novos["abrangencia"] = df_novos["veiculo"].apply(classificar_abrangencia)
-    df_novos["campus"] = df_novos.apply(
-        lambda r: classificar_campus(r["assunto"], r["veiculo"]), axis=1
-    )
+    colunas = ["data", "assunto", "veiculo", "link", "eixo_institucional",
+               "abrangencia", "campus", "origem", "tipo_mencao"]
+    for df in (df_existente, df_novos):
+        for col in colunas:
+            if col not in df.columns:
+                df[col] = ""
+    partes = [df_existente[colunas]] + ([df_novos[colunas]] if not df_novos.empty else [])
+    df_completo = pd.concat(partes, ignore_index=True)
+    salvar_e_gerar_stats(df_completo, dir_data=dir_data)
+    print(f"Consolidação concluída: {len(df_completo)} linhas antes da deduplicação final.")
 
-    print("Distribuição das novas notícias por Eixo Temático:")
-    for eixo, count in df_novos["eixo_institucional"].value_counts().items():
-        print(f"  - {eixo}: {count}")
-
-    print("Distribuição das novas notícias por Campus:")
-    for campus, count in df_novos["campus"].value_counts().head(5).items():
-        print(f"  - {campus}: {count}")
-
-    # 6. Consolidação e Salvamento
-    if dry_run:
-        print("\nModo DRY-RUN concluído com sucesso. Nenhuma alteração foi gravada em disco.")
-        print("Para efetivar a consolidação, execute com a flag --apply.")
-    else:
-        print("\nConsolidando novas notícias no acervo permanente...")
-        colunas_ordenadas = ["data", "assunto", "veiculo", "link", "eixo_institucional", "abrangencia", "campus"]
-        
-        # Garante as mesmas colunas
-        for col in colunas_ordenadas:
-            if col not in df_existente.columns:
-                df_existente[col] = ""
-            if col not in df_novos.columns:
-                df_novos[col] = ""
-
-        df_completo = pd.concat(
-            [df_existente[colunas_ordenadas], df_novos[colunas_ordenadas]],
-            ignore_index=True
-        )
-
-        salvar_e_gerar_stats(df_completo, dir_data=dir_data)
-        print(f"Consolidação concluída! O acervo agora possui {len(df_completo)} notícias catalogadas.")
 
 
 def main():
