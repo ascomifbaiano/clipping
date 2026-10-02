@@ -7,9 +7,14 @@ on:
   workflow_dispatch:
     inputs:
       executar_saneamento:
-        description: 'Executar saneamento de falsos positivos'
+        description: 'Executar saneamento de falsos positivos (só no disparo manual)'
         required: false
-        default: 'true'
+        default: false
+        type: boolean
+      forcar_camada4:
+        description: 'Rodar a camada 4 (portais locais) mesmo que já tenha rodado hoje'
+        required: false
+        default: false
         type: boolean
 
 permissions:
@@ -45,13 +50,15 @@ jobs:
         env:
           SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
           SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
+          FORCAR_CAMADA4: ${{ github.event.inputs.forcar_camada4 == 'true' && '1' || '0' }}
         run: python scraper_clipping.py
 
       - name: Ingerir Curadoria Manual DICOM (Google Docs Read-Only)
         run: python ingestao_clipping_manual.py --apply
 
+      # Saneamento da base inteira só no disparo manual (decisão D3, 02/10/2026)
       - name: Executar Saneamento de Falsos Positivos
-        if: ${{ github.event.inputs.executar_saneamento != 'false' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.executar_saneamento == 'true' }}
         run: python limpar_clipping_falsos_positivos.py
 
       - name: Sincronizar e Enviar Dados para o GitHub
