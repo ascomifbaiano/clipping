@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 1503,
+    "total": 1504,
     "eixos": {
-      "Gestão e RH": 702,
+      "Gestão e RH": 703,
       "Ensino": 358,
       "Institucional": 316,
       "Extensão": 68,
       "Pesquisa": 59
     },
     "abrangencia": {
-      "Imprensa Local": 1126,
+      "Imprensa Local": 1127,
       "Especializados (Nichos)": 111,
       "Imprensa (Nacional)": 94,
       "Imprensa Regional (Bahia)": 88,
@@ -32,7 +32,7 @@
       "08": 212,
       "05": 208,
       "09": 161,
-      "10": 116,
+      "10": 117,
       "04": 115,
       "03": 109,
       "12": 107,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 473,
+      "Geral / Não Especificado": 474,
       "Guanambi": 247,
       "Bom Jesus da Lapa": 122,
       "Alagoinhas": 89,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 512
+        "total": 513
       },
       {
         "ano": 2025,
@@ -160,9 +160,9 @@
       "Hora Brasil": 5,
       "SulBahiaNews": 4,
       "InfoEducação": 3,
-      "Prefeitura de Alagoinhas": 3,
-      "G1": 3,
       "Pimenta Blog": 3,
+      "G1": 3,
+      "Prefeitura de Alagoinhas": 3,
       "Se liga Alagoinhas": 3
     },
     "meses": {
@@ -628,16 +628,16 @@
     ]
   },
   "2026": {
-    "total": 512,
+    "total": 513,
     "eixos": {
-      "Gestão e RH": 286,
+      "Gestão e RH": 287,
       "Institucional": 104,
       "Ensino": 68,
       "Pesquisa": 27,
       "Extensão": 27
     },
     "abrangencia": {
-      "Imprensa Local": 354,
+      "Imprensa Local": 355,
       "Imprensa (Nacional)": 51,
       "Especializados (Nichos)": 45,
       "Imprensa Regional (Bahia)": 42,
@@ -666,10 +666,10 @@
       "01": 33,
       "06": 25,
       "02": 21,
-      "10": 1
+      "10": 2
     },
     "campuses": {
-      "Geral / Não Especificado": 187,
+      "Geral / Não Especificado": 188,
       "Guanambi": 83,
       "Alagoinhas": 35,
       "Bom Jesus da Lapa": 25,
@@ -693,7 +693,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 512
+        "total": 513
       },
       {
         "ano": 2025,
