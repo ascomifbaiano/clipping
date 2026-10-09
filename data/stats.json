@@ -1,8 +1,8 @@
 {
   "geral": {
-    "total": 2325,
+    "total": 2326,
     "eixos": {
-      "Ensino": 766,
+      "Ensino": 767,
       "Gestão e RH": 761,
       "Institucional": 606,
       "Extensão": 107,
@@ -10,7 +10,7 @@
     },
     "abrangencia": {
       "Imprensa Local": 1573,
-      "Especializados (Nichos)": 241,
+      "Especializados (Nichos)": 242,
       "Imprensa Regional (Bahia)": 210,
       "Imprensa (Nacional)": 145,
       "Governamental": 115,
@@ -34,7 +34,7 @@
       "09": 229,
       "03": 215,
       "02": 211,
-      "10": 186,
+      "10": 187,
       "01": 184,
       "12": 173,
       "07": 164,
@@ -44,12 +44,12 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 805,
-      "Reitoria (Salvador)": 351,
+      "Geral / Não Especificado": 803,
+      "Reitoria (Salvador)": 353,
       "Guanambi": 247,
       "Alagoinhas": 116,
       "Uruçuca": 98,
-      "Bom Jesus da Lapa": 89,
+      "Bom Jesus da Lapa": 90,
       "Valença": 88,
       "Serrinha": 71,
       "Senhor do Bonfim": 64,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 701
+        "total": 702
       },
       {
         "ano": 2025,
@@ -136,8 +136,8 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 1852,
-      "busca_automatica": 473
+      "curadoria_dicom": 1855,
+      "busca_automatica": 471
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,17 +671,17 @@
     }
   },
   "2026": {
-    "total": 701,
+    "total": 702,
     "eixos": {
       "Gestão e RH": 251,
       "Institucional": 213,
-      "Ensino": 167,
+      "Ensino": 168,
       "Extensão": 39,
       "Pesquisa": 31
     },
     "abrangencia": {
       "Imprensa Local": 466,
-      "Especializados (Nichos)": 69,
+      "Especializados (Nichos)": 70,
       "Imprensa (Nacional)": 65,
       "Imprensa Regional (Bahia)": 55,
       "Governamental": 35,
@@ -709,20 +709,20 @@
       "04": 50,
       "01": 48,
       "06": 38,
-      "10": 19
+      "10": 20
     },
     "campuses": {
-      "Reitoria (Salvador)": 201,
+      "Reitoria (Salvador)": 203,
       "Guanambi": 95,
-      "Geral / Não Especificado": 79,
+      "Geral / Não Especificado": 77,
       "Alagoinhas": 54,
       "Valença": 39,
       "Xique-Xique": 35,
-      "Santo Estêvão": 28,
       "Serrinha": 28,
+      "Santo Estêvão": 28,
       "Senhor do Bonfim": 22,
       "Uruçuca": 21,
-      "Bom Jesus da Lapa": 18,
+      "Bom Jesus da Lapa": 19,
       "Governador Mangabeira": 17,
       "Itapetinga": 13,
       "Teixeira de Freitas": 12,
@@ -736,7 +736,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 701
+        "total": 702
       },
       {
         "ano": 2025,
@@ -804,8 +804,8 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 529,
-      "busca_automatica": 172
+      "curadoria_dicom": 532,
+      "busca_automatica": 170
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
