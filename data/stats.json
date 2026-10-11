@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 2333,
+    "total": 2335,
     "eixos": {
       "Ensino": 768,
-      "Gestão e RH": 767,
-      "Institucional": 606,
+      "Gestão e RH": 768,
+      "Institucional": 607,
       "Extensão": 107,
       "Pesquisa": 85
     },
     "abrangencia": {
-      "Imprensa Local": 1575,
+      "Imprensa Local": 1577,
       "Especializados (Nichos)": 245,
       "Imprensa Regional (Bahia)": 210,
       "Imprensa (Nacional)": 145,
@@ -29,8 +29,8 @@
       "iBahia": 28
     },
     "meses": {
-      "05": 262,
-      "08": 252,
+      "05": 263,
+      "08": 253,
       "09": 230,
       "03": 215,
       "02": 211,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 809,
+      "Geral / Não Especificado": 810,
       "Reitoria (Salvador)": 353,
       "Guanambi": 247,
       "Alagoinhas": 116,
@@ -57,7 +57,7 @@
       "Teixeira de Freitas": 59,
       "Xique-Xique": 51,
       "Santo Estêvão": 48,
-      "Itaberaba": 39,
+      "Itaberaba": 40,
       "Governador Mangabeira": 39,
       "Santa Inês": 37,
       "Itapetinga": 30,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 707
+        "total": 708
       },
       {
         "ano": 2025,
@@ -80,7 +80,7 @@
       },
       {
         "ano": 2023,
-        "total": 308
+        "total": 309
       },
       {
         "ano": 2022,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1855,
-      "busca_automatica": 478
+      "busca_automatica": 480
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -265,16 +265,16 @@
     }
   },
   "2023": {
-    "total": 308,
+    "total": 309,
     "eixos": {
       "Ensino": 135,
       "Gestão e RH": 84,
-      "Institucional": 64,
+      "Institucional": 65,
       "Extensão": 15,
       "Pesquisa": 10
     },
     "abrangencia": {
-      "Imprensa Local": 231,
+      "Imprensa Local": 232,
       "Especializados (Nichos)": 42,
       "Imprensa (Nacional)": 12,
       "Governamental": 11,
@@ -285,21 +285,21 @@
       "Agência Sertão": 32,
       "agenciasertao.com": 30,
       "PCI Concursos": 7,
+      "seligaalagoinhas.com.br": 6,
       "Subsequente": 6,
       "Hora Brasil": 6,
-      "seligaalagoinhas.com.br": 6,
       "Concurso": 5,
       "Notícias Concursos": 5,
       "Bom Jesus da Lapa Notícias": 4,
-      "Egresso": 4
+      "bomjesusdalapanoticias.com.br": 4
     },
     "meses": {
       "10": 55,
       "12": 37,
       "11": 33,
       "09": 28,
+      "05": 27,
       "03": 27,
-      "05": 26,
       "02": 24,
       "06": 24,
       "01": 17,
@@ -316,8 +316,8 @@
       "Senhor do Bonfim": 16,
       "Bom Jesus da Lapa": 13,
       "Serrinha": 11,
+      "Itaberaba": 10,
       "Teixeira de Freitas": 9,
-      "Itaberaba": 9,
       "Alagoinhas": 9,
       "Xique-Xique": 5,
       "Catu": 4,
@@ -330,7 +330,7 @@
     "historico": [
       {
         "ano": 2023,
-        "total": 308
+        "total": 309
       },
       {
         "ano": 2022,
@@ -387,7 +387,7 @@
     ],
     "origem": {
       "curadoria_dicom": 268,
-      "busca_automatica": 40
+      "busca_automatica": 41
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 1,
@@ -466,7 +466,7 @@
       },
       {
         "ano": 2023,
-        "total": 308
+        "total": 309
       },
       {
         "ano": 2022,
@@ -606,7 +606,7 @@
       },
       {
         "ano": 2023,
-        "total": 308
+        "total": 309
       },
       {
         "ano": 2022,
@@ -671,16 +671,16 @@
     }
   },
   "2026": {
-    "total": 707,
+    "total": 708,
     "eixos": {
-      "Gestão e RH": 255,
+      "Gestão e RH": 256,
       "Institucional": 213,
       "Ensino": 169,
       "Extensão": 39,
       "Pesquisa": 31
     },
     "abrangencia": {
-      "Imprensa Local": 468,
+      "Imprensa Local": 469,
       "Especializados (Nichos)": 71,
       "Imprensa (Nacional)": 65,
       "Imprensa Regional (Bahia)": 55,
@@ -696,11 +696,11 @@
       "Acorda Cidade": 12,
       "Bahia na Política": 12,
       "O TEMPO": 10,
-      "Sou Enfermagem": 9,
-      "Ache Concursos": 9
+      "Ache Concursos": 9,
+      "PEBSP": 9
     },
     "meses": {
-      "08": 127,
+      "08": 128,
       "05": 124,
       "03": 89,
       "07": 79,
@@ -714,7 +714,7 @@
     "campuses": {
       "Reitoria (Salvador)": 203,
       "Guanambi": 95,
-      "Geral / Não Especificado": 82,
+      "Geral / Não Especificado": 83,
       "Alagoinhas": 54,
       "Valença": 39,
       "Xique-Xique": 35,
@@ -736,7 +736,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 707
+        "total": 708
       },
       {
         "ano": 2025,
@@ -748,7 +748,7 @@
       },
       {
         "ano": 2023,
-        "total": 308
+        "total": 309
       },
       {
         "ano": 2022,
@@ -805,7 +805,7 @@
     ],
     "origem": {
       "curadoria_dicom": 532,
-      "busca_automatica": 175
+      "busca_automatica": 176
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
