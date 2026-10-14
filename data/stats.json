@@ -23,10 +23,10 @@
       "Ache Concursos": 37,
       "Pimenta Blog": 35,
       "agenciasertao.com": 32,
-      "Fala Você Notícias": 29,
       "Notícias da Lapa": 29,
-      "iBahia": 28,
-      "seligaalagoinhas.com.br": 28
+      "Fala Você Notícias": 29,
+      "seligaalagoinhas.com.br": 28,
+      "iBahia": 28
     },
     "meses": {
       "05": 263,
@@ -44,8 +44,8 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 816,
-      "Reitoria (Salvador)": 353,
+      "Geral / Não Especificado": 814,
+      "Reitoria (Salvador)": 354,
       "Guanambi": 248,
       "Alagoinhas": 116,
       "Uruçuca": 98,
@@ -60,7 +60,7 @@
       "Itaberaba": 40,
       "Governador Mangabeira": 39,
       "Santa Inês": 38,
-      "Itapetinga": 30,
+      "Itapetinga": 31,
       "Ribeira do Pombal": 15,
       "Remanso": 8,
       "Ruy Barbosa": 8
@@ -136,8 +136,8 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 1855,
-      "busca_automatica": 489
+      "curadoria_dicom": 1857,
+      "busca_automatica": 487
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -693,10 +693,10 @@
       "PCI Concursos": 21,
       "G1": 17,
       "Folha Dirigida": 13,
-      "Acorda Cidade": 12,
       "Bahia na Política": 12,
-      "O TEMPO": 10,
+      "Acorda Cidade": 12,
       "PEBSP": 10,
+      "O TEMPO": 10,
       "Sou Enfermagem": 9
     },
     "meses": {
@@ -712,9 +712,9 @@
       "10": 29
     },
     "campuses": {
-      "Reitoria (Salvador)": 203,
+      "Reitoria (Salvador)": 204,
       "Guanambi": 96,
-      "Geral / Não Especificado": 89,
+      "Geral / Não Especificado": 87,
       "Alagoinhas": 54,
       "Valença": 39,
       "Xique-Xique": 35,
@@ -724,7 +724,7 @@
       "Uruçuca": 21,
       "Bom Jesus da Lapa": 19,
       "Governador Mangabeira": 17,
-      "Itapetinga": 13,
+      "Itapetinga": 14,
       "Teixeira de Freitas": 12,
       "Catu": 11,
       "Santa Inês": 10,
@@ -804,8 +804,8 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 532,
-      "busca_automatica": 185
+      "curadoria_dicom": 534,
+      "busca_automatica": 183
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
