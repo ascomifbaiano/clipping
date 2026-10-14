@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 2341,
+    "total": 2342,
     "eixos": {
+      "Gestão e RH": 770,
       "Ensino": 769,
-      "Gestão e RH": 769,
       "Institucional": 611,
       "Extensão": 107,
       "Pesquisa": 85
     },
     "abrangencia": {
-      "Imprensa Local": 1580,
+      "Imprensa Local": 1581,
       "Especializados (Nichos)": 246,
       "Imprensa Regional (Bahia)": 210,
       "Imprensa (Nacional)": 145,
@@ -23,8 +23,8 @@
       "Ache Concursos": 37,
       "Pimenta Blog": 35,
       "agenciasertao.com": 32,
-      "Notícias da Lapa": 29,
       "Fala Você Notícias": 29,
+      "Notícias da Lapa": 29,
       "iBahia": 28,
       "seligaalagoinhas.com.br": 28
     },
@@ -34,7 +34,7 @@
       "09": 230,
       "03": 215,
       "02": 211,
-      "10": 193,
+      "10": 194,
       "01": 187,
       "12": 173,
       "07": 165,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 814,
+      "Geral / Não Especificado": 815,
       "Reitoria (Salvador)": 353,
       "Guanambi": 248,
       "Alagoinhas": 116,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 714
+        "total": 715
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1855,
-      "busca_automatica": 486
+      "busca_automatica": 487
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,16 +671,16 @@
     }
   },
   "2026": {
-    "total": 714,
+    "total": 715,
     "eixos": {
-      "Gestão e RH": 257,
+      "Gestão e RH": 258,
       "Institucional": 217,
       "Ensino": 170,
       "Extensão": 39,
       "Pesquisa": 31
     },
     "abrangencia": {
-      "Imprensa Local": 472,
+      "Imprensa Local": 473,
       "Especializados (Nichos)": 72,
       "Imprensa (Nacional)": 65,
       "Imprensa Regional (Bahia)": 55,
@@ -709,12 +709,12 @@
       "01": 51,
       "04": 51,
       "06": 38,
-      "10": 26
+      "10": 27
     },
     "campuses": {
       "Reitoria (Salvador)": 203,
       "Guanambi": 96,
-      "Geral / Não Especificado": 87,
+      "Geral / Não Especificado": 88,
       "Alagoinhas": 54,
       "Valença": 39,
       "Xique-Xique": 35,
@@ -736,7 +736,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 714
+        "total": 715
       },
       {
         "ano": 2025,
@@ -805,7 +805,7 @@
     ],
     "origem": {
       "curadoria_dicom": 532,
-      "busca_automatica": 182
+      "busca_automatica": 183
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
