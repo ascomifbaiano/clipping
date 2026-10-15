@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 2347,
+    "total": 2349,
     "eixos": {
-      "Gestão e RH": 771,
-      "Ensino": 769,
+      "Gestão e RH": 772,
+      "Ensino": 770,
       "Institucional": 615,
       "Extensão": 107,
       "Pesquisa": 85
     },
     "abrangencia": {
-      "Imprensa Local": 1583,
+      "Imprensa Local": 1585,
       "Especializados (Nichos)": 246,
       "Imprensa Regional (Bahia)": 210,
       "Imprensa (Nacional)": 145,
@@ -23,8 +23,8 @@
       "Ache Concursos": 37,
       "Pimenta Blog": 35,
       "agenciasertao.com": 32,
-      "Notícias da Lapa": 29,
       "Fala Você Notícias": 29,
+      "Notícias da Lapa": 29,
       "seligaalagoinhas.com.br": 28,
       "iBahia": 28
     },
@@ -34,7 +34,7 @@
       "09": 230,
       "03": 215,
       "02": 211,
-      "10": 197,
+      "10": 199,
       "01": 189,
       "12": 173,
       "07": 165,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 815,
+      "Geral / Não Especificado": 816,
       "Reitoria (Salvador)": 354,
       "Guanambi": 248,
       "Alagoinhas": 116,
@@ -60,7 +60,7 @@
       "Itaberaba": 40,
       "Governador Mangabeira": 39,
       "Santa Inês": 38,
-      "Itapetinga": 33,
+      "Itapetinga": 34,
       "Ribeira do Pombal": 15,
       "Remanso": 8,
       "Ruy Barbosa": 8
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 720
+        "total": 722
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1857,
-      "busca_automatica": 490
+      "busca_automatica": 492
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,16 +671,16 @@
     }
   },
   "2026": {
-    "total": 720,
+    "total": 722,
     "eixos": {
-      "Gestão e RH": 259,
+      "Gestão e RH": 260,
       "Institucional": 221,
-      "Ensino": 170,
+      "Ensino": 171,
       "Extensão": 39,
       "Pesquisa": 31
     },
     "abrangencia": {
-      "Imprensa Local": 475,
+      "Imprensa Local": 477,
       "Especializados (Nichos)": 72,
       "Imprensa (Nacional)": 65,
       "Imprensa Regional (Bahia)": 55,
@@ -693,11 +693,11 @@
       "PCI Concursos": 21,
       "G1": 17,
       "Folha Dirigida": 13,
-      "Acorda Cidade": 12,
       "Bahia na Política": 12,
+      "Acorda Cidade": 12,
+      "PEBSP": 11,
       "O TEMPO": 10,
-      "PEBSP": 10,
-      "Ache Concursos": 9
+      "Sou Enfermagem": 9
     },
     "meses": {
       "08": 128,
@@ -709,12 +709,12 @@
       "02": 53,
       "04": 51,
       "06": 38,
-      "10": 30
+      "10": 32
     },
     "campuses": {
       "Reitoria (Salvador)": 204,
       "Guanambi": 96,
-      "Geral / Não Especificado": 88,
+      "Geral / Não Especificado": 89,
       "Alagoinhas": 54,
       "Valença": 39,
       "Xique-Xique": 35,
@@ -723,8 +723,8 @@
       "Senhor do Bonfim": 22,
       "Uruçuca": 21,
       "Bom Jesus da Lapa": 19,
+      "Itapetinga": 17,
       "Governador Mangabeira": 17,
-      "Itapetinga": 16,
       "Teixeira de Freitas": 12,
       "Catu": 11,
       "Santa Inês": 10,
@@ -736,7 +736,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 720
+        "total": 722
       },
       {
         "ano": 2025,
@@ -805,7 +805,7 @@
     ],
     "origem": {
       "curadoria_dicom": 534,
-      "busca_automatica": 186
+      "busca_automatica": 188
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
