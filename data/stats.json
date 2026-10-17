@@ -1,8 +1,8 @@
 {
   "geral": {
-    "total": 2354,
+    "total": 2355,
     "eixos": {
-      "Gestão e RH": 775,
+      "Gestão e RH": 776,
       "Ensino": 771,
       "Institucional": 616,
       "Extensão": 107,
@@ -10,7 +10,7 @@
     },
     "abrangencia": {
       "Imprensa Local": 1589,
-      "Especializados (Nichos)": 246,
+      "Especializados (Nichos)": 247,
       "Imprensa Regional (Bahia)": 210,
       "Imprensa (Nacional)": 145,
       "Governamental": 117,
@@ -25,13 +25,13 @@
       "agenciasertao.com": 32,
       "Notícias da Lapa": 29,
       "Fala Você Notícias": 29,
-      "seligaalagoinhas.com.br": 28,
-      "iBahia": 28
+      "iBahia": 28,
+      "seligaalagoinhas.com.br": 28
     },
     "meses": {
       "05": 263,
       "08": 253,
-      "09": 230,
+      "09": 231,
       "03": 215,
       "02": 211,
       "10": 204,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 819,
+      "Geral / Não Especificado": 820,
       "Reitoria (Salvador)": 354,
       "Guanambi": 248,
       "Alagoinhas": 116,
@@ -84,7 +84,7 @@
       },
       {
         "ano": 2022,
-        "total": 241
+        "total": 242
       },
       {
         "ano": 2021,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1859,
-      "busca_automatica": 495
+      "busca_automatica": 496
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -145,18 +145,18 @@
     }
   },
   "2022": {
-    "total": 241,
+    "total": 242,
     "eixos": {
       "Ensino": 110,
       "Institucional": 76,
-      "Gestão e RH": 42,
+      "Gestão e RH": 43,
       "Extensão": 10,
       "Pesquisa": 3
     },
     "abrangencia": {
       "Imprensa Local": 186,
       "Imprensa Regional (Bahia)": 19,
-      "Especializados (Nichos)": 12,
+      "Especializados (Nichos)": 13,
       "Governamental": 11,
       "Imprensa (Nacional)": 8,
       "Outras Instituições de Ensino": 5
@@ -164,14 +164,14 @@
     "top_veiculos": {
       "Agência Sertão": 33,
       "seligaalagoinhas.com.br": 12,
-      "Pimenta Blog": 10,
       "Bom Jesus da Lapa Notícias": 10,
+      "Pimenta Blog": 10,
       "Hora Brasil": 9,
       "Diga Bahia": 6,
-      "Correio": 4,
       "PCI Concursos": 4,
-      "Sul da Bahia News": 3,
-      "Tribuna do Recôncavo": 3
+      "Correio": 4,
+      "Tribuna do Recôncavo": 3,
+      "SulBahiaNews": 3
     },
     "meses": {
       "02": 45,
@@ -184,11 +184,11 @@
       "07": 16,
       "10": 15,
       "04": 12,
-      "08": 11,
-      "09": 10
+      "09": 11,
+      "08": 11
     },
     "campuses": {
-      "Geral / Não Especificado": 171,
+      "Geral / Não Especificado": 172,
       "Alagoinhas": 16,
       "Uruçuca": 13,
       "Bom Jesus da Lapa": 10,
@@ -204,7 +204,7 @@
     "historico": [
       {
         "ano": 2022,
-        "total": 241
+        "total": 242
       },
       {
         "ano": 2021,
@@ -257,7 +257,7 @@
     ],
     "origem": {
       "curadoria_dicom": 229,
-      "busca_automatica": 12
+      "busca_automatica": 13
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 1,
@@ -334,7 +334,7 @@
       },
       {
         "ano": 2022,
-        "total": 241
+        "total": 242
       },
       {
         "ano": 2021,
@@ -470,7 +470,7 @@
       },
       {
         "ano": 2022,
-        "total": 241
+        "total": 242
       },
       {
         "ano": 2021,
@@ -610,7 +610,7 @@
       },
       {
         "ano": 2022,
-        "total": 241
+        "total": 242
       },
       {
         "ano": 2021,
@@ -752,7 +752,7 @@
       },
       {
         "ano": 2022,
-        "total": 241
+        "total": 242
       },
       {
         "ano": 2021,
