@@ -1,30 +1,30 @@
 {
   "geral": {
-    "total": 2359,
+    "total": 2370,
     "eixos": {
-      "Gestão e RH": 778,
-      "Ensino": 772,
-      "Institucional": 616,
+      "Gestão e RH": 786,
+      "Ensino": 774,
+      "Institucional": 617,
       "Extensão": 108,
       "Pesquisa": 85
     },
     "abrangencia": {
-      "Imprensa Local": 1591,
+      "Imprensa Local": 1600,
       "Especializados (Nichos)": 247,
-      "Imprensa Regional (Bahia)": 210,
-      "Imprensa (Nacional)": 145,
+      "Imprensa Regional (Bahia)": 211,
+      "Imprensa (Nacional)": 146,
       "Governamental": 118,
       "Outras Instituições de Ensino": 48
     },
     "top_veiculos": {
       "Agência Sertão": 285,
       "PCI Concursos": 59,
-      "G1": 43,
+      "G1": 44,
       "Ache Concursos": 37,
       "Pimenta Blog": 35,
       "agenciasertao.com": 32,
-      "Notícias da Lapa": 29,
       "Fala Você Notícias": 29,
+      "Notícias da Lapa": 29,
       "PEBSP": 28,
       "seligaalagoinhas.com.br": 28
     },
@@ -33,34 +33,34 @@
       "08": 253,
       "09": 231,
       "03": 215,
+      "10": 215,
       "02": 211,
-      "10": 208,
-      "01": 189,
+      "01": 192,
       "12": 173,
       "07": 165,
       "06": 154,
       "11": 152,
-      "04": 144,
+      "04": 145,
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 824,
+      "Geral / Não Especificado": 831,
       "Reitoria (Salvador)": 354,
       "Guanambi": 248,
       "Alagoinhas": 116,
-      "Uruçuca": 98,
+      "Uruçuca": 99,
       "Bom Jesus da Lapa": 90,
       "Valença": 89,
       "Serrinha": 72,
       "Senhor do Bonfim": 64,
-      "Catu": 63,
+      "Catu": 64,
       "Teixeira de Freitas": 59,
       "Xique-Xique": 51,
       "Santo Estêvão": 48,
       "Itaberaba": 40,
       "Governador Mangabeira": 39,
       "Santa Inês": 39,
-      "Itapetinga": 34,
+      "Itapetinga": 36,
       "Ribeira do Pombal": 15,
       "Remanso": 8,
       "Ruy Barbosa": 8
@@ -68,11 +68,11 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 731
+        "total": 741
       },
       {
         "ano": 2025,
-        "total": 458
+        "total": 459
       },
       {
         "ano": 2024,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1859,
-      "busca_automatica": 500
+      "busca_automatica": 511
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -531,16 +531,16 @@
     }
   },
   "2025": {
-    "total": 458,
+    "total": 459,
     "eixos": {
       "Ensino": 164,
-      "Gestão e RH": 152,
+      "Gestão e RH": 153,
       "Institucional": 106,
       "Extensão": 23,
       "Pesquisa": 13
     },
     "abrangencia": {
-      "Imprensa Local": 278,
+      "Imprensa Local": 279,
       "Especializados (Nichos)": 63,
       "Imprensa Regional (Bahia)": 59,
       "Imprensa (Nacional)": 31,
@@ -554,14 +554,14 @@
       "G1": 11,
       "QConcursos": 9,
       "Correio": 9,
-      "A Tarde": 8,
       "Bahia Econômica": 8,
+      "A Tarde": 8,
       "Acorda Cidade": 8,
       "Notícias da Lapa": 7
     },
     "meses": {
       "12": 58,
-      "10": 56,
+      "10": 57,
       "02": 50,
       "11": 46,
       "05": 40,
@@ -578,9 +578,9 @@
       "Guanambi": 53,
       "Geral / Não Especificado": 44,
       "Serrinha": 27,
+      "Uruçuca": 23,
       "Bom Jesus da Lapa": 23,
       "Valença": 22,
-      "Uruçuca": 22,
       "Catu": 21,
       "Senhor do Bonfim": 19,
       "Alagoinhas": 17,
@@ -598,7 +598,7 @@
     "historico": [
       {
         "ano": 2025,
-        "total": 458
+        "total": 459
       },
       {
         "ano": 2024,
@@ -663,7 +663,7 @@
     ],
     "origem": {
       "curadoria_dicom": 378,
-      "busca_automatica": 80
+      "busca_automatica": 81
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 0,
@@ -671,19 +671,19 @@
     }
   },
   "2026": {
-    "total": 731,
+    "total": 741,
     "eixos": {
-      "Gestão e RH": 265,
-      "Institucional": 222,
-      "Ensino": 173,
+      "Gestão e RH": 272,
+      "Institucional": 223,
+      "Ensino": 175,
       "Extensão": 40,
       "Pesquisa": 31
     },
     "abrangencia": {
-      "Imprensa Local": 483,
+      "Imprensa Local": 491,
       "Especializados (Nichos)": 72,
-      "Imprensa (Nacional)": 65,
-      "Imprensa Regional (Bahia)": 55,
+      "Imprensa (Nacional)": 66,
+      "Imprensa Regional (Bahia)": 56,
       "Governamental": 38,
       "Outras Instituições de Ensino": 18
     },
@@ -691,13 +691,13 @@
       "Agência Sertão": 37,
       "Fala Você Notícias": 28,
       "PCI Concursos": 21,
-      "G1": 17,
+      "G1": 18,
       "PEBSP": 16,
       "Folha Dirigida": 13,
-      "Acorda Cidade": 12,
       "Bahia na Política": 12,
+      "Acorda Cidade": 12,
       "O TEMPO": 10,
-      "Sou Enfermagem": 9
+      "Ache Concursos": 9
     },
     "meses": {
       "08": 128,
@@ -705,15 +705,15 @@
       "03": 89,
       "07": 79,
       "09": 75,
-      "01": 53,
+      "01": 56,
       "02": 53,
-      "04": 51,
-      "10": 41,
+      "04": 52,
+      "10": 47,
       "06": 38
     },
     "campuses": {
       "Reitoria (Salvador)": 204,
-      "Geral / Não Especificado": 96,
+      "Geral / Não Especificado": 103,
       "Guanambi": 96,
       "Alagoinhas": 54,
       "Valença": 40,
@@ -723,11 +723,11 @@
       "Senhor do Bonfim": 22,
       "Uruçuca": 21,
       "Bom Jesus da Lapa": 19,
-      "Itapetinga": 17,
+      "Itapetinga": 19,
       "Governador Mangabeira": 17,
       "Teixeira de Freitas": 12,
+      "Catu": 12,
       "Santa Inês": 11,
-      "Catu": 11,
       "Itaberaba": 7,
       "Ribeira do Pombal": 6,
       "Remanso": 5,
@@ -736,11 +736,11 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 731
+        "total": 741
       },
       {
         "ano": 2025,
-        "total": 458
+        "total": 459
       },
       {
         "ano": 2024,
@@ -805,7 +805,7 @@
     ],
     "origem": {
       "curadoria_dicom": 536,
-      "busca_automatica": 195
+      "busca_automatica": 205
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
