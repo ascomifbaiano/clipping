@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 2512,
+    "total": 2514,
     "eixos": {
-      "Gestão e RH": 836,
+      "Gestão e RH": 838,
       "Ensino": 792,
       "Institucional": 679,
       "Extensão": 112,
       "Pesquisa": 93
     },
     "abrangencia": {
-      "Imprensa Local": 1699,
+      "Imprensa Local": 1701,
       "Especializados (Nichos)": 250,
       "Imprensa Regional (Bahia)": 213,
       "Imprensa (Nacional)": 158,
@@ -21,12 +21,12 @@
       "PCI Concursos": 59,
       "G1": 49,
       "Ache Concursos": 37,
+      "PEBSP": 36,
       "Pimenta Blog": 36,
-      "PEBSP": 35,
       "agenciasertao.com": 32,
       "Fala Você Notícias": 31,
       "Notícias da Lapa": 29,
-      "seligaalagoinhas.com.br": 28
+      "iBahia": 28
     },
     "meses": {
       "10": 306,
@@ -38,13 +38,13 @@
       "02": 211,
       "12": 174,
       "07": 165,
-      "11": 158,
+      "11": 160,
       "06": 156,
       "04": 145,
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 894,
+      "Geral / Não Especificado": 896,
       "Reitoria (Salvador)": 354,
       "Guanambi": 261,
       "Alagoinhas": 117,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 879
+        "total": 881
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1889,
-      "busca_automatica": 623
+      "busca_automatica": 625
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,16 +671,16 @@
     }
   },
   "2026": {
-    "total": 879,
+    "total": 881,
     "eixos": {
-      "Gestão e RH": 319,
+      "Gestão e RH": 321,
       "Institucional": 285,
       "Ensino": 192,
       "Extensão": 44,
       "Pesquisa": 39
     },
     "abrangencia": {
-      "Imprensa Local": 586,
+      "Imprensa Local": 588,
       "Imprensa (Nacional)": 78,
       "Especializados (Nichos)": 75,
       "Imprensa Regional (Bahia)": 58,
@@ -690,14 +690,14 @@
     "top_veiculos": {
       "Agência Sertão": 37,
       "Fala Você Notícias": 30,
-      "PEBSP": 23,
+      "PEBSP": 24,
       "G1": 23,
       "PCI Concursos": 21,
       "Folha Dirigida": 13,
-      "Acorda Cidade": 12,
       "Bahia na Política": 12,
+      "Acorda Cidade": 12,
       "O TEMPO": 10,
-      "Pimenta Blog": 9
+      "Ache Concursos": 9
     },
     "meses": {
       "10": 136,
@@ -710,11 +710,11 @@
       "02": 53,
       "04": 52,
       "06": 40,
-      "11": 6
+      "11": 8
     },
     "campuses": {
       "Reitoria (Salvador)": 204,
-      "Geral / Não Especificado": 164,
+      "Geral / Não Especificado": 166,
       "Guanambi": 108,
       "Alagoinhas": 55,
       "Valença": 45,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 879
+        "total": 881
       },
       {
         "ano": 2025,
@@ -806,7 +806,7 @@
     ],
     "origem": {
       "curadoria_dicom": 566,
-      "busca_automatica": 313
+      "busca_automatica": 315
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
