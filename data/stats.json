@@ -1,18 +1,18 @@
 {
   "geral": {
-    "total": 2538,
+    "total": 2563,
     "eixos": {
-      "Gestão e RH": 849,
-      "Ensino": 800,
-      "Institucional": 682,
+      "Gestão e RH": 862,
+      "Ensino": 805,
+      "Institucional": 688,
       "Extensão": 112,
-      "Pesquisa": 95
+      "Pesquisa": 96
     },
     "abrangencia": {
-      "Imprensa Local": 1715,
+      "Imprensa Local": 1734,
       "Especializados (Nichos)": 252,
-      "Imprensa Regional (Bahia)": 215,
-      "Imprensa (Nacional)": 160,
+      "Imprensa Regional (Bahia)": 217,
+      "Imprensa (Nacional)": 164,
       "Governamental": 123,
       "Outras Instituições de Ensino": 73
     },
@@ -26,40 +26,40 @@
       "agenciasertao.com": 32,
       "Fala Você Notícias": 31,
       "Notícias da Lapa": 29,
-      "iBahia": 28
+      "seligaalagoinhas.com.br": 28
     },
     "meses": {
-      "10": 312,
+      "10": 313,
       "05": 263,
       "08": 254,
-      "01": 234,
+      "01": 237,
       "09": 234,
       "03": 215,
       "02": 211,
+      "11": 195,
       "12": 174,
-      "11": 174,
       "07": 165,
       "06": 156,
       "04": 145,
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 902,
+      "Geral / Não Especificado": 916,
       "Reitoria (Salvador)": 359,
       "Guanambi": 263,
       "Alagoinhas": 117,
       "Uruçuca": 115,
       "Valença": 94,
-      "Bom Jesus da Lapa": 90,
+      "Bom Jesus da Lapa": 92,
       "Catu": 78,
       "Serrinha": 74,
       "Senhor do Bonfim": 73,
       "Teixeira de Freitas": 61,
-      "Xique-Xique": 51,
-      "Santa Inês": 50,
-      "Santo Estêvão": 49,
-      "Itaberaba": 41,
+      "Santo Estêvão": 56,
+      "Xique-Xique": 52,
+      "Santa Inês": 51,
       "Governador Mangabeira": 41,
+      "Itaberaba": 41,
       "Itapetinga": 39,
       "Remanso": 16,
       "Ribeira do Pombal": 15,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 905
+        "total": 930
       },
       {
         "ano": 2025,
@@ -136,8 +136,8 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 1910,
-      "busca_automatica": 628
+      "curadoria_dicom": 1918,
+      "busca_automatica": 645
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,19 +671,19 @@
     }
   },
   "2026": {
-    "total": 905,
+    "total": 930,
     "eixos": {
-      "Gestão e RH": 332,
-      "Institucional": 288,
-      "Ensino": 200,
+      "Gestão e RH": 345,
+      "Institucional": 294,
+      "Ensino": 205,
       "Extensão": 44,
-      "Pesquisa": 41
+      "Pesquisa": 42
     },
     "abrangencia": {
-      "Imprensa Local": 602,
-      "Imprensa (Nacional)": 80,
+      "Imprensa Local": 621,
+      "Imprensa (Nacional)": 84,
       "Especializados (Nichos)": 77,
-      "Imprensa Regional (Bahia)": 60,
+      "Imprensa Regional (Bahia)": 62,
       "Outras Instituições de Ensino": 43,
       "Governamental": 43
     },
@@ -694,39 +694,39 @@
       "G1": 25,
       "PCI Concursos": 21,
       "Folha Dirigida": 13,
-      "Bahia na Política": 12,
       "Acorda Cidade": 12,
+      "Bahia na Política": 12,
       "O TEMPO": 10,
-      "Ache Concursos": 9
+      "Pimenta Blog": 9
     },
     "meses": {
-      "10": 142,
+      "10": 143,
       "08": 128,
       "05": 124,
-      "01": 98,
+      "01": 101,
       "03": 89,
       "07": 79,
       "09": 78,
       "02": 53,
       "04": 52,
-      "06": 40,
-      "11": 22
+      "11": 43,
+      "06": 40
     },
     "campuses": {
       "Reitoria (Salvador)": 209,
-      "Geral / Não Especificado": 172,
+      "Geral / Não Especificado": 186,
       "Guanambi": 110,
       "Alagoinhas": 55,
       "Valença": 45,
       "Uruçuca": 37,
-      "Xique-Xique": 35,
+      "Santo Estêvão": 36,
+      "Xique-Xique": 36,
       "Serrinha": 31,
       "Senhor do Bonfim": 30,
-      "Santo Estêvão": 29,
       "Catu": 26,
+      "Santa Inês": 23,
       "Itapetinga": 22,
-      "Santa Inês": 22,
-      "Bom Jesus da Lapa": 19,
+      "Bom Jesus da Lapa": 21,
       "Governador Mangabeira": 19,
       "Teixeira de Freitas": 14,
       "Remanso": 13,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 905
+        "total": 930
       },
       {
         "ano": 2025,
@@ -805,8 +805,8 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 587,
-      "busca_automatica": 318
+      "curadoria_dicom": 595,
+      "busca_automatica": 335
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
