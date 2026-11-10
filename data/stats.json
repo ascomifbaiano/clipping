@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 2623,
+    "total": 2624,
     "eixos": {
       "Gestão e RH": 893,
       "Ensino": 812,
       "Institucional": 709,
-      "Extensão": 112,
+      "Extensão": 113,
       "Pesquisa": 97
     },
     "abrangencia": {
-      "Imprensa Local": 1773,
+      "Imprensa Local": 1774,
       "Especializados (Nichos)": 256,
       "Imprensa Regional (Bahia)": 219,
       "Imprensa (Nacional)": 171,
@@ -26,10 +26,10 @@
       "agenciasertao.com": 32,
       "Fala Você Notícias": 31,
       "Notícias da Lapa": 29,
-      "seligaalagoinhas.com.br": 28
+      "iBahia": 28
     },
     "meses": {
-      "10": 313,
+      "10": 314,
       "05": 263,
       "08": 254,
       "01": 250,
@@ -56,7 +56,7 @@
       "Serrinha": 74,
       "Teixeira de Freitas": 61,
       "Santo Estêvão": 57,
-      "Xique-Xique": 54,
+      "Xique-Xique": 55,
       "Santa Inês": 52,
       "Governador Mangabeira": 41,
       "Itaberaba": 41,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 989
+        "total": 990
       },
       {
         "ano": 2025,
@@ -136,7 +136,7 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 1918,
+      "curadoria_dicom": 1919,
       "busca_automatica": 705
     },
     "confusoes": {
@@ -671,16 +671,16 @@
     }
   },
   "2026": {
-    "total": 989,
+    "total": 990,
     "eixos": {
       "Gestão e RH": 376,
       "Institucional": 314,
       "Ensino": 212,
-      "Extensão": 44,
+      "Extensão": 45,
       "Pesquisa": 43
     },
     "abrangencia": {
-      "Imprensa Local": 660,
+      "Imprensa Local": 661,
       "Imprensa (Nacional)": 91,
       "Especializados (Nichos)": 81,
       "Imprensa Regional (Bahia)": 64,
@@ -694,13 +694,13 @@
       "G1": 25,
       "PCI Concursos": 21,
       "Folha Dirigida": 13,
-      "Acorda Cidade": 12,
       "Bahia na Política": 12,
+      "Acorda Cidade": 12,
       "O TEMPO": 10,
-      "Pimenta Blog": 9
+      "Sou Enfermagem": 9
     },
     "meses": {
-      "10": 143,
+      "10": 144,
       "08": 128,
       "05": 124,
       "01": 114,
@@ -718,7 +718,7 @@
       "Guanambi": 110,
       "Alagoinhas": 55,
       "Valença": 47,
-      "Xique-Xique": 38,
+      "Xique-Xique": 39,
       "Santo Estêvão": 37,
       "Uruçuca": 37,
       "Senhor do Bonfim": 32,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 989
+        "total": 990
       },
       {
         "ano": 2025,
@@ -805,7 +805,7 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 595,
+      "curadoria_dicom": 596,
       "busca_automatica": 394
     },
     "confusoes": {
