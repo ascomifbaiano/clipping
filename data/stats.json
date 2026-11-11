@@ -1,19 +1,19 @@
 {
   "geral": {
-    "total": 2626,
+    "total": 2630,
     "eixos": {
       "Gestão e RH": 894,
       "Ensino": 812,
-      "Institucional": 710,
+      "Institucional": 714,
       "Extensão": 113,
       "Pesquisa": 97
     },
     "abrangencia": {
-      "Imprensa Local": 1775,
+      "Imprensa Local": 1777,
       "Especializados (Nichos)": 256,
       "Imprensa Regional (Bahia)": 219,
       "Imprensa (Nacional)": 171,
-      "Governamental": 128,
+      "Governamental": 130,
       "Outras Instituições de Ensino": 77
     },
     "top_veiculos": {
@@ -23,10 +23,10 @@
       "PEBSP": 41,
       "Ache Concursos": 37,
       "Pimenta Blog": 36,
+      "Fala Você Notícias": 32,
       "agenciasertao.com": 32,
-      "Fala Você Notícias": 31,
       "Notícias da Lapa": 29,
-      "iBahia": 28
+      "seligaalagoinhas.com.br": 28
     },
     "meses": {
       "10": 314,
@@ -35,7 +35,7 @@
       "01": 250,
       "11": 243,
       "09": 234,
-      "03": 215,
+      "03": 219,
       "02": 211,
       "12": 174,
       "07": 166,
@@ -46,7 +46,7 @@
     "campuses": {
       "Geral / Não Especificado": 968,
       "Reitoria (Salvador)": 359,
-      "Guanambi": 263,
+      "Guanambi": 267,
       "Alagoinhas": 117,
       "Uruçuca": 115,
       "Valença": 96,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 992
+        "total": 996
       },
       {
         "ano": 2025,
@@ -136,7 +136,7 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 1919,
+      "curadoria_dicom": 1923,
       "busca_automatica": 707
     },
     "confusoes": {
@@ -671,25 +671,25 @@
     }
   },
   "2026": {
-    "total": 992,
+    "total": 996,
     "eixos": {
       "Gestão e RH": 377,
-      "Institucional": 315,
+      "Institucional": 319,
       "Ensino": 212,
       "Extensão": 45,
       "Pesquisa": 43
     },
     "abrangencia": {
-      "Imprensa Local": 662,
+      "Imprensa Local": 664,
       "Imprensa (Nacional)": 91,
       "Especializados (Nichos)": 81,
       "Imprensa Regional (Bahia)": 64,
-      "Governamental": 47,
+      "Governamental": 49,
       "Outras Instituições de Ensino": 47
     },
     "top_veiculos": {
       "Agência Sertão": 37,
-      "Fala Você Notícias": 30,
+      "Fala Você Notícias": 31,
       "PEBSP": 29,
       "G1": 25,
       "PCI Concursos": 21,
@@ -704,8 +704,8 @@
       "08": 128,
       "05": 124,
       "01": 114,
+      "03": 93,
       "11": 91,
-      "03": 89,
       "07": 79,
       "09": 78,
       "02": 53,
@@ -715,7 +715,7 @@
     "campuses": {
       "Geral / Não Especificado": 237,
       "Reitoria (Salvador)": 209,
-      "Guanambi": 110,
+      "Guanambi": 114,
       "Alagoinhas": 55,
       "Valença": 47,
       "Xique-Xique": 39,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 992
+        "total": 996
       },
       {
         "ano": 2025,
@@ -805,7 +805,7 @@
       }
     ],
     "origem": {
-      "curadoria_dicom": 596,
+      "curadoria_dicom": 600,
       "busca_automatica": 396
     },
     "confusoes": {
