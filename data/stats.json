@@ -1,20 +1,20 @@
 {
   "geral": {
-    "total": 2630,
+    "total": 2634,
     "eixos": {
-      "Gestão e RH": 894,
+      "Gestão e RH": 895,
       "Ensino": 812,
-      "Institucional": 714,
+      "Institucional": 717,
       "Extensão": 113,
       "Pesquisa": 97
     },
     "abrangencia": {
-      "Imprensa Local": 1777,
+      "Imprensa Local": 1778,
       "Especializados (Nichos)": 256,
       "Imprensa Regional (Bahia)": 219,
       "Imprensa (Nacional)": 171,
-      "Governamental": 130,
-      "Outras Instituições de Ensino": 77
+      "Governamental": 132,
+      "Outras Instituições de Ensino": 78
     },
     "top_veiculos": {
       "Agência Sertão": 285,
@@ -33,7 +33,7 @@
       "05": 263,
       "08": 254,
       "01": 250,
-      "11": 243,
+      "11": 247,
       "09": 234,
       "03": 219,
       "02": 211,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 968,
+      "Geral / Não Especificado": 972,
       "Reitoria (Salvador)": 359,
       "Guanambi": 267,
       "Alagoinhas": 117,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 996
+        "total": 1000
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1923,
-      "busca_automatica": 707
+      "busca_automatica": 711
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,21 +671,21 @@
     }
   },
   "2026": {
-    "total": 996,
+    "total": 1000,
     "eixos": {
-      "Gestão e RH": 377,
-      "Institucional": 319,
+      "Gestão e RH": 378,
+      "Institucional": 322,
       "Ensino": 212,
       "Extensão": 45,
       "Pesquisa": 43
     },
     "abrangencia": {
-      "Imprensa Local": 664,
+      "Imprensa Local": 665,
       "Imprensa (Nacional)": 91,
       "Especializados (Nichos)": 81,
       "Imprensa Regional (Bahia)": 64,
-      "Governamental": 49,
-      "Outras Instituições de Ensino": 47
+      "Governamental": 51,
+      "Outras Instituições de Ensino": 48
     },
     "top_veiculos": {
       "Agência Sertão": 37,
@@ -697,15 +697,15 @@
       "Acorda Cidade": 12,
       "Bahia na Política": 12,
       "O TEMPO": 10,
-      "Sou Enfermagem": 9
+      "Pimenta Blog": 9
     },
     "meses": {
       "10": 144,
       "08": 128,
       "05": 124,
       "01": 114,
+      "11": 95,
       "03": 93,
-      "11": 91,
       "07": 79,
       "09": 78,
       "02": 53,
@@ -713,7 +713,7 @@
       "06": 40
     },
     "campuses": {
-      "Geral / Não Especificado": 237,
+      "Geral / Não Especificado": 241,
       "Reitoria (Salvador)": 209,
       "Guanambi": 114,
       "Alagoinhas": 55,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 996
+        "total": 1000
       },
       {
         "ano": 2025,
@@ -806,7 +806,7 @@
     ],
     "origem": {
       "curadoria_dicom": 600,
-      "busca_automatica": 396
+      "busca_automatica": 400
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
