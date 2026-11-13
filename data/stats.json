@@ -1,10 +1,10 @@
 {
   "geral": {
-    "total": 2642,
+    "total": 2643,
     "eixos": {
       "Gestão e RH": 897,
       "Ensino": 814,
-      "Institucional": 719,
+      "Institucional": 720,
       "Extensão": 114,
       "Pesquisa": 98
     },
@@ -13,7 +13,7 @@
       "Especializados (Nichos)": 256,
       "Imprensa Regional (Bahia)": 219,
       "Imprensa (Nacional)": 171,
-      "Governamental": 132,
+      "Governamental": 133,
       "Outras Instituições de Ensino": 79
     },
     "top_veiculos": {
@@ -26,12 +26,12 @@
       "Fala Você Notícias": 34,
       "agenciasertao.com": 32,
       "Notícias da Lapa": 30,
-      "iBahia": 28
+      "seligaalagoinhas.com.br": 28
     },
     "meses": {
       "10": 314,
       "05": 263,
-      "11": 254,
+      "11": 255,
       "08": 254,
       "01": 251,
       "09": 234,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 970,
+      "Geral / Não Especificado": 971,
       "Reitoria (Salvador)": 360,
       "Guanambi": 269,
       "Alagoinhas": 118,
@@ -58,8 +58,8 @@
       "Santo Estêvão": 58,
       "Xique-Xique": 55,
       "Santa Inês": 52,
-      "Itaberaba": 41,
       "Governador Mangabeira": 41,
+      "Itaberaba": 41,
       "Itapetinga": 39,
       "Remanso": 16,
       "Ribeira do Pombal": 15,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1008
+        "total": 1009
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1932,
-      "busca_automatica": 710
+      "busca_automatica": 711
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,10 +671,10 @@
     }
   },
   "2026": {
-    "total": 1008,
+    "total": 1009,
     "eixos": {
       "Gestão e RH": 380,
-      "Institucional": 324,
+      "Institucional": 325,
       "Ensino": 214,
       "Extensão": 46,
       "Pesquisa": 44
@@ -684,7 +684,7 @@
       "Imprensa (Nacional)": 91,
       "Especializados (Nichos)": 81,
       "Imprensa Regional (Bahia)": 64,
-      "Governamental": 51,
+      "Governamental": 52,
       "Outras Instituições de Ensino": 49
     },
     "top_veiculos": {
@@ -704,7 +704,7 @@
       "08": 128,
       "05": 124,
       "01": 115,
-      "11": 102,
+      "11": 103,
       "03": 93,
       "07": 79,
       "09": 78,
@@ -713,7 +713,7 @@
       "06": 40
     },
     "campuses": {
-      "Geral / Não Especificado": 239,
+      "Geral / Não Especificado": 240,
       "Reitoria (Salvador)": 210,
       "Guanambi": 116,
       "Alagoinhas": 56,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1008
+        "total": 1009
       },
       {
         "ano": 2025,
@@ -806,7 +806,7 @@
     ],
     "origem": {
       "curadoria_dicom": 609,
-      "busca_automatica": 399
+      "busca_automatica": 400
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
