@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 2643,
+    "total": 2644,
     "eixos": {
-      "Gestão e RH": 897,
+      "Gestão e RH": 898,
       "Ensino": 814,
       "Institucional": 720,
       "Extensão": 114,
       "Pesquisa": 98
     },
     "abrangencia": {
-      "Imprensa Local": 1785,
+      "Imprensa Local": 1786,
       "Especializados (Nichos)": 256,
       "Imprensa Regional (Bahia)": 219,
       "Imprensa (Nacional)": 171,
@@ -31,7 +31,7 @@
     "meses": {
       "10": 314,
       "05": 263,
-      "11": 255,
+      "11": 256,
       "08": 254,
       "01": 251,
       "09": 234,
@@ -51,7 +51,7 @@
       "Uruçuca": 117,
       "Valença": 96,
       "Bom Jesus da Lapa": 95,
-      "Catu": 78,
+      "Catu": 79,
       "Senhor do Bonfim": 76,
       "Serrinha": 74,
       "Teixeira de Freitas": 61,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1009
+        "total": 1010
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1932,
-      "busca_automatica": 711
+      "busca_automatica": 712
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,16 +671,16 @@
     }
   },
   "2026": {
-    "total": 1009,
+    "total": 1010,
     "eixos": {
-      "Gestão e RH": 380,
+      "Gestão e RH": 381,
       "Institucional": 325,
       "Ensino": 214,
       "Extensão": 46,
       "Pesquisa": 44
     },
     "abrangencia": {
-      "Imprensa Local": 672,
+      "Imprensa Local": 673,
       "Imprensa (Nacional)": 91,
       "Especializados (Nichos)": 81,
       "Imprensa Regional (Bahia)": 64,
@@ -697,14 +697,14 @@
       "Bahia na Política": 12,
       "Acorda Cidade": 12,
       "O TEMPO": 10,
-      "Ache Concursos": 9
+      "Notícias da Lapa": 9
     },
     "meses": {
       "10": 144,
       "08": 128,
       "05": 124,
       "01": 115,
-      "11": 103,
+      "11": 104,
       "03": 93,
       "07": 79,
       "09": 78,
@@ -723,7 +723,7 @@
       "Santo Estêvão": 38,
       "Senhor do Bonfim": 33,
       "Serrinha": 31,
-      "Catu": 26,
+      "Catu": 27,
       "Bom Jesus da Lapa": 24,
       "Santa Inês": 24,
       "Itapetinga": 22,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1009
+        "total": 1010
       },
       {
         "ano": 2025,
@@ -806,7 +806,7 @@
     ],
     "origem": {
       "curadoria_dicom": 609,
-      "busca_automatica": 400
+      "busca_automatica": 401
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
