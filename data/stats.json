@@ -1,15 +1,15 @@
 {
   "geral": {
-    "total": 2644,
+    "total": 2647,
     "eixos": {
-      "Gestão e RH": 898,
+      "Gestão e RH": 899,
       "Ensino": 814,
-      "Institucional": 720,
-      "Extensão": 114,
+      "Institucional": 721,
+      "Extensão": 115,
       "Pesquisa": 98
     },
     "abrangencia": {
-      "Imprensa Local": 1786,
+      "Imprensa Local": 1789,
       "Especializados (Nichos)": 256,
       "Imprensa Regional (Bahia)": 219,
       "Imprensa (Nacional)": 171,
@@ -20,7 +20,7 @@
       "Agência Sertão": 285,
       "PCI Concursos": 59,
       "G1": 51,
-      "PEBSP": 42,
+      "PEBSP": 43,
       "Ache Concursos": 37,
       "Pimenta Blog": 36,
       "Fala Você Notícias": 34,
@@ -31,7 +31,7 @@
     "meses": {
       "10": 314,
       "05": 263,
-      "11": 256,
+      "11": 259,
       "08": 254,
       "01": 251,
       "09": 234,
@@ -44,9 +44,9 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 971,
+      "Geral / Não Especificado": 972,
       "Reitoria (Salvador)": 360,
-      "Guanambi": 269,
+      "Guanambi": 270,
       "Alagoinhas": 118,
       "Uruçuca": 117,
       "Valença": 96,
@@ -58,17 +58,17 @@
       "Santo Estêvão": 58,
       "Xique-Xique": 55,
       "Santa Inês": 52,
-      "Governador Mangabeira": 41,
       "Itaberaba": 41,
+      "Governador Mangabeira": 41,
       "Itapetinga": 39,
       "Remanso": 16,
       "Ribeira do Pombal": 15,
-      "Ruy Barbosa": 11
+      "Ruy Barbosa": 12
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 1010
+        "total": 1013
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1932,
-      "busca_automatica": 712
+      "busca_automatica": 715
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,16 +671,16 @@
     }
   },
   "2026": {
-    "total": 1010,
+    "total": 1013,
     "eixos": {
-      "Gestão e RH": 381,
-      "Institucional": 325,
+      "Gestão e RH": 382,
+      "Institucional": 326,
       "Ensino": 214,
-      "Extensão": 46,
+      "Extensão": 47,
       "Pesquisa": 44
     },
     "abrangencia": {
-      "Imprensa Local": 673,
+      "Imprensa Local": 676,
       "Imprensa (Nacional)": 91,
       "Especializados (Nichos)": 81,
       "Imprensa Regional (Bahia)": 64,
@@ -690,21 +690,21 @@
     "top_veiculos": {
       "Agência Sertão": 37,
       "Fala Você Notícias": 33,
-      "PEBSP": 30,
+      "PEBSP": 31,
       "G1": 25,
       "PCI Concursos": 21,
       "Folha Dirigida": 13,
       "Bahia na Política": 12,
       "Acorda Cidade": 12,
       "O TEMPO": 10,
-      "Notícias da Lapa": 9
+      "Pimenta Blog": 9
     },
     "meses": {
       "10": 144,
       "08": 128,
       "05": 124,
       "01": 115,
-      "11": 104,
+      "11": 107,
       "03": 93,
       "07": 79,
       "09": 78,
@@ -713,9 +713,9 @@
       "06": 40
     },
     "campuses": {
-      "Geral / Não Especificado": 240,
+      "Geral / Não Especificado": 241,
       "Reitoria (Salvador)": 210,
-      "Guanambi": 116,
+      "Guanambi": 117,
       "Alagoinhas": 56,
       "Valença": 47,
       "Uruçuca": 39,
@@ -732,12 +732,12 @@
       "Remanso": 13,
       "Itaberaba": 8,
       "Ribeira do Pombal": 6,
-      "Ruy Barbosa": 4
+      "Ruy Barbosa": 5
     },
     "historico": [
       {
         "ano": 2026,
-        "total": 1010
+        "total": 1013
       },
       {
         "ano": 2025,
@@ -806,7 +806,7 @@
     ],
     "origem": {
       "curadoria_dicom": 609,
-      "busca_automatica": 401
+      "busca_automatica": 404
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
