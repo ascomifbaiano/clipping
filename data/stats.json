@@ -1,36 +1,36 @@
 {
   "geral": {
-    "total": 2680,
+    "total": 2685,
     "eixos": {
-      "Gestão e RH": 904,
-      "Ensino": 821,
-      "Institucional": 738,
+      "Gestão e RH": 907,
+      "Ensino": 822,
+      "Institucional": 739,
       "Extensão": 118,
       "Pesquisa": 99
     },
     "abrangencia": {
-      "Imprensa Local": 1812,
+      "Imprensa Local": 1814,
       "Especializados (Nichos)": 259,
-      "Imprensa Regional (Bahia)": 219,
-      "Imprensa (Nacional)": 177,
-      "Governamental": 134,
+      "Imprensa Regional (Bahia)": 220,
+      "Imprensa (Nacional)": 178,
+      "Governamental": 135,
       "Outras Instituições de Ensino": 79
     },
     "top_veiculos": {
       "Agência Sertão": 285,
       "PCI Concursos": 59,
-      "G1": 51,
+      "G1": 52,
       "PEBSP": 44,
       "Ache Concursos": 37,
       "Pimenta Blog": 36,
       "Fala Você Notícias": 34,
       "agenciasertao.com": 32,
       "Notícias da Lapa": 30,
-      "seligaalagoinhas.com.br": 28
+      "iBahia": 28
     },
     "meses": {
       "10": 314,
-      "11": 281,
+      "11": 286,
       "05": 263,
       "01": 262,
       "08": 254,
@@ -44,7 +44,7 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 991,
+      "Geral / Não Especificado": 995,
       "Reitoria (Salvador)": 362,
       "Guanambi": 275,
       "Uruçuca": 118,
@@ -53,14 +53,14 @@
       "Bom Jesus da Lapa": 95,
       "Catu": 79,
       "Senhor do Bonfim": 76,
-      "Serrinha": 74,
+      "Serrinha": 75,
       "Teixeira de Freitas": 62,
       "Santo Estêvão": 58,
       "Xique-Xique": 55,
       "Santa Inês": 52,
       "Itaberaba": 42,
-      "Governador Mangabeira": 41,
       "Itapetinga": 41,
+      "Governador Mangabeira": 41,
       "Remanso": 17,
       "Ribeira do Pombal": 15,
       "Ruy Barbosa": 13
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1046
+        "total": 1051
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1932,
-      "busca_automatica": 748
+      "busca_automatica": 753
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,37 +671,37 @@
     }
   },
   "2026": {
-    "total": 1046,
+    "total": 1051,
     "eixos": {
-      "Gestão e RH": 387,
-      "Institucional": 343,
-      "Ensino": 221,
+      "Gestão e RH": 390,
+      "Institucional": 344,
+      "Ensino": 222,
       "Extensão": 50,
       "Pesquisa": 45
     },
     "abrangencia": {
-      "Imprensa Local": 699,
-      "Imprensa (Nacional)": 97,
+      "Imprensa Local": 701,
+      "Imprensa (Nacional)": 98,
       "Especializados (Nichos)": 84,
-      "Imprensa Regional (Bahia)": 64,
-      "Governamental": 53,
+      "Imprensa Regional (Bahia)": 65,
+      "Governamental": 54,
       "Outras Instituições de Ensino": 49
     },
     "top_veiculos": {
       "Agência Sertão": 37,
       "Fala Você Notícias": 33,
       "PEBSP": 32,
-      "G1": 25,
+      "G1": 26,
       "PCI Concursos": 21,
       "Folha Dirigida": 13,
-      "Acorda Cidade": 12,
+      "Acorda Cidade": 13,
       "Bahia na Política": 12,
       "O TEMPO": 10,
-      "O Tempo": 9
+      "Pimenta Blog": 9
     },
     "meses": {
       "10": 144,
-      "11": 129,
+      "11": 134,
       "08": 128,
       "01": 126,
       "05": 124,
@@ -713,7 +713,7 @@
       "06": 40
     },
     "campuses": {
-      "Geral / Não Especificado": 260,
+      "Geral / Não Especificado": 264,
       "Reitoria (Salvador)": 212,
       "Guanambi": 122,
       "Alagoinhas": 56,
@@ -722,10 +722,10 @@
       "Xique-Xique": 39,
       "Santo Estêvão": 38,
       "Senhor do Bonfim": 33,
-      "Serrinha": 31,
+      "Serrinha": 32,
       "Catu": 27,
-      "Santa Inês": 24,
       "Itapetinga": 24,
+      "Santa Inês": 24,
       "Bom Jesus da Lapa": 24,
       "Governador Mangabeira": 19,
       "Teixeira de Freitas": 15,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1046
+        "total": 1051
       },
       {
         "ano": 2025,
@@ -806,7 +806,7 @@
     ],
     "origem": {
       "curadoria_dicom": 609,
-      "busca_automatica": 437
+      "busca_automatica": 442
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 2,
