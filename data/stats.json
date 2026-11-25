@@ -1,20 +1,20 @@
 {
   "geral": {
-    "total": 3062,
+    "total": 3092,
     "eixos": {
-      "Gestão e RH": 1069,
-      "Ensino": 874,
-      "Institucional": 851,
-      "Extensão": 147,
+      "Gestão e RH": 1080,
+      "Ensino": 876,
+      "Institucional": 867,
+      "Extensão": 148,
       "Pesquisa": 121
     },
     "abrangencia": {
-      "Imprensa Local": 2076,
+      "Imprensa Local": 2102,
       "Especializados (Nichos)": 264,
-      "Imprensa (Nacional)": 259,
+      "Imprensa (Nacional)": 261,
       "Imprensa Regional (Bahia)": 225,
-      "Governamental": 142,
-      "Outras Instituições de Ensino": 96
+      "Governamental": 143,
+      "Outras Instituições de Ensino": 97
     },
     "top_veiculos": {
       "Agência Sertão": 285,
@@ -22,15 +22,15 @@
       "G1": 54,
       "PEBSP": 50,
       "Ache Concursos": 37,
-      "Fala Você Notícias": 36,
       "Pimenta Blog": 36,
+      "Fala Você Notícias": 36,
       "agenciasertao.com": 32,
       "Notícias da Lapa": 30,
       "iBahia": 30
     },
     "meses": {
-      "11": 538,
-      "01": 385,
+      "11": 552,
+      "01": 401,
       "10": 314,
       "05": 263,
       "08": 255,
@@ -44,20 +44,20 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 1283,
+      "Geral / Não Especificado": 1303,
       "Reitoria (Salvador)": 363,
       "Guanambi": 289,
-      "Uruçuca": 123,
+      "Uruçuca": 125,
       "Alagoinhas": 118,
       "Valença": 96,
       "Bom Jesus da Lapa": 95,
-      "Catu": 88,
+      "Catu": 90,
       "Serrinha": 80,
+      "Teixeira de Freitas": 76,
       "Senhor do Bonfim": 76,
-      "Teixeira de Freitas": 75,
-      "Xique-Xique": 62,
+      "Xique-Xique": 65,
       "Santo Estêvão": 62,
-      "Santa Inês": 57,
+      "Santa Inês": 59,
       "Itapetinga": 52,
       "Governador Mangabeira": 51,
       "Itaberaba": 42,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1426
+        "total": 1456
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1943,
-      "busca_automatica": 1119
+      "busca_automatica": 1149
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,21 +671,21 @@
     }
   },
   "2026": {
-    "total": 1426,
+    "total": 1456,
     "eixos": {
-      "Gestão e RH": 552,
-      "Institucional": 456,
-      "Ensino": 273,
-      "Extensão": 79,
+      "Gestão e RH": 563,
+      "Institucional": 472,
+      "Ensino": 275,
+      "Extensão": 80,
       "Pesquisa": 66
     },
     "abrangencia": {
-      "Imprensa Local": 962,
-      "Imprensa (Nacional)": 179,
+      "Imprensa Local": 988,
+      "Imprensa (Nacional)": 181,
       "Especializados (Nichos)": 89,
       "Imprensa Regional (Bahia)": 70,
-      "Outras Instituições de Ensino": 65,
-      "Governamental": 61
+      "Outras Instituições de Ensino": 66,
+      "Governamental": 62
     },
     "top_veiculos": {
       "PEBSP": 38,
@@ -693,15 +693,15 @@
       "Fala Você Notícias": 35,
       "G1": 28,
       "PCI Concursos": 21,
-      "Folha Dirigida": 13,
       "Acorda Cidade": 13,
+      "Folha Dirigida": 13,
       "Achei Sudoeste": 12,
       "Bahia na Política": 12,
       "O Tempo": 12
     },
     "meses": {
-      "11": 386,
-      "01": 249,
+      "11": 400,
+      "01": 265,
       "10": 144,
       "08": 128,
       "05": 124,
@@ -713,21 +713,21 @@
       "06": 40
     },
     "campuses": {
-      "Geral / Não Especificado": 551,
+      "Geral / Não Especificado": 571,
       "Reitoria (Salvador)": 213,
       "Guanambi": 136,
       "Alagoinhas": 56,
+      "Xique-Xique": 49,
+      "Uruçuca": 47,
       "Valença": 47,
-      "Xique-Xique": 46,
-      "Uruçuca": 45,
       "Santo Estêvão": 42,
+      "Catu": 37,
       "Serrinha": 37,
       "Itapetinga": 35,
-      "Catu": 35,
       "Senhor do Bonfim": 33,
-      "Santa Inês": 29,
+      "Santa Inês": 31,
       "Governador Mangabeira": 29,
-      "Teixeira de Freitas": 28,
+      "Teixeira de Freitas": 29,
       "Bom Jesus da Lapa": 24,
       "Remanso": 15,
       "Ruy Barbosa": 10,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1426
+        "total": 1456
       },
       {
         "ano": 2025,
@@ -805,7 +805,7 @@
       }
     ],
     "origem": {
-      "busca_automatica": 806,
+      "busca_automatica": 836,
       "curadoria_dicom": 620
     },
     "confusoes": {
