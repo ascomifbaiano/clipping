@@ -1,17 +1,17 @@
 {
   "geral": {
-    "total": 3145,
+    "total": 3168,
     "eixos": {
-      "Gestão e RH": 1100,
-      "Institucional": 888,
-      "Ensino": 884,
-      "Extensão": 150,
-      "Pesquisa": 123
+      "Gestão e RH": 1115,
+      "Institucional": 893,
+      "Ensino": 885,
+      "Extensão": 151,
+      "Pesquisa": 124
     },
     "abrangencia": {
-      "Imprensa Local": 2141,
-      "Imprensa (Nacional)": 274,
-      "Especializados (Nichos)": 264,
+      "Imprensa Local": 2157,
+      "Imprensa (Nacional)": 279,
+      "Especializados (Nichos)": 266,
       "Imprensa Regional (Bahia)": 225,
       "Governamental": 144,
       "Outras Instituições de Ensino": 97
@@ -25,12 +25,12 @@
       "Fala Você Notícias": 37,
       "Pimenta Blog": 36,
       "agenciasertao.com": 32,
-      "iBahia": 30,
-      "Notícias da Lapa": 30
+      "Notícias da Lapa": 30,
+      "iBahia": 30
     },
     "meses": {
-      "11": 579,
-      "01": 427,
+      "11": 591,
+      "01": 438,
       "10": 314,
       "05": 263,
       "08": 255,
@@ -44,9 +44,9 @@
       "20": 1
     },
     "campuses": {
-      "Geral / Não Especificado": 1342,
+      "Geral / Não Especificado": 1360,
       "Reitoria (Salvador)": 364,
-      "Guanambi": 292,
+      "Guanambi": 296,
       "Uruçuca": 126,
       "Alagoinhas": 118,
       "Valença": 96,
@@ -56,7 +56,7 @@
       "Teixeira de Freitas": 78,
       "Senhor do Bonfim": 76,
       "Xique-Xique": 65,
-      "Santa Inês": 63,
+      "Santa Inês": 64,
       "Santo Estêvão": 62,
       "Governador Mangabeira": 54,
       "Itapetinga": 52,
@@ -68,7 +68,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1509
+        "total": 1532
       },
       {
         "ano": 2025,
@@ -137,7 +137,7 @@
     ],
     "origem": {
       "curadoria_dicom": 1943,
-      "busca_automatica": 1202
+      "busca_automatica": 1225
     },
     "confusoes": {
       "ifba_no_lugar_do_ifbaiano": 6,
@@ -671,18 +671,18 @@
     }
   },
   "2026": {
-    "total": 1509,
+    "total": 1532,
     "eixos": {
-      "Gestão e RH": 583,
-      "Institucional": 493,
-      "Ensino": 283,
-      "Extensão": 82,
-      "Pesquisa": 68
+      "Gestão e RH": 598,
+      "Institucional": 498,
+      "Ensino": 284,
+      "Extensão": 83,
+      "Pesquisa": 69
     },
     "abrangencia": {
-      "Imprensa Local": 1027,
-      "Imprensa (Nacional)": 194,
-      "Especializados (Nichos)": 89,
+      "Imprensa Local": 1043,
+      "Imprensa (Nacional)": 199,
+      "Especializados (Nichos)": 91,
       "Imprensa Regional (Bahia)": 70,
       "Outras Instituições de Ensino": 66,
       "Governamental": 63
@@ -693,15 +693,15 @@
       "Fala Você Notícias": 36,
       "G1": 28,
       "PCI Concursos": 21,
+      "Achei Sudoeste": 14,
       "Folha Dirigida": 13,
       "Acorda Cidade": 13,
-      "Achei Sudoeste": 12,
       "Bahia na Política": 12,
       "O Tempo": 12
     },
     "meses": {
-      "11": 427,
-      "01": 291,
+      "11": 439,
+      "01": 302,
       "10": 144,
       "08": 128,
       "05": 124,
@@ -713,9 +713,9 @@
       "06": 40
     },
     "campuses": {
-      "Geral / Não Especificado": 610,
+      "Geral / Não Especificado": 628,
       "Reitoria (Salvador)": 214,
-      "Guanambi": 139,
+      "Guanambi": 143,
       "Alagoinhas": 56,
       "Xique-Xique": 49,
       "Uruçuca": 48,
@@ -723,7 +723,7 @@
       "Santo Estêvão": 42,
       "Catu": 37,
       "Serrinha": 37,
-      "Santa Inês": 35,
+      "Santa Inês": 36,
       "Itapetinga": 35,
       "Senhor do Bonfim": 33,
       "Governador Mangabeira": 32,
@@ -737,7 +737,7 @@
     "historico": [
       {
         "ano": 2026,
-        "total": 1509
+        "total": 1532
       },
       {
         "ano": 2025,
@@ -805,7 +805,7 @@
       }
     ],
     "origem": {
-      "busca_automatica": 889,
+      "busca_automatica": 912,
       "curadoria_dicom": 620
     },
     "confusoes": {
